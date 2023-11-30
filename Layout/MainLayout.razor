@@ -1,16 +1,69 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+@inject ILocalStorageService localStorage
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
+<MudThemeProvider Theme="MyCustomTheme" IsDarkMode=@_isDarkMode/>
+<MudDialogProvider />
+<MudSnackbarProvider />
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+<MudLayout>
+    <MudAppBar Elevation="3" Dense="true">
+            <MudSpacer/>
+            <MudTooltip Text=@_changeThemeString>
+            <MudIconButton Icon=@_darkLightIcon Color="Color.Inherit" OnClick="() => changeThemeMode(false)" />
+            </MudTooltip>
+    </MudAppBar>
+    <MudMainContent class="content px-4">
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+
+    private bool _isDarkMode = true;
+    private string? _darkLightIcon;
+    private string? _changeThemeString;
+    private string? _localStorageTheme { get; set; }
+
+    MudTheme MyCustomTheme = new MudTheme()
+    {
+        Palette = new PaletteLight()
+        {
+            Primary = Colors.Blue.Default,
+            Secondary = Colors.Green.Accent4,
+            AppbarBackground = Colors.Red.Accent4,
+        },
+        PaletteDark = new PaletteDark()
+        {
+            Primary = Colors.Blue.Lighten1
+        },
+
+        LayoutProperties = new LayoutProperties()
+        {
+            DrawerWidthLeft = "260px",
+            DrawerWidthRight = "300px"
+        }
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        _isDarkMode = await localStorage.GetItemAsync<bool>("IsDarkMode");
+        setThemeMode();
+    }
+
+
+    private async void changeThemeMode(bool firstRender)
+    {
+        _isDarkMode = !_isDarkMode;
+        setThemeMode();
+
+        await localStorage.SetItemAsync("IsDarkMode", _isDarkMode);
+    }
+
+    private void setThemeMode()
+    {
+        _darkLightIcon = _isDarkMode ? Icons.Material.Filled.LightMode : Icons.Material.Filled.Nightlight;
+        _changeThemeString = _isDarkMode ? "Switch to Light Theme" : "Switch to Dark Theme";
+        _localStorageTheme = _isDarkMode ? "Light" : "Dark";
+    }
+
+}
