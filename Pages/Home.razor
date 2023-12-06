@@ -1,7 +1,99 @@
 ﻿@page "/"
+@using Microsoft.Extensions.Localization
+@using PersonalWebSite.Localize
+@inject MudLocalizer localizer
 
 <PageTitle>Home</PageTitle>
+@localizer["Hi"]
+<MudGrid  Style="margin:20px;">
+    <MudItem xs="8" sm="3">
+        <MudImage Style="pa-4; background-color:burlywood;" Class="rounded-pill" Src="me-removebg.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+    </MudItem>
 
-<h1>Hello, world!</h1>
+    <MudItem xs="4" >
+        <MudText>
+            Hi. I am George Papasteriadis,<br />
+            a software Engineer with experience in web development who focuses more at backend technologies.<br />
+        </MudText>
+    </MudItem>
+</MudGrid>
 
-Welcome to your new app.
+<MudItem>
+    <MudText Typo="Typo.body1">
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Title="Download" Href="CV.pdf" target="_blank" Class="bounceIn" Icon="@Icons.Material.Filled.Download" />Resume
+    </MudText>
+</MudItem>
+
+
+
+<MudStack Style="margin-top:50px;" Spacing="0">
+    <MudText Align="Align.Center" Typo="Typo.h5">
+        Work Exprerience
+    </MudText>
+    <MudDivider Light=true DividerType="DividerType.Middle" Class="my-15" />
+</MudStack>
+
+<MudTimeline Style="margin-bottom:30px;" >
+    <MudTimelineItem Color="Color.Primary" Elevation="25">
+        <ItemOpposite>
+            <MudText Color="Color.Primary" Typo="Typo.h6">Aug 2020</MudText>
+        </ItemOpposite>
+        <ItemContent>
+            <MudCardContent>
+                <MudText Color="Color.Primary" Typo="Typo.h6" GutterBottom="true">MudBlazor Emerges</MudText>
+                <MudText Typo="Typo.body2">A repository pops up on Github named MudBlazor.</MudText>
+                <MudText Typo="Typo.body2">The development has already started and the most common components can be found already.</MudText>
+            </MudCardContent>
+        </ItemContent>
+    </MudTimelineItem>
+    <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
+        <ItemOpposite>
+            <MudText Color="Color.Primary" Typo="Typo.h6">Oct 2020</MudText>
+        </ItemOpposite>
+        <ItemContent>
+            <MudCardContent>
+                <MudText Color="Color.Primary" Typo="Typo.h6" GutterBottom="true">MudBlazor Unleashed!</MudText>
+                <MudText Typo="Typo.body2">The first version is released and uploaded as v1.0.7.</MudText>
+            </MudCardContent>
+        </ItemContent>
+    </MudTimelineItem>
+    <MudTimelineItem Color="Color.Primary" Elevation="25">
+        <ItemOpposite>
+            <MudText Color="Color.Primary" Typo="Typo.h6" GutterBottom="true">Nov 2020</MudText>
+        </ItemOpposite>
+        <ItemContent>
+            <MudCardContent>
+                <MudText Color="Color.Primary" Typo="Typo.h6" GutterBottom="true">First Minor</MudText>
+                <MudText Typo="Typo.body2">MudBlazor gets its first minor with version 1.1.0.</MudText>
+                <MudText Typo="Typo.body2">TimerPicker, AutoComplete and Charts join the library as well as T versions of our inputs and selects.</MudText>
+            </MudCardContent>
+        </ItemContent>
+    </MudTimelineItem>
+</MudTimeline>
+
+
+<MudDivider Light=true DividerType="DividerType.Middle" Class="my-15" />
+<MudGrid Justify="Justify.Center">
+    <MudItem>
+        <MudIconButton Color = "Color.Default" Size="Size.Large" Href="https://github.com/gpapasteriadis" target="_blank" Icon="@Icons.Custom.Brands.GitHub" Title="GitHub" />
+    </MudItem>
+    <MudItem>
+        <MudIconButton Size="Size.Large"  Href="https://www.linkedin.com/in/giorgos-papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.LinkedIn" Title="LinkedIn" />
+    </MudItem>
+    <MudItem>
+        <MudIconButton Size="Size.Large" Href="https://www.facebook.com/giwrgos.papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.Facebook" Title="Facebook" />
+    </MudItem>
+    <MudItem Class="d-flex align-center justify-center mud-width-full" Style="margin-bottom:20px;" xs="12">
+        <MudText Color="Color.Primary">
+            Get in touch:
+        </MudText>
+        <MudText>
+            giorgospapasteriadis@gmail.com
+        </MudText>
+    </MudItem>
+</MudGrid>
+
+@code {
+    private TimelineAlign _timelineAlign { get; set; } = TimelineAlign.Start;
+
+}

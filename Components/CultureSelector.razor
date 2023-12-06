@@ -1,0 +1,33 @@
+﻿@using System.Globalization
+@inject IJSRuntime JS
+@inject NavigationManager Navigation
+@inject ILocalStorageService localStorage
+
+<MudSelect Margin="Margin.Dense" @bind-Value="Culture" @bind-Value:after="@CultureInfochanged" Style="width:50px; height:55px" DisableUnderLine=true AnchorOrigin="Origin.BottomCenter">
+    @foreach (var culture in supportedCultures)
+    {
+        <MudSelectItem Value="@culture"/>
+    }
+</MudSelect>
+
+@code
+{
+
+    private CultureInfo[] supportedCultures = new[]
+    {
+        new CultureInfo("el"),
+        new CultureInfo("en"),
+    };
+    private CultureInfo? Culture { get; set; } = CultureInfo.CurrentCulture;
+    
+
+    private void CultureInfochanged()
+    {
+        if (CultureInfo.CurrentCulture != Culture)
+        {
+            localStorage.SetItemAsStringAsync("BlazorCulture", Culture.Name);
+            Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
+        }
+    }
+
+}
