@@ -1,20 +1,19 @@
 ﻿@using System.Globalization
 @using PersonalWebSite.Components
-@inject NavigationManager NavManager
 @inherits LayoutComponentBase
 @inject ILocalStorageService localStorage
+@inject IJSRuntime JS
 
 <MudThemeProvider Theme="MyCustomTheme" IsDarkMode=@_isDarkMode/>
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Style="align-items:flex-end" Elevation="3" Dense="true">
+    <MudAppBar id="appbar" Style="align-items:flex-end" Elevation="3" Dense="true">
         <CultureSelector />
-        <MudTooltip Text=@_changeThemeString>
-            <MudIconButton Edge="Edge.End" Icon=@_darkLightIcon Style="color:burlywood" OnClick="() => changeThemeMode(false)" />
-        </MudTooltip>
+        <ThemeSelector darkModeChanged="@darkModeChanged" />
     </MudAppBar>
+
     <MudMainContent Style="overflow:hidden">
         @Body
     </MudMainContent>
@@ -27,44 +26,59 @@
 @*Keyframes by https://animate.style/*@
 
 @code {
-
-    private bool _isDarkMode = true;
-    private string? _darkLightIcon;
-    private string? _changeThemeString;
-    private string? _localStorageTheme { get; set; }
+    private bool _isDarkMode;
 
     MudTheme MyCustomTheme = new MudTheme()
-    {
-        Palette = new PaletteLight()
         {
-            ActionDefault = Colors.Teal.Darken4,
-            Primary = Colors.Teal.Lighten2,
-            Secondary = Colors.Teal.Default,
-            AppbarBackground = Colors.Teal.Lighten1,
-            Background = Colors.Teal.Lighten5,
-            Divider = Colors.Teal.Darken2
-
-        },
-        PaletteDark = new PaletteDark()
-        {
-            ActionDefault = Colors.BlueGrey.Darken4,
-            Primary = Colors.BlueGrey.Default,
-            Secondary = Colors.Grey.Default,
-            AppbarBackground = Colors.BlueGrey.Darken4,
-            Background = Colors.BlueGrey.Darken3,
-            Divider = Colors.BlueGrey.Darken4
-        },
-
-        Typography = new Typography()
-        {
-            Default = new Default()
+            Palette = new PaletteLight()
             {
-                FontFamily = new[] { "consolas", "Helvetica", "Arial", "sans-serif" },
-                FontSize = "1.25rem",
-                FontWeight = 500,
-                LineHeight = 1.6,
-                LetterSpacing = ".0075em"
-            }
+                ActionDefault = Colors.Teal.Darken4,
+                Primary = Colors.Teal.Lighten2,
+                Secondary = Colors.Teal.Default,
+                AppbarBackground = Colors.Teal.Lighten1,
+                Background = Colors.Teal.Lighten5,
+                Divider = Colors.Teal.Darken2,
+                Surface = Colors.Teal.Lighten1
+
+            },
+            PaletteDark = new PaletteDark()
+            {
+                ActionDefault = Colors.BlueGrey.Darken4,
+                Primary = Colors.BlueGrey.Default,
+                Secondary = Colors.Grey.Default,
+                AppbarBackground = Colors.BlueGrey.Darken4,
+                Background = Colors.BlueGrey.Darken3,
+                Divider = Colors.BlueGrey.Darken4,
+                Surface = Colors.BlueGrey.Darken4
+            },
+
+            Typography = new Typography()
+            {
+                Default = new Default()
+                {
+                    FontFamily = new[] { "sans-serif" },
+                    FontSize = "1.50rem",
+                    FontWeight = 500,
+                    LineHeight = 1.6,
+                    LetterSpacing = ".0075em"
+                },
+                Body1 = new Body1()
+                {
+                    FontFamily = new[] { "sans-serif" },
+                    FontSize = "1.50rem",
+                    FontWeight = 500,
+                    LineHeight = 1.6,
+                    LetterSpacing = ".0075em"
+                },
+                Body2 = new Body2()
+                {
+                    FontFamily = new[] { "sans-serif" },
+                    FontSize = "1.10rem",
+                    FontWeight = 400,
+                    LineHeight = 1.6,
+                    LetterSpacing = ".0075em"
+                }
+
         },
 
         LayoutProperties = new LayoutProperties()
@@ -75,23 +89,12 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _isDarkMode = await localStorage.GetItemAsync<bool>("IsDarkMode");
-        setThemeMode();
+        await JS.InvokeVoidAsync("scrollFunctionality");
     }
 
-
-    private async void changeThemeMode(bool firstRender)
+    private void darkModeChanged(bool isDarkMode)
     {
-        _isDarkMode = !_isDarkMode;
-        setThemeMode();
-        await localStorage.SetItemAsync("IsDarkMode", _isDarkMode);
-    }
-
-    private void setThemeMode()
-    {
-        _darkLightIcon = _isDarkMode ? Icons.Material.Filled.LightMode : Icons.Material.Filled.Nightlight;
-        _changeThemeString = _isDarkMode ? "Switch to Light Theme" : "Switch to Dark Theme";
-        _localStorageTheme = _isDarkMode ? "Light" : "Dark";
+        _isDarkMode = isDarkMode;
     }
 
 }

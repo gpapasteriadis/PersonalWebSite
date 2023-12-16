@@ -3,10 +3,10 @@
 @inject NavigationManager Navigation
 @inject ILocalStorageService localStorage
 
-<MudSelect Margin="Margin.Dense" @bind-Value="Culture" @bind-Value:after="@CultureInfochanged" Style="width:50px; height:55px" DisableUnderLine=true AnchorOrigin="Origin.BottomCenter">
+<MudSelect Margin="Margin.Dense" Style="width:55px; height:55px;" @bind-Value="Culture" ToStringFunc="selectedCulture => dislayedValues(selectedCulture)" @bind-Value:after="@CultureInfochanged" DisableUnderLine=true AnchorOrigin="Origin.BottomCenter">
     @foreach (var culture in supportedCultures)
     {
-        <MudSelectItem Value="@culture"/>
+        <MudSelectItem Style="--mud-typography-body1-size: 15px;" Value=@culture />
     }
 </MudSelect>
 
@@ -15,11 +15,11 @@
 
     private CultureInfo[] supportedCultures = new[]
     {
-        new CultureInfo("el"),
         new CultureInfo("en"),
+        new CultureInfo("el")
     };
-    private CultureInfo? Culture { get; set; } = CultureInfo.CurrentCulture;
-    
+    private CultureInfo Culture { get; set; } = CultureInfo.CurrentCulture;
+
 
     private void CultureInfochanged()
     {
@@ -30,4 +30,8 @@
         }
     }
 
+    private string dislayedValues(CultureInfo selectedCulture)
+    {
+        return selectedCulture.Name.ToUpper();
+    }
 }

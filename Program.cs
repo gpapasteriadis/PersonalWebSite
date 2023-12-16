@@ -30,8 +30,8 @@ if (result != null)
 }
 else
 {
-    culture = new CultureInfo("en-US");
-    await js.InvokeVoidAsync("blazorCulture.set", "en-US");
+    culture = new CultureInfo("en");
+    await js.InvokeVoidAsync("blazorCulture.set", "en");
 }
 
 CultureInfo.DefaultThreadCurrentCulture = culture;

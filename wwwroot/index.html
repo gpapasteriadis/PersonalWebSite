@@ -37,6 +37,21 @@
             set: (value) => window.localStorage['BlazorCulture'] = value
         };
     </script>
+    <script>
+        window.scrollFunctionality = () => {
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = () => {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollpos > currentScrollPos) {
+                    document.getElementById("appbar").style.top = "0";
+                }
+                else {
+                    document.getElementById("appbar").style.top = "-50px";
+                }
+                prevScrollpos = currentScrollPos;
+            }
+        }
+    </script>
 </body>
 
 </html>

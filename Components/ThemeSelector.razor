@@ -1,0 +1,37 @@
+﻿@inject ILocalStorageService localStorage
+
+<MudTooltip Text=@_changeThemeString>
+    <MudIconButton Edge="Edge.End" Icon=@_darkLightIcon Style="color:burlywood" OnClick="() => changeThemeMode()" />
+</MudTooltip>
+
+@code {
+    public bool _isDarkMode { get; set; }
+    [Parameter]
+    public EventCallback<bool> darkModeChanged { get; set; }
+    private string? _darkLightIcon;
+    private string? _changeThemeString;
+    private string? _localStorageTheme { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _isDarkMode = await localStorage.GetItemAsync<bool>("IsDarkMode");
+        await darkModeChanged.InvokeAsync(_isDarkMode);
+        setThemeModeSettings();
+    }
+
+    private async void changeThemeMode()
+    {
+        _isDarkMode = !_isDarkMode;
+        await darkModeChanged.InvokeAsync(_isDarkMode);
+        await localStorage.SetItemAsync("IsDarkMode", _isDarkMode);
+        setThemeModeSettings();
+    }
+
+    private void setThemeModeSettings()
+    {
+        _darkLightIcon = _isDarkMode ? Icons.Material.Filled.LightMode : Icons.Material.Filled.Nightlight;
+        _changeThemeString = _isDarkMode ? "Switch to Light Theme" : "Switch to Dark Theme";
+        _localStorageTheme = _isDarkMode ? "Light" : "Dark";
+        StateHasChanged();
+    }
+}

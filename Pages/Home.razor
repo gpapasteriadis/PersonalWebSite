@@ -5,42 +5,36 @@
 
 <PageTitle>Home</PageTitle>
 @localizer["Hi"]
-<MudGrid  Style="margin:20px;">
-    <MudItem xs="8" sm="3">
-        <MudImage Style="pa-4; background-color:burlywood;" Class="rounded-pill" Src="me-removebg.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+<MudGrid Style="margin-top:20px; margin-left:100px;">
+    <MudItem xs="12" sm="2" Style="padding-right:300px;">
+        <MudImage Style="background-color:burlywood;" Class="rounded-pill" Src="me-removebg.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
     </MudItem>
 
-    <MudItem xs="4" >
-        <MudText>
-            Hi. I am George Papasteriadis,<br />
+    <MudItem xs="10" sm="5">
+        <MudText Typo="Typo.body1">
+            Hi. I am <b>George Papasteriadis</b>,<br />
             a software Engineer with experience in web development who focuses more at backend technologies.<br />
         </MudText>
     </MudItem>
 </MudGrid>
 
-<MudItem>
-    <MudText Typo="Typo.body1">
-        <MudIconButton Color="Color.Primary" Size="Size.Large" Title="Download" Href="CV.pdf" target="_blank" Class="bounceIn" Icon="@Icons.Material.Filled.Download" />Resume
-    </MudText>
-</MudItem>
+<MudCard Style="margin:100px;">
+    <MudCardContent>
+        <MudText Align="Align.Center" Typo="Typo.h4">
+            Work Exprerience
+        </MudText>
+    </MudCardContent>
+</MudCard>
 
 
-
-<MudStack Style="margin-top:50px;" Spacing="0">
-    <MudText Align="Align.Center" Typo="Typo.h5">
-        Work Exprerience
-    </MudText>
-    <MudDivider Light=true DividerType="DividerType.Middle" Class="my-15" />
-</MudStack>
-
-<MudTimeline Style="margin-bottom:30px;" >
+<MudTimeline Style="margin-bottom:30px;">
     <MudTimelineItem Color="Color.Primary" Elevation="25">
         <ItemOpposite>
-            <MudText Color="Color.Primary" Typo="Typo.h6">Aug 2020</MudText>
+            <MudText Color="Color.Primary" Typo="Typo.h5">Mar - Oct 2023</MudText>
         </ItemOpposite>
         <ItemContent>
             <MudCardContent>
-                <MudText Color="Color.Primary" Typo="Typo.h6" GutterBottom="true">MudBlazor Emerges</MudText>
+                <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">MudBlazor Emerges</MudText>
                 <MudText Typo="Typo.body2">A repository pops up on Github named MudBlazor.</MudText>
                 <MudText Typo="Typo.body2">The development has already started and the most common components can be found already.</MudText>
             </MudCardContent>
@@ -48,18 +42,18 @@
     </MudTimelineItem>
     <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
         <ItemOpposite>
-            <MudText Color="Color.Primary" Typo="Typo.h6">Oct 2020</MudText>
+            <MudText Color="Color.Primary" Typo="Typo.h5">Oct 2020 - Dec 2022</MudText>
         </ItemOpposite>
         <ItemContent>
             <MudCardContent>
-                <MudText Color="Color.Primary" Typo="Typo.h6" GutterBottom="true">MudBlazor Unleashed!</MudText>
+                <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">MudBlazor Unleashed!</MudText>
                 <MudText Typo="Typo.body2">The first version is released and uploaded as v1.0.7.</MudText>
             </MudCardContent>
         </ItemContent>
     </MudTimelineItem>
     <MudTimelineItem Color="Color.Primary" Elevation="25">
         <ItemOpposite>
-            <MudText Color="Color.Primary" Typo="Typo.h6" GutterBottom="true">Nov 2020</MudText>
+            <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">Nov 2020</MudText>
         </ItemOpposite>
         <ItemContent>
             <MudCardContent>
@@ -71,8 +65,37 @@
     </MudTimelineItem>
 </MudTimeline>
 
+<MudItem>
+    <MudText Align="Align.Center" Typo="Typo.body1">
+        View my full resume: <MudIconButton Color="Color.Primary" Size="Size.Large" Title="Download" Href="CV.pdf" target="_blank" Class="bounceIn" Icon="@Icons.Material.Filled.Download" />
+    </MudText>
+</MudItem>
+
+<MudCard Style="margin-top:80px; margin-left:100px; margin-right:100px;">
+    <MudCardContent>
+        <MudText Align="Align.Center" Typo="Typo.h4">
+            Skills
+        </MudText>
+    </MudCardContent>
+</MudCard>
+<MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
+    Coming soon...
+</MudText>
+
+<MudCard Style="margin-top:80px; margin-left:100px; margin-right:100px;">
+    <MudCardContent>
+        <MudText Align="Align.Center" Typo="Typo.h4">
+            Projects
+        </MudText>
+    </MudCardContent>
+</MudCard>
+<MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
+    Coming soon...
+</MudText>
+
 
 <MudDivider Light=true DividerType="DividerType.Middle" Class="my-15" />
+
 <MudGrid Justify="Justify.Center">
     <MudItem>
         <MudIconButton Color = "Color.Default" Size="Size.Large" Href="https://github.com/gpapasteriadis" target="_blank" Icon="@Icons.Custom.Brands.GitHub" Title="GitHub" />
@@ -84,10 +107,10 @@
         <MudIconButton Size="Size.Large" Href="https://www.facebook.com/giwrgos.papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.Facebook" Title="Facebook" />
     </MudItem>
     <MudItem Class="d-flex align-center justify-center mud-width-full" Style="margin-bottom:20px;" xs="12">
-        <MudText Color="Color.Primary">
+        <MudText Typo="Typo.inherit" Color="Color.Primary">
             Get in touch:
         </MudText>
-        <MudText>
+        <MudText Typo="Typo.inherit">
             giorgospapasteriadis@gmail.com
         </MudText>
     </MudItem>
