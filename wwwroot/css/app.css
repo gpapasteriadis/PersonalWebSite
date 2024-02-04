@@ -65,42 +65,9 @@ a, .btn-link {
     content: "An error has occurred."
 }
 
-.loading-progress {
-    position: relative;
-    display: block;
-    width: 8rem;
-    height: 8rem;
-    margin: 20vh auto 1rem auto;
-}
 
-.loading-progress circle {
-    fill: none;
-    stroke: #e0e0e0;
-    stroke-width: 0.6rem;
-    transform-origin: 50% 50%;
-    transform: rotate(-90deg);
-}
 
-.loading-progress circle:last-child {
-    stroke: #1b6ec2;
-    stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
-    transition: stroke-dasharray 0.05s ease-in-out;
-}
-
-.loading-progress-text {
-    position: absolute;
-    text-align: center;
-    font-weight: bold;
-    inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
-}
-
-.loading-progress-text:after {
-    content: var(--blazor-load-percentage-text, "Loading");
-}
-
-code {
-    color: #c02d76;
-}
+/* ~~~ Skills Animations ~~~*/
 
 .bounceIn:has(:hover) {
     opacity: 0;
@@ -111,6 +78,129 @@ code {
     animation-iteration-count: 1;
 }
 
+.jackInTheBox:has(:hover) {
+    animation-delay: 0.1s;
+    animation-duration: 2s;
+    animation-name: jackInTheBox;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.jello:has(:hover) {
+    animation-delay: 0.1s;
+    animation-duration: 2s;
+    animation-name: jello;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.flipInY:has(:hover) {
+    animation-delay: 0.1s;
+    animation-duration: 2s;
+    animation-name: flipInY;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.flipInX:has(:hover) {
+    animation-delay: 0.1s;
+    animation-duration: 2s;
+    animation-name: flipInX;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.rubberBand:has(:hover) {
+    animation-delay: 0.1s;
+    animation-duration: 2s;
+    animation-name: rubberBand;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+.tada:has(:hover) {
+    animation-delay: 0.1s;
+    animation-duration: 2s;
+    animation-name: tada;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
 #appbar {
     transition: top 0.5s; /* Transition effect when sliding down (and up) */
+}
+
+
+/* ~~~ Loading Screen ~~~*/
+
+.loading {
+    background: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loading h2 {
+    color: #ccc;
+    margin: 0;
+    font: .8em verdana;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.loading span {
+    display: inline-block;
+    vertical-align: middle;
+    width: .6em;
+    height: .6em;
+    margin: .19em;
+    background: #007DB6;
+    border-radius: .6em;
+    animation: loading 1s infinite alternate;
+}
+
+
+.loading span:nth-of-type(2) {
+    background: #008FB2;
+    animation-delay: 0.2s;
+}
+
+.loading span:nth-of-type(3) {
+    background: #009B9E;
+    animation-delay: 0.4s;
+}
+
+.loading span:nth-of-type(4) {
+    background: #00A77D;
+    animation-delay: 0.6s;
+}
+
+.loading span:nth-of-type(5) {
+    background: #00B247;
+    animation-delay: 0.8s;
+}
+
+.loading span:nth-of-type(6) {
+    background: #5AB027;
+    animation-delay: 1.0s;
+}
+
+.loading span:nth-of-type(7) {
+    background: #A0B61E;
+    animation-delay: 1.2s;
+}
+
+/*
+ * Animation keyframes
+ * Use transition opacity instead of keyframes?
+ */
+@keyframes loading {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

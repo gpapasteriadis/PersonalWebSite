@@ -3,7 +3,7 @@
 @inject NavigationManager Navigation
 @inject ILocalStorageService localStorage
 
-<MudSelect Margin="Margin.Dense" Style="width:55px; height:55px;" @bind-Value="Culture" ToStringFunc="selectedCulture => dislayedValues(selectedCulture)" @bind-Value:after="@CultureInfochanged" DisableUnderLine=true AnchorOrigin="Origin.BottomCenter">
+<MudSelect Margin="Margin.Dense" Style="width:55px; height:55px;" CloseIcon="null" OpenIcon="null" @bind-Value="Culture" ToStringFunc="selectedCulture => dislayedValues(selectedCulture)" @bind-Value:after="@CultureInfochanged" DisableUnderLine=true AnchorOrigin="Origin.BottomCenter">
     @foreach (var culture in supportedCultures)
     {
         <MudSelectItem Style="--mud-typography-body1-size: 15px;" Value=@culture />

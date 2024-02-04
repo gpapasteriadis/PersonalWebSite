@@ -3,120 +3,192 @@
 @using PersonalWebSite.Localize
 @inject MudLocalizer localizer
 
-<PageTitle>Home</PageTitle>
 @localizer["Hi"]
-<MudGrid Style="margin-top:20px; margin-left:100px;">
-    <MudItem xs="12" sm="2" Style="padding-right:300px;">
-        <MudImage Style="background-color:burlywood;" Class="rounded-pill" Src="me-removebg.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+<MudGrid Justify="Justify.SpaceEvenly" Style="width:95%; margin-inline:auto; margin-top:20px;">
+    <MudItem>
+        <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-pill" Src="/Icons/me-removebg.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
     </MudItem>
-
-    <MudItem xs="10" sm="5">
-        <MudText Typo="Typo.body1">
-            Hi. I am <b>George Papasteriadis</b>,<br />
-            a software Engineer with experience in web development who focuses more at backend technologies.<br />
+    <MudItem xs="9" sm="6">
+        <MudText GutterBottom=true Color ="Color.Primary" Typo="Typo.h6">
+            Hello! my name is
+        </MudText>
+        <MudText GutterBottom=true Color="Color.Primary" Typo="Typo.h3">
+            George Papasteriadis
+        </MudText>
+        <MudText Color="Color.Primary" Typo="Typo.h5">
+            I'm a software engineer specializing in
+            web development, actively seeking
+            dynamic work environments that
+            foster continuous learning and
+            professional growth. Passionate
+            about problem-solving and dedicated
+            to making meaningful contributions
+            to collaborative teams.
         </MudText>
     </MudItem>
 </MudGrid>
 
-<MudCard Style="margin:100px;">
+
+<MudCard id="about" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
     <MudCardContent>
-        <MudText Align="Align.Center" Typo="Typo.h4">
-            Work Exprerience
+        <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+            <b>About me</b>
+        </MudText>
+        <MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
+            Coming soon...
         </MudText>
     </MudCardContent>
 </MudCard>
 
 
-<MudTimeline Style="margin-bottom:30px;">
-    <MudTimelineItem Color="Color.Primary" Elevation="25">
-        <ItemOpposite>
-            <MudText Color="Color.Primary" Typo="Typo.h5">Mar - Oct 2023</MudText>
-        </ItemOpposite>
-        <ItemContent>
-            <MudCardContent>
-                <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">MudBlazor Emerges</MudText>
-                <MudText Typo="Typo.body2">A repository pops up on Github named MudBlazor.</MudText>
-                <MudText Typo="Typo.body2">The development has already started and the most common components can be found already.</MudText>
-            </MudCardContent>
-        </ItemContent>
-    </MudTimelineItem>
-    <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
-        <ItemOpposite>
-            <MudText Color="Color.Primary" Typo="Typo.h5">Oct 2020 - Dec 2022</MudText>
-        </ItemOpposite>
-        <ItemContent>
-            <MudCardContent>
-                <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">MudBlazor Unleashed!</MudText>
-                <MudText Typo="Typo.body2">The first version is released and uploaded as v1.0.7.</MudText>
-            </MudCardContent>
-        </ItemContent>
-    </MudTimelineItem>
-    <MudTimelineItem Color="Color.Primary" Elevation="25">
-        <ItemOpposite>
-            <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">Nov 2020</MudText>
-        </ItemOpposite>
-        <ItemContent>
-            <MudCardContent>
-                <MudText Color="Color.Primary" Typo="Typo.h6" GutterBottom="true">First Minor</MudText>
-                <MudText Typo="Typo.body2">MudBlazor gets its first minor with version 1.1.0.</MudText>
-                <MudText Typo="Typo.body2">TimerPicker, AutoComplete and Charts join the library as well as T versions of our inputs and selects.</MudText>
-            </MudCardContent>
-        </ItemContent>
-    </MudTimelineItem>
-</MudTimeline>
-
-<MudItem>
-    <MudText Align="Align.Center" Typo="Typo.body1">
-        View my full resume: <MudIconButton Color="Color.Primary" Size="Size.Large" Title="Download" Href="CV.pdf" target="_blank" Class="bounceIn" Icon="@Icons.Material.Filled.Download" />
+<MudCard id="jobs" Elevation="2" Style="margin-top:80px; margin-bottom:20px; width:85%; margin-inline:auto;">
+    <MudText Style="margin-bottom:20px;" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">
+        <b>Where I’ve Worked</b>
     </MudText>
-</MudItem>
-
-<MudCard Style="margin-top:80px; margin-left:100px; margin-right:100px;">
     <MudCardContent>
-        <MudText Align="Align.Center" Typo="Typo.h4">
-            Skills
+        <MudTimeline TimelineAlign="TimelineAlign.Start" Style="width:85%; margin-inline:auto; margin-bottom:30px;">
+            <MudTimelineItem Color="Color.Primary" Elevation="25">
+                <ItemOpposite>
+                    <MudText Color="Color.Primary" Typo="Typo.h5">Mar - Oct 2023</MudText>
+                </ItemOpposite>
+                <ItemContent>
+                    <MudPaper Elevation="0">
+                            <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true"><b>Software Engineer @@Greek Armed Forces IT Corps</b></MudText>
+                        <MudText Typo="Typo.body1">
+                            · Held a part-time position as a software developer during mandatory military service.<br />
+                            · Developed and maintained the military's internal software systems.<br />
+                            · Provided technical support to system users, addressing inquiries and troubleshooting issues.
+                        </MudText>
+                    </MudPaper>
+                </ItemContent>
+            </MudTimelineItem>
+            <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
+                <ItemOpposite>
+                    <MudText Color="Color.Primary" Typo="Typo.h5">Oct 2020 - Dec 2022</MudText>
+                </ItemOpposite>
+                <ItemContent>
+                    <MudPaper Elevation="0">
+                            <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true"><b>Software Engineer @@Terracom S.A.</b></MudText>
+                        <MudText Typo="Typo.body2">
+                            ·Played a pivotal role in the development, maintenance, and evolution of the patrol and security management platform QR-Patrol.<br />
+                            ·Actively participated in technical analysis and system design processes, contributing to enhance project outcomes.<br />
+                            ·Engaged in team meetings to synchronize efforts and maintain alignment with project goals, while maintaining close collaboration with team members to implement updates and improvements.
+                        </MudText>
+                    </MudPaper>
+                </ItemContent>
+            </MudTimelineItem>
+            <MudTimelineItem Color="Color.Primary" Elevation="25">
+                <ItemOpposite>
+                    <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">Dec 2021 — Jan 2022</MudText>
+                </ItemOpposite>
+                <ItemContent>
+                    <MudPaper Elevation="0">
+                        <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true"><b>Mobile Application Developer @@Freelancer</b></MudText>
+                        <MudText Typo="Typo.body2">
+                             Developed a mobile application utilizing: <br />
+                            ·Ionic Framework with Angular for the FrontEnd: Engineered responsive and feature-rich user interfaces for both Android and iOS.<br />
+                            ·Apollo GraphQL and nestJS for the BackEnd: Implemented efficient data handling and processing capabilities.<br />
+                            ·Deployment on DigitalOcean using Docker containers: Optimizing packaging and deployment processes.
+                        </MudText>
+                    </MudPaper>
+                </ItemContent>
+            </MudTimelineItem>
+            <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
+                <ItemOpposite>
+                    <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">Jul 2019 — Oct 2019</MudText>
+                </ItemOpposite>
+                <ItemContent>
+                    <MudPaper Elevation="0">
+                        <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true"><b>Software Engineer Intern @@CoTheta</b></MudText>
+                        <MudText Typo="Typo.body2">
+                            · Engaged in virtual and augmented reality projects using Unity3D.<br />
+                            · Contributed to the creation of interactive experiences.
+                        </MudText>
+                    </MudPaper>
+                </ItemContent>
+            </MudTimelineItem>
+        </MudTimeline>
+    </MudCardContent>
+</MudCard>
+
+
+<MudCard id="skills" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
+    <MudCardContent>
+        <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+            <b>Skills/Tools acquired</b>
+        </MudText>
+        <MudGrid Justify="Justify.Center" Style="margin-top:30px; width:80%; margin-inline:auto;">
+            <MudItem Class="jackInTheBox" Style="display:flex; flex-direction:column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">.NET Core</MudChip>
+            </MudItem>
+            <MudItem Class="tada" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">Blazor</MudChip>
+            </MudItem>
+            <MudItem Class="bounceIn" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">Angular</MudChip>
+            </MudItem>
+            <MudItem Class="jello" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">MongoDB</MudChip>
+            </MudItem>
+            <MudItem Class="flipInY" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">SQL</MudChip>
+            </MudItem>
+            <MudItem Class="flipInX" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">EF Core</MudChip>
+            </MudItem>
+            <MudItem Class="rubberBand" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">Docker</MudChip>
+            </MudItem>
+            <MudItem Class="rubberBand" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">SignalR</MudChip>
+            </MudItem>
+            <MudItem Class="rubberBand" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">RabbitMQ</MudChip>
+            </MudItem>
+        </MudGrid>
+    </MudCardContent>
+</MudCard>
+
+
+
+<MudCard Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
+    <MudCardContent>
+        <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+            <b>Some projects</b>
+        </MudText>
+        <MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
+            Coming soon...
         </MudText>
     </MudCardContent>
 </MudCard>
-<MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
-    Coming soon...
-</MudText>
 
-<MudCard Style="margin-top:80px; margin-left:100px; margin-right:100px;">
-    <MudCardContent>
-        <MudText Align="Align.Center" Typo="Typo.h4">
-            Projects
-        </MudText>
-    </MudCardContent>
-</MudCard>
-<MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
-    Coming soon...
-</MudText>
 
 
 <MudDivider Light=true DividerType="DividerType.Middle" Class="my-15" />
-
-<MudGrid Justify="Justify.Center">
+<MudGrid id="contact" Justify="Justify.Center">
     <MudItem>
-        <MudIconButton Color = "Color.Default" Size="Size.Large" Href="https://github.com/gpapasteriadis" target="_blank" Icon="@Icons.Custom.Brands.GitHub" Title="GitHub" />
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://www.linkedin.com/in/giorgos-papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.LinkedIn" Title="LinkedIn" />
     </MudItem>
     <MudItem>
-        <MudIconButton Size="Size.Large"  Href="https://www.linkedin.com/in/giorgos-papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.LinkedIn" Title="LinkedIn" />
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://github.com/gpapasteriadis" target="_blank" Icon="@Icons.Custom.Brands.GitHub" Title="GitHub" />
     </MudItem>
     <MudItem>
-        <MudIconButton Size="Size.Large" Href="https://www.facebook.com/giwrgos.papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.Facebook" Title="Facebook" />
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://www.facebook.com/giwrgos.papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.Facebook" Title="Facebook" />
     </MudItem>
-    <MudItem Class="d-flex align-center justify-center mud-width-full" Style="margin-bottom:20px;" xs="12">
-        <MudText Typo="Typo.inherit" Color="Color.Primary">
-            Get in touch:
-        </MudText>
-        <MudText Typo="Typo.inherit">
+    <MudItem>
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://www.instagram.com/george_papaste/" target="_blank" Icon="@Icons.Custom.Brands.Instagram" Title="Facebook" />
+    </MudItem>
+    <MudItem Class="flex-wrap d-flex justify-content-center" Style="margin-bottom:20px;" xs="12">
+        <MudText Typo="Typo.h6">
             giorgospapasteriadis@gmail.com
         </MudText>
     </MudItem>
+    <MudText Style="padding-bottom:10px" GutterBottom=true Typo="Typo.caption">
+        Build by George Papasteriadis
+    </MudText>
 </MudGrid>
 
+
 @code {
-    private TimelineAlign _timelineAlign { get; set; } = TimelineAlign.Start;
 
 }
