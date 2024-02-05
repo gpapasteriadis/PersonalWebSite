@@ -1,41 +1,43 @@
 ﻿@inject NavigationManager Navigation
 
-<MudButton Class="rounded-pill" OnClick=homeIconClicked>
-    <MudImage Fluid=true Class="rounded-pill" Src="/Icons/codeIcon-removebg.png" Width="32"></MudImage>
-</MudButton>
-<MudSpacer />
-<MudItem Style="margin-right:10px;">
-    <MudLink Href="#jobs">
-        <MudText Typo="Typo.h6">
-            Experience
-        </MudText>
-    </MudLink>
-</MudItem>
-<MudItem Style="margin-right:10px;">
-    <MudLink Href="#skills">
-        <MudText Typo="Typo.h6">
-            Skills
-        </MudText>
-    </MudLink>
-</MudItem>
-<MudItem Style="margin-right:10px;">
-    <MudLink Href="#projects">
-        <MudText Typo="Typo.h6">
-            Projects
-        </MudText>
-    </MudLink>
-</MudItem>
-<MudItem>
-    <MudLink Href="#contact">
-        <MudText Typo="Typo.h6">
-            Contact
-        </MudText>
-    </MudLink>
-</MudItem>
-<MudSpacer />
-<MudItem>
-    <CultureSelector />
-</MudItem>
+<MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
+    <MudButton Class="rounded-pill" OnClick=homeIconClicked>
+        <MudImage Fluid=true Class="rounded-pill" Src="/Icons/codeIcon-removebg.png" Width="32"></MudImage>
+    </MudButton>
+    <MudSpacer />
+    <MudItem Style="margin-right:10px;">
+        <MudLink Href="#jobs">
+            <MudText Typo="Typo.h6">
+                Experience
+            </MudText>
+        </MudLink>
+    </MudItem>
+    <MudItem Style="margin-right:10px;">
+        <MudLink Href="#skills">
+            <MudText Typo="Typo.h6">
+                Skills
+            </MudText>
+        </MudLink>
+    </MudItem>
+    <MudItem Style="margin-right:10px;">
+        <MudLink Href="#projects">
+            <MudText Typo="Typo.h6">
+                Projects
+            </MudText>
+        </MudLink>
+    </MudItem>
+    <MudItem>
+        <MudLink Href="#contact">
+            <MudText Typo="Typo.h6">
+                Contact
+            </MudText>
+        </MudLink>
+    </MudItem>
+    <MudSpacer />
+    <MudItem>
+        <CultureSelector />
+    </MudItem>
+</MudHidden>
 
 @code {
 

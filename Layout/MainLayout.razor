@@ -11,22 +11,76 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Class="flex-wrap" DisableGutters=false id="appbar" Elevation="3" Dense="true">
+    <MudAppBar id="appbar" Fixed=true DisableGutters=false Elevation="3" Dense="true">
         <AppBarItems></AppBarItems>
+        <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
+            <MudIconButton OnClick="@ToggleDrawer" Icon="@Icons.Material.Outlined.Menu" Size=Size.Medium Style="color:burlywood;" Class="mr-5" />
+            <MudSpacer />
+        </MudHidden>
         <ThemeSelector darkModeChanged="@darkModeChanged" />
     </MudAppBar>
+
+    <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
+        <MudDrawer Width="50%" Color=Color.Dark ClipMode="DrawerClipMode.Docked" @bind-Open="@open" Elevation="1">
+            <MudDrawerHeader Style="align-self:center">
+                <MudButton Class="rounded-pill" OnClick=homeIconClicked>
+                    <MudImage Fluid=true Class="rounded-pill" Src="/Icons/codeIcon-removebg.png" Width="32"></MudImage>
+                </MudButton>
+            </MudDrawerHeader>
+            <MudNavMenu Class="mud-width-full" Margin="Margin.Normal">
+                <MudNavLink Href="#jobs" Match="NavLinkMatch.All">
+                    <MudText Color=Color.Primary Align=Align.Center Typo=Typo.h6>
+                        Experience
+                    </MudText>
+                </MudNavLink>
+                <MudNavLink Href="#skills" Match="NavLinkMatch.All">
+                    <MudText Color=Color.Primary Align=Align.Center Typo=Typo.h6>
+                        Skills
+                    </MudText>
+                </MudNavLink>
+                <MudNavLink Href="#projects" Match="NavLinkMatch.All">
+                    <MudText Color=Color.Primary Align =Align.Center Typo=Typo.h6>
+                        Projects
+                    </MudText>
+                </MudNavLink>
+                <MudNavLink Href="#contact" Match="NavLinkMatch.All">
+                    <MudText Color=Color.Primary Align =Align.Center Typo=Typo.h6>
+                        Contact
+                    </MudText>
+                </MudNavLink>
+            </MudNavMenu>
+        </MudDrawer>
+    </MudHidden>
+    
 
     <MudMainContent Style="overflow:hidden">
         @Body
     </MudMainContent>
 
-    <MudScrollToTop OnClick=navto Style ="margin:20px; z-index:2001;">
-        <MudFab Size="Size.Medium" Style="color:burlywood" IconSize="Size.Large" StartIcon="@Icons.Material.Filled.KeyboardArrowUp" />
+    <MudScrollToTop OnClick=navto Style="margin:20px; z-index:2001;">
+        <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
+            <MudFab Size="Size.Medium" Style="color:burlywood" IconSize="Size.Large" StartIcon="@Icons.Material.Filled.KeyboardArrowUp" />
+        </MudHidden>
+        <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
+            <MudFab Size="Size.Small" Style="color:burlywood; margin:-20px;" IconSize="Size.Large" StartIcon="@Icons.Material.Filled.KeyboardArrowUp" />
+        </MudHidden>
     </MudScrollToTop>
+
 </MudLayout>
 
 @code {
     private bool _isDarkMode;
+    bool open = false;
+
+    private void homeIconClicked()
+    {
+        Navigation.NavigateTo("/", forceLoad: true);
+    }
+
+    void ToggleDrawer()
+    {
+        open = !open;
+    }
 
     MudTheme MyCustomTheme = new MudTheme()
     {
@@ -38,7 +92,8 @@
             AppbarBackground = Colors.Teal.Lighten1,
             Background = Colors.Teal.Lighten5,
             Divider = Colors.Teal.Darken2,
-            Surface = Colors.Teal.Lighten5
+            Surface = Colors.Teal.Lighten5,
+            Dark = Colors.Teal.Default
 
         },
         PaletteDark = new PaletteDark()
@@ -49,7 +104,8 @@
             AppbarBackground = Colors.BlueGrey.Darken4,
             Background = Colors.BlueGrey.Darken3,
             Divider = Colors.BlueGrey.Lighten2,
-            Surface = Colors.BlueGrey.Darken3
+            Surface = Colors.BlueGrey.Darken3,
+            Dark = Colors.BlueGrey.Darken4
         },
 
         // Typography = new Typography()
