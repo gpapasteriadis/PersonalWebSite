@@ -1,9 +1,8 @@
-﻿<MudItem>
-    <MudText Color=Color.Primary Typo="Typo.h6">
-        Resume:
-        <MudIconButton Style="color:burlywood" Size="Size.Medium" Title="Download" Href="George-CV.pdf" target="_blank" Class="bounceIn" Icon="@Icons.Material.Filled.Download" />
-    </MudText>
-</MudItem>
+﻿@inject NavigationManager Navigation
+
+<MudButton Class="rounded-pill" OnClick=homeIconClicked>
+    <MudImage Fluid=true Class="rounded-pill" Src="/Icons/codeIcon-removebg.png" Width="32"></MudImage>
+</MudButton>
 <MudSpacer />
 <MudItem Style="margin-right:10px;">
     <MudLink Href="#jobs">
@@ -37,3 +36,11 @@
 <MudItem>
     <CultureSelector />
 </MudItem>
+
+@code {
+
+    private void homeIconClicked()
+    {
+        Navigation.NavigateTo("/", forceLoad: true);
+    }
+}
