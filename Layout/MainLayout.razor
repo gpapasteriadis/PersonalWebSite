@@ -4,6 +4,7 @@
 @inject ILocalStorageService localStorage
 @inject IJSRuntime JS
 @inject ISnackbar SnackbarService
+@inject NavigationManager Navigation
 
 <MudThemeProvider Theme="MyCustomTheme" IsDarkMode=@_isDarkMode/>
 <MudDialogProvider />
@@ -11,45 +12,7 @@
 
 <MudLayout>
     <MudAppBar Class="flex-wrap" DisableGutters=false id="appbar" Elevation="3" Dense="true">
-        <MudItem>
-            <MudText Color=Color.Primary Typo="Typo.h6">
-                Resume:
-                <MudIconButton Style="color:burlywood" Size="Size.Medium" Title="Download" Href="George-CV.pdf" target="_blank" Class="bounceIn" Icon="@Icons.Material.Filled.Download" />
-            </MudText>
-        </MudItem>
-        <MudSpacer />
-        <MudItem Style="margin-right:10px;">
-            <MudLink Href="#about">
-                <MudText Typo="Typo.h6">
-                    About
-                </MudText>
-            </MudLink>
-        </MudItem>
-        <MudItem Style="margin-right:10px;">
-            <MudLink Href="#jobs">
-                <MudText Typo="Typo.h6">
-                    Experience
-                </MudText>
-            </MudLink>
-        </MudItem>
-        <MudItem Style="margin-right:10px;">
-            <MudLink Href="#skills">
-                <MudText Typo="Typo.h6">
-                    Skills
-                </MudText>
-            </MudLink>
-        </MudItem>
-        <MudItem>
-            <MudLink Href="#contact">
-                <MudText Typo="Typo.h6">
-                    Contact
-                </MudText>
-            </MudLink>
-        </MudItem>
-        <MudSpacer />
-        <MudItem>
-            <CultureSelector/>
-        </MudItem>
+        <AppBarItems></AppBarItems>
         <ThemeSelector darkModeChanged="@darkModeChanged" />
     </MudAppBar>
 
@@ -57,7 +20,7 @@
         @Body
     </MudMainContent>
 
-    <MudScrollToTop Style="margin:20px; z-index:2001;">
+    <MudScrollToTop OnClick=navto Style ="margin:20px; z-index:2001;">
         <MudFab Size="Size.Medium" Style="color:burlywood" IconSize="Size.Large" StartIcon="@Icons.Material.Filled.KeyboardArrowUp" />
     </MudScrollToTop>
 </MudLayout>
@@ -75,13 +38,13 @@
             AppbarBackground = Colors.Teal.Lighten1,
             Background = Colors.Teal.Lighten5,
             Divider = Colors.Teal.Darken2,
-                Surface = Colors.Teal.Lighten5
-            
+            Surface = Colors.Teal.Lighten5
+
         },
         PaletteDark = new PaletteDark()
         {
             ActionDefault = Colors.BlueGrey.Darken4,
-            Primary = Colors.BlueGrey.Lighten3,
+            Primary = Colors.BlueGrey.Lighten5,
             Secondary = Colors.Grey.Default,
             AppbarBackground = Colors.BlueGrey.Darken4,
             Background = Colors.BlueGrey.Darken3,
@@ -133,11 +96,6 @@
         //     }
 
         // },
-
-        LayoutProperties = new LayoutProperties()
-        {
-            DrawerWidthRight = "650px"
-        }
     };
 
     protected override async Task OnInitializedAsync()
@@ -148,6 +106,11 @@
     private void darkModeChanged(bool isDarkMode)
     {
         _isDarkMode = isDarkMode;
+    }
+
+    private void navto()
+    {
+        Navigation.NavigateTo("/", forceLoad: false);
     }
 
 }

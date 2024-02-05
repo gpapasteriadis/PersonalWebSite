@@ -69,60 +69,82 @@ a, .btn-link {
 
 /* ~~~ Skills Animations ~~~*/
 
-.bounceIn:has(:hover) {
+.bounceIn {
     opacity: 0;
     animation-delay: 0.1s;
-    animation-duration: 0.7s;
+    animation-duration: 2s;
     animation-name: bounceIn;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
+.bounceIn:active {
+    animation: none;
+}
 
-.jackInTheBox:has(:hover) {
+.jackInTheBox {
     animation-delay: 0.1s;
     animation-duration: 2s;
     animation-name: jackInTheBox;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
+.jackInTheBox:active {
+    animation: none;
+}
 
-.jello:has(:hover) {
+.jello {
     animation-delay: 0.1s;
     animation-duration: 2s;
     animation-name: jello;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
+.jello:active {
+    animation: none;
+}
 
-.flipInY:has(:hover) {
+.flipInY {
     animation-delay: 0.1s;
     animation-duration: 2s;
     animation-name: flipInY;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
+.flipInY:active {
+    animation: none;
+}
 
-.flipInX:has(:hover) {
+.flipInX {
     animation-delay: 0.1s;
     animation-duration: 2s;
     animation-name: flipInX;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
+.flipInX:active {
+    animation: none;
+}
 
-.rubberBand:has(:hover) {
+.rubberBand {
     animation-delay: 0.1s;
     animation-duration: 2s;
     animation-name: rubberBand;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
-.tada:has(:hover) {
+.rubberBand:active {
+    animation: none;
+}
+
+.tada {
     animation-delay: 0.1s;
     animation-duration: 2s;
     animation-name: tada;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
+}
+.tada:active {
+    animation: none;
 }
 
 #appbar {

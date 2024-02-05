@@ -4,7 +4,7 @@
 @inject MudLocalizer localizer
 
 @localizer["Hi"]
-<MudGrid Justify="Justify.SpaceEvenly" Style="width:95%; margin-inline:auto; margin-top:20px;">
+<MudGrid Justify="Justify.SpaceEvenly" Style="width:95%; margin-inline:auto; margin-top:20px; margin-bottom:150px;">
     <MudItem>
         <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-pill" Src="/Icons/me-removebg.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
     </MudItem>
@@ -13,7 +13,7 @@
             Hello! my name is
         </MudText>
         <MudText GutterBottom=true Color="Color.Primary" Typo="Typo.h3">
-            George Papasteriadis
+            <b>George Papasteriadis</b>
         </MudText>
         <MudText Color="Color.Primary" Typo="Typo.h5">
             I'm a software engineer specializing in
@@ -29,20 +29,8 @@
 </MudGrid>
 
 
-<MudCard id="about" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
-    <MudCardContent>
-        <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
-            <b>About me</b>
-        </MudText>
-        <MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
-            Coming soon...
-        </MudText>
-    </MudCardContent>
-</MudCard>
-
-
 <MudCard id="jobs" Elevation="2" Style="margin-top:80px; margin-bottom:20px; width:85%; margin-inline:auto;">
-    <MudText Style="margin-bottom:20px;" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">
+    <MudText Style="margin-bottom:20px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">
         <b>Where I’ve Worked</b>
     </MudText>
     <MudCardContent>
@@ -53,7 +41,10 @@
                 </ItemOpposite>
                 <ItemContent>
                     <MudPaper Elevation="0">
-                            <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true"><b>Software Engineer @@Greek Armed Forces IT Corps</b></MudText>
+                            <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                                <b>Software Engineer</b>
+                            <MudLink Target="_blank" Color="Color.Success" Href="http://army.gr/el/organosi/monades-ypiresies/kentro-pliroforikis-ypostirixis-ellinikoy-stratoy-kepyes/fotografiko" Typo="Typo.h5">@@Greek Armed Forces IT Corps</MudLink>
+                        </MudText>
                         <MudText Typo="Typo.body1">
                             · Held a part-time position as a software developer during mandatory military service.<br />
                             · Developed and maintained the military's internal software systems.<br />
@@ -68,7 +59,10 @@
                 </ItemOpposite>
                 <ItemContent>
                     <MudPaper Elevation="0">
-                            <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true"><b>Software Engineer @@Terracom S.A.</b></MudText>
+                            <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                                <b>Software Engineer</b>
+                            <MudLink Target="_blank" Color="Color.Success" Href="https://www.terracom.gr/" Typo="Typo.h5">@@Terracom S.A.</MudLink>
+                            </MudText>
                         <MudText Typo="Typo.body2">
                             ·Played a pivotal role in the development, maintenance, and evolution of the patrol and security management platform QR-Patrol.<br />
                             ·Actively participated in technical analysis and system design processes, contributing to enhance project outcomes.<br />
@@ -83,7 +77,7 @@
                 </ItemOpposite>
                 <ItemContent>
                     <MudPaper Elevation="0">
-                        <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true"><b>Mobile Application Developer @@Freelancer</b></MudText>
+                        <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true"><b>Mobile Application Developer - Freelancer</b></MudText>
                         <MudText Typo="Typo.body2">
                              Developed a mobile application utilizing: <br />
                             ·Ionic Framework with Angular for the FrontEnd: Engineered responsive and feature-rich user interfaces for both Android and iOS.<br />
@@ -99,7 +93,10 @@
                 </ItemOpposite>
                 <ItemContent>
                     <MudPaper Elevation="0">
-                        <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true"><b>Software Engineer Intern @@CoTheta</b></MudText>
+                        <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                            <b>Software Engineer Intern </b>
+                            <MudLink Target="_blank" Color="Color.Success" Href="https://www.cotheta.com/" Typo="Typo.h5">@@CoTheta</MudLink>
+                        </MudText>
                         <MudText Typo="Typo.body2">
                             · Engaged in virtual and augmented reality projects using Unity3D.<br />
                             · Contributed to the creation of interactive experiences.
@@ -119,31 +116,31 @@
         </MudText>
         <MudGrid Justify="Justify.Center" Style="margin-top:30px; width:80%; margin-inline:auto;">
             <MudItem Class="jackInTheBox" Style="display:flex; flex-direction:column;" xs="6" sm="4" md="3">
-                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">.NET Core</MudChip>
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>.NET Core</b></MudChip>
             </MudItem>
             <MudItem Class="tada" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">Blazor</MudChip>
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Blazor</b></MudChip>
             </MudItem>
             <MudItem Class="bounceIn" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">Angular</MudChip>
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Angular</b></MudChip>
             </MudItem>
             <MudItem Class="jello" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">MongoDB</MudChip>
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>MongoDB</b></MudChip>
             </MudItem>
             <MudItem Class="flipInY" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">SQL</MudChip>
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SQL</b></MudChip>
             </MudItem>
             <MudItem Class="flipInX" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">EF Core</MudChip>
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>EF Core</b></MudChip>
             </MudItem>
             <MudItem Class="rubberBand" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">Docker</MudChip>
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Docker</b></MudChip>
             </MudItem>
             <MudItem Class="rubberBand" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">SignalR</MudChip>
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SignalR</b></MudChip>
             </MudItem>
             <MudItem Class="rubberBand" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Variant="Variant.Text" Size="Size.Large" Color="Color.Primary">RabbitMQ</MudChip>
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>RabbitMQ</b></MudChip>
             </MudItem>
         </MudGrid>
     </MudCardContent>
@@ -151,7 +148,7 @@
 
 
 
-<MudCard Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
+<MudCard id="projects" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
     <MudCardContent>
         <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
             <b>Some projects</b>
@@ -164,8 +161,22 @@
 
 
 
-<MudDivider Light=true DividerType="DividerType.Middle" Class="my-15" />
-<MudGrid id="contact" Justify="Justify.Center">
+<MudDivider id="contact" Light=true DividerType="DividerType.Middle" Class="my-15" />
+
+<MudItem Class="flex-wrap d-flex justify-content-center">
+    <MudText Color="Color.Primary" GutterBottom=true Typo="Typo.h3">
+        <b>Reach Out😉</b>
+    </MudText>
+</MudItem>
+
+<MudItem Style="margin-bottom:100px;" Class="flex-wrap d-flex justify-content-center">
+    <MudButton EndIcon="@Icons.Material.Filled.Email" Variant="Variant.Outlined" Color=Color.Primary Size=Size.Large Href="mailto:test@localhost">
+       Send Me Email
+    </MudButton>
+</MudItem>
+
+
+<MudGrid Justify="Justify.Center">
     <MudItem>
         <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://www.linkedin.com/in/giorgos-papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.LinkedIn" Title="LinkedIn" />
     </MudItem>
@@ -179,14 +190,17 @@
         <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://www.instagram.com/george_papaste/" target="_blank" Icon="@Icons.Custom.Brands.Instagram" Title="Facebook" />
     </MudItem>
     <MudItem Class="flex-wrap d-flex justify-content-center" Style="margin-bottom:20px;" xs="12">
-        <MudText Typo="Typo.h6">
+        <MudText Color="Color.Primary" Typo="Typo.h6">
             giorgospapasteriadis@gmail.com
         </MudText>
     </MudItem>
+</MudGrid>
+
+<MudItem Class="flex-wrap d-flex justify-content-center">
     <MudText Style="padding-bottom:10px" GutterBottom=true Typo="Typo.caption">
         Build by George Papasteriadis
     </MudText>
-</MudGrid>
+</MudItem>
 
 
 @code {
