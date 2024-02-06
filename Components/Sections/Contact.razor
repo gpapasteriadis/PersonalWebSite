@@ -1,0 +1,77 @@
+﻿@inject MudLocalizer localizer
+
+<MudDivider id="contact" Light=true DividerType="DividerType.Middle" Style="margin-top:35px; margin-bottom:20px" />
+<MudItem Class="flex-wrap d-flex justify-content-center" Style="margin-bottom:100px;">
+    <MudText Align="Align.Center" Color="Color.Primary" GutterBottom=true Typo="Typo.h3">
+        <b>Reach Out😉</b>
+    </MudText>
+</MudItem>
+
+
+<MudItem Class="flex-wrap d-flex justify-content-center">
+    <MudButton EndIcon="@Icons.Material.Filled.Email" Variant="Variant.Outlined" Color=Color.Primary Size=Size.Large Href="mailto:giorgospapasteriadis@gmail.com">
+        Send Me Email
+    </MudButton>
+</MudItem>
+
+<MudItem Style="margin-bottom:100px;" Class="flex-wrap d-flex justify-content-center" xs="12">
+    <MudText Color="Color.Primary" Typo="Typo.h6">
+        giorgospapasteriadis@gmail.com
+    </MudText>
+</MudItem>
+
+<MudItem Class="flex-wrap d-flex justify-content-center">
+    <MudText Color="Color.Primary" Align="Align.Center" Style="padding-bottom:10px" GutterBottom=true Typo="Typo.h5">
+        You can also find me on the following social networks
+    </MudText>
+</MudItem>
+
+<MudGrid Justify="Justify.Center" Style="margin-bottom:10px;">
+    <MudItem>
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://www.linkedin.com/in/giorgos-papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.LinkedIn" Title="LinkedIn" />
+    </MudItem>
+    <MudItem>
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://github.com/gpapasteriadis" target="_blank" Icon="@Icons.Custom.Brands.GitHub" Title="GitHub" />
+    </MudItem>
+    <MudItem>
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://www.facebook.com/giwrgos.papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.Facebook" Title="Facebook" />
+    </MudItem>
+    <MudItem>
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://www.instagram.com/george_papaste/" target="_blank" Icon="@Icons.Custom.Brands.Instagram" Title="Facebook" />
+    </MudItem>
+</MudGrid>
+
+<MudItem Class="flex-wrap d-flex justify-content-center">
+    <MudText Style="padding-bottom:10px" GutterBottom=true Typo="Typo.caption">
+        Build by George Papasteriadis
+    </MudText>
+</MudItem>
+
+
+@code {
+    [CascadingParameter]
+    protected Breakpoint breakpoint { get; set; }
+
+    private Typo GetTypo()
+    {
+        var size = breakpoint;
+        if (size == Breakpoint.Xs)
+        {
+            return Typo.body1;
+        }
+        else if (size == Breakpoint.Sm)
+        {
+            return Typo.h6;
+        }
+        else if (size == Breakpoint.Md)
+        {
+            return Typo.h4;
+        }
+        else
+        {
+            return Typo.h3;
+        }
+    }
+
+}
+

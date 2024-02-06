@@ -1,0 +1,67 @@
+﻿@inject MudLocalizer localizer
+
+<MudCard id="skills" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
+    <MudCardContent>
+        <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+            <b>Skills/Tools acquired</b>
+        </MudText>
+        <MudGrid Justify="Justify.Center" Style="margin-top:30px; width:80%; margin-inline:auto;">
+            <MudItem Class="jackInTheBox" Style="display:flex; flex-direction:column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>.NET Core</b></MudChip>
+            </MudItem>
+            <MudItem Class="tada" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Blazor</b></MudChip>
+            </MudItem>
+            <MudItem Class="bounceIn" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Angular</b></MudChip>
+            </MudItem>
+            <MudItem Class="jello" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>MongoDB</b></MudChip>
+            </MudItem>
+            <MudItem Class="flipInY" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SQL</b></MudChip>
+            </MudItem>
+            <MudItem Class="flipInX" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>EF Core</b></MudChip>
+            </MudItem>
+            <MudItem Class="rubberBand" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Docker</b></MudChip>
+            </MudItem>
+            <MudItem Class="rubberBand" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SignalR</b></MudChip>
+            </MudItem>
+            <MudItem Class="rubberBand" Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                <MudChip Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>RabbitMQ</b></MudChip>
+            </MudItem>
+        </MudGrid>
+    </MudCardContent>
+</MudCard>
+
+
+
+@code {
+    [CascadingParameter]
+    protected Breakpoint breakpoint { get; set; }
+
+    private Typo GetTypo()
+    {
+        var size = breakpoint;
+        if (size == Breakpoint.Xs)
+        {
+            return Typo.body1;
+        }
+        else if (size == Breakpoint.Sm)
+        {
+            return Typo.h6;
+        }
+        else if (size == Breakpoint.Md)
+        {
+            return Typo.h4;
+        }
+        else
+        {
+            return Typo.h3;
+        }
+    }
+
+}

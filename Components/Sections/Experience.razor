@@ -1,0 +1,114 @@
+﻿@inject MudLocalizer localizer
+
+<MudCard id="jobs" Elevation="2" Style="margin-top:80px; margin-bottom:20px; width:85%; margin-inline:auto;">
+    <MudText Style="margin-bottom:20px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">
+        <b>Where I’ve Worked</b>
+    </MudText>
+    <MudCardContent>
+        <MudTimeline TimelineAlign="TimelineAlign.Start" Style="width:85%; margin-inline:auto; margin-bottom:30px;">
+            <MudTimelineItem Color="Color.Primary" Elevation="25">
+                <ItemOpposite>
+                    <MudText Color="Color.Primary" Typo="Typo.h5">Mar - Oct 2023</MudText>
+                </ItemOpposite>
+                <ItemContent>
+                    <MudPaper Elevation="0">
+                        <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                            <b>Software Engineer</b>
+                            <MudLink Target="_blank" Color="Color.Success" Href="http://army.gr/el/organosi/monades-ypiresies/kentro-pliroforikis-ypostirixis-ellinikoy-stratoy-kepyes/fotografiko" Typo="Typo.h5">@@Greek Armed Forces IT Corps</MudLink>
+                        </MudText>
+                        <MudText Typo="Typo.body1">
+                            · Held a part-time position as a software developer during mandatory military service.<br />
+                            · Developed and maintained the military's internal software systems.<br />
+                            · Provided technical support to system users, addressing inquiries and troubleshooting issues.
+                        </MudText>
+                    </MudPaper>
+                </ItemContent>
+            </MudTimelineItem>
+            <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
+                <ItemOpposite>
+                    <MudText Color="Color.Primary" Typo="Typo.h5">Oct 2020 - Dec 2022</MudText>
+                </ItemOpposite>
+                <ItemContent>
+                    <MudPaper Elevation="0">
+                        <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                            <b>Software Engineer</b>
+                            <MudLink Target="_blank" Color="Color.Success" Href="https://www.terracom.gr/" Typo="Typo.h5">@@Terracom S.A.</MudLink>
+                        </MudText>
+                        <MudText Typo="Typo.body1">
+                            ·Played a pivotal role in the development, maintenance, and evolution of the patrol and security management platform QR-Patrol.<br />
+                            ·Actively participated in technical analysis and system design processes, contributing to enhance project outcomes.<br />
+                            ·Engaged in team meetings to synchronize efforts and maintain alignment with project goals, while maintaining close collaboration with team members to implement updates and improvements.
+                        </MudText>
+                    </MudPaper>
+                </ItemContent>
+            </MudTimelineItem>
+            <MudTimelineItem Color="Color.Primary" Elevation="25">
+                <ItemOpposite>
+                    <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">Dec 2021 — Jan 2022</MudText>
+                </ItemOpposite>
+                <ItemContent>
+                    <MudPaper Elevation="0">
+                        <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true"><b>Mobile Application Developer - Freelancer</b></MudText>
+                        <MudText Typo="Typo.body1">
+                            Developed a mobile application utilizing: <br />
+                            ·Ionic Framework with Angular for the FrontEnd: Engineered responsive and feature-rich user interfaces for both Android and iOS.<br />
+                            ·Apollo GraphQL and nestJS for the BackEnd: Implemented efficient data handling and processing capabilities.<br />
+                            ·Deployment on DigitalOcean using Docker containers: Optimizing packaging and deployment processes.
+                        </MudText>
+                    </MudPaper>
+                </ItemContent>
+            </MudTimelineItem>
+            <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
+                <ItemOpposite>
+                    <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">Jul 2019 — Oct 2019</MudText>
+                </ItemOpposite>
+                <ItemContent>
+                    <MudPaper Elevation="0">
+                        <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                            <b>Software Engineer Intern </b>
+                            <MudLink Target="_blank" Color="Color.Success" Href="https://www.cotheta.com/" Typo="Typo.h5">@@CoTheta</MudLink>
+                        </MudText>
+                        <MudText Typo="Typo.body1">
+                            · Engaged in virtual and augmented reality projects using Unity3D.<br />
+                            · Contributed to the creation of interactive experiences.
+                        </MudText>
+                    </MudPaper>
+                </ItemContent>
+            </MudTimelineItem>
+        </MudTimeline>
+        <MudItem Class="d-flex flex-wrap justify-content-center">
+            <MudText Inline=true Color=Color.Primary Typo="Typo.h6">
+                Resume:
+                <MudIconButton Style="color:burlywood;" Size="Size.Medium" Title="Download" Href="George-CV.pdf" target="_blank" Class="bounceInDownloadIcon" Icon="@Icons.Material.Filled.Download" />
+            </MudText>
+        </MudItem>
+    </MudCardContent>
+</MudCard>
+
+
+@code {
+    [CascadingParameter]
+    protected Breakpoint breakpoint { get; set; }
+
+    private Typo GetTypo()
+    {
+        var size = breakpoint;
+        if (size == Breakpoint.Xs)
+        {
+            return Typo.body1;
+        }
+        else if (size == Breakpoint.Sm)
+        {
+            return Typo.h6;
+        }
+        else if (size == Breakpoint.Md)
+        {
+            return Typo.h4;
+        }
+        else
+        {
+            return Typo.h3;
+        }
+    }
+
+}
