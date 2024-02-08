@@ -1,4 +1,6 @@
-﻿@inject NavigationManager Navigation
+﻿@using PersonalWebSite.SharedState
+@inject NavigationManager Navigation
+@inject StateContainer State
 
 <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
     <MudButton Class="rounded-pill" OnClick=homeIconClicked>
@@ -34,10 +36,15 @@
         </MudLink>
     </MudItem>
     <MudSpacer />
-    <MudItem>
-        <CultureSelector />
-    </MudItem>
 </MudHidden>
+<MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
+    <MudIconButton OnClick="@ToggleSideBar" Icon="@Icons.Material.Outlined.Menu" Size=Size.Medium Style="color:burlywood;" Class="mr-5" />
+    <MudSpacer />
+</MudHidden>
+
+<CultureSelector />
+<ThemeSelector />
+
 
 @code {
 
@@ -45,4 +52,10 @@
     {
         Navigation.NavigateTo("/", forceLoad: true);
     }
+
+    void ToggleSideBar()
+    {
+        State.ChangeSideBarState();
+    }
+
 }

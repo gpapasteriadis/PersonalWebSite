@@ -7,6 +7,7 @@ using MudBlazor;
 using PersonalWebSite.Localize;
 using System.Globalization;
 using Microsoft.JSInterop;
+using PersonalWebSite.SharedState;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -17,6 +18,7 @@ builder.Services.AddMudServices();
 builder.Services.AddBlazoredLocalStorageAsSingleton();
 builder.Services.AddTransient<MudLocalizer, Resource>();
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+builder.Services.AddSingleton<StateContainer>();
 
 var host = builder.Build();
 

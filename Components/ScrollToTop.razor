@@ -1,0 +1,19 @@
+﻿@inject NavigationManager Navigation
+
+<MudScrollToTop OnClick=navTo Style="margin:20px; z-index:2001;">
+    <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
+        <MudFab Size="Size.Medium" Style="color:burlywood" IconSize="Size.Large" StartIcon="@Icons.Material.Filled.KeyboardArrowUp" />
+    </MudHidden>
+    <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
+        <MudFab Size="Size.Small" Style="color:burlywood" IconSize="Size.Large" StartIcon="@Icons.Material.Filled.KeyboardArrowUp" />
+    </MudHidden>
+</MudScrollToTop>
+
+@code{
+
+    private void navTo()
+    {
+        Navigation.NavigateTo("/", forceLoad: false);
+    }
+
+}

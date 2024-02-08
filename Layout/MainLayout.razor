@@ -1,86 +1,37 @@
 ﻿@using System.Globalization
 @using PersonalWebSite.Components
+@using PersonalWebSite.SharedState
 @inherits LayoutComponentBase
 @inject ILocalStorageService localStorage
 @inject IJSRuntime JS
 @inject ISnackbar SnackbarService
 @inject NavigationManager Navigation
+@inject StateContainer State
 
-<MudThemeProvider Theme="MyCustomTheme" IsDarkMode=@_isDarkMode/>
+<MudThemeProvider Theme="MyCustomTheme" IsDarkMode=State.DarkModeIsOn/>
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 <MudLayout>
     <MudAppBar id="appbar" Fixed=true DisableGutters=false Elevation="3" Dense="true">
         <AppBarItems></AppBarItems>
-        <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
-            <MudIconButton OnClick="@ToggleDrawer" Icon="@Icons.Material.Outlined.Menu" Size=Size.Medium Style="color:burlywood;" Class="mr-5" />
-            <MudSpacer />
-        </MudHidden>
-        <ThemeSelector darkModeChanged="@darkModeChanged" />
     </MudAppBar>
-
-    <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
-        <MudDrawer Width="50%" Color=Color.Dark ClipMode="DrawerClipMode.Docked" @bind-Open="@open" Elevation="1">
-            <MudDrawerHeader Style="align-self:center">
-                <MudButton Class="rounded-pill" OnClick=homeIconClicked>
-                    <MudImage Fluid=true Class="rounded-pill" Src="/Icons/codeIcon-removebg.png" Width="32"></MudImage>
-                </MudButton>
-            </MudDrawerHeader>
-            <MudNavMenu Class="mud-width-full" Margin="Margin.Normal">
-                <MudNavLink Href="#jobs" Match="NavLinkMatch.All">
-                    <MudText Color=Color.Primary Align=Align.Center Typo=Typo.h6>
-                        Experience
-                    </MudText>
-                </MudNavLink>
-                <MudNavLink Href="#skills" Match="NavLinkMatch.All">
-                    <MudText Color=Color.Primary Align=Align.Center Typo=Typo.h6>
-                        Skills
-                    </MudText>
-                </MudNavLink>
-                <MudNavLink Href="#projects" Match="NavLinkMatch.All">
-                    <MudText Color=Color.Primary Align =Align.Center Typo=Typo.h6>
-                        Projects
-                    </MudText>
-                </MudNavLink>
-                <MudNavLink Href="#contact" Match="NavLinkMatch.All">
-                    <MudText Color=Color.Primary Align =Align.Center Typo=Typo.h6>
-                        Contact
-                    </MudText>
-                </MudNavLink>
-            </MudNavMenu>
-        </MudDrawer>
-    </MudHidden>
-    
-
+    <SideBar></SideBar>
     <MudMainContent Style="overflow:hidden">
         @Body
     </MudMainContent>
-
-    <MudScrollToTop OnClick=navto Style="margin:20px; z-index:2001;">
-        <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
-            <MudFab Size="Size.Medium" Style="color:burlywood" IconSize="Size.Large" StartIcon="@Icons.Material.Filled.KeyboardArrowUp" />
-        </MudHidden>
-        <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
-            <MudFab Size="Size.Small" Style="color:burlywood" IconSize="Size.Large" StartIcon="@Icons.Material.Filled.KeyboardArrowUp" />
-        </MudHidden>
-    </MudScrollToTop>
-
+    <ScrollToTop></ScrollToTop>
 </MudLayout>
 
+
 @code {
-    private bool _isDarkMode;
-    bool open = false;
 
-    private void homeIconClicked()
+    protected override async Task OnInitializedAsync()
     {
-        Navigation.NavigateTo("/", forceLoad: true);
+        await JS.InvokeVoidAsync("scrollFunctionality");
+        State.DarkModeStateChanged += StateHasChanged;
     }
 
-    void ToggleDrawer()
-    {
-        open = !open;
-    }
 
     MudTheme MyCustomTheme = new MudTheme()
     {
@@ -153,20 +104,5 @@
 
         // },
     };
-
-    protected override async Task OnInitializedAsync()
-    {
-        await JS.InvokeVoidAsync("scrollFunctionality");
-    }
-
-    private void darkModeChanged(bool isDarkMode)
-    {
-        _isDarkMode = isDarkMode;
-    }
-
-    private void navto()
-    {
-        Navigation.NavigateTo("/", forceLoad: false);
-    }
-
+    
 }
