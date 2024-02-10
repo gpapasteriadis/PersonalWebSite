@@ -1,4 +1,5 @@
 ﻿@inject MudLocalizer localizer
+@inject IConfiguration config
 
 <MudDivider id="contact" Light=true DividerType="DividerType.Middle" Style="margin-top:35px; margin-bottom:20px" />
 <MudItem Class="flex-wrap d-flex justify-content-center" Style="margin-bottom:100px;">
@@ -9,14 +10,14 @@
 
 
 <MudItem Class="flex-wrap d-flex justify-content-center">
-    <MudButton EndIcon="@Icons.Material.Filled.Email" Variant="Variant.Outlined" Color=Color.Primary Size=Size.Large Href="mailto:giorgospapasteriadis@gmail.com">
+    <MudButton EndIcon="@Icons.Material.Filled.Email" Variant="Variant.Outlined" Color=Color.Primary Size=Size.Large Href="@($"mailto:{@config["Email"]}")">
         Send Me Email
     </MudButton>
 </MudItem>
 
 <MudItem Style="margin-bottom:100px;" Class="flex-wrap d-flex justify-content-center" xs="12">
     <MudText Color="Color.Primary" Typo="Typo.h6">
-        giorgospapasteriadis@gmail.com
+        @config["Email"]
     </MudText>
 </MudItem>
 
@@ -28,16 +29,16 @@
 
 <MudGrid Justify="Justify.Center" Style="margin-bottom:10px;">
     <MudItem>
-        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://www.linkedin.com/in/giorgos-papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.LinkedIn" Title="LinkedIn" />
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="@(config.GetSection("SocialNetworkLinks").GetValue<String>("LinkedIn"))" target="_blank" Icon="@Icons.Custom.Brands.LinkedIn" Title="LinkedIn" />
     </MudItem>
     <MudItem>
-        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://github.com/gpapasteriadis" target="_blank" Icon="@Icons.Custom.Brands.GitHub" Title="GitHub" />
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="@(config.GetSection("SocialNetworkLinks").GetValue<String>("GitHub"))" target="_blank" Icon="@Icons.Custom.Brands.GitHub" Title="GitHub" />
     </MudItem>
     <MudItem>
-        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://www.facebook.com/giwrgos.papasteriadis/" target="_blank" Icon="@Icons.Custom.Brands.Facebook" Title="Facebook" />
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="@(config.GetValue<String>("SocialNetworkLinks:Instagram"))" target="_blank" Icon="@Icons.Custom.Brands.Instagram" Title="Instagram" />
     </MudItem>
     <MudItem>
-        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="https://www.instagram.com/george_papaste/" target="_blank" Icon="@Icons.Custom.Brands.Instagram" Title="Facebook" />
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="@(config.GetValue<String>("SocialNetworkLinks:Facebook"))" target="_blank" Icon="@Icons.Custom.Brands.Facebook" Title="Facebook" />
     </MudItem>
 </MudGrid>
 
