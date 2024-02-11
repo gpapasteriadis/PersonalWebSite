@@ -89,7 +89,8 @@
 
         SnackbarService.Add(
             message: @<MudText Style="width:90%">
-                        <b>@skillName</b> <MudRating ReadOnly="true" SelectedValue=@skill.RatingValue />
+                        <b>@skillName</b>
+                        <MudProgressLinear Color="Color.Tertiary" Size="Size.Large" Value=@skill.RatingValue>@skill.RatingValue%</MudProgressLinear>
                         <MudDivider></MudDivider>
                          @skill.SkillDescription <br />
                         <u>Was acquired through:</u>
@@ -134,49 +135,49 @@
             switch (skillName)
             {
                 case ".NET Core":
-                    RatingValue = 3;
+                    RatingValue = 65;
                     SkillDescription = "I've used this to build APIs, Backend services and Frontend solutions.";
                     Acquired = "Job, Projects";
                     break;
                 case "Blazor":
-                    RatingValue = 4;
-                    SkillDescription = "I've used this to build APIs, Backend services and Frontend solutions.";
-                    Acquired = "Job, Projects";
+                    RatingValue = 80;
+                    SkillDescription = "Helped me to build responsive modern web applications. I have used Syncfusion and Mudblazor libraries to leverage blazor features with ease.";
+                    Acquired = "Job, Projects, Courses";
                     break;
                 case "Angular":
-                    RatingValue = 3;
-                    SkillDescription = "I've used this to build APIs, Backend services and Frontend solutions.";
-                    Acquired = "Job, Projects";
+                    RatingValue = 60;
+                    SkillDescription = "My experience is mainly in Angular2 and I have dabbled in AngularJS as well. Some libraries/tools I have used are Angular Material and Bootstrap";
+                    Acquired = "Job";
                     break;
                 case "MongoDB":
-                    RatingValue = 3;
-                    SkillDescription = "I've used this to build APIs, Backend services and Frontend solutions.";
-                    Acquired = "Job, Projects";
+                    RatingValue = 60;
+                    SkillDescription = "My experience with mongoDB is based on a job I had as a freelancer. I was using it with Mongoose (ODM) and mongo-express (Admin Interface)";
+                    Acquired = "Projects";
                     break;
                 case "SQL":
-                    RatingValue = 3;
-                    SkillDescription = "I've used this to build APIs, Backend services and Frontend solutions.";
+                    RatingValue = 75;
+                    SkillDescription = "In almost every project I've taken on, I've used SQL by integrating it with various ORMs like EFCore and Sequelize. Additionally, I have used raw SQL queries extensively";
                     Acquired = "Job, Projects";
                     break;
                 case "EF Core":
-                    RatingValue = 2;
-                    SkillDescription = "I've used this to build APIs, Backend services and Frontend solutions.";
-                    Acquired = "Job, Projects";
+                    RatingValue = 55;
+                    SkillDescription = "I gained my exprerience in EF Core primarily through structured courses, complemented by practical exposure to both the older Entity Framework and the latest EF Core in professional settings.";
+                    Acquired = "Courses, Job";
                     break;
                 case "Docker":
-                    RatingValue = 2;
-                    SkillDescription = "I've used this to build APIs, Backend services and Frontend solutions.";
-                    Acquired = "Job, Projects";
+                    RatingValue = 50;
+                    SkillDescription = "Docker has enabled me to seamlessly package and deploy applications with ease. Α few examples of some of the types of applications I have Dockerized are: .ΝΕΤ6 Services, NestJS App, Databases, Message Brokers, FrontEnd Solutions";
+                    Acquired = "Job, Courses";
                     break;
                 case "SignalR":
-                    RatingValue = 3;
-                    SkillDescription = "I've used this to build APIs, Backend services and Frontend solutions.";
-                    Acquired = "Job, Projects";
+                    RatingValue = 70;
+                    SkillDescription = "In a previous role, I leveraged SignalR to facilitate real-time updates within the frontend, implementing solutions in both C# and JavaScript.";
+                    Acquired = "Job";
                     break;
                 case "RabbitMQ":
-                    RatingValue = 4;
-                    SkillDescription = "I've used this to build APIs, Backend services and Frontend solutions.";
-                    Acquired = "Job, Projects";
+                    RatingValue = 80;
+                    SkillDescription = "Leveraging the library in C#, I successfully implemented it for various scenarios including asynchronous email dispatch, push notifications, and job scheduling, thereby enhancing system responsiveness and scalability.";
+                    Acquired = "Job";
                     break;
             }
         }
