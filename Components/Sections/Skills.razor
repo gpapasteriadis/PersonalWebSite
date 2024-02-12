@@ -1,44 +1,84 @@
 ﻿@inject MudLocalizer localizer
 @inject ISnackbar SnackbarService
 
-<MudCard id="skills" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
-    <MudCardContent>
-        <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
-            <b>Skills/Tools acquired</b>
-        </MudText>
-        <MudGrid Justify="Justify.Center" Style="margin-top:30px; width:80%; margin-inline:auto;">
-            <MudItem Style="display:flex; flex-direction:column;" xs="6" sm="4" md="3">
-                <MudChip Class="jackInTheBox" OnClick='() => OnClick(".NET Core")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>.NET Core</b></MudChip>
-            </MudItem>
-            <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Class="tada" OnClick='() => OnClick("Blazor")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Blazor</b></MudChip>
-            </MudItem>
-            <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Class="bounceIn" OnClick='() => OnClick("Angular")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Angular</b></MudChip>
-            </MudItem>
-            <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Class="jello" OnClick='() => OnClick("MongoDB")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>MongoDB</b></MudChip>
-            </MudItem>
-            <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Class="flipInY" OnClick='() => OnClick("SQL")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SQL</b></MudChip>
-            </MudItem>
-            <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Class="flipInX" OnClick='() => OnClick("EF Core")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>EF Core</b></MudChip>
-            </MudItem>
-            <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Class="rubberBand" OnClick='() => OnClick("Docker")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Docker</b></MudChip>
-            </MudItem>
-            <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Class="rubberBand" OnClick='() => OnClick("SignalR")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SignalR</b></MudChip>
-            </MudItem>
-            <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                <MudChip Class="rubberBand" OnClick='() => OnClick("RabbitMQ")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>RabbitMQ</b></MudChip>
-            </MudItem>
-        </MudGrid>
-    </MudCardContent>
-</MudCard>
+<MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
+    <MudCard id="skills" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
+        <MudCardContent>
+            <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+                <b>Skills/Tools acquired</b>
+            </MudText>
+            <MudGrid Justify="Justify.Center" Style="margin-top:30px; width:80%; margin-inline:auto;">
+                <MudItem Style="display:flex; flex-direction:column;" xs="6" sm="4" md="3">
+                    <MudChip Class="jackInTheBox" OnClick='() => OnClick(".NET Core")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>.NET Core</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="tada" OnClick='() => OnClick("Blazor")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Blazor</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="bounceIn" OnClick='() => OnClick("Angular")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Angular</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="jello" OnClick='() => OnClick("MongoDB")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>MongoDB</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="flipInY" OnClick='() => OnClick("SQL")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SQL</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="flipInX" OnClick='() => OnClick("EF Core")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>EF Core</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="rubberBand" OnClick='() => OnClick("Docker")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Docker</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="rubberBand" OnClick='() => OnClick("SignalR")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SignalR</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="rubberBand" OnClick='() => OnClick("RabbitMQ")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>RabbitMQ</b></MudChip>
+                </MudItem>
+            </MudGrid>
+        </MudCardContent>
+    </MudCard>
+</MudHidden>
 
 
+<MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
+    <MudCard id="skills" Elevation="2" Style="margin-top:80px; width:100%; margin-inline:auto;">
+        <MudCardContent>
+            <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+                <b>Skills/Tools acquired</b>
+            </MudText>
+            <MudGrid Justify="Justify.Center" Style="margin-top:30px; width:80%; margin-inline:auto;">
+                <MudItem Style="display:flex; flex-direction:column;" xs="6" sm="4" md="3">
+                    <MudChip Class="jackInTheBox" OnClick='() => OnClick(".NET Core")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>.NET Core</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="tada" OnClick='() => OnClick("Blazor")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Blazor</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="bounceIn" OnClick='() => OnClick("Angular")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Angular</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="jello" OnClick='() => OnClick("MongoDB")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>MongoDB</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="flipInY" OnClick='() => OnClick("SQL")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SQL</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="flipInX" OnClick='() => OnClick("EF Core")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>EF Core</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="rubberBand" OnClick='() => OnClick("Docker")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Docker</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="rubberBand" OnClick='() => OnClick("SignalR")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SignalR</b></MudChip>
+                </MudItem>
+                <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
+                    <MudChip Class="rubberBand" OnClick='() => OnClick("RabbitMQ")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>RabbitMQ</b></MudChip>
+                </MudItem>
+            </MudGrid>
+        </MudCardContent>
+    </MudCard>
+</MudHidden>
 
 @code {
 

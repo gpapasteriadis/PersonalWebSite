@@ -1,15 +1,31 @@
 ﻿@inject MudLocalizer localizer
 
-<MudCard id="projects" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
-    <MudCardContent>
-        <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
-            <b>Some projects</b>
-        </MudText>
-        <MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
-            Coming soon...
-        </MudText>
-    </MudCardContent>
-</MudCard>
+<MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
+    <MudCard id="projects" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
+        <MudCardContent>
+            <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+                <b>Some projects</b>
+            </MudText>
+            <MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
+                Coming soon...
+            </MudText>
+        </MudCardContent>
+    </MudCard>
+</MudHidden>
+
+<MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
+    <MudCard id="projects" Elevation="2" Style="margin-top:80px; width:100%; margin-inline:auto;">
+        <MudCardContent>
+            <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+                <b>Some projects</b>
+            </MudText>
+            <MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
+                Coming soon...
+            </MudText>
+        </MudCardContent>
+    </MudCard>
+</MudHidden>
+
 
 
 @code {
