@@ -2,31 +2,24 @@
 @inject ILocalStorageService localStorage
 @inject StateContainer State
 
-<MudTooltip>
-    <MudIconButton Edge="Edge.End" Size=Size.Medium Icon=@_darkLightIcon Style="color:burlywood; margin-right:5px;" OnClick="() => changeThemeMode()" />
-</MudTooltip>
+<MudToggleIconButton Edge="Edge.End" Size=Size.Medium Style="color:burlywood; margin-right:5px;" 
+                        @bind-Toggled="State.DarkModeIsOn"
+                        Icon="@Icons.Material.Filled.Nightlight"
+                        ToggledIcon="@Icons.Material.Filled.LightMode"
+                        @onclick="changeThemeMode" />
 
 @code {
 
-    private string? _darkLightIcon;
-
     protected override async Task OnInitializedAsync()
     {
-        bool IsDarkMode = await localStorage.GetItemAsync<bool>("DarkModeIsOn");
-        State.ChangeDarkModeState(IsDarkMode);
-        setThemeModeSettings();
+        bool DarkModeIsOn = await localStorage.GetItemAsync<bool>("DarkModeIsOn");
+        State.ChangeDarkModeState(DarkModeIsOn);
     }
 
     private async void changeThemeMode()
     {
         State.ChangeDarkModeState();
         await localStorage.SetItemAsync("DarkModeIsOn", State.DarkModeIsOn);
-        setThemeModeSettings();
     }
 
-    private void setThemeModeSettings()
-    {
-        _darkLightIcon = State.DarkModeIsOn ? Icons.Material.Filled.LightMode : Icons.Material.Filled.Nightlight;
-        StateHasChanged();
-    }
 }
