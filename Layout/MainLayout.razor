@@ -28,7 +28,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await JS.InvokeVoidAsync("scrollFunctionality");
+        await State.ScrollFunctionality();
         State.DarkModeStateChanged += StateHasChanged;
     }
 

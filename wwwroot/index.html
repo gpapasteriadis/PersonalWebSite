@@ -62,6 +62,26 @@
                 prevScrollpos = currentScrollPos;
             }
         }
+
+        // Function to reattach the scroll event handler
+        window.reAttachScrollEvent = () => {
+            window.onscroll = window.scrollFunctionality;
+        }
+    </script>
+    <script>
+        window.closeAppBar = () => {
+            // Stop the scrolling functionality by removing the event handler
+            window.onscroll = null;
+
+            // Hide the appbar
+            document.getElementById("appbar").style.top = "-50px";
+
+            // Reattach the scroll event handler after a certain delay
+            setTimeout(() => {
+                window.reAttachScrollEvent();
+            }, 1000);
+        }
+
     </script>
 </body>
 

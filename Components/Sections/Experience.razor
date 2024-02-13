@@ -97,8 +97,12 @@
 
 <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
     <MudCard id="jobs" Elevation="2" Style="margin-top:50px; margin-bottom:20px; width:100%; margin-inline:auto;">
-        <MudText Style="margin-bottom:20px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">
+        <MudText Style="margin-bottom:10px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">
             <b>Where I’ve Worked</b>
+        </MudText>
+        <MudText Color=Color.Primary Align="Align.Center" Typo="Typo.h6">
+            Resume:
+            <MudIconButton Style="color:burlywood;" Size="Size.Medium" Title="Download" Href="George-CV.pdf" target="_blank" Class="bounceInDownloadIcon" Icon="@Icons.Material.Filled.Download" />
         </MudText>
         <MudCardContent>
             <MudTabs MinimumTabWidth="70px" Rounded="true" Centered="true">
@@ -154,10 +158,7 @@
                     </MudText>
                 </MudTabPanel>
             </MudTabs>
-            <MudText Inline=true Color=Color.Primary Typo="Typo.h6">
-                Resume:
-                <MudIconButton Style="color:burlywood;" Size="Size.Medium" Title="Download" Href="George-CV.pdf" target="_blank" Class="bounceInDownloadIcon" Icon="@Icons.Material.Filled.Download" />
-            </MudText>
+            
         </MudCardContent>
     </MudCard>
 </MudHidden>

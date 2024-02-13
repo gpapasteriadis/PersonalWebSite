@@ -3,33 +3,33 @@
 @inject StateContainer State
 
 <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
-    <MudButton Class="rounded-pill" OnClick=homeIconClicked>
+    <MudButton Class="rounded-pill" OnClick=State.NavigateHome>
         <MudImage Fluid=true Class="rounded-pill" Src="/Icons/codeIcon-removebg.png" Width="32"></MudImage>
     </MudButton>
     <MudSpacer />
     <MudItem Style="margin-right:10px;">
-        <MudLink Href="#jobs">
+        <MudLink Href="#jobs" OnClick=State.CloseAppBar>
             <MudText Typo="Typo.h6">
                 Experience
             </MudText>
         </MudLink>
     </MudItem>
     <MudItem Style="margin-right:10px;">
-        <MudLink Href="#skills">
+        <MudLink Href="#skills" OnClick=State.CloseAppBar>
             <MudText Typo="Typo.h6">
                 Skills
             </MudText>
         </MudLink>
     </MudItem>
     <MudItem Style="margin-right:10px;">
-        <MudLink Href="#projects">
+        <MudLink Href="#projects" OnClick=State.CloseAppBar>
             <MudText Typo="Typo.h6">
                 Projects
             </MudText>
         </MudLink>
     </MudItem>
     <MudItem>
-        <MudLink Href="#contact">
+        <MudLink Href="#contact" OnClick=State.CloseAppBar>
             <MudText Typo="Typo.h6">
                 Contact
             </MudText>
@@ -38,7 +38,7 @@
     <MudSpacer />
 </MudHidden>
 <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
-    <MudIconButton OnClick="@ToggleSideBar" Icon="@Icons.Material.Outlined.Menu" Size=Size.Medium Style="color:burlywood;" Class="mr-5" />
+    <MudIconButton OnClick=@State.ChangeSideBarState Icon="@Icons.Material.Outlined.Menu" Size=Size.Medium Style="color:burlywood;" Class="mr-5" />
     <MudSpacer />
 </MudHidden>
 
@@ -48,14 +48,5 @@
 
 @code {
 
-    private void homeIconClicked()
-    {
-        Navigation.NavigateTo("/", forceLoad: true);
-    }
-
-    void ToggleSideBar()
-    {
-        State.ChangeSideBarState();
-    }
 
 }

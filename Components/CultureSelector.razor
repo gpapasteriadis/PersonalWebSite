@@ -1,7 +1,9 @@
 ﻿@using System.Globalization
+@using PersonalWebSite.SharedState
 @inject IJSRuntime JS
 @inject NavigationManager Navigation
 @inject ILocalStorageService localStorage
+@inject StateContainer State
 
 <MudButton Class="rounded-pill" OnClick="CultureInfochanged2">
     <MudText>
@@ -28,7 +30,7 @@
 
         language = currentCulture.Name.ToUpper();
         await localStorage.SetItemAsStringAsync("BlazorCulture", currentCulture.Name);
-        Navigation.NavigateTo("/", forceLoad: true);
+        State.NavigateHome();
     }
 
 }
