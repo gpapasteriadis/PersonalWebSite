@@ -1,27 +1,257 @@
 ﻿@inject MudLocalizer localizer
+@inject IConfiguration config
 
 <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
     <MudCard id="projects" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
         <MudCardContent>
-            <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+            <MudText Style="margin-bottom:40px;" Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
                 <b>Some projects</b>
             </MudText>
-            <MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
-                Coming soon...
-            </MudText>
+            <MudTabs Style="margin:10px; width:100%;" MinimumTabWidth="20px" Position="Position.Left">
+                <MudTabPanel BadgeColor=Color.Error Text="Personal Website" Icon=@projectIcon>
+                    <MudCard Outlined=true Class="rounded-xl" Style="margin-left:10px; width:95%;">
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo="Typo.h5"><u>My First Personal Website</u></MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Target="_blank" Href="@(config.GetValue<String>("Projects:PersonalWebsite_Git"))" Color="Color.Primary" />
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardContent Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                            <MudText Style="margin-left:15px; margin-right:15px;" Color=Color.Primary Typo ="Typo.h6">
+                                Built using Blazor with .NET 8 and the versatile MudBlazor library, my website is more than just a digital presence – it's a dynamic, 
+                                client-side web application that adapts effortlessly to your screen, whether you're browsing on a desktop, tablet, or smartphone.<br>
+
+                                Hosted on Microsoft Azure using the Static Web Apps service.<br>
+
+                                The codebase stored on GitHub, leveraging GitHub Actions for Continuous Integration and Continuous Development (CI/CD),
+                                which helps updates and enhancements roll out seamlessly.
+                            </MudText>
+                        </MudCardContent>
+                        <MudCardActions Style="margin-left:15px;">
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                .NET8
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                Blazor WebAssembly
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                MudBlazor
+                            </MudText>
+                        </MudCardActions>
+                    </MudCard>
+                </MudTabPanel>
+
+                <MudTabPanel Text="Mobile App" Icon=@projectIcon>
+                    <MudCard Outlined=true Class="@flipCardClass" Style="margin-left:10px; width:95%;">
+                        <MudCardHeader hidden="@(!showMobileAppCardImages)">
+                            <CardHeaderContent>
+                                <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo="Typo.h5"><u>Android/iOS Mobile App</u></MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                <MudIconButton Icon="@Icons.Material.Rounded.Image" Title="Click to see sample images" OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardContent hidden="@(!showMobileAppCardImages)" Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                            <MudText Style="margin-left:15px; margin-right:15px;" Color=Color.Primary Typo ="Typo.h6">
+                                As a freelancer, I undertook a one-month project to develop a mobile application, using the following technologies:<br />
+                                <b>Frontend Development:</b> Leveraging the Ionic Framework integrated with Angular, I crafted dynamic user interfaces for seamless experiences across both Android and iOS platforms.<br />
+                                <b>Backend Infrastructure:</b> In the backend, I employed Apollo GraphQL and nestJS to build a robust system. MongoDB was utilized for efficient data storage and retrieval, enabling seamless integration with our backend technologies.<br />
+                                <b>Deployment:</b> Deployment was done on DigitalOcean using Docker containers. This approach allowed for agile packaging and deployment.
+                            </MudText>
+                        </MudCardContent>
+                        <MudCardActions hidden="@(!showMobileAppCardImages)" Style="margin-left:15px;">
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                Ionic Framework
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                Angular
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                NestJS
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                Apollo GraphQL
+                            </MudText>
+                        </MudCardActions>
+                        <MudCardHeader hidden="@showMobileAppCardImages">
+                            <CardHeaderContent>
+                                <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo="Typo.h5"><u>Android/iOS Mobile App - Sample Images</u></MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                <MudIconButton Icon="@Icons.Material.Rounded.ArrowBack" Title="Flip back" OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardContent hidden="@showMobileAppCardImages" Class="gap-4 d-flex flex-wrap" Style="margin-left:30px;">
+                            <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/2.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                            <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/1.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                            <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/3.jpg" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                            <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/4.jpg" ObjectFit="ObjectFit.Cover" Width="332" Height="250" Elevation="15" />
+                            <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/2.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                        </MudCardContent>
+                    </MudCard>
+                </MudTabPanel>
+
+                <MudTabPanel Text="Project Name" Icon=@projectIcon>
+                    <MudCard Outlined=true Class="rounded-xl" Style="margin-left:10px; width:95%;">
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo="Typo.h5"><u>Project Name</u></MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Target="_blank" Href="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
+                                <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Target="_blank" Href="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardContent Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                            <MudText Style="margin-left:15px; margin-right:15px;" Color=Color.Primary Typo="Typo.h6">
+                               !!! Will be filled later on !!!
+                            </MudText>
+                        </MudCardContent>
+                        <MudCardActions>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                .NET8
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                Blazor
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                Entity Framework Core
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                Identity Framework
+                            </MudText>
+                        </MudCardActions>
+                    </MudCard>
+                </MudTabPanel>
+            </MudTabs>
+            
         </MudCardContent>
     </MudCard>
 </MudHidden>
 
+
+
 <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
     <MudCard id="projects" Elevation="2" Style="margin-top:80px; width:100%; margin-inline:auto;">
         <MudCardContent>
-            <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+            <MudText Style="margin-bottom:40px;" Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
                 <b>Some projects</b>
             </MudText>
-            <MudText Color="Color.Primary" Style="margin-top:50px;" Align="Align.Center" Typo="Typo.body1">
-                Coming soon...
-            </MudText>
+            <MudCard Outlined=true Class="rounded-xl" Style="margin-bottom:40px; margin-left:10px; width:95%;">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo="Typo.h5"><u>My First Personal Website</u></MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Target="_blank" Href="@(config.GetValue<String>("Projects:PersonalWebsite_Git"))" Color="Color.Primary" />
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                    <MudText Style="margin-left:15px; margin-right:15px;" Color=Color.Primary Typo="Typo.h6">
+                        Built using Blazor with .NET 8 and the versatile MudBlazor library, my website is more than just a digital presence – it's a dynamic,
+                        client-side web application that adapts effortlessly to your screen, whether you're browsing on a desktop, tablet, or smartphone.<br>
+
+                        Hosted on Microsoft Azure using the Static Web Apps service.<br>
+
+                        The codebase stored on GitHub, leveraging GitHub Actions for Continuous Integration and Continuous Development (CI/CD),
+                        which helps updates and enhancements roll out seamlessly.
+                    </MudText>
+                </MudCardContent>
+                <MudCardActions Class="d-flex flex-wrap" Style="margin-left:15px;">
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        .NET8
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        Blazor WebAssembly
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        MudBlazor
+                    </MudText>
+                </MudCardActions>
+            </MudCard>
+
+
+            <MudCard Outlined=true Class="@flipCardClass" Style="margin-bottom:40px; margin-left:10px; width:95%;">
+                <MudCardHeader hidden="@(!showMobileAppCardImages)">
+                    <CardHeaderContent>
+                        <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo="Typo.h5"><u>Android/iOS Mobile App</u></MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        <MudIconButton Icon="@Icons.Material.Rounded.Image" Title="Click to see sample images" OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent hidden="@(!showMobileAppCardImages)" Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                    <MudText Style="margin-left:15px; margin-right:15px;" Color=Color.Primary Typo="Typo.h6">
+                        As a freelancer, I undertook a one-month project to develop a mobile application, using the following technologies:<br />
+                        <b>Frontend Development:</b> Leveraging the Ionic Framework integrated with Angular, I crafted dynamic user interfaces for seamless experiences across both Android and iOS platforms.<br />
+                        <b>Backend Infrastructure:</b> In the backend, I employed Apollo GraphQL and nestJS to build a robust system. MongoDB was utilized for efficient data storage and retrieval, enabling seamless integration with our backend technologies.<br />
+                        <b>Deployment:</b> Deployment was done on DigitalOcean using Docker containers. This approach allowed for agile packaging and deployment.
+                    </MudText>
+                </MudCardContent>
+                <MudCardActions Class="d-flex flex-wrap" hidden="@(!showMobileAppCardImages)" Style="margin-left:15px;">
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        Ionic Framework
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        Angular
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        NestJS
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        Apollo GraphQL
+                    </MudText>
+                </MudCardActions>
+                <MudCardHeader hidden="@showMobileAppCardImages">
+                    <CardHeaderContent>
+                        <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo="Typo.h5"><u>Android/iOS Mobile App - Sample Images</u></MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        <MudIconButton Icon="@Icons.Material.Rounded.ArrowBack" Title="Flip back" OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent hidden="@showMobileAppCardImages" Class="gap-4 d-flex flex-wrap" Style="margin-left:30px;">
+                    <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/2.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                    <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/1.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                    <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/3.jpg" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                    <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/4.jpg" ObjectFit="ObjectFit.Cover" Width="332" Height="250" Elevation="15" />
+                    <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/2.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                </MudCardContent>
+            </MudCard>
+
+
+            <MudCard Outlined=true Class="rounded-xl" Style="margin-left:10px; width:95%;">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo="Typo.h5"><u>Project Name</u></MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Target="_blank" Href="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
+                        <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Target="_blank" Href="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                    <MudText Style="margin-left:15px; margin-right:15px;" Color=Color.Primary Typo="Typo.h6">
+                        !!! Will be filled later on !!!
+                    </MudText>
+                </MudCardContent>
+                <MudCardActions Class="d-flex flex-wrap" Style="margin-left:15px;">
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        .NET8
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        Blazor
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        Entity Framework Core
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        Identity Framework
+                    </MudText>
+                </MudCardActions>
+            </MudCard>
         </MudCardContent>
     </MudCard>
 </MudHidden>
@@ -31,6 +261,26 @@
 @code {
     [CascadingParameter]
     protected Breakpoint breakpoint { get; set; }
+
+    private string projectIcon = @"<svg fill=""#000000"" viewBox=""0 0 24 24"" id=""file-done-2"" data-name=""Flat Color"" xmlns=""http://www.w3.org/2000/svg"" class=""icon flat-color""><path id=""primary"" d=""M17.71,6.29l-4-4A1,1,0,0,0,13,2H4A2,2,0,0,0,2,4V20a2,2,0,0,0,2,2h8.42A5,5,0,0,1,16,15.11a5,5,0,0,1,2,0s0,0,0,0V7A1,1,0,0,0,17.71,6.29Z"" style=""fill: rgb(0, 0, 0);""></path><path id=""secondary"" d=""M17,22a1,1,0,0,1-.71-.29l-2-2a1,1,0,0,1,1.42-1.42L17,19.59l3.29-3.3a1,1,0,0,1,1.42,1.42l-4,4A1,1,0,0,1,17,22Zm-6-9a1,1,0,0,0-1-1H6a1,1,0,0,0,0,2h4A1,1,0,0,0,11,13Zm4-4a1,1,0,0,0-1-1H6a1,1,0,0,0,0,2h8A1,1,0,0,0,15,9Z"" style=""fill: rgb(44, 169, 188);""></path></svg>";
+    private string flipCardClass = "rounded-xl";
+    private bool showMobileAppCardImages = true;
+
+    private async Task RotateMobileAppCard()
+    {
+
+        // Add the animation to the card
+        flipCardClass = flipCardClass + " " + "flipInYMobileAppCard";
+
+        await Task.Delay(300);
+        showMobileAppCardImages = !showMobileAppCardImages;
+        StateHasChanged();
+
+        // Wait for the animation to complete
+        await Task.Delay(2100);
+        // Remove the animation class after the animation completes
+        flipCardClass = "rounded-xl";
+    }
 
     private Typo GetTypo()
     {
