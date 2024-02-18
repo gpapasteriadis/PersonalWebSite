@@ -9,28 +9,28 @@
     <MudSpacer />
     <MudItem Style="margin-right:10px;">
         <MudLink Href="#jobs" OnClick=State.CloseAppBar>
-            <MudText Typo="Typo.h6">
+            <MudText Typo=SectionsTypo()>
                 Experience
             </MudText>
         </MudLink>
     </MudItem>
     <MudItem Style="margin-right:10px;">
-        <MudLink Href="#skills" OnClick=State.CloseAppBar>
-            <MudText Typo="Typo.h6">
-                Skills
+        <MudLink Href="#projects" OnClick=State.CloseAppBar>
+            <MudText Typo=SectionsTypo()>
+                Projects
             </MudText>
         </MudLink>
     </MudItem>
     <MudItem Style="margin-right:10px;">
-        <MudLink Href="#projects" OnClick=State.CloseAppBar>
-            <MudText Typo="Typo.h6">
-                Projects
+        <MudLink Href="#skills" OnClick=State.CloseAppBar>
+            <MudText Typo=SectionsTypo()>
+                Skills
             </MudText>
         </MudLink>
     </MudItem>
     <MudItem>
         <MudLink Href="#contact" OnClick=State.CloseAppBar>
-            <MudText Typo="Typo.h6">
+            <MudText Typo=SectionsTypo()>
                 Contact
             </MudText>
         </MudLink>
@@ -42,11 +42,30 @@
     <MudSpacer />
 </MudHidden>
 
-<CultureSelector />
+<CultureSelector currentBreakpoint=@currentBreakpoint />
 <ThemeSelector />
 
 
 @code {
 
+    [Parameter]
+    public Breakpoint currentBreakpoint { get; set; }
+
+    private Typo SectionsTypo()
+    {
+        var size = currentBreakpoint;
+
+        switch (size)
+        {
+            
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h6;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h6;
+
+            default: return Typo.h6;
+        }
+    }
 
 }

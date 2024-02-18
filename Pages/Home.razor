@@ -3,8 +3,6 @@
 @using MudBlazor.Services
 @using PersonalWebSite.Localize
 @using PersonalWebSite.Components.Sections
-@implements IBrowserViewportObserver
-@implements IAsyncDisposable
 @inject MudLocalizer localizer
 
 
@@ -19,36 +17,7 @@
 
 
 @code {
-
-    [Inject]
-    private IBrowserViewportService BrowserViewportService { get; set; }
-    private Breakpoint currentBreakpoint;
-    Guid IBrowserViewportObserver.Id { get; } = Guid.NewGuid();
-
-
-    protected override async Task OnInitializedAsync()
-    {
-        // Get initial breakpoint
-        currentBreakpoint = await BrowserViewportService.GetCurrentBreakpointAsync();
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            await BrowserViewportService.SubscribeAsync(this, fireImmediately: true);
-        }
-
-        await base.OnAfterRenderAsync(firstRender);
-    }
-
-    Task IBrowserViewportObserver.NotifyBrowserViewportChangeAsync(BrowserViewportEventArgs browserViewportEventArgs)
-    {
-        currentBreakpoint = browserViewportEventArgs.Breakpoint;
-        return InvokeAsync(StateHasChanged);
-    }
-
-    public async ValueTask DisposeAsync() => await BrowserViewportService.UnsubscribeAsync(this);
-
+    [Parameter]
+    public Breakpoint currentBreakpoint { get; set; }
 
 }

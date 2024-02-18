@@ -1,6 +1,9 @@
 ﻿@using System.Globalization
 @using PersonalWebSite.Components
+@using PersonalWebSite.Pages
 @using PersonalWebSite.SharedState
+@implements IBrowserViewportObserver
+@implements IAsyncDisposable
 @inherits LayoutComponentBase
 @inject ILocalStorageService localStorage
 @inject IJSRuntime JS
@@ -8,17 +11,18 @@
 @inject NavigationManager Navigation
 @inject StateContainer State
 
+
 <MudThemeProvider Theme="MyCustomTheme" IsDarkMode=State.DarkModeIsOn/>
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 <MudLayout>
     <MudAppBar id="appbar" Fixed=true DisableGutters=false Elevation="3" Dense="true">
-        <AppBarItems></AppBarItems>
+        <AppBarItems currentBreakpoint=@currentBreakpoint></AppBarItems>
     </MudAppBar>
     <SideBar></SideBar>
     <MudMainContent Style="overflow:hidden">
-        @Body
+        <Home currentBreakpoint=@currentBreakpoint></Home>
     </MudMainContent>
     <ScrollToTop></ScrollToTop>
 </MudLayout>
@@ -26,12 +30,37 @@
 
 @code {
 
+    [Inject]
+    private IBrowserViewportService BrowserViewportService { get; set; }
+    private Breakpoint currentBreakpoint;
+    Guid IBrowserViewportObserver.Id { get; } = Guid.NewGuid();
+
     protected override async Task OnInitializedAsync()
     {
+        // Get initial breakpoint
+        currentBreakpoint = await BrowserViewportService.GetCurrentBreakpointAsync();
         await State.ScrollFunctionality();
         State.DarkModeStateChanged += StateHasChanged;
     }
 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await BrowserViewportService.SubscribeAsync(this, fireImmediately: true);
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    Task IBrowserViewportObserver.NotifyBrowserViewportChangeAsync(BrowserViewportEventArgs browserViewportEventArgs)
+    {
+        currentBreakpoint = browserViewportEventArgs.Breakpoint;
+        return InvokeAsync(StateHasChanged);
+    }
+
+
+    public async ValueTask DisposeAsync() => await BrowserViewportService.UnsubscribeAsync(this);
 
     MudTheme MyCustomTheme = new MudTheme()
     {

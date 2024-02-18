@@ -3,7 +3,7 @@
 
 <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
     <MudCard id="jobs" Elevation="2" Style="margin-top:50px; margin-bottom:20px; width:85%; margin-inline:auto;">
-        <MudText Style="margin-bottom:20px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">
+        <MudText Style="margin-bottom:20px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo=TitleTypo1()>
             <b>Where I’ve Worked</b>
         </MudText>
         <MudCardContent>
@@ -11,15 +11,15 @@
 
                 <MudTimelineItem Color="Color.Primary" Elevation="25">
                     <ItemOpposite>
-                        <MudText Color="Color.Primary" Typo="Typo.h5">Mar - Oct 2023</MudText>
+                        <MudText Color="Color.Primary" Typo=TitleTypo2()>Mar - Oct 2023</MudText>
                     </ItemOpposite>
                     <ItemContent>
                         <MudPaper Elevation="0">
-                            <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                            <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
                                 <b>Software Engineer</b>
-                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Army"))" Typo="Typo.h5">@@Greek Armed Forces IT Corps</MudLink>
+                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Army"))" Typo=TitleTypo2()>@@Greek Armed Forces IT Corps</MudLink>
                             </MudText>
-                            <MudText Typo="Typo.body1">
+                            <MudText Typo=DescTypo()>
                                 · Held a part-time position as a software developer during mandatory military service.<br />
                                 · Developed and maintained the military's internal software systems.<br />
                                 · Provided technical support to system users, addressing inquiries and troubleshooting issues.
@@ -30,15 +30,15 @@
 
                 <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
                     <ItemOpposite>
-                        <MudText Color="Color.Primary" Typo="Typo.h5">Oct 2020 - Dec 2022</MudText>
+                        <MudText Color="Color.Primary" Typo=TitleTypo2()>Oct 2020 - Dec 2022</MudText>
                     </ItemOpposite>
                     <ItemContent>
                         <MudPaper Elevation="0">
-                            <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                            <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
                                 <b>Software Engineer</b>
-                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Terracom"))" Typo="Typo.h5">@@Terracom S.A.</MudLink>
+                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Terracom"))" Typo=TitleTypo2()>@@Terracom S.A.</MudLink>
                             </MudText>
-                            <MudText Typo="Typo.body1">
+                            <MudText Typo=DescTypo()>
                                 ·Played a pivotal role in the development, maintenance, and evolution of the patrol and security management platform QR-Patrol.<br />
                                 ·Actively participated in technical analysis and system design processes, contributing to enhance project outcomes.<br />
                                 ·Engaged in team meetings to synchronize efforts and maintain alignment with project goals, while maintaining close collaboration with team members to implement updates and improvements.
@@ -49,15 +49,15 @@
 
                 <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
                     <ItemOpposite>
-                        <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">Jul 2019 — Oct 2019</MudText>
+                        <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">Jul 2019 — Oct 2019</MudText>
                     </ItemOpposite>
                     <ItemContent>
                         <MudPaper Elevation="0">
-                            <MudText Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                            <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
                                 <b>Software Engineer Intern </b>
-                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:CoTheta"))" Typo="Typo.h5">@@CoTheta</MudLink>
+                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:CoTheta"))" Typo=TitleTypo2()>@@CoTheta</MudLink>
                             </MudText>
-                            <MudText Typo="Typo.body1">
+                            <MudText Typo=DescTypo()>
                                 · Engaged in virtual and augmented reality projects using Unity3D.<br />
                                 · Contributed to the creation of interactive experiences.
                             </MudText>
@@ -67,7 +67,7 @@
 
             </MudTimeline>
             <MudItem Class="d-flex flex-wrap justify-content-center">
-                <MudText Inline=true Color=Color.Primary Typo="Typo.h6">
+                <MudText Inline=true Color=Color.Primary Typo=DescTypo()>
                     Resume:
                     <MudIconButton Style="color:burlywood;" Size="Size.Medium" Title="Download" Href="George-CV.pdf" target="_blank" Class="bounceInDownloadIcon" Icon="@Icons.Material.Filled.Download" />
                 </MudText>
@@ -80,10 +80,10 @@
 
 <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
     <MudCard id="jobs" Elevation="2" Style="margin-top:50px; margin-bottom:20px; width:100%; margin-inline:auto;">
-        <MudText Style="margin-bottom:10px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">
+        <MudText Style="margin-bottom:10px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo=TitleTypo1()>
             <b>Where I’ve Worked</b>
         </MudText>
-        <MudText Color=Color.Primary Align="Align.Center" Typo="Typo.h6">
+        <MudText Color=Color.Primary Align="Align.Center" Typo=TitleTypo2()>
             Resume:
             <MudIconButton Style="color:burlywood;" Size="Size.Medium" Title="Download" Href="George-CV.pdf" target="_blank" Class="bounceInDownloadIcon" Icon="@Icons.Material.Filled.Download" />
         </MudText>
@@ -91,12 +91,12 @@
             <MudTabs MinimumTabWidth="70px" Rounded="true" Centered="true">
 
                 <MudTabPanel Text="Greek Army">
-                    <MudText Style="margin-bottom:5px; margin-top:20px;"Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                    <MudText Style="margin-bottom:5px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
                         <b>Software Engineer</b>
-                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Army"))" Typo="Typo.h5">@@Greek Armed Forces IT Corps</MudLink>
+                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Army"))" Typo=TitleTypo2()>@@Greek Armed Forces IT Corps</MudLink>
                     </MudText>
-                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo="Typo.h5">Mar - Oct 2023</MudText>
-                    <MudText Typo="Typo.body1">
+                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>Mar - Oct 2023</MudText>
+                    <MudText Typo=DescTypo()>
                         · Held a part-time position as a software developer during mandatory military service.<br />
                         · Developed and maintained the military's internal software systems.<br />
                         · Provided technical support to system users, addressing inquiries and troubleshooting issues.
@@ -104,12 +104,12 @@
                 </MudTabPanel>
 
                 <MudTabPanel Text="Terracom S.A.">
-                    <MudText Style="margin-bottom:10px; margin-top:20px;" Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                    <MudText Style="margin-bottom:10px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
                         <b>Software Engineer</b>
-                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Terracom"))" Typo="Typo.h5">@@Terracom S.A.</MudLink>
+                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Terracom"))" Typo=TitleTypo2()>@@Terracom S.A.</MudLink>
                     </MudText>
-                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo="Typo.h5">Oct 2020 - Dec 2022</MudText>
-                    <MudText Typo="Typo.body1">
+                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>Oct 2020 - Dec 2022</MudText>
+                    <MudText Typo=DescTypo()>
                         ·Played a pivotal role in the development, maintenance, and evolution of the patrol and security management platform QR-Patrol.<br />
                         ·Actively participated in technical analysis and system design processes, contributing to enhance project outcomes.<br />
                         ·Engaged in team meetings to synchronize efforts and maintain alignment with project goals, while maintaining close collaboration with team members to implement updates and improvements.
@@ -117,12 +117,12 @@
                 </MudTabPanel>
 
                 <MudTabPanel Text="CoTheta">
-                    <MudText Style="margin-bottom:10px; margin-top:20px;" Color="Color.Primary" Typo="Typo.h5" GutterBottom="true">
+                    <MudText Style="margin-bottom:10px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
                         <b>Software Engineer Intern </b>
-                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:CoTheta"))" Typo="Typo.h5">@@CoTheta</MudLink>
+                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:CoTheta"))" Typo=TitleTypo2()>@@CoTheta</MudLink>
                     </MudText>
-                    <MudText Color="Color.Primary" Typo="Typo.h5" Style="margin-bottom:15px;">Jul 2019 — Oct 2019</MudText>
-                    <MudText Typo="Typo.body1">
+                    <MudText Color="Color.Primary" Typo=TitleTypo2() Style="margin-bottom:15px;">Jul 2019 — Oct 2019</MudText>
+                    <MudText Typo=DescTypo()>
                         · Engaged in virtual and augmented reality projects using Unity3D.<br />
                         · Contributed to the creation of interactive experiences.
                     </MudText>
@@ -134,27 +134,64 @@
 </MudHidden>
 
 @code {
+
     [CascadingParameter]
     protected Breakpoint breakpoint { get; set; }
 
-    private Typo GetTypo()
+    private Typo TitleTypo1()
     {
         var size = breakpoint;
-        if (size == Breakpoint.Xs)
+
+        switch (size)
         {
-            return Typo.body1;
+            case Breakpoint.Xs: // Smartphone
+                return Typo.h4;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h4;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h3;
+
+            default: return Typo.h3;
         }
-        else if (size == Breakpoint.Sm)
+    }
+
+    private Typo TitleTypo2()
+    {
+        var size = breakpoint;
+
+        switch (size)
         {
-            return Typo.h6;
+            case Breakpoint.Xs: // Smartphone
+                return Typo.body1;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h6;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h5;
+
+            default: return Typo.h5;
         }
-        else if (size == Breakpoint.Md)
+    }
+
+    private Typo DescTypo()
+    {
+        var size = breakpoint;
+
+        switch (size)
         {
-            return Typo.h4;
-        }
-        else
-        {
-            return Typo.h3;
+            case Breakpoint.Xs: // Smartphone
+                return Typo.body2;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.body1;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h6;
+
+            default: return Typo.h6;
         }
     }
 

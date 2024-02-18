@@ -5,40 +5,59 @@
         <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-pill" Src="/Icons/me-removebg.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
     </MudItem>
     <MudItem xs="12" sm="6">
-        <MudText GutterBottom=true Color="Color.Primary" Typo="Typo.h6">
+        <MudText GutterBottom=true Color="Color.Primary" Typo=DescTypo()>
             Hello! my name is
         </MudText>
-        <MudText GutterBottom=true Color="Color.Primary" Typo="Typo.h3">
+        <MudText GutterBottom=true Color="Color.Primary" Typo=NameTypo()>
             <b>George Papasteriadis</b>
         </MudText>
-        <MudText Color="Color.Primary" Typo=GetTypo()>
+        <MudText Color="Color.Primary" Typo=DescTypo()>
             @localizer["about"]
         </MudText>
     </MudItem>
 </MudGrid>
 
 @code{
+
     [CascadingParameter]
     protected Breakpoint breakpoint { get; set; }
 
-    private Typo GetTypo()
+
+    private Typo NameTypo()
     {
         var size = breakpoint;
-        if (size == Breakpoint.Xs)
+
+        switch (size)
         {
-            return Typo.body1;
+            case Breakpoint.Xs: // Smartphone
+                return Typo.h4;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h4;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h3;
+
+            default: return Typo.h3;
         }
-        else if (size == Breakpoint.Sm)
+    }
+
+    private Typo DescTypo()
+    {
+        var size = breakpoint;
+        
+        switch (size)
         {
-            return Typo.h6;
-        }
-        else if (size == Breakpoint.Md)
-        {
-            return Typo.h4;
-        }
-        else
-        {
-            return Typo.h3;
+            case Breakpoint.Xs: // Smartphone
+                return Typo.body1;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h6;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h5;
+
+            default: return Typo.h5;
         }
     }
 

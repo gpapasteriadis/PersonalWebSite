@@ -19,6 +19,7 @@ builder.Services.AddBlazoredLocalStorageAsSingleton();
 builder.Services.AddTransient<MudLocalizer, Resource>();
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 builder.Services.AddSingleton<StateContainer>();
+builder.Services.AddSingleton<MudTheme>();
 
 var host = builder.Build();
 

@@ -1,39 +1,40 @@
 ﻿@inject MudLocalizer localizer
 @inject ISnackbar SnackbarService
+@inject MudTheme theme
 
 <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
     <MudCard id="skills" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
         <MudCardContent>
-            <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+            <MudText Align="Align.Center" Color="Color.Primary" Typo=@TitleTypo1()>
                 <b>Skills/Tools acquired</b>
             </MudText>
             <MudGrid Justify="Justify.Center" Style="margin-top:30px; width:80%; margin-inline:auto;">
                 <MudItem Style="display:flex; flex-direction:column;" xs="6" sm="4" md="3">
-                    <MudChip Class="jackInTheBox" OnClick='() => OnClick(".NET Core")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>.NET Core</b></MudChip>
+                    <MudChip Class="jackInTheBox" OnClick='() => OnClick(".NET Core")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>.NET Core</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="tada" OnClick='() => OnClick("Blazor")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Blazor</b></MudChip>
+                    <MudChip Class="tada" OnClick='() => OnClick("Blazor")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>Blazor</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="bounceIn" OnClick='() => OnClick("Angular")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Angular</b></MudChip>
+                    <MudChip Class="bounceIn" OnClick='() => OnClick("Angular")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>Angular</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="jello" OnClick='() => OnClick("MongoDB")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>MongoDB</b></MudChip>
+                    <MudChip Class="jello" OnClick='() => OnClick("MongoDB")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>MongoDB</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="flipInY" OnClick='() => OnClick("SQL")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SQL</b></MudChip>
+                    <MudChip Class="flipInY" OnClick='() => OnClick("SQL")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>SQL</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="flipInX" OnClick='() => OnClick("EF Core")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>EF Core</b></MudChip>
+                    <MudChip Class="flipInX" OnClick='() => OnClick("EF Core")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>EF Core</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="rubberBand" OnClick='() => OnClick("Docker")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Docker</b></MudChip>
+                    <MudChip Class="rubberBand" OnClick='() => OnClick("Docker")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>Docker</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="tada" OnClick='() => OnClick("SignalR")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SignalR</b></MudChip>
+                    <MudChip Class="tada" OnClick='() => OnClick("SignalR")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>SignalR</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="bounceIn" OnClick='() => OnClick("RabbitMQ")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>RabbitMQ</b></MudChip>
+                    <MudChip Class="bounceIn" OnClick='() => OnClick("RabbitMQ")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>RabbitMQ</b></MudChip>
                 </MudItem>
             </MudGrid>
         </MudCardContent>
@@ -44,36 +45,36 @@
 <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
     <MudCard id="skills" Elevation="2" Style="margin-top:80px; width:100%; margin-inline:auto;">
         <MudCardContent>
-            <MudText Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">
+            <MudText Align="Align.Center" Color="Color.Primary" Typo=@TitleTypo1()>
                 <b>Skills/Tools acquired</b>
             </MudText>
             <MudGrid Justify="Justify.Center" Style="margin-top:30px; width:80%; margin-inline:auto;">
                 <MudItem Style="display:flex; flex-direction:column;" xs="6" sm="4" md="3">
-                    <MudChip Class="jackInTheBox" OnClick='() => OnClick(".NET Core")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>.NET Core</b></MudChip>
+                    <MudChip Class="jackInTheBox" OnClick='() => OnClick(".NET Core")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>.NET Core</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="tada" OnClick='() => OnClick("Blazor")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Blazor</b></MudChip>
+                    <MudChip Class="tada" OnClick='() => OnClick("Blazor")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>Blazor</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="bounceIn" OnClick='() => OnClick("Angular")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Angular</b></MudChip>
+                    <MudChip Class="bounceIn" OnClick='() => OnClick("Angular")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>Angular</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="jello" OnClick='() => OnClick("MongoDB")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>MongoDB</b></MudChip>
+                    <MudChip Class="jello" OnClick='() => OnClick("MongoDB")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>MongoDB</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="flipInY" OnClick='() => OnClick("SQL")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SQL</b></MudChip>
+                    <MudChip Class="flipInY" OnClick='() => OnClick("SQL")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>SQL</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="flipInX" OnClick='() => OnClick("EF Core")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>EF Core</b></MudChip>
+                    <MudChip Class="flipInX" OnClick='() => OnClick("EF Core")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>EF Core</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="rubberBand" OnClick='() => OnClick("Docker")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>Docker</b></MudChip>
+                    <MudChip Class="rubberBand" OnClick='() => OnClick("Docker")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>Docker</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="tada" OnClick='() => OnClick("SignalR")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>SignalR</b></MudChip>
+                    <MudChip Class="tada" OnClick='() => OnClick("SignalR")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>SignalR</b></MudChip>
                 </MudItem>
                 <MudItem Style="display:flex; flex-direction: column;" xs="6" sm="4" md="3">
-                    <MudChip Class="bounceIn" OnClick='() => OnClick("RabbitMQ")' Variant="Variant.Outlined" Size="Size.Large" Color="Color.Primary"><b>RabbitMQ</b></MudChip>
+                    <MudChip Class="bounceIn" OnClick='() => OnClick("RabbitMQ")' Variant="Variant.Outlined" Style=@($"font-size: {TitleTypo2FontSize()}") Size="Size.Large" Color="Color.Primary"><b>RabbitMQ</b></MudChip>
                 </MudItem>
             </MudGrid>
         </MudCardContent>
@@ -93,24 +94,60 @@
         SnackbarService.Configuration.ShowTransitionDuration = 500;
     }
 
-    private Typo GetTypo()
+    private Typo TitleTypo1()
     {
         var size = breakpoint;
-        if (size == Breakpoint.Xs)
+
+        switch (size)
         {
-            return Typo.body1;
+            case Breakpoint.Xs: // Smartphone
+                return Typo.h4;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h4;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h3;
+
+            default: return Typo.h3;
         }
-        else if (size == Breakpoint.Sm)
+    }
+
+    private Typo DescTypo()
+    {
+        var size = breakpoint;
+
+        switch (size)
         {
-            return Typo.h6;
+            case Breakpoint.Xs: // Smartphone
+                return Typo.body2;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.body2;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.body1;
+
+            default: return Typo.body1;
         }
-        else if (size == Breakpoint.Md)
+    }
+
+    private string TitleTypo2FontSize()
+    {
+        var size = breakpoint;
+
+        switch (size)
         {
-            return Typo.h4;
-        }
-        else
-        {
-            return Typo.h3;
+            case Breakpoint.Xs: // Smartphone
+                return theme.Typography.Body2.FontSize;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return theme.Typography.Body2.FontSize;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return theme.Typography.Body1.FontSize;
+
+            default: return theme.Typography.Body1.FontSize;
         }
     }
 
@@ -128,7 +165,7 @@
         };
 
         SnackbarService.Add(
-            message: @<MudText Style="width:90%">
+        message: @<MudText Typo=@DescTypo()>
                         <b>@skillName</b>
                         <MudDivider></MudDivider>
                          @skill.SkillDescription <br />

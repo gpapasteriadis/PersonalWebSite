@@ -3,7 +3,7 @@
 
 <MudDivider id="contact" Light=true DividerType="DividerType.Middle" Style="margin-top:80px; margin-bottom:20px" />
 <MudItem Class="flex-wrap d-flex justify-content-center" Style="margin-bottom:100px;">
-    <MudText Align="Align.Center" Color="Color.Primary" GutterBottom=true Typo="Typo.h3">
+    <MudText Align="Align.Center" Color="Color.Primary" GutterBottom=true Typo=@TitleTypo1()>
         <b>Reach Out😉</b>
     </MudText>
 </MudItem>
@@ -16,13 +16,13 @@
 </MudItem>
 
 <MudItem Style="margin-bottom:100px;" Class="flex-wrap d-flex justify-content-center" xs="12">
-    <MudText Color="Color.Primary" Typo="Typo.h6">
+    <MudText Color="Color.Primary" Typo=@TitleTypo2()>
         @config["Email"]
     </MudText>
 </MudItem>
 
 <MudItem Class="flex-wrap d-flex justify-content-center">
-    <MudText Color="Color.Primary" Align="Align.Center" Style="padding-bottom:10px" GutterBottom=true Typo="Typo.h5">
+    <MudText Color="Color.Primary" Align="Align.Center" Style="padding-bottom:10px" GutterBottom=true Typo=@TitleTypo2()>
         You can also find me on the following social networks
     </MudText>
 </MudItem>
@@ -53,24 +53,29 @@
     [CascadingParameter]
     protected Breakpoint breakpoint { get; set; }
 
-    private Typo GetTypo()
+    private Typo TitleTypo1()
     {
         var size = breakpoint;
-        if (size == Breakpoint.Xs)
+
+        switch (size)
         {
-            return Typo.body1;
+            case Breakpoint.Xs: // Smartphone
+                return Typo.h4;
+
+            default: return Typo.h3;
         }
-        else if (size == Breakpoint.Sm)
+    }
+
+    private Typo TitleTypo2()
+    {
+        var size = breakpoint;
+
+        switch (size)
         {
-            return Typo.h6;
-        }
-        else if (size == Breakpoint.Md)
-        {
-            return Typo.h4;
-        }
-        else
-        {
-            return Typo.h3;
+            case Breakpoint.Xs: // Smartphone
+                return Typo.h6;
+
+            default: return Typo.h5;
         }
     }
 
