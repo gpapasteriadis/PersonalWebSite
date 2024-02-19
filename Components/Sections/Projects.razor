@@ -30,7 +30,7 @@
                                 which helps updates and enhancements roll out seamlessly.
                             </MudText>
                         </MudCardContent>
-                        <MudCardActions Style="margin-left:15px;">
+                        <MudCardActions class="d-flex flex-wrap" Style="margin-left:15px;">
                             <MudText Style="margin-inline:10px;" Typo="Typo.caption">
                                 .NET8
                             </MudText>
@@ -58,11 +58,11 @@
                             <MudText Style="margin-left:15px; margin-right:15px;" Color=Color.Primary Typo=@DescTypo()>
                                 As a freelancer, I undertook a one-month project to develop a mobile application, using the following technologies:<br />
                                 <b>Frontend Development:</b> Leveraging the Ionic Framework integrated with Angular, I crafted dynamic user interfaces for seamless experiences across both Android and iOS platforms.<br />
-                                <b>Backend Infrastructure:</b> In the backend, I employed Apollo GraphQL and nestJS to build a robust system. MongoDB was utilized for efficient data storage and retrieval, enabling seamless integration with our backend technologies.<br />
+                                <b>Backend Infrastructure:</b> In the backend, I employed Apollo GraphQL and nestJS to build a robust system. MongoDB was utilized for efficient data storage and retrieval.<br />
                                 <b>Deployment:</b> Deployment was done on DigitalOcean using Docker containers. This approach allowed for agile packaging and deployment.
                             </MudText>
                         </MudCardContent>
-                        <MudCardActions hidden="@(!showMobileAppCardImages)" Style="margin-left:15px;">
+                        <MudCardActions class="d-flex flex-wrap" hidden="@(!showMobileAppCardImages)" Style="margin-left:15px;">
                             <MudText Style="margin-inline:10px;" Typo="Typo.caption">
                                 Ionic Framework
                             </MudText>
@@ -78,18 +78,18 @@
                         </MudCardActions>
                         <MudCardHeader hidden="@showMobileAppCardImages">
                             <CardHeaderContent>
-                                <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()><u>Android/iOS Mobile App - Sample Images</u></MudText>
+                                <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()><u>Android/iOS Mobile App - Sample Images/Video</u></MudText>
                             </CardHeaderContent>
                             <CardHeaderActions>
                                 <MudIconButton Icon="@Icons.Material.Rounded.ArrowBack" Title="Flip back" OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
                             </CardHeaderActions>
                         </MudCardHeader>
-                        <MudCardContent hidden="@showMobileAppCardImages" Class="gap-4 d-flex flex-wrap" Style="margin-left:30px;">
-                            <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/2.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
-                            <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/1.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
-                            <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/3.jpg" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
-                            <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/4.jpg" ObjectFit="ObjectFit.Cover" Width="332" Height="250" Elevation="15" />
-                            <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/2.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                        <MudCardContent hidden="@showMobileAppCardImages" Class="gap-4 d-flex flex-wrap justify-content-center">
+                            <video class="rounded-lg ma-2" controls="controls" width="250" height="430px">
+                                <source src="/Video/FoodWastApp.mp4" />
+                            </video>
+                            <MudImage Fluid=true Class="rounded-lg ma-2" Src="/Icons/1.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                            <MudImage Fluid=true Class="rounded-lg ma-2" Src="/Icons/2.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
                         </MudCardContent>
                     </MudCard>
                 </MudTabPanel>
@@ -101,8 +101,8 @@
                                 <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()><u>Project Name</u></MudText>
                             </CardHeaderContent>
                             <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Target="_blank" Href="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
-                                <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Target="_blank" Href="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
+                                <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Target="_blank" Disabled=true Href="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
+                                <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Target="_blank" Disabled=true Href="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
                             </CardHeaderActions>
                         </MudCardHeader>
                         <MudCardContent Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
@@ -110,7 +110,7 @@
                                !!! Will be filled later on !!!
                             </MudText>
                         </MudCardContent>
-                        <MudCardActions>
+                        <MudCardActions class="d-flex flex-wrap">
                             <MudText Style="margin-inline:10px;" Typo="Typo.caption">
                                 .NET8
                             </MudText>
@@ -187,7 +187,7 @@
                     <MudText Style="margin-left:15px; margin-right:15px;" Color=Color.Primary Typo=@DescTypo()>
                         As a freelancer, I undertook a one-month project to develop a mobile application, using the following technologies:<br />
                         <b>Frontend Development:</b> Leveraging the Ionic Framework integrated with Angular, I crafted dynamic user interfaces for seamless experiences across both Android and iOS platforms.<br />
-                        <b>Backend Infrastructure:</b> In the backend, I employed Apollo GraphQL and nestJS to build a robust system. MongoDB was utilized for efficient data storage and retrieval, enabling seamless integration with our backend technologies.<br />
+                        <b>Backend Infrastructure:</b> In the backend, I employed Apollo GraphQL and nestJS to build a robust system. MongoDB was utilized for efficient data storage and retrieval.<br />
                         <b>Deployment:</b> Deployment was done on DigitalOcean using Docker containers. This approach allowed for agile packaging and deployment.
                     </MudText>
                 </MudCardContent>
@@ -207,18 +207,18 @@
                 </MudCardActions>
                 <MudCardHeader hidden="@showMobileAppCardImages">
                     <CardHeaderContent>
-                        <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()><u>Android/iOS Mobile App - Sample Images</u></MudText>
+                        <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()><u>Android/iOS Mobile App - Sample Images/Video</u></MudText>
                     </CardHeaderContent>
                     <CardHeaderActions>
                         <MudIconButton Icon="@Icons.Material.Rounded.ArrowBack" Title="Flip back" OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
                     </CardHeaderActions>
                 </MudCardHeader>
-                <MudCardContent hidden="@showMobileAppCardImages" Class="gap-4 d-flex flex-wrap" Style="margin-left:30px;">
-                    <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/2.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
-                    <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/1.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
-                    <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/3.jpg" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
-                    <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/4.jpg" ObjectFit="ObjectFit.Cover" Width="332" Height="250" Elevation="15" />
-                    <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-lg ma-4" Src="/Icons/2.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                <MudCardContent hidden="@showMobileAppCardImages" Class="gap-4 d-flex flex-wrap justify-content-center">
+                    <video class="rounded-lg ma-2" controls="controls" width="250px" height="350px">
+                        <source src="/Video/FoodWastApp.mp4" />
+                    </video>
+                    <MudImage Fluid=true Class="rounded-lg ma-2" Src="/Icons/1.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+                    <MudImage Fluid=true Class="rounded-lg ma-2" Src="/Icons/2.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
                 </MudCardContent>
             </MudCard>
 
@@ -266,6 +266,8 @@
     private string projectIcon = @"<svg fill=""#000000"" viewBox=""0 0 24 24"" id=""file-done-2"" data-name=""Flat Color"" xmlns=""http://www.w3.org/2000/svg"" class=""icon flat-color""><path id=""primary"" d=""M17.71,6.29l-4-4A1,1,0,0,0,13,2H4A2,2,0,0,0,2,4V20a2,2,0,0,0,2,2h8.42A5,5,0,0,1,16,15.11a5,5,0,0,1,2,0s0,0,0,0V7A1,1,0,0,0,17.71,6.29Z"" style=""fill: rgb(0, 0, 0);""></path><path id=""secondary"" d=""M17,22a1,1,0,0,1-.71-.29l-2-2a1,1,0,0,1,1.42-1.42L17,19.59l3.29-3.3a1,1,0,0,1,1.42,1.42l-4,4A1,1,0,0,1,17,22Zm-6-9a1,1,0,0,0-1-1H6a1,1,0,0,0,0,2h4A1,1,0,0,0,11,13Zm4-4a1,1,0,0,0-1-1H6a1,1,0,0,0,0,2h8A1,1,0,0,0,15,9Z"" style=""fill: rgb(44, 169, 188);""></path></svg>";
     private string flipCardClass = "rounded-xl";
     private bool showMobileAppCardImages = true;
+
+    bool ShowEnlargedImage { get; set; }
 
     private async Task RotateMobileAppCard()
     {

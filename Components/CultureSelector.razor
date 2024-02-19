@@ -5,7 +5,7 @@
 @inject ILocalStorageService localStorage
 @inject StateContainer State
 
-<MudButton Class="rounded-pill" OnClick="CultureInfochanged2">
+<MudButton Class="rounded-pill" OnClick="CultureInfochanged">
     <MudText Typo=CaltureTypo()>
         @language
     </MudText>
@@ -25,7 +25,7 @@
     private string language = CultureInfo.CurrentCulture.Name.ToUpper();
 
 
-    private async Task CultureInfochanged2()
+    private async Task CultureInfochanged()
     {
         CultureInfo currentCulture;
         if (language.Equals(supportedCultures[0].Name, StringComparison.OrdinalIgnoreCase)) currentCulture = supportedCultures[1];
