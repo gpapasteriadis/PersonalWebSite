@@ -6,7 +6,7 @@
     <MudCard id="skills" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
         <MudCardContent>
             <MudText Align="Align.Center" Color="Color.Primary" Typo=@TitleTypo1()>
-                <b>Skills/Tools acquired</b>
+                @(new MarkupString(localizer["SkillsTitle"]))
             </MudText>
             <MudGrid Justify="Justify.Center" Style="margin-top:30px; width:80%; margin-inline:auto;">
                 <MudItem Style="display:flex; flex-direction:column;" xs="6" sm="4" md="3">
@@ -46,7 +46,7 @@
     <MudCard id="skills" Elevation="2" Style="margin-top:80px; width:100%; margin-inline:auto;">
         <MudCardContent>
             <MudText Align="Align.Center" Color="Color.Primary" Typo=@TitleTypo1()>
-                <b>Skills/Tools acquired</b>
+                @(new MarkupString(localizer["SkillsTitle"]))
             </MudText>
             <MudGrid Justify="Justify.Center" Style="margin-top:30px; width:80%; margin-inline:auto;">
                 <MudItem Style="display:flex; flex-direction:column;" xs="6" sm="4" md="3">
@@ -85,6 +85,7 @@
 
     [CascadingParameter]
     protected Breakpoint breakpoint { get; set; }
+    private Skill _skill { get; set; }
 
     protected override void OnInitialized()
     {
@@ -92,6 +93,7 @@
         SnackbarService.Configuration.VisibleStateDuration = 10000;
         SnackbarService.Configuration.HideTransitionDuration = 500;
         SnackbarService.Configuration.ShowTransitionDuration = 500;
+        _skill = new Skill(localizer);
     }
 
     private Typo TitleTypo1()
@@ -156,11 +158,11 @@
     private void OnClick(string skillName)
     {
         SnackbarService.Clear();
-        var skill = new Skill(skillName);
+        _skill.SetUpSelectedSkill(skillName);
 
         var config = (SnackbarOptions options) =>
         {
-            options.Icon = skill.Icon;
+            options.Icon = _skill.Icon;
             options.IconSize = Size.Large;
         };
 
@@ -168,10 +170,11 @@
         message: @<MudText Typo=@DescTypo()>
                         <b>@skillName</b>
                         <MudDivider></MudDivider>
-                         @skill.SkillDescription <br />
-                        <u>Was acquired through:</u>
-                        <b>@skill.Acquired</b><br />
-                    </MudText>,
+                        @_skill.SkillDescription <br />
+                        <u>@localizer["SkillAcquired"]</u>
+                        <b>@_skill.Acquired</b><br />
+                    </MudText>
+    ,
             configure: config,
             key: "Skill"
         );
@@ -198,52 +201,53 @@
         public string Icon { get; set; }
         public string SkillDescription { get; set; }
         public string Acquired { get; set; }
+        private MudLocalizer _localizer;
 
-        public Skill(string skillName)
+        public Skill(MudLocalizer localizer)
         {
-            InitializeSkill(skillName);
+            _localizer = localizer;
         }
 
-        private void InitializeSkill(string skillName)
+        public void SetUpSelectedSkill(string skillName)
         {
             Icon = _allSkillIcons[skillName];
             switch (skillName)
             {
                 case ".NET Core":
-                    SkillDescription = "I've used this to build APIs, Backend services and Frontend solutions.";
-                    Acquired = "Job, Projects";
+                    SkillDescription = _localizer[".NetCoreDesc"];
+                    Acquired = _localizer["SkillAcquired_JobProject"];
                     break;
                 case "Blazor":
-                    SkillDescription = "Helped me to build responsive modern web applications. I have used Syncfusion and Mudblazor libraries to leverage blazor features with ease.";
-                    Acquired = "Job, Projects, Courses";
+                    SkillDescription = _localizer["BlazorDesc"];
+                    Acquired = _localizer["SkillAcquired_JobProjectCourse"];
                     break;
                 case "Angular":
-                    SkillDescription = "My experience is mainly in Angular2 and I have dabbled in AngularJS as well. Some libraries/tools I have used are Angular Material and Bootstrap";
-                    Acquired = "Job";
+                    SkillDescription = _localizer["AngularDesc"];
+                    Acquired = _localizer["SkillAcquired_Job"];
                     break;
                 case "MongoDB":
-                    SkillDescription = "My experience with mongoDB is based on a job I had as a freelancer. I was using it with Mongoose (ODM) and mongo-express (Admin Interface)";
-                    Acquired = "Projects";
+                    SkillDescription = _localizer["MongoDBDesc"];
+                    Acquired = _localizer["SkillAcquired_Project"];
                     break;
                 case "SQL":
-                    SkillDescription = "In almost every project I've taken on, I've used SQL by integrating it with various ORMs like EFCore and Sequelize. Additionally, I have used raw SQL queries extensively";
-                    Acquired = "Job, Projects";
+                    SkillDescription = _localizer["SQLDesc"];
+                    Acquired = _localizer["SkillAcquired_JobProject"];
                     break;
                 case "EF Core":
-                    SkillDescription = "I gained my exprerience in EF Core primarily through structured courses, complemented by practical exposure to both the older Entity Framework and the latest EF Core in professional settings.";
-                    Acquired = "Courses, Job";
+                    SkillDescription = _localizer["EFCoreDesc"];
+                    Acquired = _localizer["SkillAcquired_JobCourse"];
                     break;
                 case "Docker":
-                    SkillDescription = "Docker has enabled me to seamlessly package and deploy applications with ease. Α few examples of some of the types of applications I have Dockerized are: .ΝΕΤ6 Services, NestJS App, Databases, Message Brokers, FrontEnd Solutions";
-                    Acquired = "Job, Courses";
+                    SkillDescription = _localizer["DockerDesc"];
+                    Acquired = _localizer["SkillAcquired_JobCourse"];
                     break;
                 case "SignalR":
-                    SkillDescription = "In a previous role, I leveraged SignalR to facilitate real-time updates within the frontend, implementing solutions in both C# and JavaScript.";
-                    Acquired = "Job";
+                    SkillDescription = _localizer["SignalRDesc"];
+                    Acquired = _localizer["SkillAcquired_Job"];
                     break;
                 case "RabbitMQ":
-                    SkillDescription = "Leveraging the library in C#, I successfully implemented it for various scenarios including asynchronous email dispatch, push notifications, and job scheduling, thereby enhancing system responsiveness and scalability.";
-                    Acquired = "Job";
+                    SkillDescription = _localizer["RabbitMQDesc"];
+                    Acquired = _localizer["SkillAcquired_Job"];
                     break;
             }
         }

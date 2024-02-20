@@ -1,5 +1,6 @@
 ﻿@using PersonalWebSite.SharedState
 @inject NavigationManager Navigation
+@inject MudLocalizer localizer
 @inject StateContainer State
 @inject IJSRuntime JS
 
@@ -13,22 +14,22 @@
         <MudNavMenu Class="mud-width-full" Margin="Margin.Normal">
             <MudNavLink Href="#jobs" Match="NavLinkMatch.All">
                 <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
-                    Experience
+                    @localizer["Experience"]
                 </MudText>
             </MudNavLink>
             <MudNavLink Href="#projects" Match="NavLinkMatch.All">
                 <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
-                    Projects
+                    @localizer["Projects"]
                 </MudText>
             </MudNavLink>
             <MudNavLink Href="#skills" Match="NavLinkMatch.All">
                 <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
-                    Skills
+                    @localizer["Skills"]
                 </MudText>
             </MudNavLink>
             <MudNavLink Href="#contact" Match="NavLinkMatch.All">
                 <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
-                    Contact
+                    @localizer["Contact"]
                 </MudText>
             </MudNavLink>
         </MudNavMenu>

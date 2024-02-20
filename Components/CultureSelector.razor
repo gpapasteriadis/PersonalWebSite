@@ -2,12 +2,13 @@
 @using PersonalWebSite.SharedState
 @inject IJSRuntime JS
 @inject NavigationManager Navigation
+@inject MudLocalizer localizer
 @inject ILocalStorageService localStorage
 @inject StateContainer State
 
 <MudButton Class="rounded-pill" OnClick="CultureInfochanged">
     <MudText Typo=CaltureTypo()>
-        @language
+        @localizer[language]
     </MudText>
 </MudButton>
 
@@ -22,16 +23,31 @@
         new CultureInfo("en"),
         new CultureInfo("el")
     };
-    private string language = CultureInfo.CurrentCulture.Name.ToUpper();
 
+    private string language = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var cultureName = CultureInfo.CurrentCulture.Name;
+        if (cultureName == "en") language = "GreekCulture";
+        else language = "EnglishCulture";
+        StateHasChanged();
+    }
 
     private async Task CultureInfochanged()
     {
         CultureInfo currentCulture;
-        if (language.Equals(supportedCultures[0].Name, StringComparison.OrdinalIgnoreCase)) currentCulture = supportedCultures[1];
-        else currentCulture = supportedCultures[0];
+        if (language == "EnglishCulture")
+        {
+            currentCulture = supportedCultures[0];
+            language = "GreekCulture";
+        }
+        else
+        {
+            currentCulture = supportedCultures[1];
+            language = "EnglishCulture";
+        }
 
-        language = currentCulture.Name.ToUpper();
         await localStorage.SetItemAsStringAsync("BlazorCulture", currentCulture.Name);
         State.NavigateHome();
     }

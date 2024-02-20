@@ -4,25 +4,23 @@
 <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
     <MudCard id="jobs" Elevation="2" Style="margin-top:50px; margin-bottom:20px; width:85%; margin-inline:auto;">
         <MudText Style="margin-bottom:20px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo=TitleTypo1()>
-            <b>Where I’ve Worked</b>
+            @(new MarkupString(localizer["ExperienceTitle"]))
         </MudText>
         <MudCardContent>
             <MudTimeline TimelineAlign="TimelineAlign.Start" Style="width:85%; margin-inline:auto; margin-bottom:30px;">
 
                 <MudTimelineItem Color="Color.Primary" Elevation="25">
                     <ItemOpposite>
-                        <MudText Color="Color.Primary" Typo=TitleTypo2()>Mar - Oct 2023</MudText>
+                        <MudText Color="Color.Primary" Typo=TitleTypo2()>@localizer["ArmyDate"]</MudText>
                     </ItemOpposite>
                     <ItemContent>
                         <MudPaper Elevation="0">
                             <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                                <b>Software Engineer</b>
-                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Army"))" Typo=TitleTypo2()>@@Greek Armed Forces IT Corps</MudLink>
+                                @(new MarkupString(localizer["SoftwareEngineer"]))
+                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Army"))" Typo=TitleTypo2()>@@@localizer["ArmyDepartment"]</MudLink>
                             </MudText>
                             <MudText Typo=DescTypo()>
-                                · Held a part-time position as a software developer during mandatory military service.<br />
-                                · Developed and maintained the military's internal software systems.<br />
-                                · Provided technical support to system users, addressing inquiries and troubleshooting issues.
+                                @(new MarkupString(localizer["ArmyDesc"]))
                             </MudText>
                         </MudPaper>
                     </ItemContent>
@@ -30,18 +28,16 @@
 
                 <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
                     <ItemOpposite>
-                        <MudText Color="Color.Primary" Typo=TitleTypo2()>Oct 2020 - Dec 2022</MudText>
+                        <MudText Color="Color.Primary" Typo=TitleTypo2()>@localizer["TerracomDate"]</MudText>
                     </ItemOpposite>
                     <ItemContent>
                         <MudPaper Elevation="0">
                             <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                                <b>Software Engineer</b>
+                                @(new MarkupString(localizer["SoftwareEngineer"]))
                                 <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Terracom"))" Typo=TitleTypo2()>@@Terracom S.A.</MudLink>
                             </MudText>
                             <MudText Typo=DescTypo()>
-                                ·Played a pivotal role in the development, maintenance, and evolution of the patrol and security management platform QR-Patrol.<br />
-                                ·Actively participated in technical analysis and system design processes, contributing to enhance project outcomes.<br />
-                                ·Engaged in team meetings to synchronize efforts and maintain alignment with project goals, while maintaining close collaboration with team members to implement updates and improvements.
+                                @(new MarkupString(localizer["TerracomDesc"]))
                             </MudText>
                         </MudPaper>
                     </ItemContent>
@@ -49,17 +45,16 @@
 
                 <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
                     <ItemOpposite>
-                        <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">Jul 2019 — Oct 2019</MudText>
+                        <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">@localizer["CothetaDate"]</MudText>
                     </ItemOpposite>
                     <ItemContent>
                         <MudPaper Elevation="0">
                             <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                                <b>Software Engineer Intern </b>
+                                @(new MarkupString(localizer["SoftwareEngineerIntern"]))
                                 <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:CoTheta"))" Typo=TitleTypo2()>@@CoTheta</MudLink>
                             </MudText>
                             <MudText Typo=DescTypo()>
-                                · Engaged in virtual and augmented reality projects using Unity3D.<br />
-                                · Contributed to the creation of interactive experiences.
+                                @(new MarkupString(localizer["CothetaDesc"]))
                             </MudText>
                         </MudPaper>
                     </ItemContent>
@@ -68,7 +63,7 @@
             </MudTimeline>
             <MudItem Class="d-flex flex-wrap justify-content-center">
                 <MudText Inline=true Color=Color.Primary Typo=DescTypo()>
-                    Resume:
+                    @localizer["CV"]
                     <MudIconButton Style="color:burlywood;" Size="Size.Medium" Title="Download" Href="George-CV.pdf" target="_blank" Class="bounceInDownloadIcon" Icon="@Icons.Material.Filled.Download" />
                 </MudText>
             </MudItem>
@@ -81,50 +76,45 @@
 <MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
     <MudCard id="jobs" Elevation="2" Style="margin-top:50px; margin-bottom:20px; width:100%; margin-inline:auto;">
         <MudText Style="margin-bottom:10px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo=TitleTypo1()>
-            <b>Where I’ve Worked</b>
+            @(new MarkupString(localizer["ExperienceTitle"]))
         </MudText>
         <MudText Color=Color.Primary Align="Align.Center" Typo=TitleTypo2()>
-            Resume:
+            @localizer["CV"]
             <MudIconButton Style="color:burlywood;" Size="Size.Medium" Title="Download" Href="George-CV.pdf" target="_blank" Class="bounceInDownloadIcon" Icon="@Icons.Material.Filled.Download" />
         </MudText>
         <MudCardContent>
             <MudTabs MinimumTabWidth="70px" Rounded="true" Centered="true">
 
-                <MudTabPanel Text="Greek Army">
+                <MudTabPanel Text=@localizer["Army"]>
                     <MudText Style="margin-bottom:5px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                        <b>Software Engineer</b>
-                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Army"))" Typo=TitleTypo2()>@@Greek Armed Forces IT Corps</MudLink>
+                        @(new MarkupString(localizer["SoftwareEngineer"]))
+                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Army"))" Typo=TitleTypo2()>@@@localizer["ArmyDepartment"]</MudLink>
                     </MudText>
-                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>Mar - Oct 2023</MudText>
+                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>@localizer["ArmyDate"]</MudText>
                     <MudText Typo=DescTypo()>
-                        · Held a part-time position as a software developer during mandatory military service.<br />
-                        · Developed and maintained the military's internal software systems.<br />
-                        · Provided technical support to system users, addressing inquiries and troubleshooting issues.
+                        @(new MarkupString(localizer["ArmyDesc"]))
                     </MudText>
                 </MudTabPanel>
 
                 <MudTabPanel Text="Terracom S.A.">
                     <MudText Style="margin-bottom:10px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                        <b>Software Engineer</b>
+                        @(new MarkupString(localizer["SoftwareEngineer"]))
                         <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Terracom"))" Typo=TitleTypo2()>@@Terracom S.A.</MudLink>
                     </MudText>
-                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>Oct 2020 - Dec 2022</MudText>
+                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>@localizer["TerracomDate"]</MudText>
                     <MudText Typo=DescTypo()>
-                        ·Played a pivotal role in the development, maintenance, and evolution of the patrol and security management platform QR-Patrol.<br />
-                        ·Actively participated in technical analysis and system design processes, contributing to enhance project outcomes.<br />
-                        ·Engaged in team meetings to synchronize efforts and maintain alignment with project goals, while maintaining close collaboration with team members to implement updates and improvements.
+                        @(new MarkupString(localizer["TerracomDesc"]))
                     </MudText>
                 </MudTabPanel>
 
                 <MudTabPanel Text="CoTheta">
                     <MudText Style="margin-bottom:10px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                        <b>Software Engineer Intern </b>
+                        @(new MarkupString(localizer["SoftwareEngineerIntern"]))
                         <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:CoTheta"))" Typo=TitleTypo2()>@@CoTheta</MudLink>
                     </MudText>
-                    <MudText Color="Color.Primary" Typo=TitleTypo2() Style="margin-bottom:15px;">Jul 2019 — Oct 2019</MudText>
+                    <MudText Color="Color.Primary" Typo=TitleTypo2() Style="margin-bottom:15px;">@localizer["CothetaDate"]</MudText>
                     <MudText Typo=DescTypo()>
-                        · Engaged in virtual and augmented reality projects using Unity3D.<br />
-                        · Contributed to the creation of interactive experiences.
+                        @(new MarkupString(localizer["CothetaDesc"]))
                     </MudText>
                 </MudTabPanel>
             </MudTabs>

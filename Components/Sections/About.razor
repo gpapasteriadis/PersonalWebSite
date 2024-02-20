@@ -6,13 +6,13 @@
     </MudItem>
     <MudItem xs="12" sm="6">
         <MudText GutterBottom=true Color="Color.Primary" Typo=DescTypo()>
-            Hello! my name is
+            @localizer["Salutation"]
         </MudText>
         <MudText GutterBottom=true Color="Color.Primary" Typo=NameTypo()>
-            <b>George Papasteriadis</b>
+            @(new MarkupString(localizer["MyName"]))
         </MudText>
         <MudText Color="Color.Primary" Typo=DescTypo()>
-            @localizer["about"]
+            @localizer["About"]
         </MudText>
     </MudItem>
 </MudGrid>

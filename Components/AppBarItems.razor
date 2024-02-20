@@ -1,5 +1,6 @@
 ﻿@using PersonalWebSite.SharedState
 @inject NavigationManager Navigation
+@inject MudLocalizer localizer
 @inject StateContainer State
 
 <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
@@ -10,28 +11,28 @@
     <MudItem Style="margin-right:10px;">
         <MudLink Href="#jobs" OnClick=State.CloseAppBar>
             <MudText Typo=SectionsTypo()>
-                Experience
+                @localizer["Experience"]
             </MudText>
         </MudLink>
     </MudItem>
     <MudItem Style="margin-right:10px;">
         <MudLink Href="#projects" OnClick=State.CloseAppBar>
             <MudText Typo=SectionsTypo()>
-                Projects
+                @localizer["Projects"]
             </MudText>
         </MudLink>
     </MudItem>
     <MudItem Style="margin-right:10px;">
         <MudLink Href="#skills" OnClick=State.CloseAppBar>
             <MudText Typo=SectionsTypo()>
-                Skills
+                @localizer["Skills"]
             </MudText>
         </MudLink>
     </MudItem>
     <MudItem>
         <MudLink Href="#contact" OnClick=State.CloseAppBar>
             <MudText Typo=SectionsTypo()>
-                Contact
+                @localizer["Contact"]
             </MudText>
         </MudLink>
     </MudItem>

@@ -4,14 +4,14 @@
 <MudDivider id="contact" Light=true DividerType="DividerType.Middle" Style="margin-top:80px; margin-bottom:20px" />
 <MudItem Class="flex-wrap d-flex justify-content-center" Style="margin-bottom:100px;">
     <MudText Align="Align.Center" Color="Color.Primary" GutterBottom=true Typo=@TitleTypo1()>
-        <b>Reach Out😉</b>
+        @(new MarkupString(localizer["ContactTitle"]))
     </MudText>
 </MudItem>
 
 
 <MudItem Class="flex-wrap d-flex justify-content-center">
     <MudButton EndIcon="@Icons.Material.Filled.Email" Variant="Variant.Outlined" Color=Color.Primary Size=Size.Large Href="@($"mailto:{@config["Email"]}")">
-        Send Me Email
+        @localizer["SendMeMail"]
     </MudButton>
 </MudItem>
 
@@ -23,7 +23,7 @@
 
 <MudItem Class="flex-wrap d-flex justify-content-center">
     <MudText Color="Color.Primary" Align="Align.Center" Style="padding-bottom:10px" GutterBottom=true Typo=@TitleTypo2()>
-        You can also find me on the following social networks
+        @localizer["FindMe"]
     </MudText>
 </MudItem>
 
@@ -44,7 +44,7 @@
 
 <MudItem Class="flex-wrap d-flex justify-content-center">
     <MudText Style="padding-bottom:10px" GutterBottom=true Typo="Typo.caption">
-        Build by George Papasteriadis
+        @localizer["BuildBy"]
     </MudText>
 </MudItem>
 

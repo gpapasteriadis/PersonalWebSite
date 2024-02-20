@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Hi" xml:space="preserve">
-    <value>geia στα Ελληνικά</value>
+  <data name="CV" xml:space="preserve">
+    <value>Βιογραφικό:</value>
+  </data>
+  <data name="EnglishCulture" xml:space="preserve">
+    <value>EN</value>
+  </data>
+  <data name="GreekCulture" xml:space="preserve">
+    <value>ΕΛ</value>
   </data>
 </root>
