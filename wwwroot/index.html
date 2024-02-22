@@ -4,23 +4,34 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PersonalWebSite</title>
+    <title>George Papasteriadis</title>
     <base href="/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link href="PersonalWebSite.styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed" />
+    <link rel="stylesheet" href="_content/MudBlazor/MudBlazor.min.css" />
+    <link rel="stylesheet" href="PersonalWebSite.styles.css" />
+    <link rel="icon" type="image/png" href="/Icons/codeIcon.png" />
 </head>
 
 <body>
     <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+        <div class="loading">
+            <h2>
+                pushing pixels
+            </h2>
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </div>
 
     <div id="blazor-error-ui">
@@ -28,8 +39,50 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
+
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script>
+        window.blazorCulture = {
+            get: () => window.localStorage['BlazorCulture'],
+            set: (value) => window.localStorage['BlazorCulture'] = value
+        };
+    </script>
+    <script>
+        window.scrollFunctionality = () => {
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = () => {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollpos > currentScrollPos) {
+                    document.getElementById("appbar").style.top = "0";
+                }
+                else {
+                    document.getElementById("appbar").style.top = "-50px";
+                }
+                prevScrollpos = currentScrollPos;
+            }
+        }
+
+        // Function to reattach the scroll event handler
+        window.reAttachScrollEvent = () => {
+            window.onscroll = window.scrollFunctionality;
+        }
+    </script>
+    <script>
+        window.closeAppBar = () => {
+            // Stop the scrolling functionality by removing the event handler
+            window.onscroll = null;
+
+            // Hide the appbar
+            document.getElementById("appbar").style.top = "-50px";
+
+            // Reattach the scroll event handler after a certain delay
+            setTimeout(() => {
+                window.reAttachScrollEvent();
+            }, 1000);
+        }
+
+    </script>
 </body>
 
 </html>

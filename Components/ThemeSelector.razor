@@ -1,0 +1,25 @@
+﻿@using PersonalWebSite.SharedState
+@inject ILocalStorageService localStorage
+@inject StateContainer State
+
+<MudToggleIconButton Edge="Edge.End" Size=Size.Medium Style="color:burlywood; margin-right:5px;" 
+                        @bind-Toggled="State.DarkModeIsOn"
+                        Icon="@Icons.Material.Filled.Nightlight"
+                        ToggledIcon="@Icons.Material.Filled.LightMode"
+                        @onclick="changeThemeMode" />
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        bool DarkModeIsOn = await localStorage.GetItemAsync<bool>("DarkModeIsOn");
+        State.ChangeDarkModeState(DarkModeIsOn);
+    }
+
+    private async void changeThemeMode()
+    {
+        State.ChangeDarkModeState();
+        await localStorage.SetItemAsync("DarkModeIsOn", State.DarkModeIsOn);
+    }
+
+}

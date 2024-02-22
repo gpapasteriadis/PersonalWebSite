@@ -1,0 +1,74 @@
+﻿@using System.Globalization
+@using PersonalWebSite.SharedState
+@inject IJSRuntime JS
+@inject NavigationManager Navigation
+@inject MudLocalizer localizer
+@inject ILocalStorageService localStorage
+@inject StateContainer State
+
+<MudButton Class="rounded-pill" OnClick="CultureInfochanged">
+    <MudText Typo=CaltureTypo()>
+        @localizer[language]
+    </MudText>
+</MudButton>
+
+@code
+{
+
+    [Parameter]
+    public Breakpoint currentBreakpoint { get; set; }
+
+    private CultureInfo[] supportedCultures = new[]
+    {
+        new CultureInfo("en"),
+        new CultureInfo("el")
+    };
+
+    private string language = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var cultureName = CultureInfo.CurrentCulture.Name;
+        if (cultureName == "en") language = "GreekCulture";
+        else language = "EnglishCulture";
+        StateHasChanged();
+    }
+
+    private async Task CultureInfochanged()
+    {
+        CultureInfo currentCulture;
+        if (language == "EnglishCulture")
+        {
+            currentCulture = supportedCultures[0];
+            language = "GreekCulture";
+        }
+        else
+        {
+            currentCulture = supportedCultures[1];
+            language = "EnglishCulture";
+        }
+
+        await localStorage.SetItemAsStringAsync("BlazorCulture", currentCulture.Name);
+        State.NavigateHome();
+    }
+
+    private Typo CaltureTypo()
+    {
+        var size = currentBreakpoint;
+
+        switch (size)
+        {
+            case Breakpoint.Xs: // Smartphone
+                return Typo.body1;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h6;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h6;
+
+            default: return Typo.h6;
+        }
+    }
+
+}

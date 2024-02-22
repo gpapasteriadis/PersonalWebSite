@@ -1,0 +1,83 @@
+﻿@inject MudLocalizer localizer
+@inject IConfiguration config
+
+<MudDivider id="contact" Light=true DividerType="DividerType.Middle" Style="margin-top:80px; margin-bottom:20px" />
+<MudItem Class="flex-wrap d-flex justify-content-center" Style="margin-bottom:100px;">
+    <MudText Align="Align.Center" Color="Color.Primary" GutterBottom=true Typo=@TitleTypo1()>
+        @(new MarkupString(localizer["ContactTitle"]))
+    </MudText>
+</MudItem>
+
+
+<MudItem Class="flex-wrap d-flex justify-content-center">
+    <MudButton EndIcon="@Icons.Material.Filled.Email" Variant="Variant.Outlined" Color=Color.Primary Size=Size.Large Href="@($"mailto:{@config["Email"]}")">
+        @localizer["SendMeMail"]
+    </MudButton>
+</MudItem>
+
+<MudItem Style="margin-bottom:100px;" Class="flex-wrap d-flex justify-content-center" xs="12">
+    <MudText Color="Color.Primary" Typo=@TitleTypo2()>
+        @config["Email"]
+    </MudText>
+</MudItem>
+
+<MudItem Class="flex-wrap d-flex justify-content-center">
+    <MudText Color="Color.Primary" Align="Align.Center" Style="padding-bottom:10px" GutterBottom=true Typo=@TitleTypo2()>
+        @localizer["FindMe"]
+    </MudText>
+</MudItem>
+
+<MudGrid Justify="Justify.Center" Style="margin-bottom:10px;">
+    <MudItem>
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="@(config.GetSection("SocialNetworkLinks").GetValue<String>("LinkedIn"))" target="_blank" Icon="@Icons.Custom.Brands.LinkedIn" Title="LinkedIn" />
+    </MudItem>
+    <MudItem>
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="@(config.GetSection("SocialNetworkLinks").GetValue<String>("GitHub"))" target="_blank" Icon="@Icons.Custom.Brands.GitHub" Title="GitHub" />
+    </MudItem>
+    <MudItem>
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="@(config.GetValue<String>("SocialNetworkLinks:Instagram"))" target="_blank" Icon="@Icons.Custom.Brands.Instagram" Title="Instagram" />
+    </MudItem>
+    <MudItem>
+        <MudIconButton Color="Color.Primary" Size="Size.Large" Href="@(config.GetValue<String>("SocialNetworkLinks:Facebook"))" target="_blank" Icon="@Icons.Custom.Brands.Facebook" Title="Facebook" />
+    </MudItem>
+</MudGrid>
+
+<MudItem Class="flex-wrap d-flex justify-content-center">
+    <MudText Style="padding-bottom:10px" GutterBottom=true Typo="Typo.caption">
+        @localizer["BuildBy"]
+    </MudText>
+</MudItem>
+
+
+@code {
+    [CascadingParameter]
+    protected Breakpoint breakpoint { get; set; }
+
+    private Typo TitleTypo1()
+    {
+        var size = breakpoint;
+
+        switch (size)
+        {
+            case Breakpoint.Xs: // Smartphone
+                return Typo.h4;
+
+            default: return Typo.h3;
+        }
+    }
+
+    private Typo TitleTypo2()
+    {
+        var size = breakpoint;
+
+        switch (size)
+        {
+            case Breakpoint.Xs: // Smartphone
+                return Typo.h6;
+
+            default: return Typo.h5;
+        }
+    }
+
+}
+

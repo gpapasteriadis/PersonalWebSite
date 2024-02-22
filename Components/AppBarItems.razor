@@ -1,0 +1,72 @@
+﻿@using PersonalWebSite.SharedState
+@inject NavigationManager Navigation
+@inject MudLocalizer localizer
+@inject StateContainer State
+
+<MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
+    <MudButton Class="rounded-pill" OnClick=State.NavigateHome>
+        <MudImage Fluid=true Class="rounded-pill" Src="/Icons/codeIcon-removebg.png" Width="32"></MudImage>
+    </MudButton>
+    <MudSpacer />
+    <MudItem Style="margin-right:10px;">
+        <MudLink Href="#jobs" OnClick=State.CloseAppBar>
+            <MudText Typo=SectionsTypo()>
+                @localizer["Experience"]
+            </MudText>
+        </MudLink>
+    </MudItem>
+    <MudItem Style="margin-right:10px;">
+        <MudLink Href="#projects" OnClick=State.CloseAppBar>
+            <MudText Typo=SectionsTypo()>
+                @localizer["Projects"]
+            </MudText>
+        </MudLink>
+    </MudItem>
+    <MudItem Style="margin-right:10px;">
+        <MudLink Href="#skills" OnClick=State.CloseAppBar>
+            <MudText Typo=SectionsTypo()>
+                @localizer["Skills"]
+            </MudText>
+        </MudLink>
+    </MudItem>
+    <MudItem>
+        <MudLink Href="#contact" OnClick=State.CloseAppBar>
+            <MudText Typo=SectionsTypo()>
+                @localizer["Contact"]
+            </MudText>
+        </MudLink>
+    </MudItem>
+    <MudSpacer />
+</MudHidden>
+<MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
+    <MudIconButton OnClick=@State.ChangeSideBarState Icon="@Icons.Material.Outlined.Menu" Size=Size.Medium Style="color:burlywood;" Class="mr-5" />
+    <MudSpacer />
+</MudHidden>
+
+<CultureSelector currentBreakpoint=@currentBreakpoint />
+<ThemeSelector />
+
+
+@code {
+
+    [Parameter]
+    public Breakpoint currentBreakpoint { get; set; }
+
+    private Typo SectionsTypo()
+    {
+        var size = currentBreakpoint;
+
+        switch (size)
+        {
+            
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h6;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h6;
+
+            default: return Typo.h6;
+        }
+    }
+
+}

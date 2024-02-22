@@ -1,7 +1,23 @@
 ﻿@page "/"
+@using Microsoft.Extensions.Localization
+@using MudBlazor.Services
+@using PersonalWebSite.Localize
+@using PersonalWebSite.Components.Sections
+@inject MudLocalizer localizer
 
-<PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<CascadingValue Value="currentBreakpoint">
+    <About></About>
+    <Experience></Experience>
+    <Projects></Projects>
+    <Skills></Skills>
+    <Contact></Contact>
+</CascadingValue>
 
-Welcome to your new app.
+
+
+@code {
+    [Parameter]
+    public Breakpoint currentBreakpoint { get; set; }
+
+}

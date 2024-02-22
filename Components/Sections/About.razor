@@ -1,0 +1,64 @@
+﻿@inject MudLocalizer localizer
+
+<MudGrid Justify="Justify.SpaceEvenly" Style="width:95%; margin-inline:auto; margin-top:30px; margin-bottom:60px;">
+    <MudItem>
+        <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-pill" Src="/Icons/me-removebg.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
+    </MudItem>
+    <MudItem xs="12" sm="6">
+        <MudText GutterBottom=true Color="Color.Primary" Typo=DescTypo()>
+            @localizer["Salutation"]
+        </MudText>
+        <MudText GutterBottom=true Color="Color.Primary" Typo=NameTypo()>
+            @(new MarkupString(localizer["MyName"]))
+        </MudText>
+        <MudText Color="Color.Primary" Typo=DescTypo()>
+            @localizer["About"]
+        </MudText>
+    </MudItem>
+</MudGrid>
+
+@code{
+
+    [CascadingParameter]
+    protected Breakpoint breakpoint { get; set; }
+
+
+    private Typo NameTypo()
+    {
+        var size = breakpoint;
+
+        switch (size)
+        {
+            case Breakpoint.Xs: // Smartphone
+                return Typo.h4;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h4;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h3;
+
+            default: return Typo.h3;
+        }
+    }
+
+    private Typo DescTypo()
+    {
+        var size = breakpoint;
+        
+        switch (size)
+        {
+            case Breakpoint.Xs: // Smartphone
+                return Typo.body1;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h6;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h5;
+
+            default: return Typo.h5;
+        }
+    }
+
+}

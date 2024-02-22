@@ -1,0 +1,46 @@
+﻿@using PersonalWebSite.SharedState
+@inject NavigationManager Navigation
+@inject MudLocalizer localizer
+@inject StateContainer State
+@inject IJSRuntime JS
+
+<MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
+    <MudDrawer Width="50%" Color=Color.Dark ClipMode="DrawerClipMode.Docked" @bind-Open=State.SideBarIsOpen Elevation="1">
+        <MudDrawerHeader Style="align-self:center">
+            <MudButton Class="rounded-pill" OnClick=State.NavigateHome>
+                <MudImage Fluid=true Class="rounded-pill" Src="/Icons/codeIcon-removebg.png" Width="32"></MudImage>
+            </MudButton>
+        </MudDrawerHeader>
+        <MudNavMenu Class="mud-width-full" Margin="Margin.Normal">
+            <MudNavLink Href="#jobs" Match="NavLinkMatch.All">
+                <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
+                    @localizer["Experience"]
+                </MudText>
+            </MudNavLink>
+            <MudNavLink Href="#projects" Match="NavLinkMatch.All">
+                <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
+                    @localizer["Projects"]
+                </MudText>
+            </MudNavLink>
+            <MudNavLink Href="#skills" Match="NavLinkMatch.All">
+                <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
+                    @localizer["Skills"]
+                </MudText>
+            </MudNavLink>
+            <MudNavLink Href="#contact" Match="NavLinkMatch.All">
+                <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
+                    @localizer["Contact"]
+                </MudText>
+            </MudNavLink>
+        </MudNavMenu>
+    </MudDrawer>
+</MudHidden>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        State.SideBarStateChanged += StateHasChanged;
+    }
+
+}

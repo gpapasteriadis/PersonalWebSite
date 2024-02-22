@@ -1,69 +1,137 @@
-﻿@inherits LayoutComponentBase
+﻿@using System.Globalization
+@using PersonalWebSite.Components
+@using PersonalWebSite.Pages
+@using PersonalWebSite.SharedState
+@implements IBrowserViewportObserver
+@implements IAsyncDisposable
+@inherits LayoutComponentBase
 @inject ILocalStorageService localStorage
+@inject IJSRuntime JS
+@inject ISnackbar SnackbarService
+@inject NavigationManager Navigation
+@inject StateContainer State
 
-<MudThemeProvider Theme="MyCustomTheme" IsDarkMode=@_isDarkMode/>
+
+<MudThemeProvider Theme="MyCustomTheme" IsDarkMode=State.DarkModeIsOn/>
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="3" Dense="true">
-            <MudSpacer/>
-            <MudTooltip Text=@_changeThemeString>
-            <MudIconButton Icon=@_darkLightIcon Color="Color.Inherit" OnClick="() => changeThemeMode(false)" />
-            </MudTooltip>
+    <MudAppBar id="appbar" Fixed=true DisableGutters=false Elevation="3" Dense="true">
+        <AppBarItems currentBreakpoint=@currentBreakpoint></AppBarItems>
     </MudAppBar>
-    <MudMainContent class="content px-4">
-        @Body
+    <SideBar></SideBar>
+    <MudMainContent Style="overflow:hidden">
+        <Home currentBreakpoint=@currentBreakpoint></Home>
     </MudMainContent>
+    <ScrollToTop></ScrollToTop>
 </MudLayout>
+
 
 @code {
 
-    private bool _isDarkMode = true;
-    private string? _darkLightIcon;
-    private string? _changeThemeString;
-    private string? _localStorageTheme { get; set; }
+    [Inject]
+    private IBrowserViewportService BrowserViewportService { get; set; }
+    private Breakpoint currentBreakpoint;
+    Guid IBrowserViewportObserver.Id { get; } = Guid.NewGuid();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Get initial breakpoint
+        currentBreakpoint = await BrowserViewportService.GetCurrentBreakpointAsync();
+        await State.ScrollFunctionality();
+        State.DarkModeStateChanged += StateHasChanged;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await BrowserViewportService.SubscribeAsync(this, fireImmediately: true);
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    Task IBrowserViewportObserver.NotifyBrowserViewportChangeAsync(BrowserViewportEventArgs browserViewportEventArgs)
+    {
+        currentBreakpoint = browserViewportEventArgs.Breakpoint;
+        return InvokeAsync(StateHasChanged);
+    }
+
+
+    public async ValueTask DisposeAsync() => await BrowserViewportService.UnsubscribeAsync(this);
 
     MudTheme MyCustomTheme = new MudTheme()
     {
         Palette = new PaletteLight()
         {
-            Primary = Colors.Blue.Default,
-            Secondary = Colors.Green.Accent4,
-            AppbarBackground = Colors.Red.Accent4,
+            ActionDefault = Colors.Teal.Darken4,
+            Primary = Colors.Teal.Darken4,
+            Secondary = Colors.Teal.Default,
+            AppbarBackground = Colors.Teal.Lighten1,
+            Background = Colors.Teal.Lighten5,
+            Divider = Colors.Teal.Darken2,
+            Surface = Colors.Teal.Lighten5,
+            Dark = Colors.Teal.Default
+
         },
         PaletteDark = new PaletteDark()
         {
-            Primary = Colors.Blue.Lighten1
+            ActionDefault = Colors.BlueGrey.Darken4,
+            Primary = Colors.BlueGrey.Lighten5,
+            Secondary = Colors.Grey.Default,
+            AppbarBackground = Colors.BlueGrey.Darken4,
+            Background = Colors.BlueGrey.Darken3,
+            Divider = Colors.BlueGrey.Lighten2,
+            Surface = Colors.BlueGrey.Darken3,
+            Dark = Colors.BlueGrey.Darken4
         },
 
-        LayoutProperties = new LayoutProperties()
-        {
-            DrawerWidthLeft = "260px",
-            DrawerWidthRight = "300px"
-        }
+        // Typography = new Typography()
+        // {
+        //     Default = new Default()
+        //     {
+        //         FontFamily = new[] { "sans-serif" },
+        //         FontSize = "3vmax",
+        //         FontWeight = 500,
+        //         LineHeight = 1.6,
+        //         LetterSpacing = ".0075em"
+        //     },
+        //     Body1 = new Body1()
+        //     {
+        //         FontFamily = new[] { "sans-serif" },
+        //         FontSize = "2.5vmax",
+        //         FontWeight = 500,
+        //         LineHeight = 1.6,
+        //         LetterSpacing = ".0075em"
+        //     },
+        //     Body2 = new Body2()
+        //     {
+        //         FontFamily = new[] { "sans-serif" },
+        //         FontSize = "2vmax",
+        //         FontWeight = 400,
+        //         LineHeight = 1.6,
+        //         LetterSpacing = ".0075em"
+        //     },
+        //     H4 = new H4()
+        //     {
+        //         FontFamily = new[] { "sans-serif" },
+        //         FontSize = "3vmax",
+        //         FontWeight = 400,
+        //         LineHeight = 1.6,
+        //         LetterSpacing = ".0075em"
+        //     },
+        //     H5 = new H5()
+        //     {
+        //         FontFamily = new[] { "sans-serif" },
+        //         FontSize = "2.5vmax",
+        //         FontWeight = 400,
+        //         LineHeight = 1.6,
+        //         LetterSpacing = ".0075em"
+        //     }
+
+        // },
     };
-
-    protected override async Task OnInitializedAsync()
-    {
-        _isDarkMode = await localStorage.GetItemAsync<bool>("IsDarkMode");
-        setThemeMode();
-    }
-
-
-    private async void changeThemeMode(bool firstRender)
-    {
-        _isDarkMode = !_isDarkMode;
-        setThemeMode();
-
-        await localStorage.SetItemAsync("IsDarkMode", _isDarkMode);
-    }
-
-    private void setThemeMode()
-    {
-        _darkLightIcon = _isDarkMode ? Icons.Material.Filled.LightMode : Icons.Material.Filled.Nightlight;
-        _changeThemeString = _isDarkMode ? "Switch to Light Theme" : "Switch to Dark Theme";
-        _localStorageTheme = _isDarkMode ? "Light" : "Dark";
-    }
-
+    
 }
