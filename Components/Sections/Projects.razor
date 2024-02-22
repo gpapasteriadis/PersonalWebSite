@@ -45,7 +45,7 @@
                                 <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()>@(new MarkupString(localizer["MobileAppTitle1"]))</MudText>
                             </CardHeaderContent>
                             <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Material.Rounded.Image" Title=@localizer["MobileAppHoverText1"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
+                                <MudIconButton Class="sampleImagesIconAnim" Icon="@Icons.Material.Rounded.Image" Title=@localizer["MobileAppHoverText1"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
                             </CardHeaderActions>
                         </MudCardHeader>
                         <MudCardContent hidden="@(!showMobileAppCardImages)" Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
@@ -165,7 +165,7 @@
                         <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()>@(new MarkupString(localizer["MobileAppTitle1"]))</MudText>
                     </CardHeaderContent>
                     <CardHeaderActions>
-                        <MudIconButton Icon="@Icons.Material.Rounded.Image" Title=@localizer["MobileAppHoverText1"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
+                        <MudIconButton Class="sampleImagesIconAnim" Icon="@Icons.Material.Rounded.Image" Title=@localizer["MobileAppHoverText1"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
                     </CardHeaderActions>
                 </MudCardHeader>
                 <MudCardContent hidden="@(!showMobileAppCardImages)" Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
@@ -197,7 +197,7 @@
                 </MudCardHeader>
                 <MudCardContent hidden="@showMobileAppCardImages" Class="gap-4 d-flex flex-wrap justify-content-center">
                     <video class="rounded-lg ma-2" controls="controls" width="250px" height="350px">
-                        <source src="/Video/FoodWastApp.mp4" />
+                        <source src="/Video/FoodWasteApp.mp4" />
                     </video>
                     <MudImage Fluid=true Class="rounded-lg ma-2" Src="/Icons/1.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
                     <MudImage Fluid=true Class="rounded-lg ma-2" Src="/Icons/2.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
