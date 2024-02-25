@@ -75,7 +75,7 @@ a, .btn-link {
     animation-duration: 2s;
     animation-name: bounceIn;
     animation-fill-mode: forwards;
-    animation-iteration-count: 20;
+    animation-iteration-count: 10;
 }
 
 .flipInYMobileAppCard {
