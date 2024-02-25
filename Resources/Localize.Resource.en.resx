@@ -121,14 +121,11 @@
     <value>I've used this to build APIs, Backend services and Frontend solutions.</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>I'm a software engineer specializing in
-web development, actively seeking
-dynamic work environments that
-foster continuous learning and
-professional growth. Passionate
-about problem-solving and dedicated
-to making meaningful contributions
-to collaborative teams.</value>
+    <value>I'm a software engineer specializing in web development.&lt;br/&gt;&lt;br/&gt;
+
+In my job, what fulfills me is tackling coding problems, exploring new technologies, and feeling like I'm contributing to the team. I love working in environments that foster continuous learning and growth. As for my job preferences, I am drawn to backend services and am eager to delve deeper into system designs.&lt;br /&gt;&lt;br/&gt;
+
+In my spare time, I'm passionate about exercise, whether it's hitting the gym or running. And if it is a sunny Sunday, you'll likely find me out riding my motorcycle.</value>
   </data>
   <data name="AngularDesc" xml:space="preserve">
     <value>My experience is mainly in Angular2 and I have dabbled in AngularJS as well. Some libraries/tools I have used are Angular Material and Bootstrap.</value>
@@ -251,7 +248,7 @@ which helps updates and enhancements roll out seamlessly.</value>
     <value>Leveraging the library in C#, I successfully implemented it for various scenarios including asynchronous email dispatch, push notifications, and job scheduling, thereby enhancing system responsiveness and scalability.</value>
   </data>
   <data name="Salutation" xml:space="preserve">
-    <value>Hello! my name is</value>
+    <value>Hello!👋 my name is</value>
   </data>
   <data name="SendMeMail" xml:space="preserve">
     <value>Send Me Email</value>
