@@ -1,23 +1,32 @@
 ﻿@page "/"
 @using Microsoft.Extensions.Localization
 @using MudBlazor.Services
+@using PersonalWebSite.Components
 @using PersonalWebSite.Localize
 @using PersonalWebSite.Components.Sections
 @inject MudLocalizer localizer
 
 
 <CascadingValue Value="currentBreakpoint">
+    <MudAppBar id="appbar" Fixed=true DisableGutters=false Elevation="3" Dense="true">
+        <AppBarItems currentBreakpoint=@currentBreakpoint></AppBarItems>
+    </MudAppBar>
+    <SideBar></SideBar>
+
     <About></About>
     <Experience></Experience>
     <Projects></Projects>
     <Skills></Skills>
     <Contact></Contact>
+
+    <ScrollToTop></ScrollToTop>
 </CascadingValue>
 
 
 
 @code {
-    [Parameter]
+
+    [CascadingParameter]
     public Breakpoint currentBreakpoint { get; set; }
 
 }

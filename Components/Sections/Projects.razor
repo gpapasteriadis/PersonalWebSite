@@ -1,6 +1,8 @@
-﻿@inject MudLocalizer localizer
+﻿@using PersonalWebSite.SharedState
+@inject MudLocalizer localizer
 @inject IConfiguration config
 @inject MudTheme theme
+@inject StateContainer State
 
 <MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
     <MudCard id="projects" Elevation="2" Style="margin-top:80px; width:85%; margin-inline:auto;">
@@ -85,20 +87,26 @@
                     </MudCard>
                 </MudTabPanel>
 
-                <MudTabPanel Text=@localizer["NewProject"] Style=@($"font-size: {TitleTypo2FontSize()}") Icon=@projectIcon>
+                <MudTabPanel Text=@localizer["ServiceBooking"] Style=@($"font-size: {TitleTypo2FontSize()}") Icon=@projectIcon>
                     <MudCard Outlined=true Class="rounded-xl" Style="margin-left:10px; width:95%;">
                         <MudCardHeader>
                             <CardHeaderContent>
-                                <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()>@(new MarkupString(localizer["NewProjectTitle"]))</MudText>
+                                <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()>@(new MarkupString(localizer["ServiceBookingTitle"]))</MudText>
                             </CardHeaderContent>
                             <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Target="_blank" Disabled=true Href="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
-                                <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Target="_blank" Disabled=true Href="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
+                                <MudIconButton Icon="@Icons.Material.Filled.DesignServices" Title="System Design" Href="@(config.GetValue<String>("Projects:LocalServiceBooking_DesignPage"))" Color="Color.Primary" />
+                                <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Target="_blank" Disabled=true Href="@(config.GetValue<String>("Projects:LocalServiceBooking_Git"))" Color="Color.Primary" />
                             </CardHeaderActions>
                         </MudCardHeader>
                         <MudCardContent Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
                             <MudText Style="margin-left:15px; margin-right:15px;" Color=Color.Primary Typo=@DescTypo()>
-                                @(new MarkupString(localizer["NewProjectDesc"]))
+                                (
+                                    @(new MarkupString(localizer["UnderConstruction"]))
+                                    <MudIcon Icon="@Icons.Material.Filled.Construction" Color="Color.Primary" />
+                                ) 
+                                <br />
+                                <br />
+                                @(new MarkupString(localizer["ServiceBookingDesc"]))
                             </MudText>
                         </MudCardContent>
                         <MudCardActions class="d-flex flex-wrap">
@@ -209,16 +217,22 @@
             <MudCard Outlined=true Class="rounded-xl">
                 <MudCardHeader>
                     <CardHeaderContent>
-                        <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()>@(new MarkupString(localizer["NewProjectTitle"]))</MudText>
+                        <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()>@(new MarkupString(localizer["ServiceBookingTitle"]))</MudText>
                     </CardHeaderContent>
                     <CardHeaderActions>
-                        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Target="_blank" Disabled=true Href ="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
-                        <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Target="_blank" Disabled=true Href="@(config.GetValue<String>("Projects:NewProject_Git"))" Color="Color.Primary" />
+                        <MudIconButton Icon="@Icons.Material.Filled.DesignServices" Title="System Design" Href="@(config.GetValue<String>("Projects:LocalServiceBooking_DesignPage"))" Color="Color.Primary" />
+                        <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Target="_blank" Disabled=true Href="@(config.GetValue<String>("Projects:LocalServiceBooking_Git"))" Color="Color.Primary" />
                     </CardHeaderActions>
                 </MudCardHeader>
                 <MudCardContent Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
                     <MudText Style="margin-left:15px; margin-right:15px;" Color=Color.Primary Typo=@DescTypo()>
-                        @(new MarkupString(localizer["NewProjectDesc"]))
+                        (
+                        @(new MarkupString(localizer["UnderConstruction"]))
+                        <MudIcon Icon="@Icons.Material.Filled.Construction" Color="Color.Primary" />
+                        )
+                        <br />
+                        <br />
+                        @(new MarkupString(localizer["ServiceBookingDesc"]))
                     </MudText>
                 </MudCardContent>
                 <MudCardActions Class="d-flex flex-wrap" Style="margin-left:15px;">
