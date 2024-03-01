@@ -126,4 +126,7 @@
   <data name="GreekCulture" xml:space="preserve">
     <value>ΕΛ</value>
   </data>
+  <data name="UnderConstruction" xml:space="preserve">
+    <value>&lt;b&gt;  Υπο Κατασκεύη &lt;/b&gt;</value>
+  </data>
 </root>

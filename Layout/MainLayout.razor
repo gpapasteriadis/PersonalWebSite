@@ -17,14 +17,13 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar id="appbar" Fixed=true DisableGutters=false Elevation="3" Dense="true">
-        <AppBarItems currentBreakpoint=@currentBreakpoint></AppBarItems>
-    </MudAppBar>
-    <SideBar></SideBar>
+    
     <MudMainContent Style="overflow:hidden">
-        <Home currentBreakpoint=@currentBreakpoint></Home>
+        <CascadingValue Value="currentBreakpoint">
+            @Body
+        </CascadingValue>
     </MudMainContent>
-    <ScrollToTop></ScrollToTop>
+
 </MudLayout>
 
 
