@@ -1,65 +1,90 @@
 ﻿@page "/ServiceBooking"
+@inject MudLocalizer localizer
 
 <MudButton Style="margin-left:5px; margin-top:-100px;" Variant="Variant.Filled" Color=Color.Secondary StartIcon="@Icons.Material.Filled.ArrowBack" ButtonType=ButtonType.Reset Href="/">
-    Go Back
+    @localizer["Back"]
 </MudButton>
-<MudText Class="flex-wrap d-flex justify-content-center" Style=" margin:10px;" Typo=Typo.h4 Color=Color.Primary>
-    Service Booking System Design
+<MudText Class="flex-wrap d-flex justify-content-center" Style=" margin:10px;" Typo=TitleTypo1() Color=Color.Primary>
+    @localizer["ServiceBookingDesign"]
 </MudText>
 
 <MudGrid Class="rounded-3" Justify="Justify.SpaceEvenly" Style="background-color:burlywood; width:90%; height:90%; margin-inline:auto; margin-top:30px; margin-bottom:60px;">
     <MudItem>
-        <MudText Style="color:black" Typo="Typo.h5">
-            Phase 1
+        <MudText Style="color:black" Typo=TitleTypo2()>
+            @localizer["Phase"] 1
         </MudText>
      </MudItem>
     <MudDivider Style="color:black" Light=true Vertical=false></MudDivider>
     <MudItem>
         <MudImage Fluid=true Class="rounded-lg" Src="/Icons/ServiceBookingDesign_Phase1.png" />
     </MudItem>
-    <MudItem xs="12" sm="6">
-        <MudText Align=Align.Center Style="color:black" Typo="Typo.h5">
-            To be filled
-        </MudText>
-    </MudItem>
 </MudGrid>
 
 <MudGrid Class="rounded-3" Justify="Justify.SpaceEvenly" Style="background-color:burlywood; width:90%; height:90%; margin-inline:auto; margin-top:30px; margin-bottom:60px;">
     <MudItem>
-        <MudText Style="color:black" Typo="Typo.h5">
-            Phase 2
+        <MudText Style="color:black" Typo=TitleTypo2()>
+            @localizer["Phase"] 2
         </MudText>
     </MudItem>
     <MudDivider Style="color:black" Light=true Vertical=false></MudDivider>
     <MudItem>
         <MudImage Fluid=true Class="rounded-lg" Src="/Icons/ServiceBookingDesign_Phase2.png" />
     </MudItem>
-    <MudItem xs="12" sm="6">
-        <MudText Align=Align.Center Style="color:black" Typo="Typo.h5">
-            To be filled
-        </MudText>
-    </MudItem>
 </MudGrid>
 
 <MudGrid Class="rounded-3" Justify="Justify.SpaceEvenly" Style="background-color:burlywood; width:90%; height:90%; margin-inline:auto; margin-top:30px; margin-bottom:60px;">
     <MudItem>
-        <MudText Style="color:black" Typo="Typo.h5">
-            Phase 3
+        <MudText Style="color:black" Typo=TitleTypo2()>
+            @localizer["Phase"] 3
         </MudText>
     </MudItem>
     <MudDivider Style="color:black" Light=true Vertical=false></MudDivider>
     <MudItem>
         <MudImage Fluid=true Class="rounded-lg" Src="/Icons/ServiceBookingDesign_Phase3.png" />
     </MudItem>
-    <MudItem xs="12" md="6">
-        <MudText Align=Align.Center Style="color:black" Typo="Typo.h5">
-            To be filled
-        </MudText>
-    </MudItem>
 </MudGrid>
 @code {
 
     [CascadingParameter]
     public Breakpoint currentBreakpoint { get; set; }
+
+    private Typo TitleTypo1()
+    {
+        var size = currentBreakpoint;
+
+        switch (size)
+        {
+            case Breakpoint.Xs: // Smartphone
+                return Typo.h5;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h5;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h4;
+
+            default: return Typo.h4;
+        }
+    }
+
+    private Typo TitleTypo2()
+    {
+        var size = currentBreakpoint;
+
+        switch (size)
+        {
+            case Breakpoint.Xs: // Smartphone
+                return Typo.body1;
+
+            case Breakpoint.Sm:// 600px> Tablet <960px
+                return Typo.h6;
+
+            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
+                return Typo.h5;
+
+            default: return Typo.h5;
+        }
+
+    }
 
 }

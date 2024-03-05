@@ -121,14 +121,11 @@
     <value>I've used this to build APIs, Backend services and Frontend solutions.</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>I'm a software engineer specializing in
-web development, actively seeking
-dynamic work environments that
-foster continuous learning and
-professional growth. Passionate
-about problem-solving and dedicated
-to making meaningful contributions
-to collaborative teams.</value>
+    <value>I'm a software engineer specializing in web development.&lt;br/&gt;&lt;br/&gt;
+
+In my work, what fills me up is finding solutions to problems, exploring new technologies and feeling like I'm contributing to the team. I seek to work in environments that promote continuous learning and growth. As for my preferences, I'm more interested in backend technologies and want to delve quite deep into system design.&lt;br /&gt;&lt;br/&gt;
+
+In my free time, I'll usually go for exercise, whether it's going to the gym or running. In addition, a bike ride helps me escape from the routine and gives me energy.</value>
   </data>
   <data name="AngularDesc" xml:space="preserve">
     <value>My experience is mainly in Angular2 and I have dabbled in AngularJS as well. Some libraries/tools I have used are Angular Material and Bootstrap.</value>
@@ -143,15 +140,18 @@ to collaborative teams.</value>
     <value>Greek Armed Forces IT Corps</value>
   </data>
   <data name="ArmyDesc" xml:space="preserve">
-    <value>· Held a part-time position as a software developer during mandatory military service.&lt;br /&gt;
+    <value>· Held a part-time position as a software engineer during mandatory military service.&lt;br /&gt;
 · Developed and maintained the military's internal software systems.&lt;br /&gt;
 · Provided technical support to system users, addressing inquiries and troubleshooting issues.</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
   </data>
   <data name="BlazorDesc" xml:space="preserve">
     <value>Helped me to build responsive modern web applications. I have used Syncfusion and Mudblazor libraries to leverage blazor features with ease.</value>
   </data>
   <data name="BuildBy" xml:space="preserve">
-    <value>Build by George Papasteriadis</value>
+    <value>Build and designed by &lt;br&gt; George Papasteriadis</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
@@ -160,7 +160,7 @@ to collaborative teams.</value>
     <value>&lt;b&gt;Reach Out😉&lt;/b&gt;</value>
   </data>
   <data name="CothetaDate" xml:space="preserve">
-    <value>Jul 2019 — Oct 2019</value>
+    <value>Jul - Oct 2019</value>
   </data>
   <data name="CothetaDesc" xml:space="preserve">
     <value>· Engaged in virtual and augmented reality projects using Unity3D.&lt;br /&gt;
@@ -170,19 +170,19 @@ to collaborative teams.</value>
     <value>Resume:</value>
   </data>
   <data name="DockerDesc" xml:space="preserve">
-    <value>Docker has enabled me to seamlessly package and deploy applications with ease. Α few examples of some of the types of applications I have Dockerized are: .ΝΕΤ6 Services, NestJS App, Databases, Message Brokers, FrontEnd Solutions.</value>
+    <value>Docker has enabled me to seamlessly package and deploy applications with ease. Α few examples of some of the types of applications I have Dockerized are: .ΝΕΤ6 Services, NestJS App, Databases, Message Brokers, Frontend Solutions.</value>
   </data>
   <data name="EFCoreDesc" xml:space="preserve">
-    <value>I gained my exprerience in EF Core primarily through structured courses, complemented by practical exposure to both the older Entity Framework and the latest EF Core in professional settings.</value>
+    <value>I gained experience in EF Core mainly through online courses but also through applying it in a work environment.</value>
   </data>
   <data name="EnglishCulture" xml:space="preserve">
     <value>EN</value>
   </data>
+  <data name="Experience" xml:space="preserve">
+    <value>Experience</value>
+  </data>
   <data name="ExperienceTitle" xml:space="preserve">
     <value>&lt;b&gt;Where I’ve Worked&lt;/b&gt;</value>
-  </data>
-  <data name="Exprerience" xml:space="preserve">
-    <value>Exprerience</value>
   </data>
   <data name="FindMe" xml:space="preserve">
     <value>You can also find me on the following social networks</value>
@@ -191,25 +191,24 @@ to collaborative teams.</value>
     <value>ΕΛ</value>
   </data>
   <data name="MobileApp" xml:space="preserve">
-    <value>Mobile App</value>
+    <value>FoodWaste App</value>
   </data>
   <data name="MobileAppDesc" xml:space="preserve">
-    <value>As a freelancer, I undertook a one-month project to develop a mobile application, using the following technologies:&lt;br /&gt;
-&lt;b&gt;Frontend Development:&lt;/b&gt; Leveraging the Ionic Framework integrated with Angular, I crafted dynamic user interfaces for seamless experiences across both Android and iOS platforms.&lt;br /&gt;
-&lt;b&gt;Backend Infrastructure:&lt;/b&gt; In the backend, I employed Apollo GraphQL and nestJS to build a robust system. MongoDB was utilized for efficient data storage and retrieval.&lt;br /&gt;
-&lt;b&gt;Deployment:&lt;/b&gt; Deployment was done on DigitalOcean using Docker containers. This approach allowed for agile packaging and deployment.</value>
+    <value>As a freelancer, I undertook a one-month project to develop a mobile application. FoodWaste application enables users to effortlessly input and categorize leftover food items, providing useful analytics to help them understand their consumption habits better.&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;Implementation Details:&lt;/b&gt;&lt;br&gt;
+· Leveraging the Ionic Framework integrated with Angular, I crafted dynamic user interfaces for seamless experiences across both Android and iOS platforms.&lt;br /&gt;
+· In the backend, I employed Apollo GraphQL and nestJS to build a robust system. MongoDB was utilized for data storage and retrieval.&lt;br /&gt;
+· Deployment was done on DigitalOcean using Docker containers. This approach allowed for agile packaging and deployment.</value>
   </data>
-  <data name="MobileAppHoverText1" xml:space="preserve">
-    <value>Click to see sample images</value>
-  </data>
-  <data name="MobileAppHoverText2" xml:space="preserve">
-    <value>Flip back</value>
+  <data name="MobileAppShowSample" xml:space="preserve">
+    <value>Click to see a sample</value>
   </data>
   <data name="MobileAppTitle1" xml:space="preserve">
-    <value>&lt;u&gt;Android/iOS Mobile App&lt;/u&gt;</value>
+    <value>&lt;u&gt;Android/iOS FoodWaste App&lt;/u&gt;</value>
   </data>
   <data name="MobileAppTitle2" xml:space="preserve">
-    <value>&lt;u&gt;Android/iOS Mobile App - Sample Images/Video&lt;/u&gt;</value>
+    <value>&lt;u&gt;Android/iOS FoodWaste App - Sample Images/Video&lt;/u&gt;</value>
   </data>
   <data name="MongoDBDesc" xml:space="preserve">
     <value>My experience with mongoDB is based on a job I had as a freelancer. I was using it with Mongoose (ODM) and mongo-express (Admin Interface).</value>
@@ -217,29 +216,25 @@ to collaborative teams.</value>
   <data name="MyName" xml:space="preserve">
     <value>&lt;b&gt;George Papasteriadis&lt;/b&gt;</value>
   </data>
-  <data name="NewProject" xml:space="preserve">
-    <value>New Project</value>
-  </data>
-  <data name="NewProjectDesc" xml:space="preserve">
-    <value>!! Coming Soon !!</value>
-  </data>
-  <data name="NewProjectTitle" xml:space="preserve">
-    <value>&lt;u&gt;New Project&lt;/u&gt;</value>
-  </data>
   <data name="PersonalWebsite" xml:space="preserve">
     <value>Personal Website</value>
   </data>
   <data name="PersonalWebsiteDesc" xml:space="preserve">
-    <value>Built using Blazor with .NET 8 and the MudBlazor library. A dynamic
+    <value>This project serves as a portfolio to showcase my projects, skills, and work experience in web development.&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;Implementation Details:&lt;/b&gt;&lt;br&gt;
+·Built using Blazor with .NET 8 and the MudBlazor library. A dynamic
 client-side web application that adapts effortlessly to any screen, whether you're browsing on a desktop, tablet, or smartphone.&lt;br&gt;
 
-Hosted on Microsoft Azure using the Static Web Apps service.&lt;br&gt;
+·Hosted on Microsoft Azure using the Static Web Apps service.&lt;br&gt;
 
-The codebase stored on GitHub, leveraging GitHub Actions for Continuous Integration and Continuous Development (CI/CD),
-which helps updates and enhancements roll out seamlessly.</value>
+·The codebase stored on GitHub, leveraging GitHub Actions for Continuous Integration and Continuous Development (CI/CD), which helps updates and enhancements roll out seamlessly.</value>
   </data>
   <data name="PersonalWebsiteTitle" xml:space="preserve">
     <value>&lt;u&gt;My First Personal Website&lt;/u&gt;</value>
+  </data>
+  <data name="Phase" xml:space="preserve">
+    <value>Phase</value>
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Projects</value>
@@ -251,13 +246,35 @@ which helps updates and enhancements roll out seamlessly.</value>
     <value>Leveraging the library in C#, I successfully implemented it for various scenarios including asynchronous email dispatch, push notifications, and job scheduling, thereby enhancing system responsiveness and scalability.</value>
   </data>
   <data name="Salutation" xml:space="preserve">
-    <value>Hello! my name is</value>
+    <value>Hello!👋 my name is</value>
   </data>
   <data name="SendMeMail" xml:space="preserve">
     <value>Send Me Email</value>
   </data>
+  <data name="ServiceBooking" xml:space="preserve">
+    <value>Service Booking</value>
+  </data>
+  <data name="ServiceBookingDesc" xml:space="preserve">
+    <value>The Local Services Booking Platform is a personal side project that aims to provide users with a convenient and efficient way to access local services in their area. I am building this platform to connect users with reliable service providers for various needs like house cleaning, personal training, tutoring and more.&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;Implementation details:&lt;/b&gt;&lt;br&gt;
+· &lt;em&gt;Frontend Development:&lt;/em&gt;&lt;br&gt;
+For the Frontend, I will be using Blazor in .NET 8, enhancing it with the MudBlazor library. Also, I will use ASP.NET Core Identity in conjunction with a dedicated database for user authentication and authorization.&lt;br&gt;
+· &lt;em&gt;Backend Services:&lt;/em&gt;&lt;br&gt;
+For the Backend I will use a Web API in .NET 8 to communicate with the Frontend and Entity Framework Core as an ORM to access the data. The main database I will use will be MSSQL for easy data storage and retrieval&lt;br&gt;
+·&lt;em&gt;Key Components:&lt;/em&gt; &lt;br&gt;
+Redis will be used to cache data that does not change frequently and has increased demand from users, improving application performance and mitigating database load and latency. Elasticsearch will be used to store log files but will also serve the search function of users, it will also be complemented by Kibana for the visualization and analysis of log files. Real-time user interface updates will be possible by leveraging SignalR. Finally RabbitMQ will act as a message broker for asynchronous communication between core services, such as the Email Worker for sending emails asynchronously and the Hangfire Worker for performing various tasks in the background.&lt;br&gt;
+· &lt;em&gt;Deployment Infrastructure:&lt;/em&gt;&lt;br&gt;
+The deployment infrastructure will be hosted on Azure, using Docker containers to package all the individual parts of the application.</value>
+  </data>
+  <data name="ServiceBookingDesign" xml:space="preserve">
+    <value>Service Booking System Design</value>
+  </data>
+  <data name="ServiceBookingTitle" xml:space="preserve">
+    <value>&lt;u&gt;Local Service Booking Web App&lt;/u&gt;</value>
+  </data>
   <data name="SignalRDesc" xml:space="preserve">
-    <value>In a previous role, I leveraged SignalR to facilitate real-time updates within the frontend, implementing solutions in both C# and JavaScript.</value>
+    <value>In a previous role, I leveraged SignalR to facilitate real-time updates within the frontend, implementing it in both C# and JavaScript.</value>
   </data>
   <data name="SkillAcquired" xml:space="preserve">
     <value>Was acquired through:</value>
@@ -292,12 +309,18 @@ which helps updates and enhancements roll out seamlessly.</value>
   <data name="SQLDesc" xml:space="preserve">
     <value>In almost every project I've taken on, I've used SQL by integrating it with various ORMs like EFCore and Sequelize. Additionally, I have used raw SQL queries extensively.</value>
   </data>
+  <data name="SystemDesign" xml:space="preserve">
+    <value>System Design</value>
+  </data>
   <data name="TerracomDate" xml:space="preserve">
     <value>Oct 2020 - Dec 2022</value>
   </data>
   <data name="TerracomDesc" xml:space="preserve">
-    <value>·Played a pivotal role in the development, maintenance, and evolution of the patrol and security management platform QR-Patrol.&lt;br /&gt;
+    <value>·Played a significant role in the development, maintenance, and evolution of the patrol and security management platform QR-Patrol.&lt;br /&gt;
 ·Actively participated in technical analysis and system design processes, contributing to enhance project outcomes.&lt;br /&gt;
-·Engaged in team meetings to synchronize efforts and maintain alignment with project goals, while maintaining close collaboration with team members to implement updates and improvements.</value>
+·Engaged in team meetings to synchronize efforts and maintain alignment with project goals.</value>
+  </data>
+  <data name="UnderConstruction" xml:space="preserve">
+    <value>&lt;b&gt;  Under Construction &lt;/b&gt;</value>
   </data>
 </root>
