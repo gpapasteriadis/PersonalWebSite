@@ -117,16 +117,210 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name=".NetCoreDesc" xml:space="preserve">
+    <value>Το έχω χρησιμοποιήσει για να δημιουργήσω APIs, Backend services και Frontend solutions.</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Είμαι μηχανικός λογισμικού και ειδικεύομαι στην ανάπτυξη Web εφαρμογών.&lt;br/&gt;&lt;br/&gt;
+
+Στη δουλειά μου, αυτό που με γεμίζει είναι να βρίσκω λύσεις σε προβλήματα, να εξερευνώ νέες τεχνολογίες και να νιώθω ότι συνεισφέρω στην ομάδα. Επιδιώκω να εργάζομαι σε περιβάλλοντα που προωθούν τη συνεχή μάθηση και ανάπτυξη. Όσον αφορά τις προτιμήσεις μου, με ενδιαφέρουν περισσότερο οι backend τεχνολογίες και θέλω να εμβαθύνω αρκετά στο σχεδιασμό συστημάτων.&lt;br /&gt;&lt;br/&gt;
+
+Στον ελεύθερο χρόνο μου, συνήθως θα πάω για γυμναστική, είτε πρόκειται για το γυμναστήριο είτε για τρέξιμο. Επιπλέον μια βόλτα με την μηχανή με βοηθάει να ξεφύγω απο την ρουτίνα και μου δίνει ενέργεια.</value>
+  </data>
+  <data name="AngularDesc" xml:space="preserve">
+    <value>Η εμπειρία μου είναι κυρίως στην Angular 2, καθώς επίσης και στην AngularJS. Σε κάποιες από τις βιβλιοθήκες/εργαλεία που έχω χρησιμοποιήσει περιλαμβάνεται το Angular Material και το Bootstrap.</value>
+  </data>
+  <data name="Army" xml:space="preserve">
+    <value>Ελληνικός Στρατός</value>
+  </data>
+  <data name="ArmyDate" xml:space="preserve">
+    <value>Μάρτιος - Οκτ 2023</value>
+  </data>
+  <data name="ArmyDepartment" xml:space="preserve">
+    <value>Σώμα Πληροφορικής Ελληνικών Ενόπλων Δυνάμεων</value>
+  </data>
+  <data name="ArmyDesc" xml:space="preserve">
+    <value>·Κατείχα μια θέση μερικής απασχόλησης ως μηχανικός λογισμικού κατά τη διάρκεια της υποχρεωτικής στρατιωτικής θητείας.&lt;br /&gt;
+· Ανέπτυσσα και συντηρούσα τα εσωτερικά λογισμικά συστήματα του στρατού.&lt;br /&gt;
+· Παρείχα τεχνική υποστήριξη στους χρήστες του συστήματος για την αντιμετώπιση προβλημάτων.</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Πίσω</value>
+  </data>
+  <data name="BlazorDesc" xml:space="preserve">
+    <value>Με βοήθησε στη δημιουργία προσαρμόσιμων, σύγχρονων web εφαρμογών. Χρησιμοποίησα τις βιβλιοθήκες Syncfusion και MudBlazor για να εκμεταλλευτώ με ευκολία τα χαρακτηριστικά του Blazor.</value>
+  </data>
+  <data name="BuildBy" xml:space="preserve">
+    <value>Κατασκευάστηκε και σχεδιάστηκε από τον &lt;br&gt; Γιώργο Παπαστεριάδη</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Επικοινωνία</value>
+  </data>
+  <data name="ContactTitle" xml:space="preserve">
+    <value>&lt;b&gt;Επικοινωνήστε😉&lt;/b&gt;</value>
+  </data>
+  <data name="CothetaDate" xml:space="preserve">
+    <value>Ιουλ  - Οκτ 2019</value>
+  </data>
+  <data name="CothetaDesc" xml:space="preserve">
+    <value>· Συμμετείχα σε έργα εικονικής και επαυξημένης πραγματικότητας χρησιμοποιώντας το Unity3D.&lt;br /&gt;
+·Συνεισέφερα στη δημιουργία διαδραστικών εμπειριών.</value>
+  </data>
   <data name="CV" xml:space="preserve">
     <value>Βιογραφικό:</value>
+  </data>
+  <data name="DockerDesc" xml:space="preserve">
+    <value>Το Docker μου επέτρεψε να πακετάρω και να αναπτύξω εφαρμογές με ευκολία. Μερικά παραδείγματα εφαρμογών που έχω χρησιμοποιήσει το Docker είναι: .NET 6 services, NestJS εφαρμογές, Bάσεις δεδομένων, Message Brokers, Frontend solutions.</value>
+  </data>
+  <data name="EFCoreDesc" xml:space="preserve">
+    <value>Απέκτησα εμπειρία στο EF Core κυρίως μέσω διαδικτυακών μαθημάτων αλλά και μέσω εφαρμογής του σε περιβάλον εργασίας.</value>
   </data>
   <data name="EnglishCulture" xml:space="preserve">
     <value>EN</value>
   </data>
+  <data name="Experience" xml:space="preserve">
+    <value>Εμπειρία</value>
+  </data>
+  <data name="ExperienceTitle" xml:space="preserve">
+    <value>&lt;b&gt;Που έχω εργαστεί&lt;/b&gt;</value>
+  </data>
+  <data name="FindMe" xml:space="preserve">
+    <value>Μπορείτε επίσης να με βρείτε στα παρακάτω κοινωνικά δίκτυα</value>
+  </data>
   <data name="GreekCulture" xml:space="preserve">
     <value>ΕΛ</value>
   </data>
+  <data name="MobileApp" xml:space="preserve">
+    <value>FoodWaste App</value>
+  </data>
+  <data name="MobileAppDesc" xml:space="preserve">
+    <value>Ως ελεύθερος επαγγελματίας, ανέλαβα ένα έργο ενός μήνα για την ανάπτυξη μιας εφαρμογής για κινητά. Η εφαρμογή FoodWaste επιτρέπει στους χρήστες να εισάγουν και να κατηγοριοποιούν εύκολα τα υπολείμματα τροφίμων, παρέχοντας χρήσιμα στοιχεία που τους βοηθούν να κατανοήσουν καλύτερα τις καταναλωτικές τους συνήθειες.&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;Λεπτομέρειες υλοποίησης:&lt;/b&gt;&lt;br&gt;
+· Χρησιμοποιώντας το Ionic Framework με την Angular, δημιούργησα δυναμικές διεπαφές χρήστη για Android και iOS λογισμικά.&lt;br /&gt;
+· Στο backend, χρησιμοποίησα το Apollo GraphQL και το nestJS για να δημιουργήσω ένα αποδοτικό σύστημα. Το MongoDB χρησιμοποιήθηκε για αποθήκευση και ανάκτηση δεδομένων.&lt;br /&gt;
+· Για περιβάλον παραγωγής επέλεξα το DigitalOcean χρησιμοποιώντας Docker containers. Αυτή η προσέγγιση επέτρεψε την ευέλικτη μεταφορά της εφαρμογής απο περιβάλον ανάπτυξης σε παραγωγής.</value>
+  </data>
+  <data name="MobileAppShowSample" xml:space="preserve">
+    <value>Κάντε κλικ για να δείτε ένα δείγμα</value>
+  </data>
+  <data name="MobileAppTitle1" xml:space="preserve">
+    <value>&lt;u&gt;Android/iOS FoodWaste App&lt;/u&gt;</value>
+  </data>
+  <data name="MobileAppTitle2" xml:space="preserve">
+    <value>&lt;u&gt;Android/iOS FoodWaste App - Δείγμα φωτογραφιών/Βίντεο&lt;/u&gt;</value>
+  </data>
+  <data name="MongoDBDesc" xml:space="preserve">
+    <value>Η εμπειρία μου με το MongoDB βασίζεται σε μια εργασία που είχα ως ελεύθερος επαγγελματίας. Χρησιμοποίησα το Mongoose (ODM) και το mongo-express (Διεπαφή Διαχειριστή).</value>
+  </data>
+  <data name="MyName" xml:space="preserve">
+    <value>&lt;b&gt;Γιώργος Παπαστεριάδης&lt;/b&gt;</value>
+  </data>
+  <data name="PersonalWebsite" xml:space="preserve">
+    <value>Προσωπική Ιστοσελίδα</value>
+  </data>
+  <data name="PersonalWebsiteDesc" xml:space="preserve">
+    <value>Αυτό το project χρησιμεύει ως χαρτοφυλάκιο για να παρουσιάσω τα projects, τις δεξιότητες και την εργασιακή μου εμπειρία στo web development.&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;Λεπτομέρειες υλοποίησης:&lt;/b&gt;&lt;br&gt;
+·Δημιουργήθηκε χρησιμοποιώντας Blazor με .NET 8 και τη βιβλιοθήκη MudBlazor. Μια δυναμική client-side
+εφαρμογή που προσαρμόζεται εύκολα σε οποιαδήποτε οθόνη, είτε κάνετε περιήγηση σε επιτραπέζιο υπολογιστή, tablet ή smartphone.&lt;br&gt;
+
+· Φιλοξενείται στο Microsoft Azure χρησιμοποιώντας την υπηρεσία Static Web Apps.&lt;br&gt;
+
+·Ο κώδικας είναι αποθηκευμένος στο GitHub, αξιοποιώντας το GitHub Actions για Continuous Integration και Continuous Development (CI/CD), το οποίο βοηθά τις ενημερώσεις και τις βελτιώσεις της εφαρμογής να βγαίνουν στην παραγωγή απρόσκοπτα.</value>
+  </data>
+  <data name="PersonalWebsiteTitle" xml:space="preserve">
+    <value>&lt;u&gt;Η πρώτη μου προσωπική ιστοσελίδα&lt;/u&gt;</value>
+  </data>
+  <data name="Phase" xml:space="preserve">
+    <value>Φάση</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="ProjectsTitle" xml:space="preserve">
+    <value>&lt;b&gt;Μερικά projects&lt;/b&gt;</value>
+  </data>
+  <data name="RabbitMQDesc" xml:space="preserve">
+    <value>Υλοποιώντας τη βιβλιοθήκη στην γλώσσα C#, την χρησιμοποίησα για διάφορες περιπτώσεις, συμπεριλαμβανομένης της ασύγχρονης αποστολής email, της αποστολής ειδοποιήσεων σε εφαρμογές κινητών, και του προγραμματισμού εργασιών, βελτιώνοντας έτσι την αποκρισιμότητα και την κλιμακωσιμότητα του συστήματος.</value>
+  </data>
+  <data name="Salutation" xml:space="preserve">
+    <value>Γεια!👋 Είμαι ο</value>
+  </data>
+  <data name="SendMeMail" xml:space="preserve">
+    <value>Στείλτε μου Email</value>
+  </data>
+  <data name="ServiceBooking" xml:space="preserve">
+    <value>Κρατήσεις Υπηρεσιών</value>
+  </data>
+  <data name="ServiceBookingDesc" xml:space="preserve">
+    <value>Η Πλατφόρμα Κρατήσεων Τοπικών Υπηρεσιών είναι ένα προσωπικό side project που στοχεύει να παρέχει στους χρήστες έναν βολικό και αποτελεσματικό τρόπο πρόσβασης στις τοπικές υπηρεσίες της περιοχής τους. Φτιάχνω αυτήν την πλατφόρμα για να συνδέω τους χρήστες με αξιόπιστους παρόχους υπηρεσιών για διάφορες ανάγκες, όπως καθαρισμός σπιτιού, personal training, διδασκαλία και άλλα.&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;Λεπτομέρειες υλοποίησης:&lt;/b&gt;&lt;br&gt;
+· &lt;em&gt;Ανάπτυξη του Frontend:&lt;/em&gt;&lt;br&gt;
+Για το Frontend, θα χρησιμοποιήσω το Blazor στο .NET 8, εμπλουτίζοντάς το με τη βιβλιοθήκη MudBlazor. Ακόμα, θα χρησιμοποιήσω το ASP.NET Core Identity σε συνδυασμό με μια αποκλειστική βάση δεδομένων για τον έλεγχο ταυτότητας και την εξουσιοδότηση των χρηστών.&lt;br&gt;
+· &lt;em&gt;Υπηρεσίες Backend:&lt;/em&gt;&lt;br&gt;
+Για το Backend θα χρησιμοποιήσω ενα Web API στο .NET 8 για την επικοινωνία με το Frontend και το Entity Framework Core ως ORM για την πρόσβαση στα δεδομένα. Η κύρια βάση που θα χρησιμοποιήσω θα ειναι το MSSQL για εύκολη αποθήκευση και ανάκτηση δεδομένων&lt;br&gt;
+·&lt;em&gt;Βασικά Στοιχεία:&lt;/em&gt; &lt;br&gt;
+Το Redis θα χρησιμοποιηθεί για την προσωρινή αποθήκευση δεδομένων τα οποία δεν μεταβάλονται συχνά και έχουν αυξημένη ζήτηση απο τους χρήστες, βελτιώνοντας την απόδοση της εφαρμογής και μετριάζοντας το φόρτο της βάσης δεδομένων και την καθυστέρηση. Το Elasticsearch θα χρησιμοποιηθεί για την αποθήκευση log αρχείων αλλά θα εξυπηρετήσει και την λειτουργία αναζήτησης των χρηστών, θα συμπληρωθεί και από το Kibana για την οπτικοποίηση και ανάλυση των log αρχείων. Οι ενημερώσεις της διεπαφής σε πραγματικό χρόνο θα είναι εφικτές αξιοποιώντας το SignalR. Τέλος το RabbitMQ θα λειτουργεί ως διαμεσολαβητής μηνυμάτων για την ασύγχρονη επικοινωνία μεταξύ βασικών υπηρεσιών, όπως ο Email Worker για ασύγχρονη αποστολή email και ο Hangfire Worker για την εκτέλεση διάφορων εργασιών στο παρασκήνιο.&lt;br&gt;
+· &lt;em&gt;Υποδομή ανάπτυξης:&lt;/em&gt;&lt;br&gt;
+Η υποδομή ανάπτυξης θα φιλοξενηθεί στο Azure, χρησιμοποιώντας Docker containers για το packaging όλων των επιμέρους τμημάτων της εφαρμογής.</value>
+  </data>
+  <data name="ServiceBookingDesign" xml:space="preserve">
+    <value>Σχεδίαση του Συστήματος Κρατήσεων Υπηρεσιών</value>
+  </data>
+  <data name="ServiceBookingTitle" xml:space="preserve">
+    <value>&lt;u&gt;Εφαρμογή Κρατήσεων Τοπικών Υπηρεσιών&lt;/u&gt;</value>
+  </data>
+  <data name="SignalRDesc" xml:space="preserve">
+    <value>Σε προηγούμενο ρόλο, αξιοποίησα το SignalR για την ενημέρωση του UI σε πραγματικό χρόνο, εφαρμόζοντάς το τόσο στη C# όσο και στη JavaScript.</value>
+  </data>
+  <data name="SkillAcquired" xml:space="preserve">
+    <value>Αποκτήθηκε μέσω:</value>
+  </data>
+  <data name="SkillAcquired_Job" xml:space="preserve">
+    <value>Εργασία</value>
+  </data>
+  <data name="SkillAcquired_JobCourse" xml:space="preserve">
+    <value>Εργασία, Μαθήματα</value>
+  </data>
+  <data name="SkillAcquired_JobProject" xml:space="preserve">
+    <value>Εργασία, Projects</value>
+  </data>
+  <data name="SkillAcquired_JobProjectCourse" xml:space="preserve">
+    <value>Εργασία, Projects, Μαθήματα</value>
+  </data>
+  <data name="SkillAcquired_Project" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="Skills" xml:space="preserve">
+    <value>Δεξιότητες</value>
+  </data>
+  <data name="SkillsTitle" xml:space="preserve">
+    <value>&lt;b&gt;Δεξιότητες/Εργαλεία που αποκτήθηκαν&lt;/b&gt;</value>
+  </data>
+  <data name="SoftwareEngineer" xml:space="preserve">
+    <value>&lt;b&gt;Μηχανικός Λογισμικού&lt;/b&gt;</value>
+  </data>
+  <data name="SoftwareEngineerIntern" xml:space="preserve">
+    <value>&lt;b&gt;Πρακτική Άσκηση ως Μηχανικός Λογισμικού&lt;/b&gt;</value>
+  </data>
+  <data name="SQLDesc" xml:space="preserve">
+    <value>Σε σχεδόν κάθε έργο που ανέλαβα, χρησιμοποίησα την SQL ενσωματώνοντάς τη με διάφορα ORMs όπως το EFCore και το Sequelize. Επιπλέον, εχω χρησιμοποιήσει εκτενώς απλά ερωτήματα SQL.</value>
+  </data>
+  <data name="SystemDesign" xml:space="preserve">
+    <value>Σχεδίαση του Συστήματος</value>
+  </data>
+  <data name="TerracomDate" xml:space="preserve">
+    <value>Οκτ 2020 - Δεκ 2022</value>
+  </data>
+  <data name="TerracomDesc" xml:space="preserve">
+    <value>· Έπαιξα σημαντικό ρόλο στην ανάπτυξη, συντήρηση και εξέλιξη της πλατφόρμας διαχείρισης περιπολίας και ασφάλειας QR-Patrol.&lt;br /&gt;
+· Συμμετείχα ενεργά στις τεχνικές αναλύσεις και τις διαδικασίες σχεδιασμού συστήματος, συνεισφέροντας στη βελτίωση των αποτελεσμάτων του project.&lt;br /&gt;
+· Συμμετείχα σε συναντήσεις της ομάδας προκειμένου να συγχρονίσουμε τις προσπάθειές μας και να διατηρήσουμε την πορεία μας προς τους στόχους του project.</value>
+  </data>
   <data name="UnderConstruction" xml:space="preserve">
-    <value>&lt;b&gt;  Υπο Κατασκεύη &lt;/b&gt;</value>
+    <value>&lt;b&gt;  Υπό κατασκευή &lt;/b&gt;</value>
   </data>
 </root>

@@ -47,7 +47,7 @@
                                 <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()>@(new MarkupString(localizer["MobileAppTitle1"]))</MudText>
                             </CardHeaderContent>
                             <CardHeaderActions>
-                                <MudIconButton Class="sampleImagesIconAnim" Icon="@Icons.Material.Rounded.Image" Title=@localizer["MobileAppHoverText1"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
+                                <MudIconButton Class="sampleImagesIconAnim" Icon="@Icons.Material.Rounded.Image" Title=@localizer["MobileAppShowSample"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
                             </CardHeaderActions>
                         </MudCardHeader>
                         <MudCardContent hidden="@(!showMobileAppCardImages)" Style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
@@ -74,7 +74,7 @@
                                 <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()>@(new MarkupString(localizer["MobileAppTitle2"]))</MudText>
                             </CardHeaderContent>
                             <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Material.Rounded.ArrowBack" Title=@localizer["MobileAppHoverText2"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
+                                <MudIconButton Icon="@Icons.Material.Rounded.ArrowBack" Title=@localizer["Back"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
                             </CardHeaderActions>
                         </MudCardHeader>
                         <MudCardContent hidden="@showMobileAppCardImages" Class="gap-4 d-flex flex-wrap justify-content-center">
@@ -94,7 +94,7 @@
                                 <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()>@(new MarkupString(localizer["ServiceBookingTitle"]))</MudText>
                             </CardHeaderContent>
                             <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Material.Filled.DesignServices" Title="System Design" Href="@(config.GetValue<String>("Projects:LocalServiceBooking_DesignPage"))" Color="Color.Primary" />
+                                <MudIconButton Icon="@Icons.Material.Filled.DesignServices" Title=@localizer["SystemDesign"] Href="@(config.GetValue<String>("Projects:LocalServiceBooking_DesignPage"))" Color="Color.Primary" />
                                 <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Target="_blank" Disabled=true Href="@(config.GetValue<String>("Projects:LocalServiceBooking_Git"))" Color="Color.Primary" />
                             </CardHeaderActions>
                         </MudCardHeader>
@@ -120,7 +120,25 @@
                                 Entity Framework Core
                             </MudText>
                             <MudText Style="margin-inline:10px;" Typo="Typo.caption">
-                                Identity Framework
+                                ASP.NET Core Identity
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                RabbitMQ
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                Elasticsearch
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                SignalR
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                Hangfire
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                Redis
+                            </MudText>
+                            <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                                Docker
                             </MudText>
                         </MudCardActions>
                     </MudCard>
@@ -174,7 +192,7 @@
                     </CardHeaderContent>
                     <CardHeaderActions>
                         <MudItem id="sampleImagesIcon">
-                            <MudIconButton Icon="@Icons.Material.Rounded.Image" Title=@localizer["MobileAppHoverText1"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
+                            <MudIconButton Icon="@Icons.Material.Rounded.Image" Title=@localizer["MobileAppShowSample"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
                         </MudItem>
                     </CardHeaderActions>
                 </MudCardHeader>
@@ -202,7 +220,7 @@
                         <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()>@(new MarkupString(localizer["MobileAppTitle2"]))</MudText>
                     </CardHeaderContent>
                     <CardHeaderActions>
-                        <MudIconButton Icon="@Icons.Material.Rounded.ArrowBack" Title=@localizer["MobileAppHoverText2"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
+                        <MudIconButton Icon="@Icons.Material.Rounded.ArrowBack" Title=@localizer["Back"] OnClick=RotateMobileAppCard Size=Size.Medium Color="Color.Primary" />
                     </CardHeaderActions>
                 </MudCardHeader>
                 <MudCardContent hidden="@showMobileAppCardImages" Class="gap-4 d-flex flex-wrap justify-content-center">
@@ -220,7 +238,7 @@
                         <MudText Style="display:flex; flex-direction:column; justify-content:center; align-items:center;" Color=Color.Primary Typo=@TitleTypo2()>@(new MarkupString(localizer["ServiceBookingTitle"]))</MudText>
                     </CardHeaderContent>
                     <CardHeaderActions>
-                        <MudIconButton Icon="@Icons.Material.Filled.DesignServices" Title="System Design" Href="@(config.GetValue<String>("Projects:LocalServiceBooking_DesignPage"))" Color="Color.Primary" />
+                        <MudIconButton Icon="@Icons.Material.Filled.DesignServices" Title=@localizer["SystemDesign"] Href="@(config.GetValue<String>("Projects:LocalServiceBooking_DesignPage"))" Color="Color.Primary" />
                         <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Target="_blank" Disabled=true Href="@(config.GetValue<String>("Projects:LocalServiceBooking_Git"))" Color="Color.Primary" />
                     </CardHeaderActions>
                 </MudCardHeader>
@@ -246,7 +264,25 @@
                         Entity Framework Core
                     </MudText>
                     <MudText Style="margin-inline:10px;" Typo="Typo.caption">
-                        Identity Framework
+                        ASP.NET Core Identity
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        RabbitMQ
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        Elasticsearch
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        SignalR
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        Hangfire
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        Redis
+                    </MudText>
+                    <MudText Style="margin-inline:10px;" Typo="Typo.caption">
+                        Docker
                     </MudText>
                 </MudCardActions>
             </MudCard>
