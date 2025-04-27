@@ -136,6 +136,9 @@ In my spare time, I enjoy working out and going on motorcycle trips, they give m
   <data name="ArmyDate" xml:space="preserve">
     <value>Mar - Oct 2023</value>
   </data>
+  <data name="PwCDate" xml:space="preserve">
+    <value>May 2024 - Present</value>
+  </data>
   <data name="ArmyDepartment" xml:space="preserve">
     <value>Greek Armed Forces IT Corps</value>
   </data>
@@ -151,9 +154,12 @@ In my spare time, I enjoy working out and going on motorcycle trips, they give m
     <value>Helped me to build responsive modern web applications. I have used Syncfusion and Mudblazor libraries to leverage blazor features with ease.</value>
   </data>
   <data name="BuildBy" xml:space="preserve">
-    <value>Build and designed by &lt;br&gt; George Papasteriadis</value>
+    <value>Built and designed by &lt;br&gt; George Papasteriadis</value>
   </data>
   <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Contact1" xml:space="preserve">
     <value>Contact</value>
   </data>
   <data name="ContactTitle" xml:space="preserve">
@@ -322,5 +328,18 @@ The deployment infrastructure will be hosted on Azure, using Docker containers t
   </data>
   <data name="UnderConstruction" xml:space="preserve">
     <value>&lt;b&gt;  Under Construction &lt;/b&gt;</value>
+  </data>
+  <data name="PwCDesc" xml:space="preserve">
+    <value>• Developed a web application for creating and managing questionnaires.&lt;br /&gt;
+ – Built with .NET 8 and Blazor Server, utilizing the MudBlazor component library for a modern and 
+ responsive UI.&lt;br /&gt;
+ – Managed data operations using SQL Server and Entity Framework Core.&lt;br /&gt;
+ – Implemented email notifications and task scheduling with Hangfire.&lt;br /&gt;
+ – Oversaw the entire development lifecycle through Azure DevOps, ensuring smooth CI/CD pipelines 
+ and efficient project tracking.&lt;br /&gt;
+
+• Contributed to the enhancement of a banking web application.&lt;br /&gt;
+ – Designed and optimized database operations using SQL Server.&lt;br /&gt;
+ – Developed and improved features using ASP.NET MVC, JavaScript, and .NET 6.</value>
   </data>
 </root>

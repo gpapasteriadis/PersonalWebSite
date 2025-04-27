@@ -11,6 +11,23 @@
 
                 <MudTimelineItem Color="Color.Primary" Elevation="25">
                     <ItemOpposite>
+                        <MudText Color="Color.Primary" Typo=TitleTypo2()>@localizer["PwCDate"]</MudText>
+                    </ItemOpposite>
+                    <ItemContent>
+                        <MudPaper Elevation="0">
+                            <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
+                                @(new MarkupString(localizer["SoftwareEngineer"]))
+                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:PwC"))" Typo=TitleTypo2()>@@PwC Greece</MudLink>
+                            </MudText>
+                            <MudText Typo=DescTypo()>
+                                @(new MarkupString(localizer["PwCDesc"]))
+                            </MudText>
+                        </MudPaper>
+                    </ItemContent>
+                </MudTimelineItem>
+
+                <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
+                    <ItemOpposite>
                         <MudText Color="Color.Primary" Typo=TitleTypo2()>@localizer["ArmyDate"]</MudText>
                     </ItemOpposite>
                     <ItemContent>
