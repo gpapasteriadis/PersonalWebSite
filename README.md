@@ -55,4 +55,4 @@ Icons provided by [flaticon](https://www.flaticon.com/).
 ## Contact
 Feel free to reach out to me with any questions, feedback, or collaboration opportunities:
 - Email: giorgospapasteriadis@gmail.com
-- LinkedIn: [in/giorgos-papasteriadis](https://www.linkedin.com/in/giorgos-papasteriadis/)
+- LinkedIn: [in/giorgos-papasteriadis](https://www.linkedin.com/in/gpapasteriadis/)
