@@ -136,6 +136,9 @@
   <data name="ArmyDate" xml:space="preserve">
     <value>Μάρτιος - Οκτ 2023</value>
   </data>
+  <data name="PwCDate" xml:space="preserve">
+    <value>Μάιος 2024 - Σήμερα</value>
+  </data>
   <data name="ArmyDepartment" xml:space="preserve">
     <value>Σώμα Πληροφορικής Ελληνικών Ενόπλων Δυνάμεων</value>
   </data>
@@ -154,6 +157,9 @@
     <value>Κατασκευάστηκε και σχεδιάστηκε από τον &lt;br&gt; Γιώργο Παπαστεριάδη</value>
   </data>
   <data name="Contact" xml:space="preserve">
+    <value>Επικοινωνία</value>
+  </data>
+  <data name="Contact1" xml:space="preserve">
     <value>Επικοινωνία</value>
   </data>
   <data name="ContactTitle" xml:space="preserve">
@@ -322,5 +328,18 @@
   </data>
   <data name="UnderConstruction" xml:space="preserve">
     <value>&lt;b&gt;  Υπό κατασκευή &lt;/b&gt;</value>
+  </data>
+  <data name="PwCDesc" xml:space="preserve">
+    <value>• Ανέπτυξα διαδικτυακή εφαρμογή για τη δημιουργία και διαχείριση ερωτηματολογίων.&lt;br /&gt;
+– Χτίστηκε με .NET 8 και Blazor Server, χρησιμοποιώντας τη βιβλιοθήκη MudBlazor για ένα σύγχρονο και
+ανταποκρινόμενο περιβάλλον χρήστη.&lt;br /&gt;
+– Διαχειρίστηκα λειτουργίες δεδομένων με χρήση SQL Server και Entity Framework Core.&lt;br /&gt;
+– Υλοποίησα ειδοποιήσεις μέσω email και προγραμματισμό εργασιών με το Hangfire.&lt;br /&gt;
+– Διαχειρίστηκα ολόκληρο τον κύκλο ανάπτυξης μέσω Azure DevOps, εξασφαλίζοντας ομαλές διαδικασίες CI/CD
+και αποδοτική παρακολούθηση του έργου.&lt;br /&gt;
+
+• Συνεισέφερα στη βελτίωση τραπεζικής διαδικτυακής εφαρμογής.&lt;br /&gt;
+– Σχεδίασα και βελτιστοποίησα λειτουργίες βάσης δεδομένων χρησιμοποιώντας SQL Server.&lt;br /&gt;
+– Ανέπτυξα και βελτίωσα λειτουργίες με χρήση ASP.NET MVC, JavaScript και .NET 6.</value>
   </data>
 </root>

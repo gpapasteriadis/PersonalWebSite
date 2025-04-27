@@ -50,17 +50,24 @@
     
         window.scrollFunctionality = () => {
             var prevScrollpos = window.pageYOffset;
+
             window.onscroll = () => {
                 var currentScrollPos = window.pageYOffset;
-                if (prevScrollpos > currentScrollPos) {
-                    document.getElementById("appbar").style.top = "0";
+                try {
+                    var appbar = document.getElementById("appbar");
+                    if (appbar) { // Ensure the appbar element exists
+                        if (prevScrollpos > currentScrollPos) {
+                            appbar.style.top = "0";
+                        } else {
+                            appbar.style.top = "-50px";
+                        }
+                    }
+                    prevScrollpos = currentScrollPos;
                 }
-                else {
-                    document.getElementById("appbar").style.top = "-50px";
+                catch (e) {
                 }
-                prevScrollpos = currentScrollPos;
-            }
-        }
+            };
+        };
 
         // Function to reattach the scroll event handler
         window.reAttachScrollEvent = () => {
