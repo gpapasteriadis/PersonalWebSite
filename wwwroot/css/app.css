@@ -258,3 +258,7 @@ a, .btn-link {
         opacity: 1;
     }
 }
+
+.no-uppercase {
+    text-transform: none !important;
+}

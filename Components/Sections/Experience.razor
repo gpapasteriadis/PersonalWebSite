@@ -102,7 +102,18 @@
         <MudCardContent>
             <MudTabs MinimumTabWidth="70px" Rounded="true" Centered="true">
 
-                <MudTabPanel Text=@localizer["Army"]>
+                <MudTabPanel Text="PwC Greece" Class="no-uppercase">
+                    <MudText Style="margin-bottom:5px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
+                        @(new MarkupString(localizer["SoftwareEngineer"]))
+                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:PwC"))" Typo=TitleTypo2()>@@PwC Greece</MudLink>
+                    </MudText>
+                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>@localizer["PwCDate"]</MudText>
+                    <MudText Typo=DescTypo()>
+                        @(new MarkupString(localizer["PwCDesc"]))
+                    </MudText>
+                </MudTabPanel>
+
+                <MudTabPanel Text=@localizer["Army"] Class="no-uppercase">
                     <MudText Style="margin-bottom:5px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
                         @(new MarkupString(localizer["SoftwareEngineer"]))
                         <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Army"))" Typo=TitleTypo2()>@@@localizer["ArmyDepartment"]</MudLink>
@@ -113,7 +124,7 @@
                     </MudText>
                 </MudTabPanel>
 
-                <MudTabPanel Text="Terracom S.A.">
+                <MudTabPanel Text="Terracom S.A." Class="no-uppercase">
                     <MudText Style="margin-bottom:10px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
                         @(new MarkupString(localizer["SoftwareEngineer"]))
                         <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Terracom"))" Typo=TitleTypo2()>@@Terracom S.A.</MudLink>
@@ -124,7 +135,7 @@
                     </MudText>
                 </MudTabPanel>
 
-                <MudTabPanel Text="CoTheta">
+                <MudTabPanel Text="CoTheta" Class="no-uppercase">
                     <MudText Style="margin-bottom:10px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
                         @(new MarkupString(localizer["SoftwareEngineerIntern"]))
                         <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:CoTheta"))" Typo=TitleTypo2()>@@CoTheta</MudLink>
