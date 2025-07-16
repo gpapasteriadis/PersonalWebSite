@@ -330,7 +330,7 @@ The deployment infrastructure will be hosted on Azure, using Docker containers t
     <value>&lt;b&gt;  Under Construction &lt;/b&gt;</value>
   </data>
   <data name="PwCDesc" xml:space="preserve">
-    <value>&lt;b&gt;🖥️ Web Development &amp; UI:&lt;/b&gt;&lt;br/&gt;
+  <value>&lt;b&gt;🖥️ Web Development &amp; UI:&lt;/b&gt;&lt;br/&gt;
  • Developed web applications using .NET 8, Blazor Server, and ASP.NET MVC.&lt;br/&gt;
  • Built modern, responsive UIs with MudBlazor and JavaScript.&lt;br/&gt;
 
