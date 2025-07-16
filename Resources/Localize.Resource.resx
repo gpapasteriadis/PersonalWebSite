@@ -143,9 +143,10 @@ In my spare time, I enjoy working out and going on motorcycle trips, they give m
     <value>Greek Armed Forces IT Corps</value>
   </data>
   <data name="ArmyDesc" xml:space="preserve">
-    <value>· Held a part-time position as a software engineer during mandatory military service.&lt;br /&gt;
-· Developed and maintained the military's internal software systems.&lt;br /&gt;
-· Provided technical support to system users, addressing inquiries and troubleshooting issues.</value>
+    <value>During Mandatory Military Service:&lt;br/&gt;
+• Developed and maintained internal software systems to support operational needs.&lt;br/&gt;
+• Provided technical support to end users, resolving inquiries and troubleshooting issues.&lt;br/&gt;
+• Contributed to ongoing improvements and enhancements of critical applications.</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
@@ -169,8 +170,7 @@ In my spare time, I enjoy working out and going on motorcycle trips, they give m
     <value>Jul - Oct 2019</value>
   </data>
   <data name="CothetaDesc" xml:space="preserve">
-    <value>· Engaged in virtual and augmented reality projects using Unity3D.&lt;br /&gt;
-· Contributed to the creation of interactive experiences.</value>
+    <value>• Developed VR/AR projects with Unity3D, creating interactive experiences.</value>
   </data>
   <data name="CV" xml:space="preserve">
     <value>Resume:</value>
@@ -322,24 +322,26 @@ The deployment infrastructure will be hosted on Azure, using Docker containers t
     <value>Oct 2020 - Dec 2022</value>
   </data>
   <data name="TerracomDesc" xml:space="preserve">
-    <value>·Played a significant role in the development, maintenance, and evolution of the patrol and security management platform QR-Patrol.&lt;br /&gt;
-·Actively participated in technical analysis and system design processes, contributing to enhance project outcomes.&lt;br /&gt;
-·Engaged in team meetings to synchronize efforts and maintain alignment with project goals.</value>
+    <value>• Played a key role in developing and maintaining the QR-Patrol security management platform.&lt;br/&gt;
+• Actively contributed to technical analysis and system design, driving enhancements to project outcomes.&lt;br/&gt;
+• Collaborated closely with team members in regular meetings to align efforts, implement updates, and continuously improve the platform.</value>
   </data>
   <data name="UnderConstruction" xml:space="preserve">
     <value>&lt;b&gt;  Under Construction &lt;/b&gt;</value>
   </data>
   <data name="PwCDesc" xml:space="preserve">
-    <value>• Developed a web application for creating and managing questionnaires.&lt;br /&gt;
- – Built with .NET 8 and Blazor Server, utilizing the MudBlazor component library for a modern and 
- responsive UI.&lt;br /&gt;
- – Managed data operations using SQL Server and Entity Framework Core.&lt;br /&gt;
- – Implemented email notifications and task scheduling with Hangfire.&lt;br /&gt;
- – Oversaw the entire development lifecycle through Azure DevOps, ensuring smooth CI/CD pipelines 
- and efficient project tracking.&lt;br /&gt;
+    <value>&lt;b&gt;🖥️ Web Development &amp; UI:&lt;/b&gt;&lt;br/&gt;
+ • Developed web applications using .NET 8, Blazor Server, and ASP.NET MVC.&lt;br/&gt;
+ • Built modern, responsive UIs with MudBlazor and JavaScript.&lt;br/&gt;
 
-• Contributed to the enhancement of a banking web application.&lt;br /&gt;
- – Designed and optimized database operations using SQL Server.&lt;br /&gt;
- – Developed and improved features using ASP.NET MVC, JavaScript, and .NET 6.</value>
+&lt;b&gt;🛠️ Backend &amp; Data Operations:&lt;/b&gt;&lt;br/&gt;
+ • Worked with SQL Server databases using Stored Procedures and raw SQL for complex queries.&lt;br/&gt;
+ • Managed data access with Entity Framework Core.&lt;br/&gt;
+
+&lt;b&gt;⏱️ Background Processing &amp; Automation:&lt;/b&gt;&lt;br/&gt;
+ • Integrated Hangfire for task scheduling and email notifications.&lt;br/&gt;
+
+&lt;b&gt;🚀 DevOps &amp; Project Management:&lt;/b&gt;&lt;br/&gt;
+ • Managed the full development lifecycle in Azure DevOps, including CI/CD pipelines and project tracking.</value>
   </data>
 </root>
