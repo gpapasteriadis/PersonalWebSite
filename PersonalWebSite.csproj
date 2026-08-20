@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include=".github\upgrades\scenarios\dotnet-version-upgrade\tasks\01-upgrade-personalwebsite-net10\progress-details.md" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.11" PrivateAssets="all" />

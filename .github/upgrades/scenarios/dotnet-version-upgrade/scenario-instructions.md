@@ -14,6 +14,10 @@
 - **Flow Mode**: Automatic
 - **Target Framework**: net10.0
 
+## User Preferences
+### Technical Preferences
+- Exclude .github upgrade artifact file references from project/repo contents when possible.
+
 ## Upgrade Options
 **Source**: .github/upgrades/scenarios/dotnet-version-upgrade/upgrade-options.md
 
