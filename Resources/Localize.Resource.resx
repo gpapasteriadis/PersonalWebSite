@@ -137,7 +137,10 @@ In my spare time, I enjoy working out and going on motorcycle trips, they give m
     <value>Mar - Oct 2023</value>
   </data>
   <data name="PwCDate" xml:space="preserve">
-    <value>May 2024 - Present</value>
+    <value>May 2024 - Nov 2025</value>
+  </data>
+  <data name="IndeavorDate" xml:space="preserve">
+    <value>Nov 2025 - Present</value>
   </data>
   <data name="ArmyDepartment" xml:space="preserve">
     <value>Greek Armed Forces IT Corps</value>
@@ -328,6 +331,19 @@ The deployment infrastructure will be hosted on Azure, using Docker containers t
   </data>
   <data name="UnderConstruction" xml:space="preserve">
     <value>&lt;b&gt;  Under Construction &lt;/b&gt;</value>
+  </data>
+  <data name="IndeavorDesc" xml:space="preserve">
+    <value>&lt;b&gt;Backend &amp; Platform Engineering:&lt;/b&gt;&lt;br/&gt;
+• Building backend services with .NET 10 and Entity Framework Core.&lt;br/&gt;
+• Working with PostgreSQL for data storage and querying.&lt;br/&gt;
+
+&lt;b&gt;Delivery &amp; Architecture:&lt;/b&gt;&lt;br/&gt;
+• Using Docker to package and run services consistently across environments.&lt;br/&gt;
+• Contributing to microservices-based systems and web development initiatives.&lt;br/&gt;
+
+&lt;b&gt;Quality &amp; Collaboration:&lt;/b&gt;&lt;br/&gt;
+• Applying xUnit for automated testing and reliability.&lt;br/&gt;
+• Supporting product delivery in a remote, full-time engineering role.</value>
   </data>
   <data name="PwCDesc" xml:space="preserve">
   <value>&lt;b&gt;🖥️ Web Development &amp; UI:&lt;/b&gt;&lt;br/&gt;

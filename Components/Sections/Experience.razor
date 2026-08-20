@@ -11,6 +11,23 @@
 
                 <MudTimelineItem Color="Color.Primary" Elevation="25">
                     <ItemOpposite>
+                        <MudText Color="Color.Primary" Typo=TitleTypo2()>@localizer["IndeavorDate"]</MudText>
+                    </ItemOpposite>
+                    <ItemContent>
+                        <MudPaper Elevation="0">
+                            <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
+                                @(new MarkupString(localizer["SoftwareEngineer"]))
+                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Indeavor"))" Typo=TitleTypo2()>@@Indeavor</MudLink>
+                            </MudText>
+                            <MudText Typo=DescTypo()>
+                                @(new MarkupString(localizer["IndeavorDesc"]))
+                            </MudText>
+                        </MudPaper>
+                    </ItemContent>
+                </MudTimelineItem>
+
+                <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
+                    <ItemOpposite>
                         <MudText Color="Color.Primary" Typo=TitleTypo2()>@localizer["PwCDate"]</MudText>
                     </ItemOpposite>
                     <ItemContent>
@@ -101,6 +118,17 @@
         </MudText>
         <MudCardContent>
             <MudTabs MinimumTabWidth="70px" Rounded="true" Centered="true">
+
+                <MudTabPanel Text="Indeavor" Class="no-uppercase">
+                    <MudText Style="margin-bottom:5px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
+                        @(new MarkupString(localizer["SoftwareEngineer"]))
+                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Indeavor"))" Typo=TitleTypo2()>@@Indeavor</MudLink>
+                    </MudText>
+                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>@localizer["IndeavorDate"]</MudText>
+                    <MudText Typo=DescTypo()>
+                        @(new MarkupString(localizer["IndeavorDesc"]))
+                    </MudText>
+                </MudTabPanel>
 
                 <MudTabPanel Text="PwC Greece" Class="no-uppercase">
                     <MudText Style="margin-bottom:5px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
