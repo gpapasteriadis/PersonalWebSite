@@ -137,7 +137,10 @@
     <value>Μάρτιος - Οκτ 2023</value>
   </data>
   <data name="PwCDate" xml:space="preserve">
-    <value>Μάιος 2024 - Σήμερα</value>
+    <value>Μάιος 2024 - Νοέ 2025</value>
+  </data>
+  <data name="IndeavorDate" xml:space="preserve">
+    <value>Νοέ 2025 - Σήμερα</value>
   </data>
   <data name="ArmyDepartment" xml:space="preserve">
     <value>Σώμα Πληροφορικής Ελληνικών Ενόπλων Δυνάμεων</value>
@@ -331,8 +334,21 @@
   <data name="UnderConstruction" xml:space="preserve">
     <value>&lt;b&gt;  Υπό κατασκευή &lt;/b&gt;</value>
   </data>
+  <data name="IndeavorDesc" xml:space="preserve">
+    <value>&lt;b&gt;Ανάπτυξη Backend &amp; Πλατφόρμας:&lt;/b&gt;&lt;br/&gt;
+• Ανάπτυξη backend υπηρεσιών με .NET 10 και Entity Framework Core.&lt;br/&gt;
+• Αξιοποίηση PostgreSQL για αποθήκευση και διαχείριση δεδομένων.&lt;br/&gt;
+
+&lt;b&gt;Αρχιτεκτονική &amp; Παράδοση:&lt;/b&gt;&lt;br/&gt;
+• Χρήση Docker για συνεπές packaging και αξιόπιστη εκτέλεση υπηρεσιών σε διαφορετικά περιβάλλοντα.&lt;br/&gt;
+• Συμβολή σε συστήματα αρχιτεκτονικής microservices και ανάπτυξης web  εφαρμογών.&lt;br/&gt;
+
+&lt;b&gt;Ποιότητα &amp; Συνεργασία:&lt;/b&gt;&lt;br/&gt;
+• Χρήση xUnit για αυτοματοποιημένους ελέγχους και testing.&lt;br/&gt;
+• Ενεργή συμμετοχή σε πλήρως απομακρυσμένο, full-time ρόλο ανάπτυξης προϊόντος.</value>
+  </data>
   <data name="PwCDesc" xml:space="preserve">
-  <value>&lt;b&gt;🖥️ Ανάπτυξη Ιστοσελίδων &amp; Διεπαφή Χρήστη:&lt;/b&gt;&lt;br/&gt;
+    <value>&lt;b&gt;🖥️ Ανάπτυξη Ιστοσελίδων &amp; Διεπαφή Χρήστη:&lt;/b&gt;&lt;br/&gt;
 • Ανάπτυξη web εφαρμογών χρησιμοποιώντας .NET 8, Blazor Server και ASP.NET MVC.&lt;br/&gt;
 • Δημιουργία μοντέρνων, responsive διεπαφών με MudBlazor και JavaScript.&lt;br/&gt;
 
