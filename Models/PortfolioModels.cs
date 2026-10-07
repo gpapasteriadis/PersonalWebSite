@@ -5,9 +5,10 @@ namespace PersonalWebSite.Models;
 // in wwwroot/appsettings.json.
 
 /// <summary>An entry in the app bar / drawer navigation that scrolls to a home-page section.</summary>
-public sealed record NavItem(string SectionId, string LabelKey)
+/// <param name="Page">Page that hosts the section; the home page by default.</param>
+public sealed record NavItem(string SectionId, string LabelKey, string Page = "/")
 {
-    public string Href => $"/#{SectionId}";
+    public string Href => $"{Page}#{SectionId}";
 }
 
 /// <summary>A position in the Experience section.</summary>
@@ -40,3 +41,26 @@ public sealed record Skill(
 
 /// <summary>A social network icon link in the Contact section.</summary>
 public sealed record SocialLink(string Name, string Icon, string LinkKey);
+
+// --- Project case-study pages (e.g. /Fieldmatics) -------------------------------------------
+
+/// <summary>An icon card with a title and a short text (highlights, design decisions).</summary>
+public sealed record Feature(string Icon, string TitleKey, string TextKey);
+
+/// <summary>Where a journey step happens; drives the zone label and accent color.</summary>
+public enum JourneyZone
+{
+    Site,
+    Inside,
+    User,
+}
+
+/// <summary>One step of the illustrated "how it works" journey.</summary>
+/// <param name="TechKey">Short technical note shown under "Behind the scenes".</param>
+public sealed record JourneyStep(string Icon, JourneyZone Zone, string TitleKey, string TextKey, string TechKey);
+
+/// <summary>A Mermaid diagram; <paramref name="SourceKey"/> holds the localized Mermaid source.</summary>
+public sealed record Diagram(string Id, string TitleKey, string TextKey, string SourceKey);
+
+/// <summary>A labelled group of technologies.</summary>
+public sealed record TechGroup(string TitleKey, IReadOnlyList<string> Items);

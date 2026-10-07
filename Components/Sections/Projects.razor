@@ -45,16 +45,19 @@
         </MudItem>
 
         <MudItem xs="12">
-            <ProjectCard Project="PortfolioContent.ServiceBooking">
+            <ProjectCard Project="PortfolioContent.Fieldmatics" Class="project-card--featured">
                 <Actions>
-                    <MudIconButton Icon="@Icons.Material.Filled.DesignServices" Href="@Config["Projects:LocalServiceBooking_DesignPage"]"
+                    <MudIconButton Icon="@Icons.Material.Filled.DesignServices" Href="@FieldmaticsContent.PagePath"
                                    Color="Color.Primary" title="@L["SystemDesign"]" aria-label="@L["SystemDesign"]" />
-                    <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Disabled="true" Color="Color.Primary" aria-label="@L["ServiceBooking"]" />
                 </Actions>
                 <ChildContent>
                     <MudChip T="string" Icon="@Icons.Material.Filled.Construction" Color="Color.Warning" Variant="Variant.Text"
-                             Class="mb-3 ml-0">@L.Html("UnderConstruction")</MudChip>
-                    <MudText Typo="Typo.body1">@L.Html("ServiceBookingDesc")</MudText>
+                             Class="mb-3 ml-0">@L["FmStatus"]</MudChip>
+                    <MudText Typo="Typo.body1">@L.Html("FmSummary")</MudText>
+                    <MudButton Href="@FieldmaticsContent.PagePath" Variant="Variant.Outlined" Color="Color.Primary"
+                               EndIcon="@Icons.Material.Filled.ArrowForward" Class="mt-4">
+                        @L["FmDesignLink"]
+                    </MudButton>
                 </ChildContent>
             </ProjectCard>
         </MudItem>

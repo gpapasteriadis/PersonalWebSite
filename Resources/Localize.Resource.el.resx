@@ -239,9 +239,6 @@
   <data name="PersonalWebsiteTitle" xml:space="preserve">
     <value>&lt;u&gt;Η πρώτη μου προσωπική ιστοσελίδα&lt;/u&gt;</value>
   </data>
-  <data name="Phase" xml:space="preserve">
-    <value>Φάση</value>
-  </data>
   <data name="Projects" xml:space="preserve">
     <value>Projects</value>
   </data>
@@ -256,28 +253,6 @@
   </data>
   <data name="SendMeMail" xml:space="preserve">
     <value>Στείλτε μου Email</value>
-  </data>
-  <data name="ServiceBooking" xml:space="preserve">
-    <value>Κρατήσεις Υπηρεσιών</value>
-  </data>
-  <data name="ServiceBookingDesc" xml:space="preserve">
-    <value>Η Πλατφόρμα Κρατήσεων Τοπικών Υπηρεσιών είναι ένα προσωπικό side project που στοχεύει να παρέχει στους χρήστες έναν βολικό και αποτελεσματικό τρόπο πρόσβασης στις τοπικές υπηρεσίες της περιοχής τους. Φτιάχνω αυτήν την πλατφόρμα για να συνδέω τους χρήστες με αξιόπιστους παρόχους υπηρεσιών για διάφορες ανάγκες, όπως καθαρισμός σπιτιού, personal training, διδασκαλία και άλλα.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Λεπτομέρειες υλοποίησης:&lt;/b&gt;&lt;br&gt;
-· &lt;em&gt;Ανάπτυξη του Frontend:&lt;/em&gt;&lt;br&gt;
-Για το Frontend, θα χρησιμοποιήσω το Blazor στο .NET 8, εμπλουτίζοντάς το με τη βιβλιοθήκη MudBlazor. Ακόμα, θα χρησιμοποιήσω το ASP.NET Core Identity σε συνδυασμό με μια αποκλειστική βάση δεδομένων για τον έλεγχο ταυτότητας και την εξουσιοδότηση των χρηστών.&lt;br&gt;
-· &lt;em&gt;Υπηρεσίες Backend:&lt;/em&gt;&lt;br&gt;
-Για το Backend θα χρησιμοποιήσω ενα Web API στο .NET 8 για την επικοινωνία με το Frontend και το Entity Framework Core ως ORM για την πρόσβαση στα δεδομένα. Η κύρια βάση που θα χρησιμοποιήσω θα ειναι το MSSQL για εύκολη αποθήκευση και ανάκτηση δεδομένων&lt;br&gt;
-·&lt;em&gt;Βασικά Στοιχεία:&lt;/em&gt; &lt;br&gt;
-Το Redis θα χρησιμοποιηθεί για την προσωρινή αποθήκευση δεδομένων τα οποία δεν μεταβάλονται συχνά και έχουν αυξημένη ζήτηση απο τους χρήστες, βελτιώνοντας την απόδοση της εφαρμογής και μετριάζοντας το φόρτο της βάσης δεδομένων και την καθυστέρηση. Το Elasticsearch θα χρησιμοποιηθεί για την αποθήκευση log αρχείων αλλά θα εξυπηρετήσει και την λειτουργία αναζήτησης των χρηστών, θα συμπληρωθεί και από το Kibana για την οπτικοποίηση και ανάλυση των log αρχείων. Οι ενημερώσεις της διεπαφής σε πραγματικό χρόνο θα είναι εφικτές αξιοποιώντας το SignalR. Τέλος το RabbitMQ θα λειτουργεί ως διαμεσολαβητής μηνυμάτων για την ασύγχρονη επικοινωνία μεταξύ βασικών υπηρεσιών, όπως ο Email Worker για ασύγχρονη αποστολή email και ο Hangfire Worker για την εκτέλεση διάφορων εργασιών στο παρασκήνιο.&lt;br&gt;
-· &lt;em&gt;Υποδομή ανάπτυξης:&lt;/em&gt;&lt;br&gt;
-Η υποδομή ανάπτυξης θα φιλοξενηθεί στο Azure, χρησιμοποιώντας Docker containers για το packaging όλων των επιμέρους τμημάτων της εφαρμογής.</value>
-  </data>
-  <data name="ServiceBookingDesign" xml:space="preserve">
-    <value>Σχεδίαση του Συστήματος Κρατήσεων Υπηρεσιών</value>
-  </data>
-  <data name="ServiceBookingTitle" xml:space="preserve">
-    <value>&lt;u&gt;Εφαρμογή Κρατήσεων Τοπικών Υπηρεσιών&lt;/u&gt;</value>
   </data>
   <data name="SignalRDesc" xml:space="preserve">
     <value>Σε προηγούμενο ρόλο, αξιοποίησα το SignalR για την ενημέρωση του UI σε πραγματικό χρόνο, εφαρμόζοντάς το τόσο στη C# όσο και στη JavaScript.</value>
@@ -327,9 +302,6 @@
 • Συνεργάστηκα στενά με τα μέλη της ομάδας σε τακτικές συναντήσεις για ευθυγράμμιση προσπαθειών, υλοποίηση ενημερώσεων και συνεχή βελτίωση της πλατφόρμας.
 
 </value>
-  </data>
-  <data name="UnderConstruction" xml:space="preserve">
-    <value>&lt;b&gt;  Υπό κατασκευή &lt;/b&gt;</value>
   </data>
   <data name="IndeavorDesc" xml:space="preserve">
     <value>&lt;b&gt;Ανάπτυξη Backend &amp; Πλατφόρμας:&lt;/b&gt;&lt;br/&gt;
@@ -392,7 +364,369 @@
   <data name="MobileAppVideo" xml:space="preserve">
     <value>Βίντεο επίδειξης της εφαρμογής FoodWaste</value>
   </data>
-  <data name="AriaOpenInNewTab" xml:space="preserve">
-    <value>{0}: άνοιγμα σε νέα καρτέλα</value>
+  <data name="FmLabel" xml:space="preserve">
+    <value>Fieldmatics</value>
+  </data>
+  <data name="FmTitle" xml:space="preserve">
+    <value>&lt;u&gt;Fieldmatics: Πλατφόρμα IoT για τη Γεωργία&lt;/u&gt;</value>
+  </data>
+  <data name="FmSummary" xml:space="preserve">
+    <value>Το Fieldmatics είναι μια multi-tenant SaaS πλατφόρμα για καλλιεργητές. Συλλέγει δεδομένα αισθητήρων από θερμοκήπια, κήπους, χωράφια και ελαιώνες, τα αποθηκεύει και δείχνει τις τρέχουσες τιμές και το ιστορικό για κάθε τοποθεσία. Στη συνέχεια θα δρα με βάση αυτά τα δεδομένα, μέσω κανόνων, ειδοποιήσεων και αυτόματης άρδευσης.&lt;br/&gt;&lt;br/&gt;Το σχεδιάζω και το υλοποιώ από το μηδέν ως δικό μου προϊόν: ένα modular monolith σε .NET 10, όπου αισθητήρες κάθε είδους δημοσιεύουν μέσω MQTT, οι μετρήσεις ρέουν αξιόπιστα μέσω RabbitMQ στην PostgreSQL και οι καλλιεργητές βλέπουν τα πάντα σε μια εφαρμογή Blazor.</value>
+  </data>
+  <data name="FmStatus" xml:space="preserve">
+    <value>Σε ενεργή ανάπτυξη</value>
+  </data>
+  <data name="FmDesignLink" xml:space="preserve">
+    <value>Επιχειρηματικό μοντέλο &amp; σχεδίαση συστήματος</value>
+  </data>
+  <data name="FmEyebrow" xml:space="preserve">
+    <value>Μελέτη περίπτωσης: προϊόν &amp; σχεδίαση συστήματος</value>
+  </data>
+  <data name="FmTagline" xml:space="preserve">
+    <value>Μια πλατφόρμα IoT για τη γεωργία που μετατρέπει μετρήσεις αισθητήρων από οποιοδήποτε υλικό σε σαφή εικόνα ανά τοποθεσία για τους καλλιεργητές.</value>
+  </data>
+  <data name="FmOnThisPage" xml:space="preserve">
+    <value>Σε αυτή τη σελίδα</value>
+  </data>
+  <data name="FmBackToProjects" xml:space="preserve">
+    <value>Πίσω στα projects</value>
+  </data>
+  <data name="FmBusinessTitle" xml:space="preserve">
+    <value>Η επιχειρηματική ιδέα</value>
+  </data>
+  <data name="FmBusinessIntro" xml:space="preserve">
+    <value>Οι καλλιεργητές διαχειρίζονται περιβάλλοντα όπως θερμοκήπια, κήπους, χωράφια και ελαιώνες. Θέλουν να ξέρουν τι συμβαίνει στο καθένα (θερμοκρασία, υγρασία, υγρασία εδάφους) και, τελικά, το σύστημα να αντιδρά για λογαριασμό τους. Τα περισσότερα εργαλεία IoT είναι χτισμένα γύρω από το υλικό. Το Fieldmatics είναι χτισμένο γύρω από τους τόπους όπου μεγαλώνουν τα φυτά.</value>
+  </data>
+  <data name="FmBuiltFor" xml:space="preserve">
+    <value>Για</value>
+  </data>
+  <data name="FmEnvGreenhouses" xml:space="preserve">
+    <value>Θερμοκήπια</value>
+  </data>
+  <data name="FmEnvGardens" xml:space="preserve">
+    <value>Κήπους &amp; μπαλκόνια</value>
+  </data>
+  <data name="FmEnvFields" xml:space="preserve">
+    <value>Χωράφια</value>
+  </data>
+  <data name="FmEnvOliveGroves" xml:space="preserve">
+    <value>Ελαιώνες</value>
+  </data>
+  <data name="FmHlLocationTitle" xml:space="preserve">
+    <value>Με επίκεντρο την τοποθεσία</value>
+  </data>
+  <data name="FmHlLocationText" xml:space="preserve">
+    <value>Ο καλλιεργητής ανοίγει το Θερμοκήπιο 1 και βλέπει την τρέχουσα θερμοκρασία, την υγρασία και την υγρασία εδάφους, και μετά τα γραφήματα ιστορικού. Κανείς δεν χρειάζεται να ξέρει ποια πλακέτα έστειλε τα δεδομένα.</value>
+  </data>
+  <data name="FmHlAgnosticTitle" xml:space="preserve">
+    <value>Ανεξάρτητο από το υλικό</value>
+  </data>
+  <data name="FmHlAgnosticText" xml:space="preserve">
+    <value>Σήμερα ένα πρωτότυπο Arduino· αργότερα ESP32, LoRaWAN, Modbus και δεδομένα τρίτων. Κάθε τεχνολογία συνδέεται μέσω του δικού της adapter, οπότε ο πυρήνας δεν αλλάζει ποτέ.</value>
+  </data>
+  <data name="FmHlSaasTitle" xml:space="preserve">
+    <value>Multi-tenant SaaS</value>
+  </data>
+  <data name="FmHlSaasText" xml:space="preserve">
+    <value>Τα δεδομένα κάθε λογαριασμού πελάτη απομονώνονται στον server. Η ιδιοκτησία προκύπτει από τα ίδια τα δεδομένα και δεν λαμβάνεται ποτέ από κάποιον client ή κάποια συσκευή.</value>
+  </data>
+  <data name="FmHlAutomationTitle" xml:space="preserve">
+    <value>Από την παρακολούθηση στον αυτοματισμό</value>
+  </data>
+  <data name="FmHlAutomationText" xml:space="preserve">
+    <value>Η πλατφόρμα εξελίσσεται σταδιακά: πρώτα παρακολούθηση, μετά βαθμονόμηση, ανίχνευση αισθητήρων εκτός σύνδεσης, κανόνες και ειδοποιήσεις, και τέλος αυτόματη άρδευση με σχεδίαση fail-safe.</value>
+  </data>
+  <data name="FmJourneyTitle" xml:space="preserve">
+    <value>Πώς λειτουργεί</value>
+  </data>
+  <data name="FmJourneyIntro" xml:space="preserve">
+    <value>Ακολουθήστε μία μέτρηση, θερμοκρασία αέρα 23,8 °C στο Θερμοκήπιο 1, από τον αισθητήρα που τη μετρά μέχρι το γράφημα που βλέπει ο καλλιεργητής.</value>
+  </data>
+  <data name="FmBehindTheScenes" xml:space="preserve">
+    <value>Στο παρασκήνιο</value>
+  </data>
+  <data name="FmZoneSite" xml:space="preserve">
+    <value>Στην τοποθεσία</value>
+  </data>
+  <data name="FmZoneInside" xml:space="preserve">
+    <value>Μέσα στο Fieldmatics</value>
+  </data>
+  <data name="FmZoneGrower" xml:space="preserve">
+    <value>Για τον καλλιεργητή</value>
+  </data>
+  <data name="FmStep1Title" xml:space="preserve">
+    <value>Μέτρηση</value>
+  </data>
+  <data name="FmStep1Text" xml:space="preserve">
+    <value>Ένας αισθητήρας σε μία από τις τοποθεσίες σας, για παράδειγμα στο Θερμοκήπιο 1, μετρά αυτό για το οποίο έχει κατασκευαστεί: θερμοκρασία αέρα, υγρασία, υγρασία εδάφους και άλλα.</value>
+  </data>
+  <data name="FmStep1Tech" xml:space="preserve">
+    <value>Σήμερα οι αισθητήρες συνδέονται σε πλακέτα Arduino. Στη συνέχεια μπορούν να προστεθούν συσκευές ESP32, LoRaWAN και Modbus.</value>
+  </data>
+  <data name="FmStep2Title" xml:space="preserve">
+    <value>Μετάφραση και δημοσίευση</value>
+  </data>
+  <data name="FmStep2Text" xml:space="preserve">
+    <value>Ένα μικρό πρόγραμμα δίπλα στο υλικό, ο adapter, διαβάζει τις τιμές, τις μετατρέπει στο τυπικό μήνυμα του Fieldmatics και το δημοσιεύει. Το Fieldmatics δεν χρειάζεται ποτέ να ξέρει από ποιο υλικό προήλθαν.</value>
+  </data>
+  <data name="FmStep2Tech" xml:space="preserve">
+    <value>Ένας adapter σε .NET διαβάζει το Arduino μέσω σειριακής θύρας USB και δημοσιεύει μέσω MQTT. Κάθε νέο είδος υλικού αποκτά τον δικό του adapter.</value>
+  </data>
+  <data name="FmStep3Title" xml:space="preserve">
+    <value>Παράδοση</value>
+  </data>
+  <data name="FmStep3Text" xml:space="preserve">
+    <value>Το μήνυμα φτάνει στο «γραμματοκιβώτιο» του Fieldmatics για το υλικό, το οποίο δέχεται μηνύματα από κάθε πηγή, οποιαδήποτε στιγμή.</value>
+  </data>
+  <data name="FmStep3Tech" xml:space="preserve">
+    <value>Ένας MQTT broker Eclipse Mosquitto. Κάθε πηγή στέλνει στο δικό της topic.</value>
+  </data>
+  <data name="FmStep4Title" xml:space="preserve">
+    <value>Ασφαλής αναμονή</value>
+  </data>
+  <data name="FmStep4Text" xml:space="preserve">
+    <value>Ένας παραλήπτης συλλέγει κάθε μήνυμα και το βάζει σε μια εσωτερική ουρά. Αν το επόμενο βήμα είναι απασχολημένο ή επανεκκινείται, τα μηνύματα περιμένουν στη σειρά αντί να χαθούν.</value>
+  </data>
+  <data name="FmStep4Tech" xml:space="preserve">
+    <value>Η υπηρεσία Ingestion προωθεί κάθε μήνυμα σε μια ανθεκτική (durable) ουρά RabbitMQ. Δεν γράφει ποτέ η ίδια στη βάση δεδομένων.</value>
+  </data>
+  <data name="FmStep5Title" xml:space="preserve">
+    <value>Έλεγχος και αποθήκευση</value>
+  </data>
+  <data name="FmStep5Text" xml:space="preserve">
+    <value>Ο worker παίρνει τα μηνύματα ένα-ένα και αντιστοιχίζει κάθε τιμή στον σωστό αισθητήρα, και μέσω αυτού στη σωστή τοποθεσία και τον σωστό πελάτη. Ένα μήνυμα φεύγει από την ουρά μόνο αφού αποθηκευτεί.</value>
+  </data>
+  <data name="FmStep5Tech" xml:space="preserve">
+    <value>Μια υπηρεσία worker σε .NET με χειροκίνητη επιβεβαίωση (manual ack): τα άκυρα μηνύματα απορρίπτονται οριστικά, ενώ οι αποτυχίες της βάσης ξαναδοκιμάζονται.</value>
+  </data>
+  <data name="FmStep6Title" xml:space="preserve">
+    <value>Διατήρηση ιστορικού</value>
+  </data>
+  <data name="FmStep6Text" xml:space="preserve">
+    <value>Κάθε μέτρηση διατηρείται μαζί με τη στιγμή που μετρήθηκε. Το ιστορικό δεν διαγράφεται ποτέ, ούτε όταν ένας αισθητήρας απενεργοποιηθεί ή αποσυρθεί.</value>
+  </data>
+  <data name="FmStep6Tech" xml:space="preserve">
+    <value>PostgreSQL μέσω Entity Framework Core. Μια υπηρεσία migrations προετοιμάζει το σχήμα πριν ξεκινήσει οτιδήποτε άλλο.</value>
+  </data>
+  <data name="FmStep7Title" xml:space="preserve">
+    <value>Απαντήσεις σε ερωτήματα</value>
+  </data>
+  <data name="FmStep7Text" xml:space="preserve">
+    <value>Το API είναι η μόνη είσοδος για τις εφαρμογές. Απαντά σε ερωτήματα όπως «ποιες είναι οι τελευταίες μετρήσεις στο Θερμοκήπιο 1;», πάντα μόνο με τα δεδομένα του ίδιου του πελάτη.</value>
+  </data>
+  <data name="FmStep7Tech" xml:space="preserve">
+    <value>ASP.NET Core Minimal APIs. Ένα tenant context στον server και φίλτρα ερωτημάτων κρατούν τα δεδομένα κάθε πελάτη χωριστά.</value>
+  </data>
+  <data name="FmStep8Title" xml:space="preserve">
+    <value>Προβολή</value>
+  </data>
+  <data name="FmStep8Text" xml:space="preserve">
+    <value>Ο καλλιεργητής ανοίγει την εφαρμογή, επιλέγει μια τοποθεσία και βλέπει πρώτα τις τρέχουσες τιμές και μετά γραφήματα του ιστορικού.</value>
+  </data>
+  <data name="FmStep8Tech" xml:space="preserve">
+    <value>Μια web εφαρμογή Blazor με MudBlazor. Μια εφαρμογή κινητού σε .NET MAUI θα επαναχρησιμοποιεί τα ίδια UI components.</value>
+  </data>
+  <data name="FmDesignTitle" xml:space="preserve">
+    <value>Σχεδίαση συστήματος</value>
+  </data>
+  <data name="FmDesignIntro" xml:space="preserve">
+    <value>Πρακτική Clean Architecture σε ένα modular monolith: ένας κώδικας, λίγες ανεξάρτητα εκτελούμενες διεργασίες και επιχειρησιακές λειτουργίες οργανωμένες ως vertical slices. Τα διαγράμματα δείχνουν τη σχεδίαση-στόχο.</value>
+  </data>
+  <data name="FmDiagramLegend" xml:space="preserve">
+    <value>Τα διακεκομμένα πλαίσια και γραμμές είναι προγραμματισμένα.</value>
+  </data>
+  <data name="FmDiagramError" xml:space="preserve">
+    <value>Δεν ήταν δυνατή η φόρτωση του διαγράμματος.</value>
+  </data>
+  <data name="FmDiagContextTitle" xml:space="preserve">
+    <value>Περιβάλλον του συστήματος</value>
+  </data>
+  <data name="FmDiagContextText" xml:space="preserve">
+    <value>Με ποιους και με τι επικοινωνεί το Fieldmatics. Οι καλλιεργητές δουλεύουν με τοποθεσίες, αισθητήρες και μετρήσεις. Το υλικό και οι πηγές τρίτων φτάνουν στην πλατφόρμα μόνο μέσω adapters στο όριο του συστήματος.</value>
+  </data>
+  <data name="FmDiagContextSource" xml:space="preserve">
+    <value>flowchart LR
+    grower([&quot;Καλλιεργητής&lt;br/&gt;διαχειρίζεται τοποθεσίες και αισθητήρες&quot;])
+    subgraph env[&quot;Περιβάλλοντα καλλιέργειας&quot;]
+        sensors[&quot;Αισθητήρες&lt;br/&gt;θερμοκρασία, υγρασία, υγρασία εδάφους …&quot;]
+    end
+    subgraph edge[&quot;Όριο ενσωμάτωσης&quot;]
+        hardware[&quot;Υλικό και πηγές&lt;br/&gt;Arduino σήμερα · ESP32, LoRaWAN, Modbus αργότερα&quot;]
+        adapters[&quot;Adapters ενσωμάτωσης&lt;br/&gt;ένας ανά τεχνολογία&quot;]
+    end
+    feeds[&quot;Δεδομένα τρίτων&quot;]:::planned
+    fm[&quot;Fieldmatics&lt;br/&gt;multi-tenant SaaS&lt;br/&gt;τοποθεσίες · αισθητήρες · μετρήσεις&quot;]:::core
+    mobile[&quot;Εφαρμογή κινητού&quot;]:::planned
+    actuators[&quot;Ενεργοποιητές και άρδευση&quot;]:::planned
+    sensors --&gt; hardware --&gt; adapters
+    adapters --&gt;|&quot;MQTT · τυπικό μήνυμα&quot;| fm
+    feeds -.-&gt;|&quot;μέσω adapter&quot;| fm
+    grower --&gt;|&quot;browser&quot;| fm
+    grower -.-&gt; mobile -.-&gt;|&quot;HTTP API&quot;| fm
+    fm -.-&gt;|&quot;αυτοματισμός&quot;| actuators
+    classDef planned stroke-dasharray: 5 4
+    classDef core stroke-width:3px</value>
+  </data>
+  <data name="FmDiagProcessesTitle" xml:space="preserve">
+    <value>Διεργασίες και υποδομή</value>
+  </data>
+  <data name="FmDiagProcessesText" xml:space="preserve">
+    <value>Κάθε διεργασία και πόρος υποδομής, με ενορχήστρωση μέσω .NET Aspire. Το MQTT είναι στραμμένο προς το υλικό και το RabbitMQ είναι εσωτερικό. Μόνο ο telemetry worker γράφει μετρήσεις, και η υπηρεσία migrations προετοιμάζει τη βάση πριν τη χρησιμοποιήσει οτιδήποτε άλλο.</value>
+  </data>
+  <data name="FmDiagProcessesSource" xml:space="preserve">
+    <value>flowchart LR
+    hardware[&quot;Αισθητήρες και υλικό&quot;]
+    adapter[&quot;Adapter ενσωμάτωσης&lt;br/&gt;π.χ. σειριακή USB → MQTT&quot;]
+    grower([&quot;Καλλιεργητής&quot;])
+    subgraph platform[&quot;Fieldmatics · ενορχήστρωση με .NET Aspire&quot;]
+        mqtt{{&quot;MQTT broker&lt;br/&gt;Mosquitto&quot;}}
+        ingestion[&quot;Ingestion&lt;br/&gt;MQTT → RabbitMQ&lt;br/&gt;δεν γράφει ποτέ στη βάση&quot;]
+        rabbit{{&quot;RabbitMQ&lt;br/&gt;ανθεκτική ουρά&quot;}}
+        worker[&quot;Telemetry worker&lt;br/&gt;αποθηκεύει τις μετρήσεις&quot;]
+        migrations[&quot;Υπηρεσία migrations&lt;br/&gt;τρέχει πρώτη και τερματίζει&quot;]
+        db[(&quot;PostgreSQL&quot;)]
+        api[&quot;API&lt;br/&gt;ASP.NET Core Minimal APIs&quot;]
+        web[&quot;Web εφαρμογή&lt;br/&gt;Blazor + MudBlazor&quot;]
+    end
+    hardware --&gt; adapter --&gt; mqtt --&gt; ingestion
+    ingestion --&gt;|&quot;persistent publish&quot;| rabbit
+    rabbit --&gt;|&quot;manual ack&quot;| worker
+    worker --&gt;|&quot;EF Core&quot;| db
+    migrations --&gt;|&quot;σχήμα&quot;| db
+    api --&gt;|&quot;EF Core&quot;| db
+    web --&gt;|&quot;HTTP&quot;| api
+    grower --&gt; web</value>
+  </data>
+  <data name="FmDiagFlowTitle" xml:space="preserve">
+    <value>Ροή τηλεμετρίας</value>
+  </data>
+  <data name="FmDiagFlowText" xml:space="preserve">
+    <value>Η διαδρομή μίας μέτρησης από το υλικό μέχρι τη βάση. Ένα μήνυμα φεύγει από την ουρά μόνο όταν τα δεδομένα του έχουν αποθηκευτεί, οπότε ένα crash δεν το χάνει ποτέ. Η άκυρη είσοδος απορρίπτεται οριστικά, ενώ οι αποτυχίες της βάσης ξαναδοκιμάζονται.</value>
+  </data>
+  <data name="FmDiagFlowSource" xml:space="preserve">
+    <value>sequenceDiagram
+    autonumber
+    participant A as Adapter
+    participant M as MQTT broker
+    participant I as Ingestion
+    participant R as RabbitMQ
+    participant W as Telemetry worker
+    participant DB as PostgreSQL
+    A-&gt;&gt;M: δημοσίευση μετρήσεων
+    M-&gt;&gt;I: παράδοση
+    I-&gt;&gt;R: δημοσίευση (persistent)
+    R-&gt;&gt;W: παράδοση, ένα-ένα
+    alt άκυρο μήνυμα
+        W-&gt;&gt;R: απόρριψη, χωρίς επανάληψη
+    else έγκυρο μήνυμα
+        W-&gt;&gt;DB: εύρεση αισθητήρα από το external ID
+        alt άγνωστος ή ανενεργός αισθητήρας
+            W-&gt;&gt;R: επιβεβαίωση, δεν αποθηκεύεται
+        else ενεργός αισθητήρας
+            W-&gt;&gt;DB: αποθήκευση μέτρησης
+            alt αποθηκεύτηκε
+                W-&gt;&gt;R: επιβεβαίωση
+            else σφάλμα βάσης
+                W-&gt;&gt;R: επαναπροσθήκη στην ουρά
+            end
+        end
+    end</value>
+  </data>
+  <data name="FmDiagDomainTitle" xml:space="preserve">
+    <value>Μοντέλο πεδίου</value>
+  </data>
+  <data name="FmDiagDomainText" xml:space="preserve">
+    <value>Tenant → Τοποθεσία → Αισθητήρας → Μέτρηση. Σκόπιμα δεν υπάρχει οντότητα Device: το υλικό είναι λεπτομέρεια ενσωμάτωσης, και ένα external ID συνδέει τα εισερχόμενα δεδομένα με έναν αισθητήρα. Κάθε οντότητα που ανήκει σε tenant έχει το δικό της tenant ID, και οι τύποι αισθητήρων είναι κοινά δεδομένα αναφοράς.</value>
+  </data>
+  <data name="FmDiagDomainSource" xml:space="preserve">
+    <value>erDiagram
+    TENANT ||--o{ LOCATION : &quot;κατέχει&quot;
+    LOCATION ||--o{ SENSOR : &quot;έχει&quot;
+    SENSOR_TYPE ||--o{ SENSOR : &quot;κατατάσσει&quot;
+    SENSOR ||--o{ READING : &quot;παράγει&quot;
+    TENANT {
+        guid id
+        string name
+    }
+    LOCATION {
+        guid id
+        guid tenant_id
+        string name &quot;μοναδικό ανά tenant&quot;
+    }
+    SENSOR {
+        guid id
+        guid tenant_id
+        string name
+        string external_id &quot;συνδέει τα δεδομένα&quot;
+        bool is_active
+    }
+    SENSOR_TYPE {
+        int id
+        string code &quot;π.χ. air_temperature&quot;
+        string unit &quot;°C, %, ppm …&quot;
+    }
+    READING {
+        long id
+        decimal value
+        datetime measured_at
+        datetime received_at
+    }</value>
+  </data>
+  <data name="FmDecisionsTitle" xml:space="preserve">
+    <value>Βασικές σχεδιαστικές αποφάσεις</value>
+  </data>
+  <data name="FmDec1Title" xml:space="preserve">
+    <value>Καμία οντότητα Device στον πυρήνα</value>
+  </data>
+  <data name="FmDec1Text" xml:space="preserve">
+    <value>Οι χρήστες σκέφτονται με τοποθεσίες και αισθητήρες, όχι με πλακέτες. Το υλικό μένει στο όριο ενσωμάτωσης και ένα external ID συνδέει τα εισερχόμενα δεδομένα με έναν αισθητήρα. Νέο υλικό δεν αγγίζει ποτέ το πεδίο.</value>
+  </data>
+  <data name="FmDec2Title" xml:space="preserve">
+    <value>MQTT έξω, RabbitMQ μέσα</value>
+  </data>
+  <data name="FmDec2Text" xml:space="preserve">
+    <value>Το MQTT είναι το ελαφρύ πρωτόκολλο που μιλά το υλικό. Το RabbitMQ δίνει στο backend ανθεκτικές ουρές και ελεγχόμενη παράδοση. Το καθένα εξυπηρετεί το δικό του όριο.</value>
+  </data>
+  <data name="FmDec3Title" xml:space="preserve">
+    <value>Επιβεβαίωση μόνο μετά την αποθήκευση</value>
+  </data>
+  <data name="FmDec3Text" xml:space="preserve">
+    <value>Ένα μήνυμα φεύγει από την ουρά μόνο όταν οι μετρήσεις του έχουν αποθηκευτεί. Η άκυρη είσοδος απορρίπτεται, οι αποτυχίες της βάσης ξαναδοκιμάζονται και ένα crash δεν χάνει ποτέ δεδομένα.</value>
+  </data>
+  <data name="FmDec4Title" xml:space="preserve">
+    <value>Η ιδιοκτησία προκύπτει από τα δεδομένα</value>
+  </data>
+  <data name="FmDec4Text" xml:space="preserve">
+    <value>Οι μετρήσεις δεν περιέχουν αναγνωριστικό πελάτη. Ο tenant προκύπτει από τον αισθητήρα στον οποίο ανήκει η μέτρηση, και ένα tenant ID που στέλνει ένας client ή μια συσκευή δεν γίνεται ποτέ αποδεκτό.</value>
+  </data>
+  <data name="FmDec5Title" xml:space="preserve">
+    <value>Το ιστορικό δεν χάνεται ποτέ</value>
+  </data>
+  <data name="FmDec5Text" xml:space="preserve">
+    <value>Οι αισθητήρες απενεργοποιούνται ή αποσύρονται, δεν διαγράφονται, και οι μετρήσεις δεν διαγράφονται ποτέ αλυσιδωτά. Ένας αισθητήρας δεν μπορεί να μετακινηθεί σε άλλη τοποθεσία, οπότε το ιστορικό του περιγράφει πάντα το σωστό μέρος.</value>
+  </data>
+  <data name="FmDec6Title" xml:space="preserve">
+    <value>Όρια που ελέγχονται με tests</value>
+  </data>
+  <data name="FmDec6Text" xml:space="preserve">
+    <value>Τα architecture tests ελέγχουν ποια projects επιτρέπεται να αναφέρονται σε ποια και κρατούν τους όρους υλικού έξω από το πεδίο, ώστε η σχεδίαση να μη φθείρεται αθόρυβα.</value>
+  </data>
+  <data name="FmStackTitle" xml:space="preserve">
+    <value>Τεχνολογίες</value>
+  </data>
+  <data name="FmStackBackend" xml:space="preserve">
+    <value>Backend</value>
+  </data>
+  <data name="FmStackMessaging" xml:space="preserve">
+    <value>Μηνύματα</value>
+  </data>
+  <data name="FmStackFrontend" xml:space="preserve">
+    <value>Frontend</value>
+  </data>
+  <data name="FmStackOperations" xml:space="preserve">
+    <value>Εργαλεία &amp; λειτουργία</value>
+  </data>
+  <data name="FmStackEdge" xml:space="preserve">
+    <value>Όριο (edge)</value>
   </data>
 </root>

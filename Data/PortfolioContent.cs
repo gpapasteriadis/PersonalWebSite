@@ -35,18 +35,11 @@ public static class PortfolioContent
         "MobileApp", "MobileAppTitle1", "MobileAppDesc",
         ["Ionic Framework", "Angular", "NestJS", "Apollo GraphQL"]);
 
-    public static Project ServiceBooking { get; } = new(
-        "ServiceBooking", "ServiceBookingTitle", "ServiceBookingDesc",
-        [".NET 10", "Blazor", "Entity Framework Core", "ASP.NET Core Identity", "RabbitMQ",
-         "Elasticsearch", "SignalR", "Hangfire", "Redis", "Docker"]);
-
-    /// <summary>Phase diagrams shown on the /ServiceBooking page.</summary>
-    public static IReadOnlyList<string> ServiceBookingPhaseImages { get; } =
-    [
-        "/Icons/ServiceBookingDesign_Phase1.png",
-        "/Icons/ServiceBookingDesign_Phase2.png",
-        "/Icons/ServiceBookingDesign_Phase3.png",
-    ];
+    /// <summary>Has its own case-study page; its content lives in <see cref="FieldmaticsContent"/>.</summary>
+    public static Project Fieldmatics { get; } = new(
+        "FmLabel", "FmTitle", "FmSummary",
+        [".NET 10", "ASP.NET Core", "Blazor", "MudBlazor", "Entity Framework Core", "PostgreSQL",
+         "MQTT", "RabbitMQ", ".NET Aspire", "Docker", "xUnit"]);
 
     public static IReadOnlyList<Skill> Skills { get; } =
     [

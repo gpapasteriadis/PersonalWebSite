@@ -1,0 +1,8 @@
+@page "/ServiceBooking"
+@inject NavigationManager Navigation
+
+@* The Service Booking project was replaced by Fieldmatics; keep old links working. *@
+
+@code {
+    protected override void OnInitialized() => Navigation.NavigateTo(FieldmaticsContent.PagePath, replace: true);
+}

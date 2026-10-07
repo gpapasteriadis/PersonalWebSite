@@ -6,6 +6,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
+- Fieldmatics project: a featured card in Projects and a case-study page at `/Fieldmatics` covering the business, an illustrated "how it works" journey, four Mermaid system-design diagrams (context, processes, telemetry flow, domain model), key design decisions and the technology stack. Fully localized (en/el), including the diagram labels.
+- Shared components `FeatureGrid`, `Journey` and `MermaidDiagram`; `site.renderDiagram` lazy-loads Mermaid from the CDN and themes it from the MudBlazor palette (re-rendered on theme change).
+
+### Changed
+- `NavItem` takes an optional page, so in-page navigation works on pages other than Home.
+
+### Removed
+- The Service Booking project: its card, the `/ServiceBooking` page, its three diagram images and its texts. `/ServiceBooking` now redirects to `/Fieldmatics`.
+
+## 2026-10-08: Visual refresh ([#17](https://github.com/gpapasteriadis/PersonalWebSite/pull/17))
+
+### Added
 - `CLAUDE.md`, `ARCHITECTURE.md`, `CHANGELOG.md` and architecture decision records in `docs/decisions/`.
 - Claude Code agents: `architecture-reviewer`, `i18n-checker`, `ui-reviewer` (`.claude/agents/`).
 - Shared Claude Code permissions (`.claude/settings.json`), `.editorconfig`, PR template.

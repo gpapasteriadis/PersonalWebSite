@@ -37,7 +37,7 @@ Components/Shared/     Reusable building blocks (PortfolioSection, SectionHeader
 Components/            App bar, drawer, language and theme toggles, scroll-to-top
 Data/                  Content catalog (jobs, projects, skills, nav, social links) + skill icons
 Layout/                MainLayout (theme provider, app bar, drawer)
-Pages/                 Home (/) and ServiceBooking (/ServiceBooking)
+Pages/                 Home (/) and the Fieldmatics case study (/Fieldmatics)
 Resources/             Localized strings (neutral/en/el .resx)
 SharedState/           UiState: theme, culture, drawer
 Theme/                 AppTheme: palettes and typography
@@ -50,6 +50,7 @@ For how the pieces fit together, see [ARCHITECTURE.md](ARCHITECTURE.md).
 - **A new job**: add the texts to the resx files, the company URL under `JobLinks` in `wwwroot/appsettings.json`, and a `Job` entry in `Data/PortfolioContent.cs` (newest first).
 - **A new skill**: add the SVG to `Data/SkillIcons.cs`, the description to the resx files, and a `Skill` entry in `PortfolioContent.Skills`.
 - **A project's tech tags**: edit the `Tech` list of the project in `PortfolioContent`.
+- **The Fieldmatics case study**: texts and diagram sources are `Fm*` keys in the resx files; structure (sections, journey steps, diagrams, decisions, stack) is in `Data/FieldmaticsContent.cs`. Diagram sources are [Mermaid](https://mermaid.js.org/) and are translated per language.
 - **Links / email**: `wwwroot/appsettings.json`.
 - **CV**: replace `wwwroot/George-CV.pdf`.
 

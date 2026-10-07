@@ -96,6 +96,89 @@
         }).observe(document.body, { childList: true, subtree: true });
     }
 
+    // --- Diagrams (Mermaid) ---------------------------------------------------------------
+    // Loaded from the CDN on first use, so pages without diagrams don't pay for it.
+    const mermaidUrl = 'https://cdn.jsdelivr.net/npm/mermaid@12.1.0/dist/mermaid.esm.min.mjs';
+    let mermaidModule;
+    let diagramCount = 0;
+
+    const loadMermaid = () => mermaidModule ??= import(mermaidUrl).then(m => m.default);
+
+    const nextFrame = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+
+    // MudBlazor exposes colors as "rgba(r,g,b,a)" or "r,g,b". Mermaid derives shades from fills and
+    // ignores alpha, so tints are blended into solid colors here.
+    const channels = value => (value.match(/[\d.]+/g) || []).slice(0, 3).map(Number);
+    const blend = (color, base, amount) => {
+        const [a, b] = [channels(color), channels(base)];
+        return `rgb(${a.map((c, i) => Math.round(c * amount + b[i] * (1 - amount))).join(', ')})`;
+    };
+
+    // Theme variables come from the live MudBlazor palette, so diagrams match light and dark mode.
+    const diagramTheme = () => {
+        const css = getComputedStyle(root);
+        const v = name => css.getPropertyValue(name).trim();
+        const isDark = root.dataset.theme === 'dark';
+        return {
+            darkMode: isDark,
+            fontFamily: 'Roboto, "Helvetica Neue", Arial, sans-serif',
+            fontSize: '15px',
+            background: v('--mud-palette-surface'),
+            primaryColor: v('--mud-palette-background'),
+            primaryTextColor: v('--mud-palette-text-primary'),
+            primaryBorderColor: v('--mud-palette-primary'),
+            secondaryColor: v('--mud-palette-background-gray'),
+            tertiaryColor: v('--mud-palette-surface'),
+            lineColor: v('--mud-palette-text-secondary'),
+            textColor: v('--mud-palette-text-primary'),
+            clusterBkg: blend(v('--mud-palette-primary-rgb'), v('--mud-palette-background'), isDark ? .07 : .06),
+            clusterBorder: v('--mud-palette-tertiary'),
+            edgeLabelBackground: v('--mud-palette-surface'),
+            actorBkg: v('--mud-palette-background'),
+            actorBorder: v('--mud-palette-primary'),
+            actorTextColor: v('--mud-palette-text-primary'),
+            signalColor: v('--mud-palette-text-primary'),
+            signalTextColor: v('--mud-palette-text-primary'),
+            labelBoxBkgColor: v('--mud-palette-background-gray'),
+            labelBoxBorderColor: v('--mud-palette-primary'),
+            labelTextColor: v('--mud-palette-text-primary'),
+            loopTextColor: v('--mud-palette-text-primary'),
+            noteBkgColor: v('--mud-palette-background-gray'),
+            noteTextColor: v('--mud-palette-text-primary'),
+            sequenceNumberColor: v('--mud-palette-primary-text'),
+            attributeBackgroundColorOdd: v('--mud-palette-surface'),
+            attributeBackgroundColorEven: v('--mud-palette-background'),
+        };
+    };
+
+    const renderNow = async (element, source, errorText) => {
+        if (!element) return;
+        try {
+            const mermaid = await loadMermaid();
+            await nextFrame(); // let a theme change reach the CSS variables first
+            mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'strict',
+                theme: 'base',
+                themeVariables: diagramTheme(),
+                flowchart: { curve: 'basis', htmlLabels: true },
+                sequence: { mirrorActors: false, showSequenceNumbers: true },
+            });
+            const { svg } = await mermaid.render(`diagram-${++diagramCount}`, source);
+            element.innerHTML = svg;
+            element.classList.remove('diagram__canvas--error');
+        } catch (error) {
+            console.warn('Diagram could not be rendered', error);
+            element.textContent = errorText || 'The diagram could not be loaded.';
+            element.classList.add('diagram__canvas--error');
+        }
+    };
+
+    // mermaid.initialize/render share global state, so diagrams render one at a time.
+    let renderQueue = Promise.resolve();
+    const renderDiagram = (element, source, errorText) =>
+        renderQueue = renderQueue.then(() => renderNow(element, source, errorText));
+
     // --- API used from Blazor ------------------------------------------------------------
     window.site = {
         prefs: {
@@ -114,7 +197,8 @@
             window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
             setActiveNav(null);
         },
-        // Called by the home page after its first render, so /#section links from other pages land on the section.
+        renderDiagram,
+        // Called by pages after their first render, so /page#section links land on the section.
         scrollToHash() {
             const id = decodeURIComponent(location.hash.slice(1));
             if (!id) return;

@@ -31,7 +31,8 @@ graph TD
     ML --> STT[ScrollToTop]
     ML --> Body["@Body"]
     Body --> Home[Pages/Home]
-    Body --> SBk[Pages/ServiceBooking]
+    Body --> FM[Pages/Fieldmatics]
+    FM --> FG[Shared/FeatureGrid] & JR[Shared/Journey] & MD[Shared/MermaidDiagram]
     Home --> About & Experience & Projects & Skills & Contact
     Experience & Projects & Skills & Contact --> PS[Shared/PortfolioSection]
     PS --> SH[Shared/SectionHeader]
@@ -41,14 +42,14 @@ graph TD
 ## Building blocks
 | Concern | Where | Notes |
 |---|---|---|
-| Content catalog | `Data/PortfolioContent.cs`, `Models/PortfolioModels.cs` | Jobs, projects, skills, nav items, social links as records. Sections loop over these. |
+| Content catalog | `Data/PortfolioContent.cs`, `Data/FieldmaticsContent.cs`, `Models/PortfolioModels.cs` | Jobs, projects, skills, nav items, social links as records. Sections loop over these. |
 | Skill icons | `Data/SkillIcons.cs` | Inline SVG markup used by skill chips and the skill snackbar. |
 | Text | `Resources/Localize.Resource{,.en,.el}.resx` | Accessed via `IStringLocalizer<Resource>`, injected globally as `L` in `_Imports.razor`. `L.Html(key)` renders values that contain HTML. |
 | Links / email | `wwwroot/appsettings.json` | Read through `IConfiguration` (`Config["JobLinks:PwC"]`). |
 | Theme | `Theme/AppTheme.cs` | One `MudTheme`: light (teal) and dark (blue-grey) palettes, burlywood `Tertiary` accent, fluid `clamp()` typography, 12px radius. |
 | Global CSS | `wwwroot/css/app.css` | `--app-*` tokens, then sections for layout, components, pages, motion, and the loading/error UI. Colors come from `var(--mud-palette-*)`. |
 | UI state | `SharedState/UiState.cs` (singleton) | `IsDarkMode`, `IsDrawerOpen`, culture toggle, `GoHomeAsync`. Raises `Changed`; subscribers unsubscribe in `Dispose`. |
-| JS interop | `wwwroot/js/site.js` → `window.site` | Preferences in localStorage, hide-on-scroll app bar, scroll-reveal (`.reveal` → `.is-visible`), scrollspy (`aria-current` on `[data-nav-target]`), `scrollToHash`, `scrollToTop`. A MutationObserver re-syncs the IntersectionObservers at most once per frame and unobserves nodes Blazor removed. |
+| JS interop | `wwwroot/js/site.js` → `window.site` | Preferences in localStorage, hide-on-scroll app bar, scroll-reveal (`.reveal` → `.is-visible`), scrollspy (`aria-current` on `[data-nav-target]`), `scrollToHash`, `scrollToTop`. A MutationObserver re-syncs the IntersectionObservers at most once per frame and unobserves nodes Blazor removed. `renderDiagram` lazy-loads Mermaid, themes it from the live palette (solid colors via `blend`) and renders one diagram at a time; `MermaidDiagram` re-renders when the theme changes. |
 
 ## Responsive strategy
 - Typography scales through `clamp()` in the theme. Components use fixed `Typo` values.
@@ -61,7 +62,8 @@ graph TD
 
 ## Routing
 - `/`: Home. Nav links are `/#section` (`jobs`, `projects`, `skills`, `contact`). From other pages they navigate home, and `Home` calls `site.scrollToHash()` after its first render.
-- `/ServiceBooking`: system-design diagrams for the Service Booking project.
+- `/Fieldmatics`: case study of the Fieldmatics platform (business, journey, Mermaid diagrams, decisions, stack). Its in-page nav uses `/Fieldmatics#fm-*` links and calls `site.scrollToHash()` after the first render.
+- `/ServiceBooking`: redirects to `/Fieldmatics` (the project it described was replaced).
 - Anything else renders the styled 404 in `App.razor`. In production, `wwwroot/staticwebapp.config.json` rewrites unknown paths to `index.html`.
 
 ## Build and deploy
@@ -76,5 +78,6 @@ graph TD
 | `MudBlazor` 9.x | Components, theming, breakpoints, snackbar |
 | animate.css (CDN) | Keyframes used by skill chips, card flip, pulses |
 | Roboto (Google Fonts) | Typeface |
+| Mermaid 12 (jsDelivr, ES module) | Diagrams on case-study pages; imported on first use only |
 
 Decisions behind these choices are recorded in [docs/decisions/](docs/decisions/).
