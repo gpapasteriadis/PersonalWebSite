@@ -20,9 +20,8 @@
     --app-loading-bg: #EEF6F5;
     --app-loading-text: #4A5C5A;
 
-    /* Fixed surfaces: media letterbox, diagrams (drawn on white), error banner */
+    /* Fixed surfaces: media letterbox, error banner */
     --app-media-bg: #000;
-    --app-diagram-bg: #FFF;
     --app-error-bg: #FFF4D6;
     --app-error-text: #3B2A14;
     --app-error-link: #00695C;
@@ -61,6 +60,11 @@ h1:focus {
     outline: 2px solid var(--mud-palette-tertiary);
     outline-offset: 2px;
     border-radius: 4px;
+}
+
+/* Burlywood is under 3:1 on light surfaces; use the primary color for focus rings there. */
+:root:not([data-theme="dark"]) :focus-visible {
+    outline-color: var(--mud-palette-primary);
 }
 
 a {
@@ -536,26 +540,430 @@ video.gallery__item {
 }
 
 /* 6. Pages ------------------------------------------------------------------------------- */
-.page {
-    padding-block: 1.5rem var(--app-section-space);
+/* Project case study (/Fieldmatics) */
+.fm-hero {
+    padding-block: 1.5rem 0;
+    background:
+        radial-gradient(circle at 85% 10%, rgba(var(--mud-palette-tertiary-rgb), .22), transparent 45%),
+        radial-gradient(circle at 10% 90%, rgba(var(--mud-palette-primary-rgb), .12), transparent 50%);
 }
 
-.phases {
+.fm-hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+    max-width: 52rem;
+    padding-block: clamp(1.5rem, 1rem + 3vw, 3.5rem) 1.5rem;
+}
+
+.fm-hero__eyebrow {
+    letter-spacing: .14em;
+}
+
+.fm-hero__now {
+    max-width: 62ch;
+    margin-top: .5rem;
+    color: var(--mud-palette-text-secondary);
+}
+
+.fm-hero__tagline {
+    color: var(--mud-palette-text-primary);
+    font-weight: 400;
+}
+
+/* Sticky at page level; follows the app bar when it hides on scroll. */
+.fm-toc-bar {
+    position: sticky;
+    top: calc(var(--app-appbar-height) + 8px);
+    z-index: 2;
+    transition: top .35s var(--app-ease);
+}
+
+body:has(.site-appbar[data-hidden="true"]) .fm-toc-bar {
+    top: 8px;
+}
+
+/* Section headings land below both the app bar and the sticky page nav. */
+.fm-section[id] {
+    scroll-margin-top: calc(var(--app-appbar-height) + 72px);
+}
+
+.fm-toc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .25rem .5rem;
+    margin-bottom: 1rem;
+    padding: .5rem .75rem;
+    border: 1px solid var(--mud-palette-lines-default);
+    border-radius: var(--app-radius-pill);
+    background: color-mix(in srgb, var(--mud-palette-surface) 88%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: var(--app-shadow-soft);
+}
+
+.fm-toc__label {
+    margin-right: .25rem;
+    color: var(--mud-palette-text-secondary);
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.fm-toc__link {
+    padding: .3rem .8rem;
+    border-radius: var(--app-radius-pill);
+    color: var(--mud-palette-primary);
+    font-size: .9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color .2s, color .2s;
+}
+
+    .fm-toc__link:hover {
+        background: rgba(var(--mud-palette-primary-rgb), .08);
+    }
+
+    .fm-toc__link[aria-current="true"] {
+        background: var(--mud-palette-primary);
+        color: var(--mud-palette-primary-text);
+    }
+
+/* Phones: one scrollable row instead of a multi-line block. */
+@media (max-width: 959.98px) {
+    .fm-toc {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        border-radius: var(--app-radius);
+        scrollbar-width: none;
+    }
+
+        .fm-toc::-webkit-scrollbar {
+            display: none;
+        }
+
+    .fm-toc__label {
+        display: none;
+    }
+
+    /* Hint that the row scrolls sideways. */
+    .fm-toc {
+        -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent);
+        mask-image: linear-gradient(90deg, #000 85%, transparent);
+    }
+
+    .fm-toc__link {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+}
+
+.fm-lead {
+    max-width: 72ch;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.fm-audience {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 2.5rem;
+}
+
+.fm-audience__label {
+    color: var(--mud-palette-text-secondary);
+    font-weight: 600;
+}
+
+.feature-grid {
     display: grid;
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.phase-card.mud-card {
+.feature-grid--wide {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--mud-palette-lines-default);
+    border-radius: var(--app-radius);
+    background: var(--mud-palette-surface);
+    box-shadow: var(--app-shadow-soft);
+    transition: transform .25s var(--app-ease), box-shadow .25s;
+}
+
+    .feature-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--app-shadow-lift);
+    }
+
+.feature-card__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .75rem;
+}
+
+/* Status of a case-study feature or step that is not finished: in progress (solid) or planned (dashed). */
+.status-badge {
+    align-self: flex-start;
+    padding: .15rem .6rem;
+    border: 1px solid rgba(var(--mud-palette-primary-rgb), .55);
+    border-radius: var(--app-radius-pill);
+    color: var(--mud-palette-primary);
+    font-size: .75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-badge--planned {
+    border-style: dashed;
+    border-color: rgba(var(--mud-palette-secondary-rgb), .8);
+    color: var(--mud-palette-secondary);
+}
+
+.feature-card__head .status-badge {
+    margin-top: .25rem;
+}
+
+.feature-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(var(--mud-palette-tertiary-rgb), .22);
+    color: var(--mud-palette-primary);
+}
+
+.feature-card__text {
+    color: var(--mud-palette-text-primary);
+}
+
+/* Journey: numbered steps, colored by where they happen */
+.journey {
+    --zone-color: var(--mud-palette-primary-rgb);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.journey-step {
+    --zone-color: var(--mud-palette-primary-rgb);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 1.25rem 1.25rem 1rem;
+    border: 1px solid var(--mud-palette-lines-default);
+    border-top: 4px solid rgb(var(--zone-color));
+    border-radius: var(--app-radius);
+    background: var(--mud-palette-surface);
+    box-shadow: var(--app-shadow-soft);
+}
+
+.journey-step--setup {
+    --zone-color: var(--mud-palette-tertiary-rgb);
+}
+
+/* Roadmap step: dashed accent, like planned parts of the diagrams. */
+.journey-step--next {
+    --zone-color: var(--mud-palette-secondary-rgb);
+    border-top-style: dashed;
+}
+
+.journey-step__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+}
+
+.journey-step__icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(var(--zone-color), .18);
+    color: var(--mud-palette-primary);
+}
+
+.journey-step__number {
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 4px;
+    border: 2px solid var(--mud-palette-surface);
+    border-radius: var(--app-radius-pill);
+    background: var(--mud-palette-primary);
+    color: var(--mud-palette-primary-text);
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.journey-step__zone {
+    padding: .15rem .6rem;
+    border-radius: var(--app-radius-pill);
+    background: rgba(var(--zone-color), .14);
+    color: var(--mud-palette-text-primary);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+}
+
+.journey-step__text {
+    flex: 1 1 auto;
+    color: var(--mud-palette-text-primary);
+}
+
+
+.js-reveal .reveal.is-visible .journey-step {
+    animation: fadeInUp .7s var(--step-delay) both;
+}
+
+/* Diagrams */
+.fm-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin: -1rem 0 1.5rem;
+    color: var(--mud-palette-text-secondary);
+    font-size: .875rem;
+}
+
+.fm-legend__sample {
+    width: 28px;
+    height: 0;
+    border-top: 2px dashed var(--mud-palette-text-secondary);
+}
+
+/* minmax(0, 1fr): a wide diagram must scroll inside its card, never widen the page. */
+.fm-diagrams {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+}
+
+.fm-diagram-card.mud-paper {
+    padding: clamp(1rem, .75rem + 1vw, 1.75rem);
     border-radius: var(--app-radius);
     box-shadow: var(--app-shadow-soft);
 }
 
-.phase-card__image {
-    display: block;
-    width: 100%;
-    height: auto;
+.fm-diagram-card__text {
+    max-width: 80ch;
+    margin: .5rem 0 1rem;
+    color: var(--mud-palette-text-primary);
+}
+
+.diagram {
+    margin: 0;
+}
+
+.diagram__canvas {
+    display: flex;
+    justify-content: safe center; /* never clip the left edge when it overflows */
+    max-width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    overflow-x: auto;
     border-radius: calc(var(--app-radius) * .75);
-    background: var(--app-diagram-bg);
+    background: var(--mud-palette-background);
+}
+
+    .diagram__canvas svg {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .diagram__canvas:empty::before {
+        content: "";
+        align-self: center;
+        width: 28px;
+        height: 28px;
+        border: 3px solid rgba(var(--mud-palette-primary-rgb), .2);
+        border-top-color: var(--mud-palette-primary);
+        border-radius: 50%;
+        animation: diagram-spin .8s linear infinite;
+    }
+
+.diagram__canvas--error {
+    align-items: center;
+    color: var(--mud-palette-text-secondary);
+    font-style: italic;
+}
+
+@keyframes diagram-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Wide diagrams stay readable on phones: keep a minimum size and scroll sideways inside the card. */
+@media (max-width: 759.98px) {
+    .diagram__canvas svg {
+        min-width: 640px;
+        max-width: none;
+    }
+}
+
+.fm-stack {
+    display: flex;
+    justify-content: center;
+}
+
+    .fm-stack .tech-tags {
+        justify-content: center;
+        max-width: 720px;
+    }
+
+
+
+.fm-back {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.project-card--featured.mud-card {
+    border-color: rgba(var(--mud-palette-tertiary-rgb), .8);
+    background:
+        radial-gradient(circle at 100% 0%, rgba(var(--mud-palette-tertiary-rgb), .14), transparent 40%),
+        var(--mud-palette-surface);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
 }
 
 .not-found {
@@ -608,6 +1016,7 @@ video.gallery__item {
     *::before,
     *::after {
         animation-duration: .01ms !important;
+        animation-delay: 0s !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
     }

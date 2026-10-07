@@ -176,7 +176,7 @@
     <value>Βιογραφικό:</value>
   </data>
   <data name="DockerDesc" xml:space="preserve">
-    <value>Το Docker μου επέτρεψε να πακετάρω και να αναπτύξω εφαρμογές με ευκολία. Μερικά παραδείγματα εφαρμογών που έχω χρησιμοποιήσει το Docker είναι: .NET 6 services, NestJS εφαρμογές, Bάσεις δεδομένων, Message Brokers, Frontend solutions.</value>
+    <value>Το Docker μου επέτρεψε να πακετάρω και να αναπτύξω εφαρμογές με ευκολία. Μερικά παραδείγματα εφαρμογών που έχω χρησιμοποιήσει το Docker είναι: .NET 6 services, NestJS εφαρμογές, Βάσεις δεδομένων, Message Brokers, Frontend solutions.</value>
   </data>
   <data name="EFCoreDesc" xml:space="preserve">
     <value>Απέκτησα εμπειρία στο EF Core κυρίως μέσω διαδικτυακών μαθημάτων αλλά και μέσω εφαρμογής του σε περιβάλον εργασίας.</value>
@@ -226,7 +226,7 @@
     <value>Προσωπική Ιστοσελίδα</value>
   </data>
   <data name="PersonalWebsiteDesc" xml:space="preserve">
-    <value>Αυτό το project χρησιμεύει ως χαρτοφυλάκιο για να παρουσιάσω τα projects, τις δεξιότητες και την εργασιακή μου εμπειρία στo web development.&lt;br&gt;&lt;br&gt;
+    <value>Αυτό το project χρησιμεύει ως χαρτοφυλάκιο για να παρουσιάσω τα projects, τις δεξιότητες και την εργασιακή μου εμπειρία στο web development.&lt;br&gt;&lt;br&gt;
 
 &lt;b&gt;Λεπτομέρειες υλοποίησης:&lt;/b&gt;&lt;br&gt;
 ·Δημιουργήθηκε χρησιμοποιώντας Blazor με .NET 8 και τη βιβλιοθήκη MudBlazor. Μια δυναμική client-side
@@ -238,9 +238,6 @@
   </data>
   <data name="PersonalWebsiteTitle" xml:space="preserve">
     <value>&lt;u&gt;Η πρώτη μου προσωπική ιστοσελίδα&lt;/u&gt;</value>
-  </data>
-  <data name="Phase" xml:space="preserve">
-    <value>Φάση</value>
   </data>
   <data name="Projects" xml:space="preserve">
     <value>Projects</value>
@@ -256,28 +253,6 @@
   </data>
   <data name="SendMeMail" xml:space="preserve">
     <value>Στείλτε μου Email</value>
-  </data>
-  <data name="ServiceBooking" xml:space="preserve">
-    <value>Κρατήσεις Υπηρεσιών</value>
-  </data>
-  <data name="ServiceBookingDesc" xml:space="preserve">
-    <value>Η Πλατφόρμα Κρατήσεων Τοπικών Υπηρεσιών είναι ένα προσωπικό side project που στοχεύει να παρέχει στους χρήστες έναν βολικό και αποτελεσματικό τρόπο πρόσβασης στις τοπικές υπηρεσίες της περιοχής τους. Φτιάχνω αυτήν την πλατφόρμα για να συνδέω τους χρήστες με αξιόπιστους παρόχους υπηρεσιών για διάφορες ανάγκες, όπως καθαρισμός σπιτιού, personal training, διδασκαλία και άλλα.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Λεπτομέρειες υλοποίησης:&lt;/b&gt;&lt;br&gt;
-· &lt;em&gt;Ανάπτυξη του Frontend:&lt;/em&gt;&lt;br&gt;
-Για το Frontend, θα χρησιμοποιήσω το Blazor στο .NET 8, εμπλουτίζοντάς το με τη βιβλιοθήκη MudBlazor. Ακόμα, θα χρησιμοποιήσω το ASP.NET Core Identity σε συνδυασμό με μια αποκλειστική βάση δεδομένων για τον έλεγχο ταυτότητας και την εξουσιοδότηση των χρηστών.&lt;br&gt;
-· &lt;em&gt;Υπηρεσίες Backend:&lt;/em&gt;&lt;br&gt;
-Για το Backend θα χρησιμοποιήσω ενα Web API στο .NET 8 για την επικοινωνία με το Frontend και το Entity Framework Core ως ORM για την πρόσβαση στα δεδομένα. Η κύρια βάση που θα χρησιμοποιήσω θα ειναι το MSSQL για εύκολη αποθήκευση και ανάκτηση δεδομένων&lt;br&gt;
-·&lt;em&gt;Βασικά Στοιχεία:&lt;/em&gt; &lt;br&gt;
-Το Redis θα χρησιμοποιηθεί για την προσωρινή αποθήκευση δεδομένων τα οποία δεν μεταβάλονται συχνά και έχουν αυξημένη ζήτηση απο τους χρήστες, βελτιώνοντας την απόδοση της εφαρμογής και μετριάζοντας το φόρτο της βάσης δεδομένων και την καθυστέρηση. Το Elasticsearch θα χρησιμοποιηθεί για την αποθήκευση log αρχείων αλλά θα εξυπηρετήσει και την λειτουργία αναζήτησης των χρηστών, θα συμπληρωθεί και από το Kibana για την οπτικοποίηση και ανάλυση των log αρχείων. Οι ενημερώσεις της διεπαφής σε πραγματικό χρόνο θα είναι εφικτές αξιοποιώντας το SignalR. Τέλος το RabbitMQ θα λειτουργεί ως διαμεσολαβητής μηνυμάτων για την ασύγχρονη επικοινωνία μεταξύ βασικών υπηρεσιών, όπως ο Email Worker για ασύγχρονη αποστολή email και ο Hangfire Worker για την εκτέλεση διάφορων εργασιών στο παρασκήνιο.&lt;br&gt;
-· &lt;em&gt;Υποδομή ανάπτυξης:&lt;/em&gt;&lt;br&gt;
-Η υποδομή ανάπτυξης θα φιλοξενηθεί στο Azure, χρησιμοποιώντας Docker containers για το packaging όλων των επιμέρους τμημάτων της εφαρμογής.</value>
-  </data>
-  <data name="ServiceBookingDesign" xml:space="preserve">
-    <value>Σχεδίαση του Συστήματος Κρατήσεων Υπηρεσιών</value>
-  </data>
-  <data name="ServiceBookingTitle" xml:space="preserve">
-    <value>&lt;u&gt;Εφαρμογή Κρατήσεων Τοπικών Υπηρεσιών&lt;/u&gt;</value>
   </data>
   <data name="SignalRDesc" xml:space="preserve">
     <value>Σε προηγούμενο ρόλο, αξιοποίησα το SignalR για την ενημέρωση του UI σε πραγματικό χρόνο, εφαρμόζοντάς το τόσο στη C# όσο και στη JavaScript.</value>
@@ -327,9 +302,6 @@
 • Συνεργάστηκα στενά με τα μέλη της ομάδας σε τακτικές συναντήσεις για ευθυγράμμιση προσπαθειών, υλοποίηση ενημερώσεων και συνεχή βελτίωση της πλατφόρμας.
 
 </value>
-  </data>
-  <data name="UnderConstruction" xml:space="preserve">
-    <value>&lt;b&gt;  Υπό κατασκευή &lt;/b&gt;</value>
   </data>
   <data name="IndeavorDesc" xml:space="preserve">
     <value>&lt;b&gt;Ανάπτυξη Backend &amp; Πλατφόρμας:&lt;/b&gt;&lt;br/&gt;
@@ -392,7 +364,246 @@
   <data name="MobileAppVideo" xml:space="preserve">
     <value>Βίντεο επίδειξης της εφαρμογής FoodWaste</value>
   </data>
-  <data name="AriaOpenInNewTab" xml:space="preserve">
-    <value>{0}: άνοιγμα σε νέα καρτέλα</value>
+  <data name="FmLabel" xml:space="preserve">
+    <value>Fieldmatics</value>
+  </data>
+  <data name="FmTitle" xml:space="preserve">
+    <value>&lt;u&gt;Fieldmatics: Πλατφόρμα IoT για τη γεωργία&lt;/u&gt;</value>
+  </data>
+  <data name="FmSummary" xml:space="preserve">
+    <value>Το Fieldmatics είναι μια πλατφόρμα SaaS που σχεδιάζω και υλοποιώ για καλλιεργητές. Στόχος της είναι να συγκεντρώνει σε ένα σημείο κάθε θερμοκήπιο, χωράφι και ελαιώνα: τις τρέχουσες συνθήκες και το πλήρες ιστορικό κάθε τοποθεσίας και, στη συνέχεια, ειδοποιήσεις και αυτόματη άρδευση. Λειτουργεί με οποιονδήποτε αισθητήρα και τα δεδομένα κάθε πελάτη παραμένουν ιδιωτικά.&lt;br/&gt;&lt;br/&gt;Τεχνικά, είναι μια modular πλατφόρμα σε .NET 10 με Blazor, PostgreSQL, MQTT και RabbitMQ.</value>
+  </data>
+  <data name="FmStatus" xml:space="preserve">
+    <value>Σε ενεργή ανάπτυξη</value>
+  </data>
+  <data name="FmDesignLink" xml:space="preserve">
+    <value>Η επιχειρηματική ιδέα &amp; πώς λειτουργεί</value>
+  </data>
+  <data name="FmEyebrow" xml:space="preserve">
+    <value>Μελέτη περίπτωσης προϊόντος</value>
+  </data>
+  <data name="FmTagline" xml:space="preserve">
+    <value>Μια πλατφόρμα SaaS που βοηθά τους καλλιεργητές να βλέπουν τι συμβαίνει σε κάθε θερμοκήπιο, χωράφι και ελαιώνα και, στη συνέχεια, ενεργεί αυτόματα για λογαριασμό τους.</value>
+  </data>
+  <data name="FmOnThisPage" xml:space="preserve">
+    <value>Σε αυτή τη σελίδα</value>
+  </data>
+  <data name="FmBackToProjects" xml:space="preserve">
+    <value>Πίσω στα projects</value>
+  </data>
+  <data name="FmProblemTitle" xml:space="preserve">
+    <value>Το πρόβλημα</value>
+  </data>
+  <data name="FmProblemText" xml:space="preserve">
+    <value>Οι καλλιεργητές φροντίζουν πολλούς διαφορετικούς χώρους, συχνά μακριά τον έναν από τον άλλον: θερμοκήπια, κήπους, χωράφια και ελαιώνες. Οι συνθήκες αλλάζουν από ώρα σε ώρα: ένα ζεστό απόγευμα, ένα σημείο με ξερό χώμα, μια κρύα νύχτα. Χωρίς δεδομένα, τα προβλήματα εντοπίζονται αργά, το νερό σπαταλιέται και οι αποφάσεις βασίζονται σε εκτιμήσεις. Τα περισσότερα εργαλεία IoT δεν το λύνουν αυτό, γιατί βασίζονται σε συγκεκριμένο υλικό και δείχνουν συσκευές, όχι χώρους.</value>
+  </data>
+  <data name="FmBuiltFor" xml:space="preserve">
+    <value>Κατάλληλο για</value>
+  </data>
+  <data name="FmEnvGreenhouses" xml:space="preserve">
+    <value>Θερμοκήπια</value>
+  </data>
+  <data name="FmEnvGardens" xml:space="preserve">
+    <value>Κήπους &amp; μπαλκόνια</value>
+  </data>
+  <data name="FmEnvFields" xml:space="preserve">
+    <value>Χωράφια</value>
+  </data>
+  <data name="FmEnvOliveGroves" xml:space="preserve">
+    <value>Ελαιώνες</value>
+  </data>
+  <data name="FmValueTitle" xml:space="preserve">
+    <value>Τι προσφέρει το Fieldmatics</value>
+  </data>
+  <data name="FmValueIntro" xml:space="preserve">
+    <value>Όσα σχεδιάζεται να προσφέρει η πλατφόρμα στους καλλιεργητές. Οι δυνατότητες με την ένδειξη «Σε εξέλιξη» ή «Έρχεται σύντομα» δεν έχουν ολοκληρωθεί ακόμη.</value>
+  </data>
+  <data name="FmPlanned" xml:space="preserve">
+    <value>Έρχεται σύντομα</value>
+  </data>
+  <data name="FmVal1Title" xml:space="preserve">
+    <value>Κάθε τοποθεσία με μια ματιά</value>
+  </data>
+  <data name="FmVal1Text" xml:space="preserve">
+    <value>Τρέχουσα θερμοκρασία, υγρασία αέρα και υγρασία εδάφους για κάθε θερμοκήπιο, χωράφι ή ελαιώνα, σε ένα σημείο και από οποιονδήποτε browser. Επιλέγετε χώρο, όχι συσκευή.</value>
+  </data>
+  <data name="FmVal2Title" xml:space="preserve">
+    <value>Ιστορικό με νόημα</value>
+  </data>
+  <data name="FmVal2Text" xml:space="preserve">
+    <value>Κάθε μέτρηση διατηρείται και δεν διαγράφεται ποτέ. Οι τάσεις δείχνουν τι συνέβη τη νύχτα, την προηγούμενη εβδομάδα ή σε όλη τη σεζόν, ώστε οι αποφάσεις να βασίζονται σε στοιχεία και όχι σε εκτιμήσεις.</value>
+  </data>
+  <data name="FmVal3Title" xml:space="preserve">
+    <value>Λειτουργεί με κάθε αισθητήρα</value>
+  </data>
+  <data name="FmVal3Text" xml:space="preserve">
+    <value>Ξεκινήστε με οικονομικούς αισθητήρες και προσθέστε άλλους αργότερα: σήμερα με Arduino, αύριο με ασύρματες και βιομηχανικές συσκευές. Χωρίς δέσμευση σε έναν μόνο προμηθευτή υλικού.</value>
+  </data>
+  <data name="FmVal4Title" xml:space="preserve">
+    <value>Ειδοποιήσεις πριν γίνει η ζημιά</value>
+  </data>
+  <data name="FmVal4Text" xml:space="preserve">
+    <value>Οι κανόνες που ορίζετε σας ειδοποιούν μόλις μια τιμή βγει εκτός ασφαλών ορίων, π.χ. όταν ένα θερμοκήπιο υπερθερμαίνεται ή το έδαφος ξεραίνεται, ώστε να δράσετε πριν επηρεαστούν τα φυτά.</value>
+  </data>
+  <data name="FmVal5Title" xml:space="preserve">
+    <value>Αυτόματη άρδευση</value>
+  </data>
+  <data name="FmVal5Text" xml:space="preserve">
+    <value>Πότισμα μόνο όταν το έδαφος πραγματικά το χρειάζεται, με εξοικονόμηση νερού και χρόνου, και με ασφαλή σχεδίαση (fail-safe), ώστε μια βλάβη να μην πλημμυρίσει ποτέ ούτε να ξεράνει ένα χωράφι.</value>
+  </data>
+  <data name="FmVal6Title" xml:space="preserve">
+    <value>Χωρίς εγκατάσταση</value>
+  </data>
+  <data name="FmVal6Text" xml:space="preserve">
+    <value>Μια υπηρεσία cloud: συνδέεστε από οπουδήποτε και οι ενημερώσεις γίνονται από την πλατφόρμα. Τα δεδομένα κάθε πελάτη παραμένουν ιδιωτικά και χωριστά από τα δεδομένα όλων των άλλων.</value>
+  </data>
+  <data name="FmHowTitle" xml:space="preserve">
+    <value>Πώς λειτουργεί για τον καλλιεργητή</value>
+  </data>
+  <data name="FmHowIntro" xml:space="preserve">
+    <value>Από την πρώτη ρύθμιση μέχρι ένα σύστημα που δουλεύει για εσάς. Τα βήματα με την ένδειξη «Σε εξέλιξη» ή «Έρχεται σύντομα» βρίσκονται ακόμη υπό ανάπτυξη.</value>
+  </data>
+  <data name="FmZoneSetup" xml:space="preserve">
+    <value>Ρύθμιση</value>
+  </data>
+  <data name="FmZoneDaily" xml:space="preserve">
+    <value>Καθημερινά</value>
+  </data>
+  <data name="FmZoneNext" xml:space="preserve">
+    <value>Έρχεται σύντομα</value>
+  </data>
+  <data name="FmStep1Title" xml:space="preserve">
+    <value>Προσθέστε τις τοποθεσίες σας</value>
+  </data>
+  <data name="FmStep1Text" xml:space="preserve">
+    <value>Δημιουργήστε τους χώρους όπου καλλιεργείτε, όπως το Θερμοκήπιο 1, τον βόρειο ελαιώνα ή το μπαλκόνι, και δώστε όνομα στους αισθητήρες του καθενός.</value>
+  </data>
+  <data name="FmStep2Title" xml:space="preserve">
+    <value>Συνδέστε τους αισθητήρες</value>
+  </data>
+  <data name="FmStep2Text" xml:space="preserve">
+    <value>Ένας μικρός connector δίπλα στο υλικό στέλνει τις μετρήσεις στο Fieldmatics. Κάθε είδος αισθητήρα μπορεί να συνδεθεί· κάθε τεχνολογία απλώς αποκτά τον δικό της connector.</value>
+  </data>
+  <data name="FmStep3Title" xml:space="preserve">
+    <value>Οι μετρήσεις έρχονται μόνες τους</value>
+  </data>
+  <data name="FmStep3Text" xml:space="preserve">
+    <value>Οι μετρήσεις φτάνουν όλο το εικοσιτετράωρο. Περιμένουν με ασφάλεια σε ουρά μέχρι να αποθηκευτούν, οπότε δεν χάνεται τίποτα αν κάποιο μέρος της πλατφόρμας κάνει επανεκκίνηση.</value>
+  </data>
+  <data name="FmStep4Title" xml:space="preserve">
+    <value>Δείτε τι συμβαίνει</value>
+  </data>
+  <data name="FmStep4Text" xml:space="preserve">
+    <value>Ανοίξτε μια τοποθεσία για να δείτε πρώτα τις τρέχουσες συνθήκες της και μετά πώς άλλαξαν με τον χρόνο.</value>
+  </data>
+  <data name="FmStep5Title" xml:space="preserve">
+    <value>Αφήστε το να δουλέψει για εσάς</value>
+  </data>
+  <data name="FmStep5Text" xml:space="preserve">
+    <value>Ορίστε κανόνες μία φορά και αφήστε το Fieldmatics να σας ειδοποιεί ή να ξεκινά την άρδευση όταν το απαιτούν οι συνθήκες.</value>
+  </data>
+  <data name="FmPictureTitle" xml:space="preserve">
+    <value>Η συνολική εικόνα</value>
+  </data>
+  <data name="FmPictureIntro" xml:space="preserve">
+    <value>Το Fieldmatics βρίσκεται ανάμεσα στον χώρο καλλιέργειας και στον καλλιεργητή. Οποιοσδήποτε εξοπλισμός συνδέεται μέσω ενός μικρού connector, και η πλατφόρμα κρατά τα δεδομένα ασφαλή και τα μετατρέπει σε γνώση και, αργότερα, σε δράση.</value>
+  </data>
+  <data name="FmDiagramLegend" xml:space="preserve">
+    <value>Τα διακεκομμένα πλαίσια και οι διακεκομμένες γραμμές δείχνουν όσα έχουν προγραμματιστεί.</value>
+  </data>
+  <data name="FmDiagramError" xml:space="preserve">
+    <value>Δεν ήταν δυνατή η φόρτωση του διαγράμματος.</value>
+  </data>
+  <data name="FmDiagFlowTitle" xml:space="preserve">
+    <value>Από το χωράφι στον καλλιεργητή</value>
+  </data>
+  <data name="FmDiagFlowText" xml:space="preserve">
+    <value>Οι μετρήσεις ταξιδεύουν από τους αισθητήρες κάθε τοποθεσίας, μέσω ενός connector, στην πλατφόρμα, η οποία τις κρατά όλες και τις μετατρέπει σε κάτι χρήσιμο για τον καλλιεργητή.</value>
+  </data>
+  <data name="FmDiagFlowSource" xml:space="preserve">
+    <value>flowchart LR
+    subgraph field[&quot;Στις τοποθεσίες σας&quot;]
+        sensors[&quot;Αισθητήρες&lt;br/&gt;θερμοκρασία · υγρασία αέρα · υγρασία εδάφους&quot;]
+        connector[&quot;Connector&lt;br/&gt;λειτουργεί με κάθε υλικό&quot;]
+    end
+    subgraph platform[&quot;Fieldmatics · SaaS&quot;]
+        receive[&quot;Λαμβάνει κάθε μέτρηση&lt;br/&gt;με ασφάλεια&quot;]
+        history[(&quot;Κρατά όλο το ιστορικό&quot;)]
+        insight[&quot;Μετατρέπει τα δεδομένα σε γνώση&quot;]
+    end
+    grower([&quot;Καλλιεργητής&lt;br/&gt;εφαρμογή web&quot;])
+    mobile([&quot;Εφαρμογή κινητού&quot;]):::planned
+    alerts[&quot;Ειδοποιήσεις και κανόνες&quot;]:::planned
+    irrigation[&quot;Αυτόματη άρδευση&quot;]:::planned
+    sensors --&gt; connector --&gt; receive --&gt; history --&gt; insight --&gt; grower
+    insight -.-&gt; mobile
+    insight -.-&gt; alerts -.-&gt; irrigation
+    classDef planned stroke-dasharray: 5 4</value>
+  </data>
+  <data name="FmDiagTenantsTitle" xml:space="preserve">
+    <value>Μία πλατφόρμα, πολλοί πελάτες</value>
+  </data>
+  <data name="FmDiagTenantsText" xml:space="preserve">
+    <value>Ο στόχος: όλοι οι πελάτες χρησιμοποιούν την ίδια, πάντα ενημερωμένη πλατφόρμα, αλλά ο καθένας βλέπει μόνο τις δικές του τοποθεσίες και τα δικά του δεδομένα. Οι διακεκομμένες γραμμές δείχνουν τον διαχωρισμό δεδομένων που βρίσκεται ακόμη υπό ανάπτυξη.</value>
+  </data>
+  <data name="FmDiagTenantsSource" xml:space="preserve">
+    <value>flowchart TB
+    subgraph c[&quot;Πελάτης Γ · ερασιτέχνης κηπουρός&quot;]
+        c1[&quot;Μπαλκόνι&quot;]
+    end
+    subgraph b[&quot;Πελάτης Β · θερμοκηπιακός παραγωγός&quot;]
+        b1[&quot;Θερμοκήπιο 1&quot;]
+        b2[&quot;Θερμοκήπιο 2&quot;]
+    end
+    subgraph a[&quot;Πελάτης Α · ελαιοπαραγωγός&quot;]
+        a1[&quot;Βόρειος ελαιώνας&quot;]
+        a2[&quot;Νότιος ελαιώνας&quot;]
+    end
+    platform{{&quot;Μία πλατφόρμα Fieldmatics&lt;br/&gt;κοινή και πάντα ενημερωμένη&quot;}}
+    a1 &amp; a2 --&gt; platform
+    b1 &amp; b2 --&gt; platform
+    c1 --&gt; platform
+    platform -.-&gt;|&quot;μόνο τα δικά του δεδομένα&quot;| va([&quot;Πελάτης Α&quot;])
+    platform -.-&gt;|&quot;μόνο τα δικά του δεδομένα&quot;| vb([&quot;Πελάτης Β&quot;])
+    platform -.-&gt;|&quot;μόνο τα δικά του δεδομένα&quot;| vc([&quot;Πελάτης Γ&quot;])</value>
+  </data>
+  <data name="FmTrustTitle" xml:space="preserve">
+    <value>Σχεδιασμένο για να εμπνέει εμπιστοσύνη</value>
+  </data>
+  <data name="FmTrust1Title" xml:space="preserve">
+    <value>Καμία μέτρηση δεν χάνεται</value>
+  </data>
+  <data name="FmTrust1Text" xml:space="preserve">
+    <value>Οι μετρήσεις περιμένουν σε μια ασφαλή ουρά και αφαιρούνται μόνο αφού αποθηκευτούν, οπότε μια επανεκκίνηση στην πλευρά της πλατφόρμας δεν αφήνει κενά στο ιστορικό σας.</value>
+  </data>
+  <data name="FmTrust2Title" xml:space="preserve">
+    <value>Τα δεδομένα σας μένουν δικά σας</value>
+  </data>
+  <data name="FmTrust2Text" xml:space="preserve">
+    <value>Σχεδιασμένο ώστε κάθε λογαριασμός πελάτη να διατηρείται απομονωμένος στον server, με την ιδιοκτησία να προκύπτει από τα ίδια τα δεδομένα και ποτέ από ό,τι ισχυρίζεται μια συσκευή ή μια εφαρμογή. Ο διαχωρισμός των λογαριασμών βρίσκεται υπό ανάπτυξη.</value>
+  </data>
+  <data name="FmTrust3Title" xml:space="preserve">
+    <value>Το ιστορικό διατηρείται</value>
+  </data>
+  <data name="FmTrust3Text" xml:space="preserve">
+    <value>Οι αισθητήρες μπορούν να απενεργοποιηθούν ή να αποσυρθούν, αλλά οι μετρήσεις τους δεν διαγράφονται ποτέ, ώστε οι μακροπρόθεσμες τάσεις να μένουν πλήρεις.</value>
+  </data>
+  <data name="FmTrust4Title" xml:space="preserve">
+    <value>Έτοιμο να μεγαλώσει</value>
+  </data>
+  <data name="FmTrust4Text" xml:space="preserve">
+    <value>Νέα είδη αισθητήρων, νέες δυνατότητες και νέοι πελάτες προστίθενται χωρίς επανασχεδιασμό της πλατφόρμας. Τα εσωτερικά της όρια ελέγχονται με αυτοματοποιημένα tests.</value>
+  </data>
+  <data name="FmStackTitle" xml:space="preserve">
+    <value>Τεχνολογίες</value>
+  </data>
+  <data name="FmStackText" xml:space="preserve">
+    <value>Τεχνικά, το Fieldmatics είναι μια modular πλατφόρμα σε .NET 10: μια εφαρμογή web σε Blazor, PostgreSQL για το ιστορικό, και MQTT και RabbitMQ για την αξιόπιστη μεταφορά των μετρήσεων.</value>
+  </data>
+  <data name="FmInProgress" xml:space="preserve">
+    <value>Σε εξέλιξη</value>
+  </data>
+  <data name="FmNowText" xml:space="preserve">
+    <value>Πού βρίσκεται: οι μετρήσεις ήδη ρέουν από ένα πρωτότυπο Arduino μέσω της πλατφόρμας σε μια βάση δεδομένων και σε ένα πρώτο dashboard. Οι τοποθεσίες, οι λογαριασμοί πελατών και τα dashboards ανά τοποθεσία βρίσκονται σε εξέλιξη.</value>
   </data>
 </root>

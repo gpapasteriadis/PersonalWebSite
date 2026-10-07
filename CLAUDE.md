@@ -21,18 +21,19 @@ There is no test project. Verify changes by running the site (see the checklist 
 Program.cs                 DI + culture bootstrap (reads culture from localStorage before startup)
 App.razor                  Router + styled 404
 Layout/MainLayout.razor    Theme provider, app bar, drawer, scroll-to-top. Shared by all pages
-Pages/                     Home (/) and ServiceBooking (/ServiceBooking)
+Pages/                     Home (/), Fieldmatics (/Fieldmatics case study), ServiceBookingRedirect (/ServiceBooking → /Fieldmatics)
 Components/Sections/       One component per home-page section (About, Experience, Projects, Skills, Contact)
-Components/Shared/         Reusable building blocks (PortfolioSection, SectionHeader, ProjectCard, TechTags)
+Components/Shared/         Reusable building blocks (PortfolioSection, SectionHeader, ProjectCard, TechTags, FeatureGrid, Journey, MermaidDiagram)
 Components/*.razor         App-bar pieces (SiteAppBar, CultureSelector, ThemeSelector, SideBar, ScrollToTop)
 Data/PortfolioContent.cs   The content catalog: jobs, projects, skills, nav items
+Data/FieldmaticsContent.cs Content of the /Fieldmatics case study (value, journey, diagrams, trust principles)
 Models/                    Records used by the catalog
 Theme/AppTheme.cs          The single MudTheme (light + dark palettes, typography, radius)
 SharedState/UiState.cs     App-wide UI state (dark mode, drawer), with change events
 Localize/                  Resource (marker for IStringLocalizer<Resource>) + L.Html(key) for resx values with HTML
 Resources/*.resx           Localized strings: neutral (= English), .en, .el
 wwwroot/index.html         Host page: meta tags, CSS/JS includes, loading screen
-wwwroot/js/site.js         All JS interop (culture storage, app-bar hide, scroll reveal, scrollspy)
+wwwroot/js/site.js         All JS interop (culture storage, app-bar hide, scroll reveal, scrollspy, Mermaid diagrams)
 wwwroot/css/app.css        Design tokens + global styles + animations
 wwwroot/appsettings.json   External links (jobs, socials, projects) and email
 ```
@@ -40,14 +41,16 @@ wwwroot/appsettings.json   External links (jobs, socials, projects) and email
 ## Conventions
 - **Don't change displayed information** (texts, dates, links, job/skill lists) unless the user asks for it. Visual and code changes are fine.
 - **Text**: every user-visible string comes from `IStringLocalizer<Resource>` (injected as `L`). When you add or rename a key, update **all three** resx files. Values may contain HTML; render them with `(MarkupString)`.
-- **Content**: jobs, projects, skills and nav items are data in `Data/PortfolioContent.cs`. Components loop over it. Don't hand-write repeated markup per item or per breakpoint.
+- **Content**: jobs, projects, skills and nav items are data in `Data/PortfolioContent.cs`; a project case-study page has its own catalog (e.g. `Data/FieldmaticsContent.cs`). Components loop over it. Don't hand-write repeated markup per item or per breakpoint.
 - **Links/email**: read from `IConfiguration` (`wwwroot/appsettings.json`), never hard-coded.
 - **Colors**: never inline (`style="color:burlywood"`, hex). Use MudBlazor `Color.*`, `var(--mud-palette-*)`, or the `--app-*` tokens in `app.css`. The burlywood accent is `Color.Tertiary` / `var(--mud-palette-tertiary)`.
 - **Typography**: pick a fixed `Typo`. Responsive sizes come from the theme's `clamp()` values. Don't add per-breakpoint `Typo` switch methods.
 - **Responsive**: prefer `MudGrid` `xs/sm/md` and CSS. Use `MudHidden` only when mobile and desktop need genuinely different widgets, and then both branches must render the same data.
-- **Sections**: wrap a home-page section in `<PortfolioSection Id="..." Title="...">`. It handles the anchor, container width, header and scroll reveal.
+- **Sections**: wrap a page section in `<PortfolioSection Id="..." Title="...">`. It handles the anchor, container width, header and scroll reveal.
 - **State**: subscribe to `UiState` events in `OnInitialized` and unsubscribe in `Dispose` (`@implements IDisposable`). No `async void`.
 - **JS**: add functions to `wwwroot/js/site.js` under `window.site`. No inline scripts and no `window.onscroll =` assignments.
+- **Diagrams**: use `<MermaidDiagram>` with the Mermaid source in a resx key (one per language, labels translated). Never put markup inside its canvas; JS owns it.
+- **Private projects**: Fieldmatics is a private, proprietary repository. Its page is business-first (problem, value, how it works) with light technical detail: no code, configuration, protocol/topic names, internal decision IDs or repository links. Mark roadmap features as planned; never present them as done.
 - **Accessibility**: icon-only buttons need `aria-label`; images need `alt`; `target="_blank"` links need `rel="noopener"`; animations must respect `prefers-reduced-motion`.
 - **Nullable** is on and warnings fail the build. Fix them; don't suppress them.
 - MudBlazor ships an analyzer: `MUD0002` warnings mean a parameter name is wrong for this MudBlazor version.
@@ -60,10 +63,11 @@ wwwroot/appsettings.json   External links (jobs, socials, projects) and email
 - Record user-facing or structural changes in `CHANGELOG.md` under `[Unreleased]`. Update `ARCHITECTURE.md` when structure changes, and add an ADR in `docs/decisions/` for significant decisions.
 
 ## Manual verification checklist
-Run `dotnet watch` and check at ~375px and ~1440px: English and Greek, light and dark (reload to confirm the theme persists without a flash), nav links scroll to and highlight sections, the drawer works on mobile, skill chips open the snackbar, the mobile-app card flips to the gallery, the CV downloads, `/ServiceBooking` renders with nav, and an unknown URL shows the 404 page.
+Run `dotnet watch` and check at ~375px and ~1440px: English and Greek, light and dark (reload to confirm the theme persists without a flash), nav links scroll to and highlight sections, the drawer works on mobile, skill chips open the snackbar, the mobile-app card flips to the gallery, the CV downloads, `/Fieldmatics` renders with nav and both diagrams in both themes, `/ServiceBooking` redirects to it, and an unknown URL shows the 404 page.
 
 ## Gotchas
 - Culture switching writes `BlazorCulture` to localStorage and **reloads** the app. `Program.cs` reads it before `RunAsync`.
-- `wwwroot/staticwebapp.config.json` rewrites unknown routes to `index.html`, so deep links like `/ServiceBooking` work in production.
+- `wwwroot/staticwebapp.config.json` rewrites unknown routes to `index.html`, so deep links like `/Fieldmatics` work in production.
 - The SWA deploy workflow builds the app itself (Oryx). `.github/workflows/ci.yml` only verifies the build on PRs.
+- Mermaid is pinned in `site.js` (`mermaidUrl`) and loaded from jsDelivr only on pages with diagrams. Mermaid derives shades from fill colors and ignores alpha, so pass solid colors (see `blend`).
 - `wwwroot/Video/FoodWasteApp.mp4` is ~30 MB. Keep `preload="metadata"` (first frame only) and never autoplay it.
