@@ -1,16 +1,7 @@
-﻿using Microsoft.Extensions.Localization;
-using MudBlazor;
+namespace PersonalWebSite.Localize;
 
-namespace PersonalWebSite.Localize
-{
-    public class Resource : MudLocalizer
-    {
-        private readonly IStringLocalizer<Resource> _localizer = null!;
-
-        public Resource(IStringLocalizer<Resource> localizer)
-        {
-            _localizer = localizer;
-        }
-        public override LocalizedString this[string key] => _localizer[key];
-    }
-}
+/// <summary>
+/// Marker type for <c>IStringLocalizer&lt;Resource&gt;</c>. With ResourcesPath "Resources" it resolves
+/// Resources/Localize.Resource.resx (neutral), .en.resx and .el.resx. Don't rename or move it without renaming those files.
+/// </summary>
+public sealed class Resource;

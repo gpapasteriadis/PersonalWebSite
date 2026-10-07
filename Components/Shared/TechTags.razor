@@ -1,0 +1,10 @@
+<ul class="tech-tags">
+    @foreach (var item in Items)
+    {
+        <li class="tech-tag">@item</li>
+    }
+</ul>
+
+@code {
+    [Parameter, EditorRequired] public IReadOnlyList<string> Items { get; set; } = [];
+}

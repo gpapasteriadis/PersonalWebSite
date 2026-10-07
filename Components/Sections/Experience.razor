@@ -1,244 +1,53 @@
-﻿@inject MudLocalizer localizer
-@inject IConfiguration config
+@inject IConfiguration Config
 
-<MudHidden Breakpoint="Breakpoint.SmAndUp" Invert=true>
-    <MudCard id="jobs" Elevation="2" Style="margin-top:50px; margin-bottom:20px; width:85%; margin-inline:auto;">
-        <MudText Style="margin-bottom:20px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo=TitleTypo1()>
-            @(new MarkupString(localizer["ExperienceTitle"]))
-        </MudText>
-        <MudCardContent>
-            <MudTimeline TimelineAlign="TimelineAlign.Start" Style="width:85%; margin-inline:auto; margin-bottom:30px;">
-
-                <MudTimelineItem Color="Color.Primary" Elevation="25">
-                    <ItemOpposite>
-                        <MudText Color="Color.Primary" Typo=TitleTypo2()>@localizer["IndeavorDate"]</MudText>
-                    </ItemOpposite>
-                    <ItemContent>
-                        <MudPaper Elevation="0">
-                            <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                                @(new MarkupString(localizer["SoftwareEngineer"]))
-                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Indeavor"))" Typo=TitleTypo2()>@@Indeavor</MudLink>
-                            </MudText>
-                            <MudText Typo=DescTypo()>
-                                @(new MarkupString(localizer["IndeavorDesc"]))
-                            </MudText>
-                        </MudPaper>
-                    </ItemContent>
-                </MudTimelineItem>
-
-                <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
-                    <ItemOpposite>
-                        <MudText Color="Color.Primary" Typo=TitleTypo2()>@localizer["PwCDate"]</MudText>
-                    </ItemOpposite>
-                    <ItemContent>
-                        <MudPaper Elevation="0">
-                            <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                                @(new MarkupString(localizer["SoftwareEngineer"]))
-                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:PwC"))" Typo=TitleTypo2()>@@PwC Greece</MudLink>
-                            </MudText>
-                            <MudText Typo=DescTypo()>
-                                @(new MarkupString(localizer["PwCDesc"]))
-                            </MudText>
-                        </MudPaper>
-                    </ItemContent>
-                </MudTimelineItem>
-
-                <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
-                    <ItemOpposite>
-                        <MudText Color="Color.Primary" Typo=TitleTypo2()>@localizer["ArmyDate"]</MudText>
-                    </ItemOpposite>
-                    <ItemContent>
-                        <MudPaper Elevation="0">
-                            <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                                @(new MarkupString(localizer["SoftwareEngineer"]))
-                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Army"))" Typo=TitleTypo2()>@@@localizer["ArmyDepartment"]</MudLink>
-                            </MudText>
-                            <MudText Typo=DescTypo()>
-                                @(new MarkupString(localizer["ArmyDesc"]))
-                            </MudText>
-                        </MudPaper>
-                    </ItemContent>
-                </MudTimelineItem>
-
-                <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
-                    <ItemOpposite>
-                        <MudText Color="Color.Primary" Typo=TitleTypo2()>@localizer["TerracomDate"]</MudText>
-                    </ItemOpposite>
-                    <ItemContent>
-                        <MudPaper Elevation="0">
-                            <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                                @(new MarkupString(localizer["SoftwareEngineer"]))
-                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Terracom"))" Typo=TitleTypo2()>@@Terracom S.A.</MudLink>
-                            </MudText>
-                            <MudText Typo=DescTypo()>
-                                @(new MarkupString(localizer["TerracomDesc"]))
-                            </MudText>
-                        </MudPaper>
-                    </ItemContent>
-                </MudTimelineItem>
-
-                <MudTimelineItem TimelineAlign="TimelineAlign.End" Color="Color.Primary" Elevation="25">
-                    <ItemOpposite>
-                        <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">@localizer["CothetaDate"]</MudText>
-                    </ItemOpposite>
-                    <ItemContent>
-                        <MudPaper Elevation="0">
-                            <MudText Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                                @(new MarkupString(localizer["SoftwareEngineerIntern"]))
-                                <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:CoTheta"))" Typo=TitleTypo2()>@@CoTheta</MudLink>
-                            </MudText>
-                            <MudText Typo=DescTypo()>
-                                @(new MarkupString(localizer["CothetaDesc"]))
-                            </MudText>
-                        </MudPaper>
-                    </ItemContent>
-                </MudTimelineItem>
-
+<PortfolioSection Id="jobs" Title="@L["ExperienceTitle"]">
+    <Subtitle>
+        <div class="cv-link">
+            <MudText Typo="Typo.h6" Inline="true">@L["CV"]</MudText>
+            <MudIconButton Href="@PortfolioContent.CvPath" target="_blank" rel="noopener" Icon="@Icons.Material.Filled.Download"
+                           Color="Color.Primary" Size="Size.Medium" Class="cv-link__button" aria-label="@L["AriaDownloadCV"]" />
+        </div>
+    </Subtitle>
+    <ChildContent>
+        @* Tablet/desktop: timeline *@
+        <MudHidden Breakpoint="Breakpoint.Xs">
+            <MudTimeline TimelinePosition="TimelinePosition.Start" Class="experience-timeline">
+                @foreach (var job in PortfolioContent.Jobs)
+                {
+                    <MudTimelineItem Color="Color.Primary" Size="Size.Small" Variant="Variant.Filled">
+                        <MudPaper Outlined="true" Class="job-card">@JobDetails(job)</MudPaper>
+                    </MudTimelineItem>
+                }
             </MudTimeline>
-            <MudItem Class="d-flex flex-wrap justify-content-center">
-                <MudText Inline=true Color=Color.Primary Typo=DescTypo()>
-                    @localizer["CV"]
-                    <MudIconButton Style="color:burlywood;" Size="Size.Medium" Title="Download" Href="George-CV.pdf" target="_blank" Class="bounceInDownloadIcon" Icon="@Icons.Material.Filled.Download" />
-                </MudText>
-            </MudItem>
-        </MudCardContent>
-    </MudCard>
-</MudHidden>
+        </MudHidden>
 
-
-
-<MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
-    <MudCard id="jobs" Elevation="2" Style="margin-top:50px; margin-bottom:20px; width:100%; margin-inline:auto;">
-        <MudText Style="margin-bottom:10px; padding-top:20px;" Color="Color.Primary" Align="Align.Center" Typo=TitleTypo1()>
-            @(new MarkupString(localizer["ExperienceTitle"]))
-        </MudText>
-        <MudText Color=Color.Primary Align="Align.Center" Typo=TitleTypo2()>
-            @localizer["CV"]
-            <MudIconButton Style="color:burlywood;" Size="Size.Medium" Title="Download" Href="George-CV.pdf" target="_blank" Class="bounceInDownloadIcon" Icon="@Icons.Material.Filled.Download" />
-        </MudText>
-        <MudCardContent>
-            <MudTabs MinimumTabWidth="70px" Rounded="true" Centered="true">
-
-                <MudTabPanel Text="Indeavor" Class="no-uppercase">
-                    <MudText Style="margin-bottom:5px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                        @(new MarkupString(localizer["SoftwareEngineer"]))
-                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Indeavor"))" Typo=TitleTypo2()>@@Indeavor</MudLink>
-                    </MudText>
-                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>@localizer["IndeavorDate"]</MudText>
-                    <MudText Typo=DescTypo()>
-                        @(new MarkupString(localizer["IndeavorDesc"]))
-                    </MudText>
-                </MudTabPanel>
-
-                <MudTabPanel Text="PwC Greece" Class="no-uppercase">
-                    <MudText Style="margin-bottom:5px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                        @(new MarkupString(localizer["SoftwareEngineer"]))
-                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:PwC"))" Typo=TitleTypo2()>@@PwC Greece</MudLink>
-                    </MudText>
-                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>@localizer["PwCDate"]</MudText>
-                    <MudText Typo=DescTypo()>
-                        @(new MarkupString(localizer["PwCDesc"]))
-                    </MudText>
-                </MudTabPanel>
-
-                <MudTabPanel Text=@localizer["Army"] Class="no-uppercase">
-                    <MudText Style="margin-bottom:5px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                        @(new MarkupString(localizer["SoftwareEngineer"]))
-                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Army"))" Typo=TitleTypo2()>@@@localizer["ArmyDepartment"]</MudLink>
-                    </MudText>
-                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>@localizer["ArmyDate"]</MudText>
-                    <MudText Typo=DescTypo()>
-                        @(new MarkupString(localizer["ArmyDesc"]))
-                    </MudText>
-                </MudTabPanel>
-
-                <MudTabPanel Text="Terracom S.A." Class="no-uppercase">
-                    <MudText Style="margin-bottom:10px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                        @(new MarkupString(localizer["SoftwareEngineer"]))
-                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:Terracom"))" Typo=TitleTypo2()>@@Terracom S.A.</MudLink>
-                    </MudText>
-                    <MudText Color="Color.Primary" Style="margin-bottom:15px;" Typo=TitleTypo2()>@localizer["TerracomDate"]</MudText>
-                    <MudText Typo=DescTypo()>
-                        @(new MarkupString(localizer["TerracomDesc"]))
-                    </MudText>
-                </MudTabPanel>
-
-                <MudTabPanel Text="CoTheta" Class="no-uppercase">
-                    <MudText Style="margin-bottom:10px; margin-top:20px;" Color="Color.Primary" Typo=TitleTypo2() GutterBottom="true">
-                        @(new MarkupString(localizer["SoftwareEngineerIntern"]))
-                        <MudLink Target="_blank" Color="Color.Success" Href="@(config.GetValue<String>("JobLinks:CoTheta"))" Typo=TitleTypo2()>@@CoTheta</MudLink>
-                    </MudText>
-                    <MudText Color="Color.Primary" Typo=TitleTypo2() Style="margin-bottom:15px;">@localizer["CothetaDate"]</MudText>
-                    <MudText Typo=DescTypo()>
-                        @(new MarkupString(localizer["CothetaDesc"]))
-                    </MudText>
-                </MudTabPanel>
-            </MudTabs>
-            
-        </MudCardContent>
-    </MudCard>
-</MudHidden>
+        @* Phone: one tab per company *@
+        <MudHidden Breakpoint="Breakpoint.SmAndUp">
+            <MudPaper Outlined="true" Class="job-card job-card--tabs">
+                <MudTabs Rounded="true" Centered="true" MinimumTabWidth="70px" TabPanelsClass="pt-4" Class="experience-tabs">
+                    @foreach (var job in PortfolioContent.Jobs)
+                    {
+                        <MudTabPanel Text="@Text(job, job.ShortName)">@JobDetails(job)</MudTabPanel>
+                    }
+                </MudTabs>
+            </MudPaper>
+        </MudHidden>
+    </ChildContent>
+</PortfolioSection>
 
 @code {
+    private string Text(Job job, string value) => job.IsLocalized ? L[value] : value;
 
-    [CascadingParameter]
-    protected Breakpoint breakpoint { get; set; }
-
-    private Typo TitleTypo1()
-    {
-        var size = breakpoint;
-
-        switch (size)
-        {
-            case Breakpoint.Xs: // Smartphone
-                return Typo.h4;
-
-            case Breakpoint.Sm:// 600px> Tablet <960px
-                return Typo.h4;
-
-            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
-                return Typo.h3;
-
-            default: return Typo.h3;
-        }
-    }
-
-    private Typo TitleTypo2()
-    {
-        var size = breakpoint;
-
-        switch (size)
-        {
-            case Breakpoint.Xs: // Smartphone
-                return Typo.body1;
-
-            case Breakpoint.Sm:// 600px> Tablet <960px
-                return Typo.h6;
-
-            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
-                return Typo.h5;
-
-            default: return Typo.h5;
-        }
-    }
-
-    private Typo DescTypo()
-    {
-        var size = breakpoint;
-
-        switch (size)
-        {
-            case Breakpoint.Xs: // Smartphone
-                return Typo.body2;
-
-            case Breakpoint.Sm:// 600px> Tablet <960px
-                return Typo.body1;
-
-            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
-                return Typo.h6;
-
-            default: return Typo.h6;
-        }
-    }
-
+    private RenderFragment JobDetails(Job job) =>
+        @<div class="job">
+            <div class="job__heading">
+                <MudText Typo="Typo.h6" HtmlTag="h3" Color="Color.Primary" Class="job__role">
+                    @L.Html(job.RoleKey)
+                    <MudLink Href="@Config[job.LinkKey]" Target="_blank" rel="noopener" Color="Color.Secondary"
+                             Typo="Typo.h6" Class="job__company">@@@Text(job, job.Company)</MudLink>
+                </MudText>
+                <span class="job__date">@L[job.DateKey]</span>
+            </div>
+            <MudText Typo="Typo.body1" Class="job__description">@L.Html(job.DescriptionKey)</MudText>
+        </div>;
 }

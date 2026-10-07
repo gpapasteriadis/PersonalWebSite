@@ -5,24 +5,31 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>George Papasteriadis</title>
+    <meta name="description" content="George Papasteriadis, software engineer specializing in web development. Experience, projects, skills and contact." />
+    <meta name="author" content="George Papasteriadis" />
+    <meta name="theme-color" content="#00695C" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#263238" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="George Papasteriadis | Software Engineer" />
+    <meta property="og:description" content="Software engineer specializing in web development. Experience, projects, skills and contact." />
+    <meta name="twitter:card" content="summary" />
     <base href="/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/app.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed" />
     <link rel="stylesheet" href="_content/MudBlazor/MudBlazor.min.css" />
-    <link rel="stylesheet" href="PersonalWebSite.styles.css" />
+    <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="/Icons/codeIcon.png" />
+    <link rel="apple-touch-icon" href="/Icons/codeIcon.png" />
 </head>
 
 <body>
     <div id="app">
-        <div class="loading">
-            <h2>
-                pushing pixels
-            </h2>
-            <div>
+        <div class="loading" role="status" aria-live="polite">
+            <h2>pushing pixels</h2>
+            <div aria-hidden="true">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -37,75 +44,12 @@
     <div id="blazor-error-ui">
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
+        <a class="dismiss" aria-label="Dismiss">🗙</a>
     </div>
 
+    <script src="js/site.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
-    <script>
-        window.blazorCulture = {
-            get: () => window.localStorage['BlazorCulture'],
-            set: (value) => window.localStorage['BlazorCulture'] = value
-        };
-    
-        window.scrollFunctionality = () => {
-            var prevScrollpos = window.pageYOffset;
-
-            window.onscroll = () => {
-                var currentScrollPos = window.pageYOffset;
-                try {
-                    var appbar = document.getElementById("appbar");
-                    if (appbar) { // Ensure the appbar element exists
-                        if (prevScrollpos > currentScrollPos) {
-                            appbar.style.top = "0";
-                        } else {
-                            appbar.style.top = "-50px";
-                        }
-                    }
-                    prevScrollpos = currentScrollPos;
-                }
-                catch (e) {
-                }
-            };
-        };
-
-        // Function to reattach the scroll event handler
-        window.reAttachScrollEvent = () => {
-            window.onscroll = window.scrollFunctionality;
-        }
-    
-        window.closeAppBar = () => {
-            // Stop the scrolling functionality by removing the event handler
-            window.onscroll = null;
-
-            // Hide the appbar
-            document.getElementById("appbar").style.top = "-50px";
-
-            // Reattach the scroll event handler after a certain delay
-            setTimeout(() => {
-                window.reAttachScrollEvent();
-            }, 1000);
-        }
-
-        // detect if sampleImages icon is in View (On XS screensize)
-        window.isElementInView = function (element) {
-            var rect = element.getBoundingClientRect();
-            return (
-                rect.top +40 >= 0 && rect.top <= window.innerHeight
-            );
-        }
-
-        // Add event listener to the window's scroll event
-        window.addEventListener('scroll', function () {
-            var icon = document.getElementById('sampleImagesIcon');
-            if (icon) {
-                var IconIsInView = window.isElementInView(icon);
-                if (IconIsInView) icon.className = "sampleImagesIconAnim";
-                else icon.className = "";
-            }
-        });
-
-    </script>
 </body>
 
 </html>
