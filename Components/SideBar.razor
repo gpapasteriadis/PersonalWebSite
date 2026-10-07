@@ -1,46 +1,26 @@
-﻿@using PersonalWebSite.SharedState
-@inject NavigationManager Navigation
-@inject MudLocalizer localizer
-@inject StateContainer State
-@inject IJSRuntime JS
+@implements IDisposable
+@inject UiState State
 
-<MudHidden Breakpoint="Breakpoint.Xs" Invert=true>
-    <MudDrawer Width="50%" Color=Color.Dark ClipMode="DrawerClipMode.Docked" @bind-Open=State.SideBarIsOpen Elevation="1">
-        <MudDrawerHeader Style="align-self:center">
-            <MudButton Class="rounded-pill" OnClick=State.NavigateHome>
-                <MudImage Fluid=true Class="rounded-pill" Src="/Icons/codeIcon-removebg.png" Width="32"></MudImage>
-            </MudButton>
-        </MudDrawerHeader>
-        <MudNavMenu Class="mud-width-full" Margin="Margin.Normal">
-            <MudNavLink Href="#jobs" Match="NavLinkMatch.All">
-                <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
-                    @localizer["Experience"]
-                </MudText>
-            </MudNavLink>
-            <MudNavLink Href="#projects" Match="NavLinkMatch.All">
-                <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
-                    @localizer["Projects"]
-                </MudText>
-            </MudNavLink>
-            <MudNavLink Href="#skills" Match="NavLinkMatch.All">
-                <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
-                    @localizer["Skills"]
-                </MudText>
-            </MudNavLink>
-            <MudNavLink Href="#contact" Match="NavLinkMatch.All">
-                <MudText Color=Color.Primary Align=Align.Center @onclick=State.CloseAppBar Typo=Typo.h6>
-                    @localizer["Contact"]
-                </MudText>
-            </MudNavLink>
-        </MudNavMenu>
-    </MudDrawer>
-</MudHidden>
+<MudDrawer Open="State.IsDrawerOpen" OpenChanged="State.SetDrawerOpen" Variant="DrawerVariant.Temporary"
+           Anchor="Anchor.Start" Width="min(75vw, 280px)" Elevation="2" Class="site-drawer">
+    <MudDrawerHeader Class="site-drawer__header">
+        <button type="button" class="site-logo" @onclick="State.GoHomeAsync" aria-label="@L["AriaHome"]">
+            <img src="@PortfolioContent.LogoPath" alt="" width="40" height="40" />
+        </button>
+    </MudDrawerHeader>
+    <nav class="site-drawer__nav" aria-label="@L["AriaMainNav"]">
+        @foreach (var item in PortfolioContent.Navigation)
+        {
+            <a class="site-drawer__link" href="@item.Href" data-nav-target="@item.SectionId"
+               @onclick="() => State.SetDrawerOpen(false)">@L[item.LabelKey]</a>
+        }
+    </nav>
+</MudDrawer>
 
 @code {
+    protected override void OnInitialized() => State.Changed += OnStateChanged;
 
-    protected override async Task OnInitializedAsync()
-    {
-        State.SideBarStateChanged += StateHasChanged;
-    }
+    private void OnStateChanged() => InvokeAsync(StateHasChanged);
 
+    public void Dispose() => State.Changed -= OnStateChanged;
 }

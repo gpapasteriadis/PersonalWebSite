@@ -1,0 +1,20 @@
+@* A home-page section: anchor target for the nav, centered container, header, and scroll-reveal. *@
+<section id="@Id" class="portfolio-section @Class">
+    <MudContainer MaxWidth="MaxWidth.Large">
+        <SectionHeader Title="@Title">@Subtitle</SectionHeader>
+        <div class="reveal">
+            @ChildContent
+        </div>
+    </MudContainer>
+</section>
+
+@code {
+    [Parameter, EditorRequired] public string Id { get; set; } = "";
+
+    /// <summary>Localized title; may contain markup from the resx file.</summary>
+    [Parameter, EditorRequired] public string Title { get; set; } = "";
+
+    [Parameter] public RenderFragment? Subtitle { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public string? Class { get; set; }
+}

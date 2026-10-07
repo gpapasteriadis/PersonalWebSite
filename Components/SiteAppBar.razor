@@ -1,0 +1,28 @@
+@inject UiState State
+
+<MudAppBar id="appbar" Fixed="true" Dense="true" Elevation="0" Class="site-appbar">
+    @* Mobile: burger opens the drawer *@
+    <MudHidden Breakpoint="Breakpoint.SmAndUp">
+        <MudIconButton Icon="@Icons.Material.Outlined.Menu" Color="Color.Tertiary" Edge="Edge.Start"
+                       OnClick="() => State.SetDrawerOpen(true)" aria-label="@L["AriaOpenMenu"]" />
+    </MudHidden>
+
+    <button type="button" class="site-logo" @onclick="State.GoHomeAsync" aria-label="@L["AriaHome"]">
+        <img src="@PortfolioContent.LogoPath" alt="" width="32" height="32" />
+    </button>
+
+    <MudSpacer />
+
+    <MudHidden Breakpoint="Breakpoint.Xs">
+        <nav class="site-nav" aria-label="@L["AriaMainNav"]">
+            @foreach (var item in PortfolioContent.Navigation)
+            {
+                <a class="site-nav__link" href="@item.Href" data-nav-target="@item.SectionId">@L[item.LabelKey]</a>
+            }
+        </nav>
+        <MudSpacer />
+    </MudHidden>
+
+    <CultureSelector />
+    <ThemeSelector />
+</MudAppBar>

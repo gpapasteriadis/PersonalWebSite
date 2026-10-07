@@ -1,136 +1,27 @@
-﻿@using System.Globalization
-@using PersonalWebSite.Components
-@using PersonalWebSite.Pages
-@using PersonalWebSite.SharedState
-@implements IBrowserViewportObserver
-@implements IAsyncDisposable
 @inherits LayoutComponentBase
-@inject ILocalStorageService localStorage
-@inject IJSRuntime JS
-@inject ISnackbar SnackbarService
-@inject NavigationManager Navigation
-@inject StateContainer State
+@implements IDisposable
+@inject UiState State
 
-
-<MudThemeProvider Theme="MyCustomTheme" IsDarkMode=State.DarkModeIsOn/>
+<MudThemeProvider Theme="AppTheme.Theme" IsDarkMode="State.IsDarkMode" />
+<MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 <MudLayout>
-    
-    <MudMainContent Style="overflow:hidden">
-        <CascadingValue Value="currentBreakpoint">
-            @Body
-        </CascadingValue>
+    <SiteAppBar />
+    <SideBar />
+
+    <MudMainContent Class="site-main">
+        @Body
     </MudMainContent>
 
+    <ScrollToTop />
 </MudLayout>
 
-
 @code {
+    protected override void OnInitialized() => State.Changed += OnStateChanged;
 
-    [Inject]
-    private IBrowserViewportService BrowserViewportService { get; set; }
-    private Breakpoint currentBreakpoint;
-    Guid IBrowserViewportObserver.Id { get; } = Guid.NewGuid();
+    private void OnStateChanged() => InvokeAsync(StateHasChanged);
 
-    protected override async Task OnInitializedAsync()
-    {
-        // Get initial breakpoint
-        currentBreakpoint = await BrowserViewportService.GetCurrentBreakpointAsync();
-        await State.ScrollFunctionality();
-        State.DarkModeStateChanged += StateHasChanged;
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            await BrowserViewportService.SubscribeAsync(this, fireImmediately: true);
-        }
-
-        await base.OnAfterRenderAsync(firstRender);
-    }
-
-    Task IBrowserViewportObserver.NotifyBrowserViewportChangeAsync(BrowserViewportEventArgs browserViewportEventArgs)
-    {
-        currentBreakpoint = browserViewportEventArgs.Breakpoint;
-        return InvokeAsync(StateHasChanged);
-    }
-
-
-    public async ValueTask DisposeAsync() => await BrowserViewportService.UnsubscribeAsync(this);
-
-    MudTheme MyCustomTheme = new MudTheme()
-    {
-        Palette = new PaletteLight()
-        {
-            ActionDefault = Colors.Teal.Darken4,
-            Primary = Colors.Teal.Darken4,
-            Secondary = Colors.Teal.Default,
-            AppbarBackground = Colors.Teal.Lighten1,
-            Background = Colors.Teal.Lighten5,
-            Divider = Colors.Teal.Darken2,
-            Surface = Colors.Teal.Lighten5,
-            Dark = Colors.Teal.Default
-
-        },
-        PaletteDark = new PaletteDark()
-        {
-            ActionDefault = Colors.BlueGrey.Darken4,
-            Primary = Colors.BlueGrey.Lighten5,
-            Secondary = Colors.Grey.Default,
-            AppbarBackground = Colors.BlueGrey.Darken4,
-            Background = Colors.BlueGrey.Darken3,
-            Divider = Colors.BlueGrey.Lighten2,
-            Surface = Colors.BlueGrey.Darken3,
-            Dark = Colors.BlueGrey.Darken4
-        },
-
-        // Typography = new Typography()
-        // {
-        //     Default = new Default()
-        //     {
-        //         FontFamily = new[] { "sans-serif" },
-        //         FontSize = "3vmax",
-        //         FontWeight = 500,
-        //         LineHeight = 1.6,
-        //         LetterSpacing = ".0075em"
-        //     },
-        //     Body1 = new Body1()
-        //     {
-        //         FontFamily = new[] { "sans-serif" },
-        //         FontSize = "2.5vmax",
-        //         FontWeight = 500,
-        //         LineHeight = 1.6,
-        //         LetterSpacing = ".0075em"
-        //     },
-        //     Body2 = new Body2()
-        //     {
-        //         FontFamily = new[] { "sans-serif" },
-        //         FontSize = "2vmax",
-        //         FontWeight = 400,
-        //         LineHeight = 1.6,
-        //         LetterSpacing = ".0075em"
-        //     },
-        //     H4 = new H4()
-        //     {
-        //         FontFamily = new[] { "sans-serif" },
-        //         FontSize = "3vmax",
-        //         FontWeight = 400,
-        //         LineHeight = 1.6,
-        //         LetterSpacing = ".0075em"
-        //     },
-        //     H5 = new H5()
-        //     {
-        //         FontFamily = new[] { "sans-serif" },
-        //         FontSize = "2.5vmax",
-        //         FontWeight = 400,
-        //         LineHeight = 1.6,
-        //         LetterSpacing = ".0075em"
-        //     }
-
-        // },
-    };
-    
+    public void Dispose() => State.Changed -= OnStateChanged;
 }

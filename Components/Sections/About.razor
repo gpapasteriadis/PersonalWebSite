@@ -1,64 +1,16 @@
-﻿@inject MudLocalizer localizer
-
-<MudGrid Justify="Justify.SpaceEvenly" Style="width:95%; margin-inline:auto; margin-top:30px; margin-bottom:60px;">
-    <MudItem>
-        <MudImage Fluid=true Style="background-color:burlywood;" Class="rounded-pill" Src="/Icons/me-removebg.png" ObjectFit="ObjectFit.Cover" Width="250" Height="280" Elevation="15" />
-    </MudItem>
-    <MudItem xs="12" sm="6">
-        <MudText GutterBottom=true Color="Color.Primary" Typo=DescTypo()>
-            @localizer["Salutation"]
-        </MudText>
-        <MudText GutterBottom=true Color="Color.Primary" Typo=NameTypo()>
-            @(new MarkupString(localizer["MyName"]))
-        </MudText>
-        <MudText Color="Color.Primary" Typo=DescTypo()>
-            @(new MarkupString(localizer["About"]))
-        </MudText>
-    </MudItem>
-</MudGrid>
-
-@code{
-
-    [CascadingParameter]
-    protected Breakpoint breakpoint { get; set; }
-
-
-    private Typo NameTypo()
-    {
-        var size = breakpoint;
-
-        switch (size)
-        {
-            case Breakpoint.Xs: // Smartphone
-                return Typo.h4;
-
-            case Breakpoint.Sm:// 600px> Tablet <960px
-                return Typo.h4;
-
-            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
-                return Typo.h3;
-
-            default: return Typo.h3;
-        }
-    }
-
-    private Typo DescTypo()
-    {
-        var size = breakpoint;
-        
-        switch (size)
-        {
-            case Breakpoint.Xs: // Smartphone
-                return Typo.body1;
-
-            case Breakpoint.Sm:// 600px> Tablet <960px
-                return Typo.h6;
-
-            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
-                return Typo.h5;
-
-            default: return Typo.h5;
-        }
-    }
-
-}
+<section id="about" class="hero">
+    <MudContainer MaxWidth="MaxWidth.Large">
+        <div class="hero__grid">
+            <div class="hero__avatar reveal">
+                <img src="@PortfolioContent.AvatarPath" alt="George Papasteriadis" width="250" height="280" />
+            </div>
+            <div class="hero__text reveal">
+                <MudText Typo="Typo.h5" Color="Color.Secondary" GutterBottom="true">@L["Salutation"]</MudText>
+                <MudText Typo="Typo.h2" HtmlTag="h1" Color="Color.Primary" GutterBottom="true" Class="hero__name">
+                    @L.Html("MyName")
+                </MudText>
+                <MudText Typo="Typo.body1" Class="hero__about">@L.Html("About")</MudText>
+            </div>
+        </div>
+    </MudContainer>
+</section>

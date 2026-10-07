@@ -163,9 +163,6 @@ In my spare time, I enjoy working out and going on motorcycle trips, they give m
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
   </data>
-  <data name="Contact1" xml:space="preserve">
-    <value>Contact</value>
-  </data>
   <data name="ContactTitle" xml:space="preserve">
     <value>&lt;b&gt;Reach Out😉&lt;/b&gt;</value>
   </data>
@@ -359,5 +356,41 @@ The deployment infrastructure will be hosted on Azure, using Docker containers t
 
 &lt;b&gt;🚀 DevOps &amp; Project Management:&lt;/b&gt;&lt;br/&gt;
  • Managed the full development lifecycle in Azure DevOps, including CI/CD pipelines and project tracking.</value>
+  </data>
+  <data name="AriaOpenMenu" xml:space="preserve">
+    <value>Open menu</value>
+  </data>
+  <data name="AriaHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="AriaMainNav" xml:space="preserve">
+    <value>Main navigation</value>
+  </data>
+  <data name="AriaSwitchLanguage" xml:space="preserve">
+    <value>Switch language</value>
+  </data>
+  <data name="AriaToggleTheme" xml:space="preserve">
+    <value>Toggle dark mode</value>
+  </data>
+  <data name="AriaScrollToTop" xml:space="preserve">
+    <value>Back to top</value>
+  </data>
+  <data name="AriaDownloadCV" xml:space="preserve">
+    <value>Download resume</value>
+  </data>
+  <data name="NotFoundTitle" xml:space="preserve">
+    <value>Not found</value>
+  </data>
+  <data name="NotFoundMessage" xml:space="preserve">
+    <value>Sorry, there&apos;s nothing at this address.</value>
+  </data>
+  <data name="MobileAppScreenshot" xml:space="preserve">
+    <value>FoodWaste app screenshot {0}</value>
+  </data>
+  <data name="MobileAppVideo" xml:space="preserve">
+    <value>FoodWaste app demo video</value>
+  </data>
+  <data name="AriaOpenInNewTab" xml:space="preserve">
+    <value>{0}: open in new tab</value>
   </data>
 </root>

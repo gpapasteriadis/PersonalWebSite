@@ -1,0 +1,13 @@
+<header class="section-header reveal">
+    <MudText Typo="Typo.h3" HtmlTag="h2" Color="Color.Primary" Align="Align.Center">@((MarkupString)Title)</MudText>
+    <span class="section-header__bar" aria-hidden="true"></span>
+    @ChildContent
+</header>
+
+@code {
+    /// <summary>Localized title; may contain markup from the resx file.</summary>
+    [Parameter, EditorRequired] public string Title { get; set; } = "";
+
+    /// <summary>Optional content under the accent bar (e.g. the CV link).</summary>
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

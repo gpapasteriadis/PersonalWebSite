@@ -1,90 +1,34 @@
-﻿@page "/ServiceBooking"
-@inject MudLocalizer localizer
+@page "/ServiceBooking"
 
-<MudButton Style="margin-left:5px; margin-top:-100px;" Variant="Variant.Filled" Color=Color.Secondary StartIcon="@Icons.Material.Filled.ArrowBack" ButtonType=ButtonType.Reset Href="/">
-    @localizer["Back"]
-</MudButton>
-<MudText Class="flex-wrap d-flex justify-content-center" Style=" margin:10px;" Typo=TitleTypo1() Color=Color.Primary>
-    @localizer["ServiceBookingDesign"]
-</MudText>
+<PageTitle>@L["ServiceBookingDesign"] · George Papasteriadis</PageTitle>
 
-<MudGrid Class="rounded-3" Justify="Justify.SpaceEvenly" Style="background-color:burlywood; width:90%; height:90%; margin-inline:auto; margin-top:30px; margin-bottom:60px;">
-    <MudItem>
-        <MudText Style="color:black" Typo=TitleTypo2()>
-            @localizer["Phase"] 1
-        </MudText>
-     </MudItem>
-    <MudDivider Style="color:black" Light=true Vertical=false></MudDivider>
-    <MudItem>
-        <MudImage Fluid=true Class="rounded-lg" Src="/Icons/ServiceBookingDesign_Phase1.png" />
-    </MudItem>
-</MudGrid>
+<MudContainer MaxWidth="MaxWidth.Large" Class="page">
+    <MudButton Href="/#projects" Variant="Variant.Text" Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowBack">
+        @L["Back"]
+    </MudButton>
 
-<MudGrid Class="rounded-3" Justify="Justify.SpaceEvenly" Style="background-color:burlywood; width:90%; height:90%; margin-inline:auto; margin-top:30px; margin-bottom:60px;">
-    <MudItem>
-        <MudText Style="color:black" Typo=TitleTypo2()>
-            @localizer["Phase"] 2
-        </MudText>
-    </MudItem>
-    <MudDivider Style="color:black" Light=true Vertical=false></MudDivider>
-    <MudItem>
-        <MudImage Fluid=true Class="rounded-lg" Src="/Icons/ServiceBookingDesign_Phase2.png" />
-    </MudItem>
-</MudGrid>
+    <SectionHeader Title="@L["ServiceBookingDesign"]" />
 
-<MudGrid Class="rounded-3" Justify="Justify.SpaceEvenly" Style="background-color:burlywood; width:90%; height:90%; margin-inline:auto; margin-top:30px; margin-bottom:60px;">
-    <MudItem>
-        <MudText Style="color:black" Typo=TitleTypo2()>
-            @localizer["Phase"] 3
-        </MudText>
-    </MudItem>
-    <MudDivider Style="color:black" Light=true Vertical=false></MudDivider>
-    <MudItem>
-        <MudImage Fluid=true Class="rounded-lg" Src="/Icons/ServiceBookingDesign_Phase3.png" />
-    </MudItem>
-</MudGrid>
-@code {
-
-    [CascadingParameter]
-    public Breakpoint currentBreakpoint { get; set; }
-
-    private Typo TitleTypo1()
-    {
-        var size = currentBreakpoint;
-
-        switch (size)
+    <div class="phases">
+        @for (var i = 0; i < PortfolioContent.ServiceBookingPhaseImages.Count; i++)
         {
-            case Breakpoint.Xs: // Smartphone
-                return Typo.h5;
-
-            case Breakpoint.Sm:// 600px> Tablet <960px
-                return Typo.h5;
-
-            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
-                return Typo.h4;
-
-            default: return Typo.h4;
+            var phase = i + 1;
+            var image = PortfolioContent.ServiceBookingPhaseImages[i];
+            <MudCard Outlined="true" Class="phase-card reveal">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h5" HtmlTag="h2" Color="Color.Primary">@L["Phase"] @phase</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Href="@image" Target="_blank" rel="noopener"
+                                       Color="Color.Primary" aria-label="@L["AriaOpenInNewTab", $"{L["Phase"]} {phase}"]" />
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent>
+                    <img class="phase-card__image" src="@image" alt="@($"{L["ServiceBookingDesign"]} – {L["Phase"]} {phase}")"
+                         loading="@(phase == 1 ? "eager" : "lazy")" />
+                </MudCardContent>
+            </MudCard>
         }
-    }
-
-    private Typo TitleTypo2()
-    {
-        var size = currentBreakpoint;
-
-        switch (size)
-        {
-            case Breakpoint.Xs: // Smartphone
-                return Typo.body1;
-
-            case Breakpoint.Sm:// 600px> Tablet <960px
-                return Typo.h6;
-
-            case Breakpoint.MdAndUp:// 960px> Tablet/laptop <1280px
-                return Typo.h5;
-
-            default: return Typo.h5;
-        }
-
-    }
-
-}
+    </div>
+</MudContainer>

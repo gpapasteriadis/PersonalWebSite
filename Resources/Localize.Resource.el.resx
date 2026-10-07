@@ -163,9 +163,6 @@
   <data name="Contact" xml:space="preserve">
     <value>Επικοινωνία</value>
   </data>
-  <data name="Contact1" xml:space="preserve">
-    <value>Επικοινωνία</value>
-  </data>
   <data name="ContactTitle" xml:space="preserve">
     <value>&lt;b&gt;Επικοινωνήστε😉&lt;/b&gt;</value>
   </data>
@@ -361,5 +358,41 @@
 
 &lt;b&gt;🚀 DevOps &amp; Διαχείριση Έργων:&lt;/b&gt;&lt;br/&gt;
 • Διαχείριση ολόκληρου του κύκλου ανάπτυξης στο Azure DevOps, περιλαμβάνοντας CI/CD pipelines και παρακολούθηση έργου.</value>
+  </data>
+  <data name="AriaOpenMenu" xml:space="preserve">
+    <value>Άνοιγμα μενού</value>
+  </data>
+  <data name="AriaHome" xml:space="preserve">
+    <value>Αρχική</value>
+  </data>
+  <data name="AriaMainNav" xml:space="preserve">
+    <value>Κύρια πλοήγηση</value>
+  </data>
+  <data name="AriaSwitchLanguage" xml:space="preserve">
+    <value>Αλλαγή γλώσσας</value>
+  </data>
+  <data name="AriaToggleTheme" xml:space="preserve">
+    <value>Εναλλαγή σκοτεινού θέματος</value>
+  </data>
+  <data name="AriaScrollToTop" xml:space="preserve">
+    <value>Επιστροφή στην αρχή</value>
+  </data>
+  <data name="AriaDownloadCV" xml:space="preserve">
+    <value>Λήψη βιογραφικού</value>
+  </data>
+  <data name="NotFoundTitle" xml:space="preserve">
+    <value>Δεν βρέθηκε</value>
+  </data>
+  <data name="NotFoundMessage" xml:space="preserve">
+    <value>Λυπούμαστε, δεν υπάρχει τίποτα σε αυτή τη διεύθυνση.</value>
+  </data>
+  <data name="MobileAppScreenshot" xml:space="preserve">
+    <value>Στιγμιότυπο της εφαρμογής FoodWaste {0}</value>
+  </data>
+  <data name="MobileAppVideo" xml:space="preserve">
+    <value>Βίντεο επίδειξης της εφαρμογής FoodWaste</value>
+  </data>
+  <data name="AriaOpenInNewTab" xml:space="preserve">
+    <value>{0}: άνοιγμα σε νέα καρτέλα</value>
   </data>
 </root>

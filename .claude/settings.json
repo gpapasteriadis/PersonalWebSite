@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet build:*)",
+      "Bash(dotnet restore:*)",
+      "Bash(dotnet run:*)",
+      "Bash(dotnet watch:*)",
+      "Bash(dotnet publish:*)",
+      "Bash(dotnet list package:*)",
+      "Bash(dotnet package search:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "PowerShell(dotnet build:*)",
+      "PowerShell(dotnet restore:*)",
+      "PowerShell(dotnet run:*)",
+      "PowerShell(dotnet watch:*)",
+      "PowerShell(dotnet publish:*)",
+      "PowerShell(git status:*)",
+      "PowerShell(git diff:*)",
+      "PowerShell(git log:*)"
+    ]
+  }
+}
