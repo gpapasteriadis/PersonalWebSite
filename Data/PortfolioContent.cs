@@ -17,6 +17,9 @@ public static class PortfolioContent
         new("contact", "Contact"),
     ];
 
+    /// <summary>Link back to the Projects section from other pages.</summary>
+    public const string ProjectsHref = "/#projects";
+
     /// <summary>Newest first.</summary>
     public static IReadOnlyList<Job> Jobs { get; } =
     [

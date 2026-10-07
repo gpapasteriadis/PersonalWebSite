@@ -132,7 +132,7 @@
             lineColor: v('--mud-palette-text-secondary'),
             textColor: v('--mud-palette-text-primary'),
             clusterBkg: blend(v('--mud-palette-primary-rgb'), v('--mud-palette-background'), isDark ? .07 : .06),
-            clusterBorder: v('--mud-palette-tertiary'),
+            clusterBorder: v(isDark ? '--mud-palette-tertiary' : '--mud-palette-secondary'), // 3:1 on light
             edgeLabelBackground: v('--mud-palette-surface'),
             actorBkg: v('--mud-palette-background'),
             actorBorder: v('--mud-palette-primary'),
@@ -166,10 +166,12 @@
             });
             const { svg } = await mermaid.render(`diagram-${++diagramCount}`, source);
             element.innerHTML = svg;
+            element.setAttribute('role', 'img');
             element.classList.remove('diagram__canvas--error');
         } catch (error) {
             console.warn('Diagram could not be rendered', error);
             element.textContent = errorText || 'The diagram could not be loaded.';
+            element.removeAttribute('role'); // let screen readers read the error text
             element.classList.add('diagram__canvas--error');
         }
     };

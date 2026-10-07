@@ -369,19 +369,19 @@ client-side web application that adapts effortlessly to any screen, whether you'
     <value>&lt;u&gt;Fieldmatics: Agricultural IoT Platform&lt;/u&gt;</value>
   </data>
   <data name="FmSummary" xml:space="preserve">
-    <value>Fieldmatics is a multi-tenant SaaS platform for growers. It collects sensor data from greenhouses, gardens, fields and olive groves, stores it, and shows current values and history for every location. Next, it will act on that data through rules, alerts and automated irrigation.&lt;br/&gt;&lt;br/&gt;I am designing and building it from scratch as my own product: a modular monolith on .NET 10, where sensors of any kind publish over MQTT, readings flow reliably through RabbitMQ into PostgreSQL, and growers see everything in a Blazor app.</value>
+    <value>Fieldmatics is a SaaS platform I am designing and building for growers. Its goal is to bring every greenhouse, field and olive grove into one place: the current conditions of each location, their full history and, next, alerts and automated irrigation. It works with any sensor hardware, and every customer&apos;s data stays private.&lt;br/&gt;&lt;br/&gt;Under the hood it is a modular .NET 10 platform with Blazor, PostgreSQL, MQTT and RabbitMQ.</value>
   </data>
   <data name="FmStatus" xml:space="preserve">
     <value>Under active development</value>
   </data>
   <data name="FmDesignLink" xml:space="preserve">
-    <value>Business &amp; system design</value>
+    <value>The business &amp; how it works</value>
   </data>
   <data name="FmEyebrow" xml:space="preserve">
-    <value>Product &amp; system design case study</value>
+    <value>Product case study</value>
   </data>
   <data name="FmTagline" xml:space="preserve">
-    <value>An agricultural IoT platform that turns sensor readings from any hardware into clear, per-location insight for growers.</value>
+    <value>A SaaS platform that helps growers see what is happening in every greenhouse, field and grove, and next, act on it automatically.</value>
   </data>
   <data name="FmOnThisPage" xml:space="preserve">
     <value>On this page</value>
@@ -389,11 +389,11 @@ client-side web application that adapts effortlessly to any screen, whether you'
   <data name="FmBackToProjects" xml:space="preserve">
     <value>Back to projects</value>
   </data>
-  <data name="FmBusinessTitle" xml:space="preserve">
-    <value>The business</value>
+  <data name="FmProblemTitle" xml:space="preserve">
+    <value>The problem</value>
   </data>
-  <data name="FmBusinessIntro" xml:space="preserve">
-    <value>Growers manage environments such as greenhouses, gardens, fields and olive groves. They want to know what is happening in each one (temperature, humidity, soil moisture) and, eventually, have the system react for them. Most IoT tools are built around hardware. Fieldmatics is built around the places where things grow.</value>
+  <data name="FmProblemText" xml:space="preserve">
+    <value>Growers look after many different places, often far apart: greenhouses, gardens, fields and olive groves. Conditions change by the hour: a hot afternoon, a dry patch of soil, a cold night. Without data, problems are noticed late, water is wasted and decisions rely on guesswork. Most IoT tools don&apos;t fix this, because they are built around specific hardware and show devices, not places.</value>
   </data>
   <data name="FmBuiltFor" xml:space="preserve">
     <value>Built for</value>
@@ -410,125 +410,101 @@ client-side web application that adapts effortlessly to any screen, whether you'
   <data name="FmEnvOliveGroves" xml:space="preserve">
     <value>Olive groves</value>
   </data>
-  <data name="FmHlLocationTitle" xml:space="preserve">
-    <value>Location-centric</value>
+  <data name="FmValueTitle" xml:space="preserve">
+    <value>What Fieldmatics brings</value>
   </data>
-  <data name="FmHlLocationText" xml:space="preserve">
-    <value>A grower opens Greenhouse 1 and sees its current temperature, humidity and soil moisture, then the history charts. Nobody needs to know which board sent the data.</value>
+  <data name="FmValueIntro" xml:space="preserve">
+    <value>What the platform is being built to give growers. Features marked “Coming next” are on the roadmap.</value>
   </data>
-  <data name="FmHlAgnosticTitle" xml:space="preserve">
-    <value>Hardware-agnostic</value>
+  <data name="FmPlanned" xml:space="preserve">
+    <value>Coming next</value>
   </data>
-  <data name="FmHlAgnosticText" xml:space="preserve">
-    <value>An Arduino prototype today; ESP32, LoRaWAN, Modbus and third-party feeds later. Each technology plugs in through its own adapter, so the core never changes.</value>
+  <data name="FmVal1Title" xml:space="preserve">
+    <value>Every location at a glance</value>
   </data>
-  <data name="FmHlSaasTitle" xml:space="preserve">
-    <value>Multi-tenant SaaS</value>
+  <data name="FmVal1Text" xml:space="preserve">
+    <value>Current temperature, humidity and soil moisture for each greenhouse, field or grove, in one place and from any browser. You pick a place, not a device.</value>
   </data>
-  <data name="FmHlSaasText" xml:space="preserve">
-    <value>Every customer account&apos;s data is isolated on the server. Ownership is derived from the data itself and is never taken from a client or device.</value>
+  <data name="FmVal2Title" xml:space="preserve">
+    <value>History that tells a story</value>
   </data>
-  <data name="FmHlAutomationTitle" xml:space="preserve">
-    <value>From monitoring to automation</value>
+  <data name="FmVal2Text" xml:space="preserve">
+    <value>Every reading is kept and never deleted. Trends show what happened overnight, last week or across a whole season, so decisions rest on facts instead of guesswork.</value>
   </data>
-  <data name="FmHlAutomationText" xml:space="preserve">
-    <value>The platform grows in steps: monitoring first, then calibration, offline detection, rules and alerts, and finally automated irrigation with a fail-safe design.</value>
+  <data name="FmVal3Title" xml:space="preserve">
+    <value>Works with any sensor</value>
   </data>
-  <data name="FmJourneyTitle" xml:space="preserve">
-    <value>How it works</value>
+  <data name="FmVal3Text" xml:space="preserve">
+    <value>Start with affordable sensors and add others later: Arduino-based today, wireless and industrial devices tomorrow. No lock-in to a single hardware vendor.</value>
   </data>
-  <data name="FmJourneyIntro" xml:space="preserve">
-    <value>Follow one reading, an air temperature of 23.8 °C in Greenhouse 1, from the sensor that measures it to the chart a grower looks at.</value>
+  <data name="FmVal4Title" xml:space="preserve">
+    <value>Alerts before damage</value>
   </data>
-  <data name="FmBehindTheScenes" xml:space="preserve">
-    <value>Behind the scenes</value>
+  <data name="FmVal4Text" xml:space="preserve">
+    <value>Rules notify you the moment a value leaves its safe range, such as a greenhouse overheating or soil drying out, so you can act before plants suffer.</value>
   </data>
-  <data name="FmZoneSite" xml:space="preserve">
-    <value>At the location</value>
+  <data name="FmVal5Title" xml:space="preserve">
+    <value>Automated irrigation</value>
   </data>
-  <data name="FmZoneInside" xml:space="preserve">
-    <value>Inside Fieldmatics</value>
+  <data name="FmVal5Text" xml:space="preserve">
+    <value>Water only when the soil actually needs it, saving water and time, with a fail-safe design so that a fault never floods or dries out a field.</value>
   </data>
-  <data name="FmZoneGrower" xml:space="preserve">
-    <value>For the grower</value>
+  <data name="FmVal6Title" xml:space="preserve">
+    <value>Nothing to install</value>
+  </data>
+  <data name="FmVal6Text" xml:space="preserve">
+    <value>A cloud service: sign in from anywhere, and updates are handled by the platform. Each customer&apos;s data is kept private and separate from everyone else&apos;s.</value>
+  </data>
+  <data name="FmHowTitle" xml:space="preserve">
+    <value>How it works for a grower</value>
+  </data>
+  <data name="FmHowIntro" xml:space="preserve">
+    <value>From the first setup to a system that works for you. Some of these steps are still being built.</value>
+  </data>
+  <data name="FmZoneSetup" xml:space="preserve">
+    <value>Set up</value>
+  </data>
+  <data name="FmZoneDaily" xml:space="preserve">
+    <value>Every day</value>
+  </data>
+  <data name="FmZoneNext" xml:space="preserve">
+    <value>Coming next</value>
   </data>
   <data name="FmStep1Title" xml:space="preserve">
-    <value>Measure</value>
+    <value>Add your locations</value>
   </data>
   <data name="FmStep1Text" xml:space="preserve">
-    <value>A sensor at one of your locations, for example Greenhouse 1, measures what it is built for: air temperature, humidity, soil moisture and more.</value>
-  </data>
-  <data name="FmStep1Tech" xml:space="preserve">
-    <value>Today the sensors are wired to an Arduino board. ESP32, LoRaWAN and Modbus devices can follow.</value>
+    <value>Create the places you grow in, such as Greenhouse 1, the north olive grove or the balcony, and name the sensors in each one.</value>
   </data>
   <data name="FmStep2Title" xml:space="preserve">
-    <value>Translate and publish</value>
+    <value>Connect your sensors</value>
   </data>
   <data name="FmStep2Text" xml:space="preserve">
-    <value>A small program next to the hardware, the adapter, reads the values, turns them into the standard Fieldmatics message and publishes it. Fieldmatics never needs to know which hardware they came from.</value>
-  </data>
-  <data name="FmStep2Tech" xml:space="preserve">
-    <value>A .NET adapter reads the Arduino over USB serial and publishes over MQTT. Every new kind of hardware gets its own adapter.</value>
+    <value>A small connector next to the hardware sends the readings to Fieldmatics. Any kind of sensor can join; each technology simply gets its own connector.</value>
   </data>
   <data name="FmStep3Title" xml:space="preserve">
-    <value>Deliver</value>
+    <value>Readings arrive on their own</value>
   </data>
   <data name="FmStep3Text" xml:space="preserve">
-    <value>The message arrives at the Fieldmatics mailbox for hardware, which accepts messages from every publisher at any time.</value>
-  </data>
-  <data name="FmStep3Tech" xml:space="preserve">
-    <value>An Eclipse Mosquitto MQTT broker. Each publisher sends to its own topic.</value>
+    <value>Measurements flow in around the clock. They wait safely in line until they are stored, so nothing is lost if part of the platform restarts.</value>
   </data>
   <data name="FmStep4Title" xml:space="preserve">
-    <value>Queue safely</value>
+    <value>See what is happening</value>
   </data>
   <data name="FmStep4Text" xml:space="preserve">
-    <value>A receiver collects every message and puts it in an internal queue. If the next step is busy or restarting, messages wait in line instead of getting lost.</value>
-  </data>
-  <data name="FmStep4Tech" xml:space="preserve">
-    <value>The Ingestion service forwards each message to a durable RabbitMQ queue. It never writes to the database itself.</value>
+    <value>Open a location to see its current conditions first, then how they changed over time.</value>
   </data>
   <data name="FmStep5Title" xml:space="preserve">
-    <value>Check and save</value>
+    <value>Let it act for you</value>
   </data>
   <data name="FmStep5Text" xml:space="preserve">
-    <value>The worker takes messages one at a time and matches every value to the right sensor, and through it to the right location and customer. A message leaves the queue only after it has been saved.</value>
+    <value>Set rules once and let Fieldmatics alert you or start the irrigation when conditions call for it.</value>
   </data>
-  <data name="FmStep5Tech" xml:space="preserve">
-    <value>A .NET worker service with manual acknowledgements: invalid messages are rejected for good, database failures are retried.</value>
+  <data name="FmPictureTitle" xml:space="preserve">
+    <value>The big picture</value>
   </data>
-  <data name="FmStep6Title" xml:space="preserve">
-    <value>Keep the history</value>
-  </data>
-  <data name="FmStep6Text" xml:space="preserve">
-    <value>Every reading is kept together with the time it was measured. History is never deleted, not even when a sensor is switched off or retired.</value>
-  </data>
-  <data name="FmStep6Tech" xml:space="preserve">
-    <value>PostgreSQL through Entity Framework Core. A migration service prepares the schema before anything else starts.</value>
-  </data>
-  <data name="FmStep7Title" xml:space="preserve">
-    <value>Answer questions</value>
-  </data>
-  <data name="FmStep7Text" xml:space="preserve">
-    <value>The API is the only way in for apps. It answers questions such as “what are the latest readings in Greenhouse 1?”, and only ever with the customer&apos;s own data.</value>
-  </data>
-  <data name="FmStep7Tech" xml:space="preserve">
-    <value>ASP.NET Core Minimal APIs. A server-side tenant context and query filters keep every customer&apos;s data apart.</value>
-  </data>
-  <data name="FmStep8Title" xml:space="preserve">
-    <value>Show it</value>
-  </data>
-  <data name="FmStep8Text" xml:space="preserve">
-    <value>The grower opens the app, picks a location and sees its current values first, then charts of the history.</value>
-  </data>
-  <data name="FmStep8Tech" xml:space="preserve">
-    <value>A Blazor web app with MudBlazor. A .NET MAUI mobile app will reuse the same UI components.</value>
-  </data>
-  <data name="FmDesignTitle" xml:space="preserve">
-    <value>System design</value>
-  </data>
-  <data name="FmDesignIntro" xml:space="preserve">
-    <value>Pragmatic Clean Architecture in a modular monolith: one codebase, a handful of deployable processes, and business capabilities organised as vertical slices. The diagrams show the target design.</value>
+  <data name="FmPictureIntro" xml:space="preserve">
+    <value>Fieldmatics sits between the growing environment and the grower. Any hardware connects through a small connector, and the platform keeps the data safe and turns it into insight and, later, action.</value>
   </data>
   <data name="FmDiagramLegend" xml:space="preserve">
     <value>Dashed boxes and lines are planned.</value>
@@ -536,195 +512,90 @@ client-side web application that adapts effortlessly to any screen, whether you'
   <data name="FmDiagramError" xml:space="preserve">
     <value>The diagram could not be loaded.</value>
   </data>
-  <data name="FmDiagContextTitle" xml:space="preserve">
-    <value>System context</value>
-  </data>
-  <data name="FmDiagContextText" xml:space="preserve">
-    <value>Who and what Fieldmatics talks to. Growers work with locations, sensors and readings. Hardware and third-party sources reach the platform only through adapters at the edge.</value>
-  </data>
-  <data name="FmDiagContextSource" xml:space="preserve">
-    <value>flowchart LR
-    grower([&quot;Grower&lt;br/&gt;manages locations and sensors&quot;])
-    subgraph env[&quot;Growing environments&quot;]
-        sensors[&quot;Sensors&lt;br/&gt;temperature, humidity, soil moisture …&quot;]
-    end
-    subgraph edge[&quot;Integration edge&quot;]
-        hardware[&quot;Hardware and sources&lt;br/&gt;Arduino today · ESP32, LoRaWAN, Modbus later&quot;]
-        adapters[&quot;Integration adapters&lt;br/&gt;one per technology&quot;]
-    end
-    feeds[&quot;Third-party data feeds&quot;]:::planned
-    fm[&quot;Fieldmatics&lt;br/&gt;multi-tenant SaaS&lt;br/&gt;locations · sensors · readings&quot;]:::core
-    mobile[&quot;Mobile app&quot;]:::planned
-    actuators[&quot;Actuators and irrigation&quot;]:::planned
-    sensors --&gt; hardware --&gt; adapters
-    adapters --&gt;|&quot;MQTT · standard message&quot;| fm
-    feeds -.-&gt;|&quot;through an adapter&quot;| fm
-    grower --&gt;|&quot;browser&quot;| fm
-    grower -.-&gt; mobile -.-&gt;|&quot;HTTP API&quot;| fm
-    fm -.-&gt;|&quot;automation&quot;| actuators
-    classDef planned stroke-dasharray: 5 4
-    classDef core stroke-width:3px</value>
-  </data>
-  <data name="FmDiagProcessesTitle" xml:space="preserve">
-    <value>Processes and infrastructure</value>
-  </data>
-  <data name="FmDiagProcessesText" xml:space="preserve">
-    <value>Every running process and infrastructure resource, orchestrated with .NET Aspire. MQTT faces the hardware and RabbitMQ is internal. Only the telemetry worker writes readings, and the migration service prepares the database before anything else uses it.</value>
-  </data>
-  <data name="FmDiagProcessesSource" xml:space="preserve">
-    <value>flowchart LR
-    hardware[&quot;Sensors and hardware&quot;]
-    adapter[&quot;Integration adapter&lt;br/&gt;e.g. USB serial → MQTT&quot;]
-    grower([&quot;Grower&quot;])
-    subgraph platform[&quot;Fieldmatics · orchestrated with .NET Aspire&quot;]
-        mqtt{{&quot;MQTT broker&lt;br/&gt;Mosquitto&quot;}}
-        ingestion[&quot;Ingestion&lt;br/&gt;MQTT → RabbitMQ&lt;br/&gt;never writes to the database&quot;]
-        rabbit{{&quot;RabbitMQ&lt;br/&gt;durable queue&quot;}}
-        worker[&quot;Telemetry worker&lt;br/&gt;owns telemetry persistence&quot;]
-        migrations[&quot;Migration service&lt;br/&gt;runs first, then exits&quot;]
-        db[(&quot;PostgreSQL&quot;)]
-        api[&quot;API&lt;br/&gt;ASP.NET Core Minimal APIs&quot;]
-        web[&quot;Web app&lt;br/&gt;Blazor + MudBlazor&quot;]
-    end
-    hardware --&gt; adapter --&gt; mqtt --&gt; ingestion
-    ingestion --&gt;|&quot;persistent publish&quot;| rabbit
-    rabbit --&gt;|&quot;manual ack&quot;| worker
-    worker --&gt;|&quot;EF Core&quot;| db
-    migrations --&gt;|&quot;schema&quot;| db
-    api --&gt;|&quot;EF Core&quot;| db
-    web --&gt;|&quot;HTTP&quot;| api
-    grower --&gt; web</value>
-  </data>
   <data name="FmDiagFlowTitle" xml:space="preserve">
-    <value>Telemetry flow</value>
+    <value>From the field to the grower</value>
   </data>
   <data name="FmDiagFlowText" xml:space="preserve">
-    <value>One measurement&apos;s way from the hardware to the database. A message leaves the queue only once its data is saved, so a crash never loses it. Invalid input is rejected for good, while database failures are retried.</value>
+    <value>Readings travel from the sensors at each location, through a connector, into the platform, which keeps every one of them and turns them into something the grower can use.</value>
   </data>
   <data name="FmDiagFlowSource" xml:space="preserve">
-    <value>sequenceDiagram
-    autonumber
-    participant A as Adapter
-    participant M as MQTT broker
-    participant I as Ingestion
-    participant R as RabbitMQ
-    participant W as Telemetry worker
-    participant DB as PostgreSQL
-    A-&gt;&gt;M: publish measurements
-    M-&gt;&gt;I: deliver
-    I-&gt;&gt;R: publish (persistent)
-    R-&gt;&gt;W: deliver, one at a time
-    alt invalid message
-        W-&gt;&gt;R: reject, never retried
-    else valid message
-        W-&gt;&gt;DB: find the sensor by its external ID
-        alt unknown or disabled sensor
-            W-&gt;&gt;R: acknowledge, not stored
-        else active sensor
-            W-&gt;&gt;DB: save the reading
-            alt saved
-                W-&gt;&gt;R: acknowledge
-            else database error
-                W-&gt;&gt;R: requeue and retry
-            end
-        end
-    end</value>
+    <value>flowchart LR
+    subgraph field[&quot;At your locations&quot;]
+        sensors[&quot;Sensors&lt;br/&gt;temperature · humidity · soil moisture&quot;]
+        connector[&quot;Connector&lt;br/&gt;works with any hardware&quot;]
+    end
+    subgraph platform[&quot;Fieldmatics · SaaS&quot;]
+        receive[&quot;Receives every reading&lt;br/&gt;safely&quot;]
+        history[(&quot;Keeps the full history&quot;)]
+        insight[&quot;Turns data into insight&quot;]
+    end
+    grower([&quot;Grower&lt;br/&gt;web app&quot;])
+    mobile([&quot;Mobile app&quot;]):::planned
+    alerts[&quot;Alerts and rules&quot;]:::planned
+    irrigation[&quot;Automated irrigation&quot;]:::planned
+    sensors --&gt; connector --&gt; receive --&gt; history --&gt; insight --&gt; grower
+    insight -.-&gt; mobile
+    insight -.-&gt; alerts -.-&gt; irrigation
+    classDef planned stroke-dasharray: 5 4</value>
   </data>
-  <data name="FmDiagDomainTitle" xml:space="preserve">
-    <value>Domain model</value>
+  <data name="FmDiagTenantsTitle" xml:space="preserve">
+    <value>One platform, many customers</value>
   </data>
-  <data name="FmDiagDomainText" xml:space="preserve">
-    <value>Tenant → Location → Sensor → Reading. There is deliberately no Device entity: hardware is an integration detail, and an external ID links incoming data to a sensor. Every tenant-owned entity carries its own tenant ID, and sensor types are shared reference data.</value>
+  <data name="FmDiagTenantsText" xml:space="preserve">
+    <value>Every customer uses the same, always up-to-date platform, but each one only ever sees their own locations and data.</value>
   </data>
-  <data name="FmDiagDomainSource" xml:space="preserve">
-    <value>erDiagram
-    TENANT ||--o{ LOCATION : owns
-    LOCATION ||--o{ SENSOR : has
-    SENSOR_TYPE ||--o{ SENSOR : classifies
-    SENSOR ||--o{ READING : produces
-    TENANT {
-        guid id
-        string name
-    }
-    LOCATION {
-        guid id
-        guid tenant_id
-        string name &quot;unique per tenant&quot;
-    }
-    SENSOR {
-        guid id
-        guid tenant_id
-        string name
-        string external_id &quot;links incoming data&quot;
-        bool is_active
-    }
-    SENSOR_TYPE {
-        int id
-        string code &quot;e.g. air_temperature&quot;
-        string unit &quot;°C, %, ppm …&quot;
-    }
-    READING {
-        long id
-        decimal value
-        datetime measured_at
-        datetime received_at
-    }</value>
+  <data name="FmTrustTitle" xml:space="preserve">
+    <value>Built to be trusted</value>
   </data>
-  <data name="FmDecisionsTitle" xml:space="preserve">
-    <value>Key design decisions</value>
+  <data name="FmTrust1Title" xml:space="preserve">
+    <value>No reading gets lost</value>
   </data>
-  <data name="FmDec1Title" xml:space="preserve">
-    <value>No Device in the core domain</value>
+  <data name="FmTrust1Text" xml:space="preserve">
+    <value>Readings wait in a safe queue and are only removed once they are stored, so a restart on the platform side doesn&apos;t leave gaps in your history.</value>
   </data>
-  <data name="FmDec1Text" xml:space="preserve">
-    <value>Users think in locations and sensors, not in boards. Hardware stays at the integration edge, and an external ID links incoming data to a sensor. New hardware never touches the domain.</value>
+  <data name="FmTrust2Title" xml:space="preserve">
+    <value>Your data stays yours</value>
   </data>
-  <data name="FmDec2Title" xml:space="preserve">
-    <value>MQTT outside, RabbitMQ inside</value>
+  <data name="FmTrust2Text" xml:space="preserve">
+    <value>Each customer account is kept apart on the server, and ownership comes from the data itself, never from what a device or app claims.</value>
   </data>
-  <data name="FmDec2Text" xml:space="preserve">
-    <value>MQTT is the lightweight protocol hardware speaks. RabbitMQ gives the backend durable queues and controlled delivery. Each one serves its own boundary.</value>
+  <data name="FmTrust3Title" xml:space="preserve">
+    <value>History is kept</value>
   </data>
-  <data name="FmDec3Title" xml:space="preserve">
-    <value>Acknowledge only after saving</value>
+  <data name="FmTrust3Text" xml:space="preserve">
+    <value>Sensors can be switched off or retired, but their readings are never deleted, so long-term trends stay complete.</value>
   </data>
-  <data name="FmDec3Text" xml:space="preserve">
-    <value>A message leaves the queue only once its readings are stored. Invalid input is rejected, database failures are retried, and a crash never loses data.</value>
+  <data name="FmTrust4Title" xml:space="preserve">
+    <value>Ready to grow</value>
   </data>
-  <data name="FmDec4Title" xml:space="preserve">
-    <value>Ownership comes from the data</value>
-  </data>
-  <data name="FmDec4Text" xml:space="preserve">
-    <value>Readings carry no customer ID. The tenant is resolved from the sensor a reading belongs to, and a tenant ID sent by a client or device is never trusted.</value>
-  </data>
-  <data name="FmDec5Title" xml:space="preserve">
-    <value>History is never lost</value>
-  </data>
-  <data name="FmDec5Text" xml:space="preserve">
-    <value>Sensors are disabled or retired, not deleted, and readings are never cascade-deleted. A sensor can&apos;t move to another location, so its history always describes the right place.</value>
-  </data>
-  <data name="FmDec6Title" xml:space="preserve">
-    <value>Boundaries enforced by tests</value>
-  </data>
-  <data name="FmDec6Text" xml:space="preserve">
-    <value>Architecture tests check which projects may reference which, and keep hardware terms out of the domain, so the design can&apos;t erode silently.</value>
+  <data name="FmTrust4Text" xml:space="preserve">
+    <value>New kinds of sensors, new features and new customers fit in without redesigning the platform. Its internal boundaries are checked automatically on every change.</value>
   </data>
   <data name="FmStackTitle" xml:space="preserve">
-    <value>Technology</value>
+    <value>Built with</value>
   </data>
-  <data name="FmStackBackend" xml:space="preserve">
-    <value>Backend</value>
+  <data name="FmStackText" xml:space="preserve">
+    <value>Under the hood, Fieldmatics is a modular .NET 10 platform: a Blazor web app, PostgreSQL for the history, and MQTT and RabbitMQ to move readings reliably.</value>
   </data>
-  <data name="FmStackMessaging" xml:space="preserve">
-    <value>Messaging</value>
-  </data>
-  <data name="FmStackFrontend" xml:space="preserve">
-    <value>Frontend</value>
-  </data>
-  <data name="FmStackOperations" xml:space="preserve">
-    <value>Tooling &amp; operations</value>
-  </data>
-  <data name="FmStackEdge" xml:space="preserve">
-    <value>Edge</value>
+  <data name="FmDiagTenantsSource" xml:space="preserve">
+    <value>flowchart TB
+    subgraph c[&quot;Customer C · home gardener&quot;]
+        c1[&quot;Balcony&quot;]
+    end
+    subgraph b[&quot;Customer B · greenhouse grower&quot;]
+        b1[&quot;Greenhouse 1&quot;]
+        b2[&quot;Greenhouse 2&quot;]
+    end
+    subgraph a[&quot;Customer A · olive farm&quot;]
+        a1[&quot;North grove&quot;]
+        a2[&quot;South grove&quot;]
+    end
+    platform{{&quot;One Fieldmatics platform&lt;br/&gt;shared and always up to date&quot;}}
+    a1 &amp; a2 --&gt; platform
+    b1 &amp; b2 --&gt; platform
+    c1 --&gt; platform
+    platform --&gt;|&quot;only their own data&quot;| va([&quot;Customer A&quot;])
+    platform --&gt;|&quot;only their own data&quot;| vb([&quot;Customer B&quot;])
+    platform --&gt;|&quot;only their own data&quot;| vc([&quot;Customer C&quot;])</value>
   </data>
 </root>

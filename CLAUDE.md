@@ -26,7 +26,7 @@ Components/Sections/       One component per home-page section (About, Experienc
 Components/Shared/         Reusable building blocks (PortfolioSection, SectionHeader, ProjectCard, TechTags, FeatureGrid, Journey, MermaidDiagram)
 Components/*.razor         App-bar pieces (SiteAppBar, CultureSelector, ThemeSelector, SideBar, ScrollToTop)
 Data/PortfolioContent.cs   The content catalog: jobs, projects, skills, nav items
-Data/FieldmaticsContent.cs Content of the /Fieldmatics case study (highlights, journey, diagrams, decisions, stack)
+Data/FieldmaticsContent.cs Content of the /Fieldmatics case study (value, journey, diagrams, trust principles)
 Models/                    Records used by the catalog
 Theme/AppTheme.cs          The single MudTheme (light + dark palettes, typography, radius)
 SharedState/UiState.cs     App-wide UI state (dark mode, drawer), with change events
@@ -50,7 +50,7 @@ wwwroot/appsettings.json   External links (jobs, socials, projects) and email
 - **State**: subscribe to `UiState` events in `OnInitialized` and unsubscribe in `Dispose` (`@implements IDisposable`). No `async void`.
 - **JS**: add functions to `wwwroot/js/site.js` under `window.site`. No inline scripts and no `window.onscroll =` assignments.
 - **Diagrams**: use `<MermaidDiagram>` with the Mermaid source in a resx key (one per language, labels translated). Never put markup inside its canvas; JS owns it.
-- **Private projects**: Fieldmatics is a private, proprietary repository. Its page shows business and architecture only: no code, configuration, topic names, internal decision IDs or repository links.
+- **Private projects**: Fieldmatics is a private, proprietary repository. Its page is business-first (problem, value, how it works) with light technical detail: no code, configuration, protocol/topic names, internal decision IDs or repository links. Mark roadmap features as planned; never present them as done.
 - **Accessibility**: icon-only buttons need `aria-label`; images need `alt`; `target="_blank"` links need `rel="noopener"`; animations must respect `prefers-reduced-motion`.
 - **Nullable** is on and warnings fail the build. Fix them; don't suppress them.
 - MudBlazor ships an analyzer: `MUD0002` warnings mean a parameter name is wrong for this MudBlazor version.
@@ -63,7 +63,7 @@ wwwroot/appsettings.json   External links (jobs, socials, projects) and email
 - Record user-facing or structural changes in `CHANGELOG.md` under `[Unreleased]`. Update `ARCHITECTURE.md` when structure changes, and add an ADR in `docs/decisions/` for significant decisions.
 
 ## Manual verification checklist
-Run `dotnet watch` and check at ~375px and ~1440px: English and Greek, light and dark (reload to confirm the theme persists without a flash), nav links scroll to and highlight sections, the drawer works on mobile, skill chips open the snackbar, the mobile-app card flips to the gallery, the CV downloads, `/Fieldmatics` renders with nav and all four diagrams in both themes, `/ServiceBooking` redirects to it, and an unknown URL shows the 404 page.
+Run `dotnet watch` and check at ~375px and ~1440px: English and Greek, light and dark (reload to confirm the theme persists without a flash), nav links scroll to and highlight sections, the drawer works on mobile, skill chips open the snackbar, the mobile-app card flips to the gallery, the CV downloads, `/Fieldmatics` renders with nav and both diagrams in both themes, `/ServiceBooking` redirects to it, and an unknown URL shows the 404 page.
 
 ## Gotchas
 - Culture switching writes `BlazorCulture` to localStorage and **reloads** the app. `Program.cs` reads it before `RunAsync`.

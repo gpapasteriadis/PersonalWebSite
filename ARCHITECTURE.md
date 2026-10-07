@@ -58,11 +58,14 @@ graph TD
 ## Motion and accessibility
 - `.reveal` elements fade up when they scroll into view. The hidden state applies only after `site.js` adds `html.js-reveal`, so content stays visible if JS fails or the user prefers reduced motion. Skill chips play their animate.css keyframe (`Skill.Animation`) when revealed.
 - `prefers-reduced-motion` disables animations and smooth scrolling.
+- Journey steps fade in with a staggered delay when revealed; reduced motion also zeroes animation delays.
+- Diagrams: the canvas is `role="img"` with the diagram title as `aria-label` and the visible description as `aria-describedby`. If Mermaid fails, the role is removed so the localized error text is read.
+- On `/Fieldmatics`, the in-page nav is sticky at page level and its sections get a larger `scroll-margin-top` so headings land below it.
 - Icon-only buttons have localized `aria-label`s (`Aria*` resx keys). Sections are `<section id>` landmarks with `scroll-margin-top` for the fixed app bar. There is one `h1` (the name in the hero).
 
 ## Routing
 - `/`: Home. Nav links are `/#section` (`jobs`, `projects`, `skills`, `contact`). From other pages they navigate home, and `Home` calls `site.scrollToHash()` after its first render.
-- `/Fieldmatics`: case study of the Fieldmatics platform (business, journey, Mermaid diagrams, decisions, stack). Its in-page nav uses `/Fieldmatics#fm-*` links and calls `site.scrollToHash()` after the first render.
+- `/Fieldmatics`: business-first case study of the Fieldmatics platform (problem, value, grower journey, two Mermaid diagrams, trust principles). Its in-page nav uses `/Fieldmatics#fm-*` links and calls `site.scrollToHash()` after the first render.
 - `/ServiceBooking`: redirects to `/Fieldmatics` (the project it described was replaced).
 - Anything else renders the styled 404 in `App.razor`. In production, `wwwroot/staticwebapp.config.json` rewrites unknown paths to `index.html`.
 

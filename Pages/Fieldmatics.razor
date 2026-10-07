@@ -1,22 +1,28 @@
 @page "/Fieldmatics"
 @inject IJSRuntime JS
 
-<PageTitle>Fieldmatics · George Papasteriadis</PageTitle>
+<PageTitle>@L["FmLabel"] · George Papasteriadis</PageTitle>
 
 <section id="fm-intro" class="fm-hero">
     <MudContainer MaxWidth="MaxWidth.Large">
-        <MudButton Href="/#projects" Variant="Variant.Text" Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowBack">
+        <MudButton Href="@PortfolioContent.ProjectsHref" Variant="Variant.Text" Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowBack">
             @L["FmBackToProjects"]
         </MudButton>
         <div class="fm-hero__content reveal">
             <MudText Typo="Typo.overline" Color="Color.Secondary" Class="fm-hero__eyebrow">@L["FmEyebrow"]</MudText>
-            <MudText Typo="Typo.h2" HtmlTag="h1" Color="Color.Primary">Fieldmatics</MudText>
-            <MudText Typo="Typo.h5" Class="fm-hero__tagline">@L["FmTagline"]</MudText>
-            <MudChip T="string" Icon="@Icons.Material.Filled.Construction" Color="Color.Warning" Variant="Variant.Text" Class="ml-0">
+            <MudText Typo="Typo.h2" HtmlTag="h1" Color="Color.Primary">@L["FmLabel"]</MudText>
+            <MudText Typo="Typo.h5" HtmlTag="p" Class="fm-hero__tagline">@L["FmTagline"]</MudText>
+            <MudChip T="string" Icon="@Icons.Material.Filled.Construction" Color="Color.Tertiary" Variant="Variant.Filled" Class="ml-0">
                 @L["FmStatus"]
             </MudChip>
         </div>
-        <nav class="fm-toc reveal" aria-label="@L["FmOnThisPage"]">
+    </MudContainer>
+</section>
+
+@* Page-level (not inside the hero) so it stays pinned while scrolling the whole page. *@
+<div class="fm-toc-bar">
+    <MudContainer MaxWidth="MaxWidth.Large">
+        <nav class="fm-toc" aria-label="@L["FmOnThisPage"]">
             <span class="fm-toc__label">@L["FmOnThisPage"]</span>
             @foreach (var section in FieldmaticsContent.Sections)
             {
@@ -24,10 +30,10 @@
             }
         </nav>
     </MudContainer>
-</section>
+</div>
 
-<PortfolioSection Id="fm-business" Title="@L["FmBusinessTitle"]">
-    <MudText Typo="Typo.body1" Class="fm-lead">@L["FmBusinessIntro"]</MudText>
+<PortfolioSection Id="fm-problem" Title="@L["FmProblemTitle"]" Class="fm-section">
+    <MudText Typo="Typo.body1" Class="fm-lead">@L["FmProblemText"]</MudText>
     <div class="fm-audience">
         <span class="fm-audience__label">@L["FmBuiltFor"]</span>
         @foreach (var key in FieldmaticsContent.EnvironmentKeys)
@@ -35,16 +41,20 @@
             <span class="tech-tag">@L[key]</span>
         }
     </div>
-    <FeatureGrid Items="FieldmaticsContent.Highlights" />
 </PortfolioSection>
 
-<PortfolioSection Id="fm-how" Title="@L["FmJourneyTitle"]">
-    <MudText Typo="Typo.body1" Class="fm-lead">@L["FmJourneyIntro"]</MudText>
-    <Journey Steps="FieldmaticsContent.Journey" ZoneKey="FieldmaticsContent.ZoneKey" BehindTheScenesKey="FmBehindTheScenes" />
+<PortfolioSection Id="fm-value" Title="@L["FmValueTitle"]" Class="fm-section">
+    <MudText Typo="Typo.body1" Class="fm-lead">@L["FmValueIntro"]</MudText>
+    <FeatureGrid Items="FieldmaticsContent.Value" PlannedKey="FmPlanned" Class="feature-grid--wide" />
 </PortfolioSection>
 
-<PortfolioSection Id="fm-design" Title="@L["FmDesignTitle"]">
-    <MudText Typo="Typo.body1" Class="fm-lead">@L["FmDesignIntro"]</MudText>
+<PortfolioSection Id="fm-how" Title="@L["FmHowTitle"]" Class="fm-section">
+    <MudText Typo="Typo.body1" Class="fm-lead">@L["FmHowIntro"]</MudText>
+    <Journey Steps="FieldmaticsContent.Journey" ZoneKey="FieldmaticsContent.ZoneKey" />
+</PortfolioSection>
+
+<PortfolioSection Id="fm-picture" Title="@L["FmPictureTitle"]" Class="fm-section">
+    <MudText Typo="Typo.body1" Class="fm-lead">@L["FmPictureIntro"]</MudText>
     <p class="fm-legend">
         <span class="fm-legend__sample" aria-hidden="true"></span>@L["FmDiagramLegend"]
     </p>
@@ -53,30 +63,25 @@
         {
             <MudPaper Outlined="true" Class="fm-diagram-card">
                 <MudText Typo="Typo.h5" HtmlTag="h3" Color="Color.Primary">@L[diagram.TitleKey]</MudText>
-                <MudText Typo="Typo.body2" Class="fm-diagram-card__text">@L[diagram.TextKey]</MudText>
+                <MudText Typo="Typo.body2" Class="fm-diagram-card__text" id="@($"{diagram.Id}-text")">@L[diagram.TextKey]</MudText>
                 <MermaidDiagram Id="@diagram.Id" Title="@L[diagram.TitleKey]" Source="@L[diagram.SourceKey]"
-                                ErrorText="@L["FmDiagramError"]" />
+                                ErrorText="@L["FmDiagramError"]" DescriptionId="@($"{diagram.Id}-text")" />
             </MudPaper>
         }
     </div>
 </PortfolioSection>
 
-<PortfolioSection Id="fm-decisions" Title="@L["FmDecisionsTitle"]">
-    <FeatureGrid Items="FieldmaticsContent.Decisions" Class="feature-grid--wide" />
+<PortfolioSection Id="fm-trust" Title="@L["FmTrustTitle"]" Class="fm-section">
+    <FeatureGrid Items="FieldmaticsContent.Trust" />
 </PortfolioSection>
 
-<PortfolioSection Id="fm-stack" Title="@L["FmStackTitle"]">
+<PortfolioSection Id="fm-stack" Title="@L["FmStackTitle"]" Class="fm-section">
+    <MudText Typo="Typo.body1" Class="fm-lead">@L["FmStackText"]</MudText>
     <div class="fm-stack">
-        @foreach (var group in FieldmaticsContent.TechStack)
-        {
-            <MudPaper Outlined="true" Class="fm-stack__group">
-                <MudText Typo="Typo.subtitle1" HtmlTag="h3" Color="Color.Primary" Class="fm-stack__title">@L[group.TitleKey]</MudText>
-                <TechTags Items="group.Items" />
-            </MudPaper>
-        }
+        <TechTags Items="PortfolioContent.Fieldmatics.Tech" />
     </div>
     <div class="fm-back">
-        <MudButton Href="/#projects" Variant="Variant.Outlined" Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowBack">
+        <MudButton Href="@PortfolioContent.ProjectsHref" Variant="Variant.Outlined" Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowBack">
             @L["FmBackToProjects"]
         </MudButton>
     </div>
@@ -85,7 +90,7 @@
 @code {
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        // Direct links such as /Fieldmatics#fm-design: scroll once the sections exist.
+        // Direct links such as /Fieldmatics#fm-picture: scroll once the sections exist.
         if (firstRender)
         {
             await JS.InvokeVoidAsync("site.scrollToHash");

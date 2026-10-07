@@ -6,11 +6,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
-- Fieldmatics project: a featured card in Projects and a case-study page at `/Fieldmatics` covering the business, an illustrated "how it works" journey, four Mermaid system-design diagrams (context, processes, telemetry flow, domain model), key design decisions and the technology stack. Fully localized (en/el), including the diagram labels.
+- Fieldmatics project: a featured card in Projects and a business-first case-study page at `/Fieldmatics`: the problem it solves, what the SaaS brings (roadmap features marked “Coming next”), how it works for a grower, two non-technical Mermaid diagrams (from the field to the grower; one platform, many customers), trust principles and a compact tech list. Fully localized (en/el), including the diagram labels.
 - Shared components `FeatureGrid`, `Journey` and `MermaidDiagram`; `site.renderDiagram` lazy-loads Mermaid from the CDN and themes it from the MudBlazor palette (re-rendered on theme change).
 
 ### Changed
 - `NavItem` takes an optional page, so in-page navigation works on pages other than Home.
+- Status chips use the burlywood accent (readable contrast), and focus rings use the primary color in light mode.
 
 ### Removed
 - The Service Booking project: its card, the `/ServiceBooking` page, its three diagram images and its texts. `/ServiceBooking` now redirects to `/Fieldmatics`.

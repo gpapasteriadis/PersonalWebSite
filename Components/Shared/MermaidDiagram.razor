@@ -5,9 +5,8 @@
 @* Renders Mermaid source client-side (site.renderDiagram). Mermaid is loaded from the CDN on first use only,
    and the diagram is re-rendered when the theme changes so its colors follow the palette.
    The canvas must stay empty in Razor: JS owns its content (CSS shows a loading state while it is :empty). *@
-<figure class="diagram" aria-labelledby="@($"{Id}-caption")">
-    <div class="diagram__canvas" @ref="_canvas" role="img" aria-label="@Title"></div>
-    <figcaption id="@($"{Id}-caption")" class="visually-hidden">@Title</figcaption>
+<figure class="diagram">
+    <div id="@Id" class="diagram__canvas" @ref="_canvas" role="img" aria-label="@Title" aria-describedby="@DescriptionId"></div>
 </figure>
 
 @code {
@@ -16,6 +15,9 @@
 
     [Parameter, EditorRequired] public string Id { get; set; } = "";
     [Parameter, EditorRequired] public string Title { get; set; } = "";
+
+    /// <summary>Id of the visible text that describes the diagram (its text alternative).</summary>
+    [Parameter] public string? DescriptionId { get; set; }
 
     /// <summary>Mermaid source (localized).</summary>
     [Parameter, EditorRequired] public string Source { get; set; } = "";
@@ -37,7 +39,23 @@
     {
         if (State.IsDarkMode != _renderedDark)
         {
-            _ = InvokeAsync(RenderDiagramAsync);
+            _ = InvokeAsync(RenderSafelyAsync);
+        }
+    }
+
+    // Theme changes re-render outside the normal lifecycle; never let an interop failure go unobserved.
+    private async Task RenderSafelyAsync()
+    {
+        try
+        {
+            await RenderDiagramAsync();
+        }
+        catch (JSException)
+        {
+            // site.renderDiagram shows its own error text; nothing else to do here.
+        }
+        catch (JSDisconnectedException)
+        {
         }
     }
 
