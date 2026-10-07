@@ -5,6 +5,7 @@ namespace PersonalWebSite.Theme;
 /// <summary>
 /// The single MudBlazor theme for the site. Identity: teal (light), blue-grey (dark), burlywood accent (Tertiary).
 /// Font sizes use clamp() so typography scales with the viewport. Don't add per-breakpoint Typo switches in components.
+/// Keep Background/TextSecondary/AppbarBackground in sync with --app-loading-* in wwwroot/css/app.css and the theme-color metas in index.html.
 /// </summary>
 public static class AppTheme
 {

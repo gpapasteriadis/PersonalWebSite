@@ -12,7 +12,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - CI workflow that builds every PR with warnings as errors.
 - Content catalog (`Data/PortfolioContent.cs`, `Models/`) and shared components (`PortfolioSection`, `SectionHeader`, `ProjectCard`, `TechTags`).
 - `wwwroot/js/site.js`: preferences, hide-on-scroll app bar, scroll-reveal, active-section highlighting in the nav.
-- Styled 404 page, navigation on the `/ServiceBooking` page, SEO and Open Graph meta tags, localized `aria-label`s.
+- Styled and localized 404 page, navigation on the `/ServiceBooking` page, SEO and Open Graph meta tags, localized `aria-label`s and gallery alt text.
 
 ### Changed
 - MudBlazor 6.15 → 9.11. Localization uses `IStringLocalizer<Resource>` instead of `MudLocalizer`.

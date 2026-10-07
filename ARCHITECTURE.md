@@ -48,7 +48,7 @@ graph TD
 | Theme | `Theme/AppTheme.cs` | One `MudTheme`: light (teal) and dark (blue-grey) palettes, burlywood `Tertiary` accent, fluid `clamp()` typography, 12px radius. |
 | Global CSS | `wwwroot/css/app.css` | `--app-*` tokens, then sections for layout, components, pages, motion, and the loading/error UI. Colors come from `var(--mud-palette-*)`. |
 | UI state | `SharedState/UiState.cs` (singleton) | `IsDarkMode`, `IsDrawerOpen`, culture toggle, `GoHomeAsync`. Raises `Changed`; subscribers unsubscribe in `Dispose`. |
-| JS interop | `wwwroot/js/site.js` → `window.site` | Preferences in localStorage, hide-on-scroll app bar, scroll-reveal (`.reveal` → `.is-visible`), scrollspy (`aria-current` on `[data-nav-target]`), `scrollToHash`, `scrollToTop`. |
+| JS interop | `wwwroot/js/site.js` → `window.site` | Preferences in localStorage, hide-on-scroll app bar, scroll-reveal (`.reveal` → `.is-visible`), scrollspy (`aria-current` on `[data-nav-target]`), `scrollToHash`, `scrollToTop`. A MutationObserver re-syncs the IntersectionObservers at most once per frame and unobserves nodes Blazor removed. |
 
 ## Responsive strategy
 - Typography scales through `clamp()` in the theme. Components use fixed `Typo` values.
@@ -62,7 +62,7 @@ graph TD
 ## Routing
 - `/`: Home. Nav links are `/#section` (`jobs`, `projects`, `skills`, `contact`). From other pages they navigate home, and `Home` calls `site.scrollToHash()` after its first render.
 - `/ServiceBooking`: system-design diagrams for the Service Booking project.
-- Anything else renders the styled 404 in `App.razor`. In production, `staticwebapp.config.json` rewrites unknown paths to `index.html`.
+- Anything else renders the styled 404 in `App.razor`. In production, `wwwroot/staticwebapp.config.json` rewrites unknown paths to `index.html`.
 
 ## Build and deploy
 - `PersonalWebSite.csproj` sets `TreatWarningsAsErrors`. MudBlazor's analyzer (`MUD0002`) flags invalid component parameters.

@@ -19,6 +19,14 @@
     /* Loading screen (shown before Blazor/MudBlazor styles exist) */
     --app-loading-bg: #EEF6F5;
     --app-loading-text: #4A5C5A;
+
+    /* Fixed surfaces: media letterbox, diagrams (drawn on white), error banner */
+    --app-media-bg: #000;
+    --app-diagram-bg: #FFF;
+    --app-error-bg: #FFF4D6;
+    --app-error-text: #3B2A14;
+    --app-error-link: #00695C;
+    --app-error-boundary-bg: #B32121;
 }
 
 :root[data-theme="dark"] {
@@ -26,6 +34,9 @@
     --app-shadow-lift: 0 2px 4px rgba(0, 0, 0, .35), 0 16px 32px rgba(0, 0, 0, .35);
     --app-loading-bg: #1A2327;
     --app-loading-text: #B0BEC5;
+    --app-error-bg: #3B2F1A;
+    --app-error-text: #FBE9C8;
+    --app-error-link: #80CBC4;
 }
 
 /* 2. Base -------------------------------------------------------------------------------- */
@@ -393,7 +404,7 @@ img {
 }
 
 video.gallery__item {
-    background: #000;
+    background: var(--app-media-bg);
 }
 
 /* Skills */
@@ -544,7 +555,7 @@ video.gallery__item {
     width: 100%;
     height: auto;
     border-radius: calc(var(--app-radius) * .75);
-    background: #fff;
+    background: var(--app-diagram-bg);
 }
 
 .not-found {
@@ -651,14 +662,14 @@ video.gallery__item {
     display: none;
     width: 100%;
     padding: .75rem 2.5rem .75rem 1.25rem;
-    background: #FFF4D6;
-    color: #3B2A14;
+    background: var(--app-error-bg);
+    color: var(--app-error-text);
     box-shadow: 0 -1px 4px rgba(0, 0, 0, .2);
 }
 
     #blazor-error-ui .reload {
         margin-left: .5rem;
-        color: #00695C;
+        color: var(--app-error-link);
         font-weight: 600;
     }
 
@@ -672,7 +683,7 @@ video.gallery__item {
 .blazor-error-boundary {
     padding: 1rem 1.25rem;
     border-radius: var(--app-radius);
-    background: #B32121;
+    background: var(--app-error-boundary-bg);
     color: #fff;
 }
 

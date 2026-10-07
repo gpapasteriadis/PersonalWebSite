@@ -378,4 +378,19 @@ The deployment infrastructure will be hosted on Azure, using Docker containers t
   <data name="AriaDownloadCV" xml:space="preserve">
     <value>Download resume</value>
   </data>
+  <data name="NotFoundTitle" xml:space="preserve">
+    <value>Not found</value>
+  </data>
+  <data name="NotFoundMessage" xml:space="preserve">
+    <value>Sorry, there&apos;s nothing at this address.</value>
+  </data>
+  <data name="MobileAppScreenshot" xml:space="preserve">
+    <value>FoodWaste app screenshot {0}</value>
+  </data>
+  <data name="MobileAppVideo" xml:space="preserve">
+    <value>FoodWaste app demo video</value>
+  </data>
+  <data name="AriaOpenInNewTab" xml:space="preserve">
+    <value>{0}: open in new tab</value>
+  </data>
 </root>

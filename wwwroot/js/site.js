@@ -62,19 +62,39 @@
         }
     }, { rootMargin: '-45% 0px -50% 0px' });
 
-    const observeNewElements = () => {
-        if (!supportsObserver) return;
-        for (const el of document.querySelectorAll('.reveal:not([data-observed])')) {
-            el.dataset.observed = '';
+    // Tracked so elements Blazor removes (e.g. navigating to another page) are unobserved and can be collected.
+    const revealed = new Set();
+    const spied = new Set();
+
+    const syncObservers = () => {
+        for (const [set, observer] of [[revealed, revealObserver], [spied, spyObserver]]) {
+            for (const el of set) {
+                if (el.isConnected) continue;
+                observer.unobserve(el);
+                set.delete(el);
+            }
+        }
+        for (const el of document.querySelectorAll('.reveal:not(.is-visible)')) {
+            if (revealed.has(el)) continue;
+            revealed.add(el);
             revealObserver.observe(el);
         }
-        for (const section of document.querySelectorAll('section[id]:not([data-spied])')) {
-            section.dataset.spied = '';
+        for (const section of document.querySelectorAll('section[id]')) {
+            if (spied.has(section)) continue;
+            spied.add(section);
             spyObserver.observe(section);
         }
     };
 
-    new MutationObserver(observeNewElements).observe(document.body, { childList: true, subtree: true });
+    // DOM mutations come in bursts (Blazor renders, ripples, snackbars); scan at most once per frame.
+    let syncQueued = false;
+    if (supportsObserver) {
+        new MutationObserver(() => {
+            if (syncQueued) return;
+            syncQueued = true;
+            requestAnimationFrame(() => { syncQueued = false; syncObservers(); });
+        }).observe(document.body, { childList: true, subtree: true });
+    }
 
     // --- API used from Blazor ------------------------------------------------------------
     window.site = {

@@ -47,7 +47,8 @@ public sealed class UiState(IJSRuntime js, NavigationManager navigation)
     public async Task ToggleCultureAsync()
     {
         await js.InvokeVoidAsync("site.setCulture", IsGreek ? English : Greek);
-        navigation.NavigateTo(navigation.Uri, forceLoad: true);
+        // Drop the fragment: site.scrollToTop clears it outside Blazor, so NavigationManager.Uri can be stale.
+        navigation.NavigateTo(navigation.Uri.Split('#')[0], forceLoad: true);
     }
 
     public void SetDrawerOpen(bool open)

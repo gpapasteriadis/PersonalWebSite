@@ -64,6 +64,6 @@ Run `dotnet watch` and check at ~375px and ~1440px: English and Greek, light and
 
 ## Gotchas
 - Culture switching writes `BlazorCulture` to localStorage and **reloads** the app. `Program.cs` reads it before `RunAsync`.
-- `staticwebapp.config.json` rewrites unknown routes to `index.html`, so deep links like `/ServiceBooking` work in production.
+- `wwwroot/staticwebapp.config.json` rewrites unknown routes to `index.html`, so deep links like `/ServiceBooking` work in production.
 - The SWA deploy workflow builds the app itself (Oryx). `.github/workflows/ci.yml` only verifies the build on PRs.
 - `wwwroot/Video/FoodWasteApp.mp4` is ~30 MB. Keep `preload="metadata"` (first frame only) and never autoplay it.
