@@ -23,13 +23,13 @@ App.razor                  Router + styled 404
 Layout/MainLayout.razor    Theme provider, app bar, drawer, scroll-to-top. Shared by all pages
 Pages/                     Home (/) and ServiceBooking (/ServiceBooking)
 Components/Sections/       One component per home-page section (About, Experience, Projects, Skills, Contact)
-Components/Shared/         Reusable building blocks (PortfolioSection, SectionHeader, TechTags, ...)
-Components/*.razor         App-bar pieces (NavLinks, CultureSelector, ThemeSelector, SideBar, ScrollToTop)
+Components/Shared/         Reusable building blocks (PortfolioSection, SectionHeader, ProjectCard, TechTags)
+Components/*.razor         App-bar pieces (SiteAppBar, CultureSelector, ThemeSelector, SideBar, ScrollToTop)
 Data/PortfolioContent.cs   The content catalog: jobs, projects, skills, nav items
 Models/                    Records used by the catalog
 Theme/AppTheme.cs          The single MudTheme (light + dark palettes, typography, radius)
 SharedState/UiState.cs     App-wide UI state (dark mode, drawer), with change events
-Localize/Resource.cs       Marker type for IStringLocalizer<Resource>
+Localize/                  Resource (marker for IStringLocalizer<Resource>) + L.Html(key) for resx values with HTML
 Resources/*.resx           Localized strings: neutral (= English), .en, .el
 wwwroot/index.html         Host page: meta tags, CSS/JS includes, loading screen
 wwwroot/js/site.js         All JS interop (culture storage, app-bar hide, scroll reveal, scrollspy)
@@ -66,4 +66,4 @@ Run `dotnet watch` and check at ~375px and ~1440px: English and Greek, light and
 - Culture switching writes `BlazorCulture` to localStorage and **reloads** the app. `Program.cs` reads it before `RunAsync`.
 - `staticwebapp.config.json` rewrites unknown routes to `index.html`, so deep links like `/ServiceBooking` work in production.
 - The SWA deploy workflow builds the app itself (Oryx). `.github/workflows/ci.yml` only verifies the build on PRs.
-- `wwwroot/Video/FoodWasteApp.mp4` is ~30 MB. Keep `preload="none"` on it.
+- `wwwroot/Video/FoodWasteApp.mp4` is ~30 MB. Keep `preload="metadata"` (first frame only) and never autoplay it.

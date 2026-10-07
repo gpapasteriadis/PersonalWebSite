@@ -1,58 +1,70 @@
-# My Personal Website Project
+# George Papasteriadis: Personal Website
 
-## Description
-Welcome to my personal website project! This website serves as a portfolio to showcase my projects, skills, and experiences in web development.
+My portfolio: experience, projects, skills and contact details, in **English** and **Greek**, with light and dark themes.
 
-### Installation
+Built with **Blazor WebAssembly (.NET 10)** and **MudBlazor 9**, and hosted on **Azure Static Web Apps**.
 
-To run this project locally, ensure you have the following prerequisites installed:
+## Tech stack
+| Area | Technology |
+|---|---|
+| UI framework | Blazor WebAssembly, .NET 10 |
+| Component library | MudBlazor 9 |
+| Localization | `IStringLocalizer` + `.resx` (en, el) |
+| Styling | MudBlazor theme (`Theme/AppTheme.cs`) + `wwwroot/css/app.css`, animate.css keyframes |
+| Hosting / CI | Azure Static Web Apps, GitHub Actions |
 
-- [Visual Studio](https://visualstudio.microsoft.com/downloads/)
-- [.NET SDK 8](https://dotnet.microsoft.com/download/dotnet/8.0)
+## Getting started
+Prerequisites: [.NET SDK 10](https://dotnet.microsoft.com/download/dotnet/10.0). Visual Studio 2026, VS Code (C# Dev Kit) or Rider are optional.
 
-Follow these steps to set up and run the project:
+```bash
+git clone https://github.com/gpapasteriadis/PersonalWebSite.git
+cd PersonalWebSite
+dotnet watch            # http://localhost:5288 with hot reload
+```
 
-1. **Clone the Repository**:  
-   ```bash 
-    git clone https://github.com/gpapasteriadis/PersonalWebSite.git
+Other commands:
+```bash
+dotnet build -c Release     # warnings are treated as errors
+dotnet publish -c Release   # static output in bin/Release/net10.0/publish/wwwroot
+```
 
-2. **Open the Project in Visual Studio**:
-Navigate to the cloned project directory and open the solution file (`PersonalWebSite.sln`) in Visual Studio.
+In Visual Studio, open `PersonalWebSite.sln` and press <kbd>F5</kbd>.
 
-3. **Restore NuGet Packages**:
-Visual Studio will automatically restore the NuGet packages when you open the solution. If not, right-click on the solution in the Solution Explorer and select "Restore NuGet Packages".
+## Project structure
+```
+Components/Sections/   Home-page sections (About, Experience, Projects, Skills, Contact)
+Components/Shared/     Reusable building blocks (PortfolioSection, SectionHeader, ProjectCard, TechTags)
+Components/            App bar, drawer, language and theme toggles, scroll-to-top
+Data/                  Content catalog (jobs, projects, skills, nav, social links) + skill icons
+Layout/                MainLayout (theme provider, app bar, drawer)
+Pages/                 Home (/) and ServiceBooking (/ServiceBooking)
+Resources/             Localized strings (neutral/en/el .resx)
+SharedState/           UiState: theme, culture, drawer
+Theme/                 AppTheme: palettes and typography
+wwwroot/               index.html, css/app.css, js/site.js, images, CV, video
+```
+For how the pieces fit together, see [ARCHITECTURE.md](ARCHITECTURE.md).
 
-4. **Build and Run the Project**:
-Press `F5` or select "Start Debugging" from the Debug menu to build and run the project.
+## Updating content
+- **Text**: edit the key in **all three** files in `Resources/` (`Localize.Resource.resx`, `.en.resx`, `.el.resx`). Values may contain simple HTML (`<b>`, `<br/>`).
+- **A new job**: add the texts to the resx files, the company URL under `JobLinks` in `wwwroot/appsettings.json`, and a `Job` entry in `Data/PortfolioContent.cs` (newest first).
+- **A new skill**: add the SVG to `Data/SkillIcons.cs`, the description to the resx files, and a `Skill` entry in `PortfolioContent.Skills`.
+- **A project's tech tags**: edit the `Tech` list of the project in `PortfolioContent`.
+- **Links / email**: `wwwroot/appsettings.json`.
+- **CV**: replace `wwwroot/George-CV.pdf`.
 
-5. **View the Application**:
-Once the project is running, your default web browser will open automatically, and you can view the application.
+## Deployment
+Every push to `main` triggers `.github/workflows/azure-static-web-apps-*.yml`, which builds the app and deploys it to Azure Static Web Apps. Pull requests get a preview environment. `.github/workflows/ci.yml` builds every PR with warnings as errors. `wwwroot/staticwebapp.config.json` rewrites unknown routes to `index.html` so deep links work.
 
-
-## Usage
-Once the website is running locally, you can navigate through different sections using the navigation bar. Explore my projects, read about my skills and experiences, and easily find information to get in touch with me by navigating to the contact section.
-
-## Technologies Used
-- HTML
-- CSS
-- C#
-- Blazor
-- MudBlazor
-
-## Contributing
-I welcome contributions to this project! If you have any suggestions, bug reports, or would like to contribute code, please follow these steps:
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and ensure that they are well-documented.
-4. Submit a pull request, explaining the changes you've made.
+## Working with Claude Code
+`CLAUDE.md` holds the project conventions. `.claude/agents/` defines three review agents: `architecture-reviewer` (run after big changes), `i18n-checker` and `ui-reviewer`. Changes are tracked in [CHANGELOG.md](CHANGELOG.md), and design decisions in [docs/decisions/](docs/decisions/).
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+[MIT](LICENSE)
 
 ## Credits
-Icons provided by [flaticon](https://www.flaticon.com/).
+Icons by [flaticon](https://www.flaticon.com/) and [SVG Repo](https://www.svgrepo.com/). UI components by [MudBlazor](https://mudblazor.com/). Animations by [animate.css](https://animate.style/).
 
 ## Contact
-Feel free to reach out to me with any questions, feedback, or collaboration opportunities:
 - Email: giorgospapasteriadis@gmail.com
-- LinkedIn: [in/giorgos-papasteriadis](https://www.linkedin.com/in/gpapasteriadis/)
+- LinkedIn: [in/gpapasteriadis](https://www.linkedin.com/in/gpapasteriadis/)
