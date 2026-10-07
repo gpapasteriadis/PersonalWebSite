@@ -29,21 +29,21 @@ public static class FieldmaticsContent
     /// <summary>What the SaaS brings to growers.</summary>
     public static IReadOnlyList<Feature> Value { get; } =
     [
-        new(Icons.Material.Filled.Dashboard, "FmVal1Title", "FmVal1Text"),
+        new(Icons.Material.Filled.Dashboard, "FmVal1Title", "FmVal1Text", FeatureStatus.InProgress),
         new(Icons.Material.Filled.Timeline, "FmVal2Title", "FmVal2Text"),
         new(Icons.Material.Filled.Hub, "FmVal3Title", "FmVal3Text"),
-        new(Icons.Material.Filled.NotificationsActive, "FmVal4Title", "FmVal4Text", IsPlanned: true),
-        new(Icons.Material.Filled.WaterDrop, "FmVal5Title", "FmVal5Text", IsPlanned: true),
-        new(Icons.Material.Filled.Cloud, "FmVal6Title", "FmVal6Text"),
+        new(Icons.Material.Filled.NotificationsActive, "FmVal4Title", "FmVal4Text", FeatureStatus.Planned),
+        new(Icons.Material.Filled.WaterDrop, "FmVal5Title", "FmVal5Text", FeatureStatus.Planned),
+        new(Icons.Material.Filled.Cloud, "FmVal6Title", "FmVal6Text", FeatureStatus.Planned),
     ];
 
     /// <summary>A grower's path from setup to automation.</summary>
     public static IReadOnlyList<JourneyStep> Journey { get; } =
     [
-        new(Icons.Material.Filled.AddLocationAlt, JourneyZone.Setup, "FmStep1Title", "FmStep1Text"),
+        new(Icons.Material.Filled.AddLocationAlt, JourneyZone.Setup, "FmStep1Title", "FmStep1Text", FeatureStatus.InProgress),
         new(Icons.Material.Filled.Sensors, JourneyZone.Setup, "FmStep2Title", "FmStep2Text"),
         new(Icons.Material.Filled.CloudSync, JourneyZone.Daily, "FmStep3Title", "FmStep3Text"),
-        new(Icons.Material.Filled.Insights, JourneyZone.Daily, "FmStep4Title", "FmStep4Text"),
+        new(Icons.Material.Filled.Insights, JourneyZone.Daily, "FmStep4Title", "FmStep4Text", FeatureStatus.InProgress),
         new(Icons.Material.Filled.AutoMode, JourneyZone.Next, "FmStep5Title", "FmStep5Text"),
     ];
 
@@ -53,6 +53,14 @@ public static class FieldmaticsContent
         JourneyZone.Daily => "FmZoneDaily",
         JourneyZone.Next => "FmZoneNext",
         _ => throw new ArgumentOutOfRangeException(nameof(zone), zone, null),
+    };
+
+    /// <summary>Badge label for a feature or journey step; null when it is available today.</summary>
+    public static string? StatusKey(FeatureStatus status) => status switch
+    {
+        FeatureStatus.InProgress => "FmInProgress",
+        FeatureStatus.Planned => "FmPlanned",
+        _ => null,
     };
 
     /// <summary>Deliberately non-technical: no product, protocol or process names.</summary>

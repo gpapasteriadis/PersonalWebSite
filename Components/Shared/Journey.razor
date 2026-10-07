@@ -12,6 +12,10 @@
                 <span class="journey-step__zone">@L[ZoneKey(step.Zone)]</span>
             </div>
             <MudText Typo="Typo.h6" HtmlTag="h3" Color="Color.Primary" Class="journey-step__title">@L[step.TitleKey]</MudText>
+            @if (StatusKey?.Invoke(step.Status) is { } badgeKey)
+            {
+                <span class="status-badge status-badge--@step.Status.ToString().ToLowerInvariant()">@L[badgeKey]</span>
+            }
             <MudText Typo="Typo.body2" Class="journey-step__text">@L[step.TextKey]</MudText>
         </li>
     }
@@ -22,4 +26,7 @@
 
     /// <summary>Maps a zone to its localized label key.</summary>
     [Parameter, EditorRequired] public Func<JourneyZone, string> ZoneKey { get; set; } = _ => "";
+
+    /// <summary>Maps a step status to its badge label key (null = no badge).</summary>
+    [Parameter] public Func<FeatureStatus, string?>? StatusKey { get; set; }
 }

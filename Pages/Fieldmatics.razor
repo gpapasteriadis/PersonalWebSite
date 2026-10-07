@@ -15,6 +15,7 @@
             <MudChip T="string" Icon="@Icons.Material.Filled.Construction" Color="Color.Tertiary" Variant="Variant.Filled" Class="ml-0">
                 @L["FmStatus"]
             </MudChip>
+            <MudText Typo="Typo.body2" Class="fm-hero__now">@L["FmNowText"]</MudText>
         </div>
     </MudContainer>
 </section>
@@ -45,12 +46,12 @@
 
 <PortfolioSection Id="fm-value" Title="@L["FmValueTitle"]" Class="fm-section">
     <MudText Typo="Typo.body1" Class="fm-lead">@L["FmValueIntro"]</MudText>
-    <FeatureGrid Items="FieldmaticsContent.Value" PlannedKey="FmPlanned" Class="feature-grid--wide" />
+    <FeatureGrid Items="FieldmaticsContent.Value" StatusKey="FieldmaticsContent.StatusKey" Class="feature-grid--wide" />
 </PortfolioSection>
 
 <PortfolioSection Id="fm-how" Title="@L["FmHowTitle"]" Class="fm-section">
     <MudText Typo="Typo.body1" Class="fm-lead">@L["FmHowIntro"]</MudText>
-    <Journey Steps="FieldmaticsContent.Journey" ZoneKey="FieldmaticsContent.ZoneKey" />
+    <Journey Steps="FieldmaticsContent.Journey" ZoneKey="FieldmaticsContent.ZoneKey" StatusKey="FieldmaticsContent.StatusKey" />
 </PortfolioSection>
 
 <PortfolioSection Id="fm-picture" Title="@L["FmPictureTitle"]" Class="fm-section">

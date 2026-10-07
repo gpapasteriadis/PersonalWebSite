@@ -134,20 +134,6 @@
             clusterBkg: blend(v('--mud-palette-primary-rgb'), v('--mud-palette-background'), isDark ? .07 : .06),
             clusterBorder: v(isDark ? '--mud-palette-tertiary' : '--mud-palette-secondary'), // 3:1 on light
             edgeLabelBackground: v('--mud-palette-surface'),
-            actorBkg: v('--mud-palette-background'),
-            actorBorder: v('--mud-palette-primary'),
-            actorTextColor: v('--mud-palette-text-primary'),
-            signalColor: v('--mud-palette-text-primary'),
-            signalTextColor: v('--mud-palette-text-primary'),
-            labelBoxBkgColor: v('--mud-palette-background-gray'),
-            labelBoxBorderColor: v('--mud-palette-primary'),
-            labelTextColor: v('--mud-palette-text-primary'),
-            loopTextColor: v('--mud-palette-text-primary'),
-            noteBkgColor: v('--mud-palette-background-gray'),
-            noteTextColor: v('--mud-palette-text-primary'),
-            sequenceNumberColor: v('--mud-palette-primary-text'),
-            attributeBackgroundColorOdd: v('--mud-palette-surface'),
-            attributeBackgroundColorEven: v('--mud-palette-background'),
         };
     };
 
@@ -162,7 +148,6 @@
                 theme: 'base',
                 themeVariables: diagramTheme(),
                 flowchart: { curve: 'basis', htmlLabels: true },
-                sequence: { mirrorActors: false, showSequenceNumbers: true },
             });
             const { svg } = await mermaid.render(`diagram-${++diagramCount}`, source);
             element.innerHTML = svg;

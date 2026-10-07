@@ -561,6 +561,12 @@ video.gallery__item {
     letter-spacing: .14em;
 }
 
+.fm-hero__now {
+    max-width: 62ch;
+    margin-top: .5rem;
+    color: var(--mud-palette-text-secondary);
+}
+
 .fm-hero__tagline {
     color: var(--mud-palette-text-primary);
     font-weight: 400;
@@ -712,14 +718,26 @@ body:has(.site-appbar[data-hidden="true"]) .fm-toc-bar {
     gap: .75rem;
 }
 
-.feature-card__badge {
+/* Status of a case-study feature or step that is not finished: in progress (solid) or planned (dashed). */
+.status-badge {
+    align-self: flex-start;
     padding: .15rem .6rem;
-    border: 1px dashed rgba(var(--mud-palette-secondary-rgb), .7);
+    border: 1px solid rgba(var(--mud-palette-primary-rgb), .55);
     border-radius: var(--app-radius-pill);
-    color: var(--mud-palette-secondary);
+    color: var(--mud-palette-primary);
     font-size: .75rem;
     font-weight: 600;
     white-space: nowrap;
+}
+
+.status-badge--planned {
+    border-style: dashed;
+    border-color: rgba(var(--mud-palette-secondary-rgb), .8);
+    color: var(--mud-palette-secondary);
+}
+
+.feature-card__head .status-badge {
+    margin-top: .25rem;
 }
 
 .feature-card__icon {

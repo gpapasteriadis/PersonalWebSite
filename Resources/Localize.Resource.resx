@@ -414,7 +414,7 @@ client-side web application that adapts effortlessly to any screen, whether you'
     <value>What Fieldmatics brings</value>
   </data>
   <data name="FmValueIntro" xml:space="preserve">
-    <value>What the platform is being built to give growers. Features marked “Coming next” are on the roadmap.</value>
+    <value>What the platform is being built to give growers. Features marked “In progress” or “Coming next” are not finished yet.</value>
   </data>
   <data name="FmPlanned" xml:space="preserve">
     <value>Coming next</value>
@@ -459,7 +459,7 @@ client-side web application that adapts effortlessly to any screen, whether you'
     <value>How it works for a grower</value>
   </data>
   <data name="FmHowIntro" xml:space="preserve">
-    <value>From the first setup to a system that works for you. Some of these steps are still being built.</value>
+    <value>From the first setup to a system that works for you. Steps marked “In progress” or “Coming next” are still being built.</value>
   </data>
   <data name="FmZoneSetup" xml:space="preserve">
     <value>Set up</value>
@@ -542,40 +542,7 @@ client-side web application that adapts effortlessly to any screen, whether you'
     <value>One platform, many customers</value>
   </data>
   <data name="FmDiagTenantsText" xml:space="preserve">
-    <value>Every customer uses the same, always up-to-date platform, but each one only ever sees their own locations and data.</value>
-  </data>
-  <data name="FmTrustTitle" xml:space="preserve">
-    <value>Built to be trusted</value>
-  </data>
-  <data name="FmTrust1Title" xml:space="preserve">
-    <value>No reading gets lost</value>
-  </data>
-  <data name="FmTrust1Text" xml:space="preserve">
-    <value>Readings wait in a safe queue and are only removed once they are stored, so a restart on the platform side doesn&apos;t leave gaps in your history.</value>
-  </data>
-  <data name="FmTrust2Title" xml:space="preserve">
-    <value>Your data stays yours</value>
-  </data>
-  <data name="FmTrust2Text" xml:space="preserve">
-    <value>Each customer account is kept apart on the server, and ownership comes from the data itself, never from what a device or app claims.</value>
-  </data>
-  <data name="FmTrust3Title" xml:space="preserve">
-    <value>History is kept</value>
-  </data>
-  <data name="FmTrust3Text" xml:space="preserve">
-    <value>Sensors can be switched off or retired, but their readings are never deleted, so long-term trends stay complete.</value>
-  </data>
-  <data name="FmTrust4Title" xml:space="preserve">
-    <value>Ready to grow</value>
-  </data>
-  <data name="FmTrust4Text" xml:space="preserve">
-    <value>New kinds of sensors, new features and new customers fit in without redesigning the platform. Its internal boundaries are checked automatically on every change.</value>
-  </data>
-  <data name="FmStackTitle" xml:space="preserve">
-    <value>Built with</value>
-  </data>
-  <data name="FmStackText" xml:space="preserve">
-    <value>Under the hood, Fieldmatics is a modular .NET 10 platform: a Blazor web app, PostgreSQL for the history, and MQTT and RabbitMQ to move readings reliably.</value>
+    <value>The goal: every customer uses the same, always up-to-date platform, but each one only ever sees their own locations and data. The dashed lines show the data separation that is still being built.</value>
   </data>
   <data name="FmDiagTenantsSource" xml:space="preserve">
     <value>flowchart TB
@@ -594,8 +561,47 @@ client-side web application that adapts effortlessly to any screen, whether you'
     a1 &amp; a2 --&gt; platform
     b1 &amp; b2 --&gt; platform
     c1 --&gt; platform
-    platform --&gt;|&quot;only their own data&quot;| va([&quot;Customer A&quot;])
-    platform --&gt;|&quot;only their own data&quot;| vb([&quot;Customer B&quot;])
-    platform --&gt;|&quot;only their own data&quot;| vc([&quot;Customer C&quot;])</value>
+    platform -.-&gt;|&quot;only their own data&quot;| va([&quot;Customer A&quot;])
+    platform -.-&gt;|&quot;only their own data&quot;| vb([&quot;Customer B&quot;])
+    platform -.-&gt;|&quot;only their own data&quot;| vc([&quot;Customer C&quot;])</value>
+  </data>
+  <data name="FmTrustTitle" xml:space="preserve">
+    <value>Built to be trusted</value>
+  </data>
+  <data name="FmTrust1Title" xml:space="preserve">
+    <value>No reading gets lost</value>
+  </data>
+  <data name="FmTrust1Text" xml:space="preserve">
+    <value>Readings wait in a safe queue and are only removed once they are stored, so a restart on the platform side doesn&apos;t leave gaps in your history.</value>
+  </data>
+  <data name="FmTrust2Title" xml:space="preserve">
+    <value>Your data stays yours</value>
+  </data>
+  <data name="FmTrust2Text" xml:space="preserve">
+    <value>Designed so that each customer account is kept apart on the server, with ownership coming from the data itself, never from what a device or app claims. Account separation is being built.</value>
+  </data>
+  <data name="FmTrust3Title" xml:space="preserve">
+    <value>History is kept</value>
+  </data>
+  <data name="FmTrust3Text" xml:space="preserve">
+    <value>Sensors can be switched off or retired, but their readings are never deleted, so long-term trends stay complete.</value>
+  </data>
+  <data name="FmTrust4Title" xml:space="preserve">
+    <value>Ready to grow</value>
+  </data>
+  <data name="FmTrust4Text" xml:space="preserve">
+    <value>New kinds of sensors, new features and new customers fit in without redesigning the platform. Its internal boundaries are checked by automated tests.</value>
+  </data>
+  <data name="FmStackTitle" xml:space="preserve">
+    <value>Built with</value>
+  </data>
+  <data name="FmStackText" xml:space="preserve">
+    <value>Under the hood, Fieldmatics is a modular .NET 10 platform: a Blazor web app, PostgreSQL for the history, and MQTT and RabbitMQ to move readings reliably.</value>
+  </data>
+  <data name="FmInProgress" xml:space="preserve">
+    <value>In progress</value>
+  </data>
+  <data name="FmNowText" xml:space="preserve">
+    <value>Where it stands: sensor readings already flow from an Arduino prototype through the platform into a database and onto a first dashboard. Locations, customer accounts and per-location dashboards are being built now.</value>
   </data>
 </root>

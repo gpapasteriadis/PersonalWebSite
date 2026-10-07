@@ -44,9 +44,16 @@ public sealed record SocialLink(string Name, string Icon, string LinkKey);
 
 // --- Project case-study pages (e.g. /Fieldmatics) -------------------------------------------
 
+/// <summary>How far a feature of a case-study product is; anything but Available shows a badge.</summary>
+public enum FeatureStatus
+{
+    Available,
+    InProgress,
+    Planned,
+}
+
 /// <summary>An icon card with a title and a short text (value propositions, principles).</summary>
-/// <param name="IsPlanned">Shows a "coming next" badge for roadmap features.</param>
-public sealed record Feature(string Icon, string TitleKey, string TextKey, bool IsPlanned = false);
+public sealed record Feature(string Icon, string TitleKey, string TextKey, FeatureStatus Status = FeatureStatus.Available);
 
 /// <summary>The phase a journey step belongs to; drives the label and accent color.</summary>
 public enum JourneyZone
@@ -57,7 +64,7 @@ public enum JourneyZone
 }
 
 /// <summary>One step of the illustrated "how it works" journey.</summary>
-public sealed record JourneyStep(string Icon, JourneyZone Zone, string TitleKey, string TextKey);
+public sealed record JourneyStep(string Icon, JourneyZone Zone, string TitleKey, string TextKey, FeatureStatus Status = FeatureStatus.Available);
 
 /// <summary>A Mermaid diagram; <paramref name="SourceKey"/> holds the localized Mermaid source.</summary>
 public sealed record Diagram(string Id, string TitleKey, string TextKey, string SourceKey);

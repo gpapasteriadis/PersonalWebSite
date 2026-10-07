@@ -2,14 +2,15 @@
 <ul class="feature-grid @Class">
     @foreach (var feature in Items)
     {
-        <li class="feature-card @(feature.IsPlanned ? "feature-card--planned" : null)">
+        var badgeKey = StatusKey?.Invoke(feature.Status);
+        <li class="feature-card">
             <div class="feature-card__head">
                 <span class="feature-card__icon" aria-hidden="true">
                     <MudIcon Icon="@feature.Icon" Size="Size.Medium" />
                 </span>
-                @if (feature.IsPlanned && PlannedKey is not null)
+                @if (badgeKey is not null)
                 {
-                    <span class="feature-card__badge">@L[PlannedKey]</span>
+                    <span class="status-badge status-badge--@feature.Status.ToString().ToLowerInvariant()">@L[badgeKey]</span>
                 }
             </div>
             <MudText Typo="Typo.h6" HtmlTag="h3" Color="Color.Primary" Class="feature-card__title">@L[feature.TitleKey]</MudText>
@@ -21,8 +22,8 @@
 @code {
     [Parameter, EditorRequired] public IReadOnlyList<Feature> Items { get; set; } = [];
 
-    /// <summary>Label of the badge on planned features (resx key).</summary>
-    [Parameter] public string? PlannedKey { get; set; }
+    /// <summary>Maps a feature status to its badge label key (null = no badge).</summary>
+    [Parameter] public Func<FeatureStatus, string?>? StatusKey { get; set; }
 
     [Parameter] public string? Class { get; set; }
 }
