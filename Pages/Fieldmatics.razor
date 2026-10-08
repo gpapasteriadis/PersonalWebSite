@@ -25,9 +25,9 @@
     <MudContainer MaxWidth="MaxWidth.Large">
         <nav class="fm-toc" aria-label="@L["FmOnThisPage"]">
             <span class="fm-toc__label">@L["FmOnThisPage"]</span>
-            @foreach (var section in FieldmaticsContent.Sections)
+            @foreach (var item in FieldmaticsContent.Sections)
             {
-                <a class="fm-toc__link" href="@section.Href" data-nav-target="@section.SectionId">@L[section.LabelKey]</a>
+                <a class="fm-toc__link" href="@item.Href" data-nav-target="@item.SectionId">@L[item.LabelKey]</a>
             }
         </nav>
     </MudContainer>

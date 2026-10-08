@@ -69,5 +69,6 @@ Run `dotnet watch` and check at ~375px and ~1440px: English and Greek, light and
 - Culture switching writes `BlazorCulture` to localStorage and **reloads** the app. `Program.cs` reads it before `RunAsync`.
 - `wwwroot/staticwebapp.config.json` rewrites unknown routes to `index.html`, so deep links like `/Fieldmatics` work in production.
 - The SWA deploy workflow builds the app itself (Oryx). `.github/workflows/ci.yml` only verifies the build on PRs.
+- Azure builds with an older SDK (10.0.200) than a dev machine or CI (latest 10.0.x), and its Razor compiler is stricter. Never name a Razor variable after a directive keyword (`section`, `code`, `functions`, `inject`, …): `@section.Href` compiled locally but broke the production deploy.
 - Mermaid is pinned in `site.js` (`mermaidUrl`) and loaded from jsDelivr only on pages with diagrams. Mermaid derives shades from fill colors and ignores alpha, so pass solid colors (see `blend`).
 - `wwwroot/Video/FoodWasteApp.mp4` is ~30 MB. Keep `preload="metadata"` (first frame only) and never autoplay it.

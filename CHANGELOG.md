@@ -5,6 +5,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+- Production deploy failure: the `/Fieldmatics` navigation loop used a variable named `section`, which Azure's Razor compiler (SDK 10.0.200) reads as the `@section` directive. Renamed it to `item`.
 ### Added
 - Fieldmatics project: a featured card in Projects and a business-first case-study page at `/Fieldmatics`: the problem it solves, what the SaaS brings, with unfinished features and steps marked “In progress” or “Coming next”, a short “where it stands” note, how it works for a grower, two non-technical Mermaid diagrams (from the field to the grower; one platform, many customers), trust principles and a compact tech list. Fully localized (en/el), including the diagram labels.
 - Shared components `FeatureGrid`, `Journey` and `MermaidDiagram`; `site.renderDiagram` lazy-loads Mermaid from the CDN and themes it from the MudBlazor palette (re-rendered on theme change).
