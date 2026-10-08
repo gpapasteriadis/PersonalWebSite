@@ -273,55 +273,48 @@ img {
 }
 
 /* Experience */
-.cv-link {
-    display: inline-flex;
-    align-items: center;
-    gap: .6rem;
+/* Resume button: a MudButton (theme typography, ripple) restyled as the burlywood pill. */
+.cv-link.mud-button-root {
     min-height: 48px;
-    padding: .6rem 1.5rem .6rem 1.2rem;
+    padding: .5rem 1.5rem .5rem 1.25rem;
     border: 1px solid rgba(var(--mud-palette-tertiary-rgb), .8);
     border-radius: var(--app-radius-pill);
     background: rgba(var(--mud-palette-tertiary-rgb), .14);
-    color: var(--mud-palette-primary);
-    font-size: 1.05rem;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
     transition: background-color .2s, box-shadow .2s, transform .2s var(--app-ease);
 }
 
-    .cv-link:active {
+    .cv-link.mud-button-root:active {
         transform: translateY(0);
     }
 
     /* Keeps the site-wide focus ring color; only adds room around the pill. */
-    .cv-link:focus-visible {
+    .cv-link.mud-button-root:focus-visible {
         outline-offset: 3px;
     }
 
-.cv-link__external {
-    opacity: .7;
-    transition: transform .2s var(--app-ease), opacity .2s;
-}
+    .cv-link .mud-button-icon-end {
+        opacity: .7;
+        transition: transform .2s var(--app-ease), opacity .2s;
+    }
 
 /* Hover effects only where hover exists, so they don't stick after a tap. */
 @media (hover: hover) {
-    .cv-link:hover {
+    .cv-link.mud-button-root:hover {
         background: rgba(var(--mud-palette-tertiary-rgb), .3);
         box-shadow: var(--app-shadow-soft);
         transform: translateY(-2px);
     }
 
-        .cv-link:hover .cv-link__external {
+        .cv-link.mud-button-root:hover .mud-button-icon-end {
             opacity: 1;
             transform: translate(2px, -2px);
         }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .cv-link,
-    .cv-link:hover,
-    .cv-link:hover .cv-link__external {
+    .cv-link.mud-button-root,
+    .cv-link.mud-button-root:hover,
+    .cv-link.mud-button-root:hover .mud-button-icon-end {
         transform: none;
     }
 }
@@ -369,6 +362,11 @@ img {
             border-radius: 50%;
             background: var(--mud-palette-tertiary);
         }
+
+/* Burlywood dots are faint on white cards; use the primary color in light mode (as the focus ring does). */
+:root:not([data-theme="dark"]) .rich__list li::before {
+    background: var(--mud-palette-primary);
+}
 
 .experience-timeline.mud-timeline {
     max-width: 1040px;

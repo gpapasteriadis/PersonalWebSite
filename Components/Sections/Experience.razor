@@ -3,12 +3,11 @@
 <PortfolioSection Id="jobs" Title="@L["ExperienceTitle"]">
     <Subtitle>
         @* The whole pill is the link: a large, labelled target that opens the PDF in a new tab. *@
-        <a class="cv-link" href="@PortfolioContent.CvPath" target="_blank" rel="noopener">
-            <MudIcon Icon="@Icons.Material.Filled.Description" aria-hidden="true" />
-            <span>@L["ViewCV"]</span>
-            <span class="visually-hidden">@L["AriaOpensNewTab"]</span>
-            <MudIcon Icon="@Icons.Material.Filled.OpenInNew" Size="Size.Small" Class="cv-link__external" aria-hidden="true" />
-        </a>
+        <MudButton Href="@PortfolioContent.CvPath" Target="_blank" rel="noopener" Variant="Variant.Outlined" Color="Color.Primary"
+                   Size="Size.Large" StartIcon="@Icons.Material.Filled.Description" EndIcon="@Icons.Material.Filled.OpenInNew"
+                   Class="cv-link">
+            @L["ViewCV"]<span class="visually-hidden">@L["AriaOpensNewTab"]</span>
+        </MudButton>
     </Subtitle>
     <ChildContent>
         @* Tablet/desktop: timeline *@
