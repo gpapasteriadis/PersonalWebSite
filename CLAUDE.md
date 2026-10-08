@@ -66,7 +66,7 @@ docs/decisions/               ADRs (0001–0006) + template
 
 ## Workflow
 - Work on a feature branch off `main`. `main` deploys to production.
-- Every PR gets a staging (preview) environment from the Static Web Apps workflow; the bot comments its URL on the PR (`https://<app>-<PR number>.<region>.azurestaticapps.net`). When you open or update a PR, wait for "Build and Deploy Job" to pass and give the user both the PR link and the staging link.
+- Every PR gets a staging (preview) environment from the Static Web Apps workflow; its URL is `https://ambitious-desert-072293a03-<PR number>.westeurope.4.azurestaticapps.net` (also printed in the "Build and Deploy Job" log). When you open or update a PR, wait for "Build and Deploy Job" to pass and give the user both the PR link and the staging link.
 - After any change: `dotnet build -c Release`, then run the app and check it in a browser (no console errors) before calling it done.
 - After any **big implementation** (multi-file change, new section or component, refactor, dependency upgrade), run the **`architecture-reviewer`** agent and address its findings.
 - When `.resx` files or visible text change, run the **`i18n-checker`** agent.
