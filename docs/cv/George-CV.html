@@ -1,0 +1,405 @@
+<!doctype html>
+<!--
+  Source of wwwroot/George-CV.pdf. Edit this file, then regenerate the PDF:
+    docs/cv/build-cv.sh
+  Colors match Theme/AppTheme.cs (teal primary, burlywood accent).
+  Job texts mirror the site's resx keys (IndeavorDesc, PwCDesc, ArmyDesc, TerracomDesc, MobileAppDesc, CothetaDesc)
+  in a tighter CV wording; when facts change, update both.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>George Papasteriadis - CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+<style>
+    :root {
+        --primary: #00695C;
+        --primary-dark: #004D40;
+        --accent: #DEB887;
+        --accent-soft: #F6EBDC;
+        --tint: #EEF6F5;
+        --text: #1C2B2A;
+        --muted: #4A5C5A;
+        --rule: #CFE3E0;
+    }
+
+    @page { size: A4; margin: 0; }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+        margin: 0;
+        font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 9.2pt;
+        line-height: 1.4;
+        color: var(--text);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Sidebar tint runs the full height of every page */
+    body {
+        background: linear-gradient(to right, var(--tint) 0 70mm, #fff 70mm);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* Header */
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8mm;
+        padding: 9mm 14mm 7mm;
+        background: var(--primary);
+        color: #fff;
+        border-bottom: 2.2mm solid var(--accent);
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 23pt;
+        font-weight: 300;
+        letter-spacing: .06em;
+        line-height: 1.1;
+    }
+
+        .header h1 b { font-weight: 700; }
+
+    .header .role {
+        margin-top: 1.5mm;
+        color: var(--accent);
+        font-size: 11pt;
+        font-weight: 500;
+        letter-spacing: .22em;
+        text-transform: uppercase;
+    }
+
+    .contact {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 8.8pt;
+        text-align: right;
+        line-height: 1.6;
+    }
+
+        .contact li::after {
+            content: "";
+            display: inline-block;
+            width: 1.6mm;
+            height: 1.6mm;
+            margin-left: 2.2mm;
+            border-radius: 50%;
+            background: var(--accent);
+            vertical-align: middle;
+        }
+
+    /* Two columns */
+    .page {
+        display: grid;
+        grid-template-columns: 70mm 1fr;
+    }
+
+    .side { padding: 7mm 7mm 6mm 14mm; }
+    .main { padding: 7mm 14mm 6mm 8mm; }
+
+    h2 {
+        display: flex;
+        align-items: center;
+        gap: 2.5mm;
+        margin: 0 0 3.5mm;
+        color: var(--primary);
+        font-size: 10.5pt;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+    }
+
+        h2::before {
+            content: "";
+            width: 5mm;
+            height: 1.2mm;
+            border-radius: 1mm;
+            background: var(--accent);
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--rule);
+        }
+
+    section + section { margin-top: 5mm; }
+
+
+    .side p { margin: 0; font-size: 9.2pt; }
+
+    .skill-group + .skill-group { margin-top: 3.2mm; }
+
+    .skill-group h3 {
+        margin: 0 0 1.4mm;
+        color: var(--primary);
+        font-size: 8.6pt;
+        font-weight: 700;
+    }
+
+    .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.4mm;
+    }
+
+        .chips span {
+            padding: .5mm 2.2mm;
+            border: 1px solid var(--rule);
+            border-radius: 3mm;
+            background: #fff;
+            font-size: 8.4pt;
+        }
+
+    .langs { margin: 0; padding: 0; list-style: none; }
+
+        .langs li {
+            display: flex;
+            justify-content: space-between;
+        }
+
+            .langs li + li { margin-top: 1.2mm; }
+
+            .langs span { color: var(--muted); }
+
+    .edu h3 { margin: 0; font-size: 9.4pt; font-weight: 700; line-height: 1.35; }
+    .edu .where { margin-top: .8mm; color: var(--muted); }
+    .edu .when { margin-top: .8mm; color: var(--primary); font-weight: 500; font-size: 8.6pt; }
+
+    /* Experience timeline */
+    .jobs { position: relative; }
+
+    .job {
+        position: relative;
+        padding-left: 6mm;
+        break-inside: avoid;
+    }
+
+        .job + .job { margin-top: 3.6mm; }
+
+        /* Timeline rail + dot */
+        .job::before {
+            content: "";
+            position: absolute;
+            left: 1.1mm;
+            top: 3.6mm;
+            bottom: -3.6mm;
+            width: .5mm;
+            background: var(--rule);
+        }
+
+        .job:last-child::before { display: none; }
+
+        .job::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 1.2mm;
+            width: 2.7mm;
+            height: 2.7mm;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 0 .7mm var(--accent-soft);
+        }
+
+    .job__top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 4mm;
+    }
+
+    .job h3 { margin: 0; font-size: 10.4pt; font-weight: 700; }
+
+    .job .date {
+        flex-shrink: 0;
+        padding: .3mm 2.4mm;
+        border-radius: 3mm;
+        background: var(--accent-soft);
+        color: var(--primary);
+        font-size: 8.2pt;
+        font-weight: 500;
+    }
+
+    .job .company {
+        margin-top: .4mm;
+        color: var(--primary);
+        font-weight: 500;
+    }
+
+        .job .company span { color: var(--muted); font-weight: 400; }
+
+    .group {
+        margin: 2.2mm 0 .8mm;
+        color: var(--primary);
+        font-size: 8.4pt;
+        font-weight: 700;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+    }
+
+    .job ul {
+        margin: 1.2mm 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        .group + ul { margin-top: 0; }
+
+    .job li {
+        position: relative;
+        padding-left: 3.6mm;
+    }
+
+        .job li + li { margin-top: .6mm; }
+
+        .job li::before {
+            content: "";
+            position: absolute;
+            left: .3mm;
+            top: .62em;
+            width: 1.3mm;
+            height: 1.3mm;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+</style>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1>GEORGE <b>PAPASTERIADIS</b></h1>
+            <div class="role">Software Engineer</div>
+        </div>
+        <ul class="contact">
+            <li><a href="mailto:giorgospapasteriadis@gmail.com">giorgospapasteriadis@gmail.com</a></li>
+            <li>(+30) 6980039662</li>
+            <li>Trikala, Greece</li>
+            <li><a href="https://www.linkedin.com/in/gpapasteriadis/">linkedin.com/in/gpapasteriadis</a></li>
+            <li><a href="https://github.com/gpapasteriadis">github.com/gpapasteriadis</a></li>
+            <li><a href="https://gpapasteriadis.xyz">gpapasteriadis.xyz</a></li>
+        </ul>
+    </header>
+
+    <div class="page">
+        <aside class="side">
+            <section>
+                <h2>Summary</h2>
+                <p>Software engineer specializing in web development, actively seeking dynamic work environments that foster continuous learning and professional growth. Passionate about problem-solving and dedicated to making meaningful contributions to collaborative teams.</p>
+            </section>
+
+            <section>
+                <h2>Skills</h2>
+                <div class="skill-group">
+                    <h3>Backend</h3>
+                    <div class="chips"><span>.NET Core</span><span>Entity Framework Core</span><span>SignalR</span><span>RabbitMQ</span><span>Hangfire</span></div>
+                </div>
+                <div class="skill-group">
+                    <h3>Frontend</h3>
+                    <div class="chips"><span>Blazor</span><span>Angular</span></div>
+                </div>
+                <div class="skill-group">
+                    <h3>Data</h3>
+                    <div class="chips"><span>SQL (PostgreSQL, MySQL, SQL Server)</span><span>MongoDB</span></div>
+                </div>
+                <div class="skill-group">
+                    <h3>Cloud &amp; DevOps</h3>
+                    <div class="chips"><span>Docker</span><span>Azure</span></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Languages</h2>
+                <ul class="langs">
+                    <li>Greek <span>Native</span></li>
+                    <li>English <span>Advanced</span></li>
+                </ul>
+            </section>
+
+            <section class="edu">
+                <h2>Education</h2>
+                <h3>Integrated Master in Computer Science and Engineering</h3>
+                <div class="where">University of Ioannina, Ioannina, Greece</div>
+                <div class="when">Feb 2014 — Apr 2022</div>
+            </section>
+        </aside>
+
+        <main class="main">
+            <section>
+                <h2>Experience</h2>
+                <div class="jobs">
+                    <article class="job">
+                        <div class="job__top"><h3>Software Engineer</h3><span class="date">Nov 2025 — Present</span></div>
+                        <div class="company">Indeavor <span>· Remote, full-time</span></div>
+                        <ul>
+                            <li>Build backend services with .NET 10, EF Core and PostgreSQL.</li>
+                            <li>Contribute to microservices-based systems and web applications.</li>
+                            <li>Package and run services with Docker, consistently across environments.</li>
+                            <li>Write automated tests with xUnit in a remote, product-focused team.</li>
+                        </ul>
+                    </article>
+
+                    <article class="job">
+                        <div class="job__top"><h3>Software Engineer</h3><span class="date">May 2024 — Nov 2025</span></div>
+                        <div class="company">PwC Greece <span>· Trikala, Greece</span></div>
+                        <ul>
+                            <li>Developed web applications with .NET 8, Blazor Server and ASP.NET MVC, building responsive UIs with MudBlazor and JavaScript.</li>
+                            <li>Worked with SQL Server using stored procedures and raw SQL for complex queries; managed data access with Entity Framework Core.</li>
+                            <li>Integrated Hangfire for task scheduling and email notifications.</li>
+                            <li>Managed the full development lifecycle in Azure DevOps, including CI/CD pipelines and project tracking.</li>
+                        </ul>
+                    </article>
+
+                    <article class="job">
+                        <div class="job__top"><h3>Software Engineer</h3><span class="date">Mar 2023 — Oct 2023</span></div>
+                        <div class="company">Greek Armed Forces IT Corps <span>· Athens, Greece · Mandatory military service</span></div>
+                        <ul>
+                            <li>Developed and maintained internal software for day-to-day operations.</li>
+                            <li>Provided technical support to end users and troubleshot issues.</li>
+                            <li>Improved and upgraded critical applications.</li>
+                        </ul>
+                    </article>
+
+                    <article class="job">
+                        <div class="job__top"><h3>Software Engineer</h3><span class="date">Oct 2020 — Dec 2022</span></div>
+                        <div class="company">Terracom S.A. <span>· Ioannina, Greece</span></div>
+                        <ul>
+                            <li>Core developer of QR-Patrol, a security management platform.</li>
+                            <li>Took part in technical analysis and system design.</li>
+                            <li>Collaborated with the team to plan work, ship updates and improve the platform.</li>
+                        </ul>
+                    </article>
+
+                    <article class="job">
+                        <div class="job__top"><h3>Mobile Application Developer</h3><span class="date">Dec 2021 — Jan 2022</span></div>
+                        <div class="company">Freelancer <span>· Ioannina, Greece</span></div>
+                        <ul>
+                            <li>Built the Android/iOS app UI with Ionic Framework and Angular.</li>
+                            <li>Implemented the backend with NestJS, Apollo GraphQL and MongoDB.</li>
+                            <li>Deployed it in Docker containers on DigitalOcean.</li>
+                        </ul>
+                    </article>
+
+                    <article class="job">
+                        <div class="job__top"><h3>Software Engineer Intern</h3><span class="date">Jul 2019 — Oct 2019</span></div>
+                        <div class="company">CoTheta <span>· Ioannina, Greece</span></div>
+                        <ul>
+                            <li>Developed VR/AR projects with Unity3D, creating interactive experiences.</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

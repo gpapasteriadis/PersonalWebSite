@@ -179,11 +179,6 @@
             storage.set(keys.darkMode, String(isDark));
             applyTheme(isDark);
         },
-        scrollToTop() {
-            history.replaceState(null, '', location.pathname);
-            window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-            setActiveNav(null);
-        },
         renderDiagram,
         // Called by pages after their first render, so /page#section links land on the section.
         scrollToHash() {

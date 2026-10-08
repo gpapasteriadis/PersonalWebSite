@@ -4,7 +4,7 @@
 <MudDrawer Open="State.IsDrawerOpen" OpenChanged="State.SetDrawerOpen" Variant="DrawerVariant.Temporary"
            Anchor="Anchor.Start" Width="min(75vw, 280px)" Elevation="2" Class="site-drawer">
     <MudDrawerHeader Class="site-drawer__header">
-        <button type="button" class="site-logo" @onclick="State.GoHomeAsync" aria-label="@L["AriaHome"]">
+        <button type="button" class="site-logo" @onclick="State.GoHome" aria-label="@L["AriaHome"]">
             <img src="@PortfolioContent.LogoPath" alt="" width="40" height="40" />
         </button>
     </MudDrawerHeader>

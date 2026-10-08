@@ -53,7 +53,7 @@ For how the pieces fit together, see [ARCHITECTURE.md](ARCHITECTURE.md).
 - **A project's tech tags**: edit the `Tech` list of the project in `PortfolioContent`.
 - **The Fieldmatics case study**: texts and diagram sources are `Fm*` keys in the resx files; structure (sections, value cards, journey steps, diagrams, trust principles) is in `Data/FieldmaticsContent.cs`. Diagram sources are [Mermaid](https://mermaid.js.org/) and are translated per language.
 - **Links / email**: `wwwroot/appsettings.json`.
-- **CV**: replace `wwwroot/George-CV.pdf`.
+- **CV**: edit `docs/cv/George-CV.html` and run `sh docs/cv/build-cv.sh`. It regenerates `wwwroot/George-CV.pdf` and bumps the `?v=` in `PortfolioContent.CvPath`.
 
 ## Deployment
 Every push to `main` triggers `.github/workflows/azure-static-web-apps-*.yml`, which builds the app and deploys it to Azure Static Web Apps. Pull requests get a preview environment. `.github/workflows/ci.yml` builds every PR with warnings as errors. `wwwroot/staticwebapp.config.json` rewrites unknown routes to `index.html` so deep links work.

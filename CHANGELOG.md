@@ -12,6 +12,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Shared components `FeatureGrid`, `Journey` and `MermaidDiagram`; `site.renderDiagram` lazy-loads Mermaid from the CDN and themes it from the MudBlazor palette (re-rendered on theme change).
 
 ### Changed
+- Experience, Personal Website and FoodWaste texts reworded in a friendlier first-person tone (en/el), same facts. Bullets are now real lists with grouped headings (`.rich__*` styles) and the timeline is a bit wider. The Personal Website card now says .NET 10 (was .NET 8).
+- Projects: the featured Fieldmatics card now comes first, with Personal Website and FoodWaste side by side below it.
+- Resume button: the whole pill is now one 48px-tall link labelled “View resume” / “Προβολή βιογραφικού” (was a small icon next to a non-clickable label). It opens the PDF in a new tab, shows an open-in-new-tab icon (announced to screen readers via `AriaOpensNewTab`), and has hover (pointer devices only), focus and reduced-motion states. The resx key `AriaDownloadCV` became `ViewCV`, and the unused `CV` key was removed.
+- The Resume pill is now a `MudButton` (theme typography, ripple) restyled with `.cv-link`; list dots use the primary color in light mode, where burlywood was faint on white.
+- CLAUDE.md synced with the codebase: full layout (docs/cv, SkillIcons, agents), "MudBlazor first" and rich-description conventions, CV workflow, updated checklist and dev-server gotchas.
+- Description lists carry `role="list"` so Safari/VoiceOver keep list semantics despite the custom bullets.
+- `docs/cv/build-cv.sh` now sets the CV link's `?v=` to a hash of the PDF automatically (ADR 0006).
+- The logo (app bar and drawer) now reloads the site at the top of the home page instead of only scrolling up; `site.scrollToTop` was removed.
+- CV redesigned in the site's colors (teal header, burlywood accents, tinted sidebar, experience timeline, grouped skills), condensed to one page and updated with the Indeavor role (PwC now ends Nov 2025). Its source is `docs/cv/George-CV.html`; `docs/cv/build-cv.sh` regenerates `wwwroot/George-CV.pdf` with headless Edge/Chrome.
 - `NavItem` takes an optional page, so in-page navigation works on pages other than Home.
 - Status chips use the burlywood accent (readable contrast), and focus rings use the primary color in light mode.
 

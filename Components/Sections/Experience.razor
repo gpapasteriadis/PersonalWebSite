@@ -2,11 +2,12 @@
 
 <PortfolioSection Id="jobs" Title="@L["ExperienceTitle"]">
     <Subtitle>
-        <div class="cv-link">
-            <MudText Typo="Typo.h6" Inline="true">@L["CV"]</MudText>
-            <MudIconButton Href="@PortfolioContent.CvPath" Target="_blank" rel="noopener" Icon="@Icons.Material.Filled.Download"
-                           Color="Color.Primary" Size="Size.Medium" Class="cv-link__button" aria-label="@L["AriaDownloadCV"]" />
-        </div>
+        @* The whole pill is the link: a large, labelled target that opens the PDF in a new tab. *@
+        <MudButton Href="@PortfolioContent.CvPath" Target="_blank" rel="noopener" Variant="Variant.Outlined" Color="Color.Primary"
+                   Size="Size.Large" StartIcon="@Icons.Material.Filled.Description" EndIcon="@Icons.Material.Filled.OpenInNew"
+                   Class="cv-link">
+            @L["ViewCV"]<span class="visually-hidden">@L["AriaOpensNewTab"]</span>
+        </MudButton>
     </Subtitle>
     <ChildContent>
         @* Tablet/desktop: timeline *@
@@ -48,6 +49,6 @@
                 </MudText>
                 <span class="job__date">@L[job.DateKey]</span>
             </div>
-            <MudText Typo="Typo.body1" Class="job__description">@L.Html(job.DescriptionKey)</MudText>
+            <MudText Typo="Typo.body1" HtmlTag="div" Class="job__description">@L.Html(job.DescriptionKey)</MudText>
         </div>;
 }

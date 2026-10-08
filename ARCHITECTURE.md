@@ -44,12 +44,12 @@ graph TD
 |---|---|---|
 | Content catalog | `Data/PortfolioContent.cs`, `Data/FieldmaticsContent.cs`, `Models/PortfolioModels.cs` | Jobs, projects, skills, nav items, social links as records. Sections loop over these. |
 | Skill icons | `Data/SkillIcons.cs` | Inline SVG markup used by skill chips and the skill snackbar. |
-| Text | `Resources/Localize.Resource{,.en,.el}.resx` | Accessed via `IStringLocalizer<Resource>`, injected globally as `L` in `_Imports.razor`. `L.Html(key)` renders values that contain HTML. |
+| Text | `Resources/Localize.Resource{,.en,.el}.resx` | Accessed via `IStringLocalizer<Resource>`, injected globally as `L` in `_Imports.razor`. `L.Html(key)` renders values that contain HTML. Job and project descriptions are structured HTML (`<p class="rich__lead">`, `<p class="rich__group">`, `<ul class="rich__list" role="list">`) rendered inside `MudText HtmlTag="div"`, because a `<p>` can't contain a `<ul>`. |
 | Links / email | `wwwroot/appsettings.json` | Read through `IConfiguration` (`Config["JobLinks:PwC"]`). |
 | Theme | `Theme/AppTheme.cs` | One `MudTheme`: light (teal) and dark (blue-grey) palettes, burlywood `Tertiary` accent, fluid `clamp()` typography, 12px radius. |
 | Global CSS | `wwwroot/css/app.css` | `--app-*` tokens, then sections for layout, components, pages, motion, and the loading/error UI. Colors come from `var(--mud-palette-*)`. |
-| UI state | `SharedState/UiState.cs` (singleton) | `IsDarkMode`, `IsDrawerOpen`, culture toggle, `GoHomeAsync`. Raises `Changed`; subscribers unsubscribe in `Dispose`. |
-| JS interop | `wwwroot/js/site.js` → `window.site` | Preferences in localStorage, hide-on-scroll app bar, scroll-reveal (`.reveal` → `.is-visible`), scrollspy (`aria-current` on `[data-nav-target]`), `scrollToHash`, `scrollToTop`. A MutationObserver re-syncs the IntersectionObservers at most once per frame and unobserves nodes Blazor removed. `renderDiagram` lazy-loads Mermaid, themes it from the live palette (solid colors via `blend`) and renders one diagram at a time; `MermaidDiagram` re-renders when the theme changes. |
+| UI state | `SharedState/UiState.cs` (singleton) | `IsDarkMode`, `IsDrawerOpen`, culture toggle, `GoHome` (logo: full reload of `/`). Raises `Changed`; subscribers unsubscribe in `Dispose`. |
+| JS interop | `wwwroot/js/site.js` → `window.site` | Preferences in localStorage, hide-on-scroll app bar, scroll-reveal (`.reveal` → `.is-visible`), scrollspy (`aria-current` on `[data-nav-target]`), `scrollToHash`. A MutationObserver re-syncs the IntersectionObservers at most once per frame and unobserves nodes Blazor removed. `renderDiagram` lazy-loads Mermaid, themes it from the live palette (solid colors via `blend`) and renders one diagram at a time; `MermaidDiagram` re-renders when the theme changes. |
 
 ## Responsive strategy
 - Typography scales through `clamp()` in the theme. Components use fixed `Typo` values.
@@ -73,6 +73,7 @@ graph TD
 - `PersonalWebSite.csproj` sets `TreatWarningsAsErrors`. MudBlazor's analyzer (`MUD0002`) flags invalid component parameters.
 - `.github/workflows/ci.yml` builds every PR (`-warnaserror`).
 - `.github/workflows/azure-static-web-apps-*.yml` builds with Oryx and deploys `wwwroot` output to Azure Static Web Apps on pushes to `main`, plus preview environments for PRs.
+- The CV (`wwwroot/George-CV.pdf`) is not built by CI. It is generated locally from `docs/cv/George-CV.html` by `docs/cv/build-cv.sh` (headless Edge/Chrome), which also rewrites the `?v=` cache-buster in `PortfolioContent.CvPath`. See ADR 0006.
 
 ## Dependencies
 | Package | Why |

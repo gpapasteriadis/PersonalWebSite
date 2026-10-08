@@ -2,6 +2,24 @@
 
 <PortfolioSection Id="projects" Title="@L["ProjectsTitle"]">
     <MudGrid Spacing="4">
+        <MudItem xs="12">
+            <ProjectCard Project="PortfolioContent.Fieldmatics" Class="project-card--featured">
+                <Actions>
+                    <MudIconButton Icon="@Icons.Material.Filled.DesignServices" Href="@FieldmaticsContent.PagePath"
+                                   Color="Color.Primary" title="@L["SystemDesign"]" aria-label="@L["SystemDesign"]" />
+                </Actions>
+                <ChildContent>
+                    <MudChip T="string" Icon="@Icons.Material.Filled.Construction" Color="Color.Tertiary" Variant="Variant.Filled"
+                             Class="mb-3 ml-0">@L["FmStatus"]</MudChip>
+                    <MudText Typo="Typo.body1">@L.Html("FmSummary")</MudText>
+                    <MudButton Href="@FieldmaticsContent.PagePath" Variant="Variant.Outlined" Color="Color.Primary"
+                               EndIcon="@Icons.Material.Filled.ArrowForward" Class="mt-4">
+                        @L["FmDesignLink"]
+                    </MudButton>
+                </ChildContent>
+            </ProjectCard>
+        </MudItem>
+
         <MudItem xs="12" md="6">
             <ProjectCard Project="PortfolioContent.PersonalWebsite">
                 <Actions>
@@ -42,24 +60,6 @@
                     </ProjectCard>
                 }
             </div>
-        </MudItem>
-
-        <MudItem xs="12">
-            <ProjectCard Project="PortfolioContent.Fieldmatics" Class="project-card--featured">
-                <Actions>
-                    <MudIconButton Icon="@Icons.Material.Filled.DesignServices" Href="@FieldmaticsContent.PagePath"
-                                   Color="Color.Primary" title="@L["SystemDesign"]" aria-label="@L["SystemDesign"]" />
-                </Actions>
-                <ChildContent>
-                    <MudChip T="string" Icon="@Icons.Material.Filled.Construction" Color="Color.Tertiary" Variant="Variant.Filled"
-                             Class="mb-3 ml-0">@L["FmStatus"]</MudChip>
-                    <MudText Typo="Typo.body1">@L.Html("FmSummary")</MudText>
-                    <MudButton Href="@FieldmaticsContent.PagePath" Variant="Variant.Outlined" Color="Color.Primary"
-                               EndIcon="@Icons.Material.Filled.ArrowForward" Class="mt-4">
-                        @L["FmDesignLink"]
-                    </MudButton>
-                </ChildContent>
-            </ProjectCard>
         </MudItem>
     </MudGrid>
 </PortfolioSection>
