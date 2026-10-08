@@ -47,7 +47,7 @@ public sealed class UiState(IJSRuntime js, NavigationManager navigation)
     public async Task ToggleCultureAsync()
     {
         await js.InvokeVoidAsync("site.setCulture", IsGreek ? English : Greek);
-        // Drop the fragment: site.scrollToTop clears it outside Blazor, so NavigationManager.Uri can be stale.
+        // Drop the fragment so the reload starts at the top of the page.
         navigation.NavigateTo(navigation.Uri.Split('#')[0], forceLoad: true);
     }
 
@@ -58,20 +58,8 @@ public sealed class UiState(IJSRuntime js, NavigationManager navigation)
         NotifyChanged();
     }
 
-    /// <summary>Scrolls to the top of the home page, navigating there first from other pages.</summary>
-    public async Task GoHomeAsync()
-    {
-        SetDrawerOpen(false);
-        var path = navigation.ToBaseRelativePath(navigation.Uri);
-        if (path.Length == 0 || path.StartsWith('#'))
-        {
-            await js.InvokeVoidAsync("site.scrollToTop");
-        }
-        else
-        {
-            navigation.NavigateTo("/");
-        }
-    }
+    /// <summary>Reloads the site from the top of the home page (the logo acts as a refresh).</summary>
+    public void GoHome() => navigation.NavigateTo("/", forceLoad: true);
 
     private void NotifyChanged() => Changed?.Invoke();
 

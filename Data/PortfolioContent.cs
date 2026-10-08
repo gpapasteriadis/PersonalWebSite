@@ -65,7 +65,9 @@ public static class PortfolioContent
         new("Facebook", Icons.Custom.Brands.Facebook, "SocialNetworkLinks:Facebook"),
     ];
 
-    public const string CvPath = "George-CV.pdf";
+    /// <summary>The query string busts browser caches. docs/cv/build-cv.sh rewrites it whenever it regenerates the PDF.</summary>
+    public const string CvPath = "George-CV.pdf?v=60afdd0f";
+
     public const string AvatarPath = "/Icons/me-removebg.png";
     public const string LogoPath = "/Icons/codeIcon-removebg.png";
 }

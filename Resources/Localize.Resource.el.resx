@@ -146,10 +146,7 @@
     <value>Σώμα Πληροφορικής Ελληνικών Ενόπλων Δυνάμεων</value>
   </data>
   <data name="ArmyDesc" xml:space="preserve">
-    <value>Κατά τη διάρκεια της Υποχρεωτικής Στρατιωτικής Θητείας:&lt;br/&gt;
-• Ανέπτυξα και συντήρησα εσωτερικά συστήματα λογισμικού για την υποστήριξη επιχειρησιακών αναγκών.&lt;br/&gt;
-• Παρείχα τεχνική υποστήριξη στους τελικούς χρήστες, επιλύοντας αιτήματα και αντιμετωπίζοντας προβλήματα.&lt;br/&gt;
-• Συνέβαλα στη συνεχή βελτίωση και αναβάθμιση κρίσιμων εφαρμογών.</value>
+    <value>&lt;p class="rich__lead"&gt;Κατά τη διάρκεια της υποχρεωτικής στρατιωτικής θητείας μου:&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Ανέπτυξα και συντήρησα εσωτερικό λογισμικό που στήριζε τις καθημερινές επιχειρησιακές ανάγκες.&lt;/li&gt;&lt;li&gt;Ήμουν το πρόσωπο αναφοράς για τους χρήστες: απαντούσα σε ερωτήματα και έλυνα προβλήματα.&lt;/li&gt;&lt;li&gt;Συνέβαλα στη βελτίωση και αναβάθμιση κρίσιμων εφαρμογών.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Πίσω</value>
@@ -170,10 +167,7 @@
     <value>Ιουλ  - Οκτ 2019</value>
   </data>
   <data name="CothetaDesc" xml:space="preserve">
-    <value>• Ανέπτυξα έργα Εικονικής και Επαυξημένης Πραγματικότητας με το Unity3D, δημιουργώντας διαδραστικές εμπειρίες.</value>
-  </data>
-  <data name="CV" xml:space="preserve">
-    <value>Βιογραφικό:</value>
+    <value>&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Δημιούργησα έργα VR/AR στο Unity3D, μετατρέποντας ιδέες σε διαδραστικές εμπειρίες.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="DockerDesc" xml:space="preserve">
     <value>Το Docker μου επέτρεψε να πακετάρω και να αναπτύξω εφαρμογές με ευκολία. Μερικά παραδείγματα εφαρμογών που έχω χρησιμοποιήσει το Docker είναι: .NET 6 services, NestJS εφαρμογές, Βάσεις δεδομένων, Message Brokers, Frontend solutions.</value>
@@ -200,12 +194,7 @@
     <value>FoodWaste App</value>
   </data>
   <data name="MobileAppDesc" xml:space="preserve">
-    <value>Ως ελεύθερος επαγγελματίας, ανέλαβα ένα έργο ενός μήνα για την ανάπτυξη μιας εφαρμογής για κινητά. Η εφαρμογή FoodWaste επιτρέπει στους χρήστες να εισάγουν και να κατηγοριοποιούν εύκολα τα υπολείμματα τροφίμων, παρέχοντας χρήσιμα στοιχεία που τους βοηθούν να κατανοήσουν καλύτερα τις καταναλωτικές τους συνήθειες.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Λεπτομέρειες υλοποίησης:&lt;/b&gt;&lt;br&gt;
-· Χρησιμοποιώντας το Ionic Framework με την Angular, δημιούργησα δυναμικές διεπαφές χρήστη για Android και iOS λογισμικά.&lt;br /&gt;
-· Στο backend, χρησιμοποίησα το Apollo GraphQL και το nestJS για να δημιουργήσω ένα αποδοτικό σύστημα. Το MongoDB χρησιμοποιήθηκε για αποθήκευση και ανάκτηση δεδομένων.&lt;br /&gt;
-· Για περιβάλον παραγωγής επέλεξα το DigitalOcean χρησιμοποιώντας Docker containers. Αυτή η προσέγγιση επέτρεψε την ευέλικτη μεταφορά της εφαρμογής απο περιβάλον ανάπτυξης σε παραγωγής.</value>
+    <value>&lt;p class="rich__lead"&gt;Ένα freelance project διάρκειας ενός μήνα: μια εφαρμογή για κινητά όπου καταγράφεις και κατηγοριοποιείς τα υπολείμματα φαγητού σου και παίρνεις στατιστικά για να καταλάβεις τις καταναλωτικές σου συνήθειες.&lt;/p&gt;&lt;p class="rich__group"&gt;Πώς δουλεύει&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Ionic με Angular για το UI, με ομαλή εμπειρία σε Android και iOS.&lt;/li&gt;&lt;li&gt;NestJS και Apollo GraphQL στο backend, με MongoDB για αποθήκευση και ανάκτηση δεδομένων.&lt;/li&gt;&lt;li&gt;Φιλοξενία στο DigitalOcean με Docker containers, που έκανε το πακετάρισμα και την παράδοση γρήγορα και εύκολα.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="MobileAppShowSample" xml:space="preserve">
     <value>Κάντε κλικ για να δείτε ένα δείγμα</value>
@@ -226,15 +215,7 @@
     <value>Προσωπική Ιστοσελίδα</value>
   </data>
   <data name="PersonalWebsiteDesc" xml:space="preserve">
-    <value>Αυτό το project χρησιμεύει ως χαρτοφυλάκιο για να παρουσιάσω τα projects, τις δεξιότητες και την εργασιακή μου εμπειρία στο web development.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Λεπτομέρειες υλοποίησης:&lt;/b&gt;&lt;br&gt;
-·Δημιουργήθηκε χρησιμοποιώντας Blazor με .NET 8 και τη βιβλιοθήκη MudBlazor. Μια δυναμική client-side
-εφαρμογή που προσαρμόζεται εύκολα σε οποιαδήποτε οθόνη, είτε κάνετε περιήγηση σε επιτραπέζιο υπολογιστή, tablet ή smartphone.&lt;br&gt;
-
-· Φιλοξενείται στο Microsoft Azure χρησιμοποιώντας την υπηρεσία Static Web Apps.&lt;br&gt;
-
-·Ο κώδικας είναι αποθηκευμένος στο GitHub, αξιοποιώντας το GitHub Actions για Continuous Integration και Continuous Development (CI/CD), το οποίο βοηθά τις ενημερώσεις και τις βελτιώσεις της εφαρμογής να βγαίνουν στην παραγωγή απρόσκοπτα.</value>
+    <value>&lt;p class="rich__lead"&gt;Το portfolio μου: ένας χώρος για να παρουσιάζω τα projects, τις δεξιότητες και την εμπειρία μου στο web development.&lt;/p&gt;&lt;p class="rich__group"&gt;Πώς είναι φτιαγμένο&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Blazor με .NET 10 και τη βιβλιοθήκη MudBlazor. Είναι client-side web εφαρμογή που προσαρμόζεται σε κάθε οθόνη, είτε είσαι σε υπολογιστή, tablet ή κινητό.&lt;/li&gt;&lt;li&gt;Φιλοξενείται στο Microsoft Azure με Static Web Apps.&lt;/li&gt;&lt;li&gt;Ο κώδικας βρίσκεται στο GitHub και το GitHub Actions αναλαμβάνει το CI/CD, ώστε κάθε αλλαγή να βγαίνει αυτόματα στον αέρα.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="PersonalWebsiteTitle" xml:space="preserve">
     <value>&lt;u&gt;Η πρώτη μου προσωπική ιστοσελίδα&lt;/u&gt;</value>
@@ -297,39 +278,13 @@
     <value>Οκτ 2020 - Δεκ 2022</value>
   </data>
   <data name="TerracomDesc" xml:space="preserve">
-    <value>• Διαδραμάτισα βασικό ρόλο στην ανάπτυξη και συντήρηση της πλατφόρμας QR-Patrol.&lt;br/&gt;
-• Συμμετείχα ενεργά στην τεχνική ανάλυση και το σχεδιασμό συστημάτων, συμβάλλοντας στη βελτίωση των αποτελεσμάτων του έργου.&lt;br/&gt;
-• Συνεργάστηκα στενά με τα μέλη της ομάδας σε τακτικές συναντήσεις για ευθυγράμμιση προσπαθειών, υλοποίηση ενημερώσεων και συνεχή βελτίωση της πλατφόρμας.
-
-</value>
+    <value>&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Βασικός developer στην QR-Patrol, μια πλατφόρμα διαχείρισης ασφάλειας: ανάπτυξη νέων λειτουργιών και συντήρηση.&lt;/li&gt;&lt;li&gt;Συμμετείχα στην τεχνική ανάλυση και τον σχεδιασμό του συστήματος, ώστε κάθε αλλαγή να βελτιώνει το προϊόν.&lt;/li&gt;&lt;li&gt;Δούλευα στενά με την ομάδα σε τακτικές συναντήσεις για να οργανώνουμε, να βγάζουμε ενημερώσεις και να βελτιώνουμε διαρκώς την πλατφόρμα.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="IndeavorDesc" xml:space="preserve">
-    <value>&lt;b&gt;Ανάπτυξη Backend &amp; Πλατφόρμας:&lt;/b&gt;&lt;br/&gt;
-• Ανάπτυξη backend υπηρεσιών με .NET 10 και Entity Framework Core.&lt;br/&gt;
-• Αξιοποίηση PostgreSQL για αποθήκευση και διαχείριση δεδομένων.&lt;br/&gt;
-
-&lt;b&gt;Αρχιτεκτονική &amp; Παράδοση:&lt;/b&gt;&lt;br/&gt;
-• Χρήση Docker για συνεπές packaging και αξιόπιστη εκτέλεση υπηρεσιών σε διαφορετικά περιβάλλοντα.&lt;br/&gt;
-• Συμβολή σε συστήματα αρχιτεκτονικής microservices και ανάπτυξης web  εφαρμογών.&lt;br/&gt;
-
-&lt;b&gt;Ποιότητα &amp; Συνεργασία:&lt;/b&gt;&lt;br/&gt;
-• Χρήση xUnit για αυτοματοποιημένους ελέγχους και testing.&lt;br/&gt;
-• Ενεργή συμμετοχή σε πλήρως απομακρυσμένο, full-time ρόλο ανάπτυξης προϊόντος.</value>
+    <value>&lt;p class="rich__group"&gt;Ανάπτυξη Backend &amp; Πλατφόρμας&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Ανάπτυξη backend υπηρεσιών με .NET 10 και Entity Framework Core.&lt;/li&gt;&lt;li&gt;Αποθήκευση και ερωτήματα δεδομένων σε PostgreSQL.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;Αρχιτεκτονική &amp; Παράδοση&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Πακετάρισμα υπηρεσιών με Docker, ώστε να τρέχουν με τον ίδιο τρόπο παντού.&lt;/li&gt;&lt;li&gt;Συμμετοχή στην ανάπτυξη συστημάτων microservices και web εφαρμογών.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;Ποιότητα &amp; Συνεργασία&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Αυτοματοποιημένα τεστ με xUnit για αξιοπιστία.&lt;/li&gt;&lt;li&gt;Υποστήριξη της παράδοσης του προϊόντος σε πλήρως απομακρυσμένο, full-time ρόλο.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="PwCDesc" xml:space="preserve">
-    <value>&lt;b&gt;🖥️ Ανάπτυξη Ιστοσελίδων &amp; Διεπαφή Χρήστη:&lt;/b&gt;&lt;br/&gt;
-• Ανάπτυξη web εφαρμογών χρησιμοποιώντας .NET 8, Blazor Server και ASP.NET MVC.&lt;br/&gt;
-• Δημιουργία μοντέρνων, responsive διεπαφών με MudBlazor και JavaScript.&lt;br/&gt;
-
-&lt;b&gt;🛠️ Backend &amp; Διαχείριση Δεδομένων:&lt;/b&gt;&lt;br/&gt;
-• Εργασία με βάσεις δεδομένων SQL Server χρησιμοποιώντας Stored Procedures και raw SQL για σύνθετα ερωτήματα.&lt;br/&gt;
-• Διαχείριση πρόσβασης σε δεδομένα με Entity Framework Core.&lt;br/&gt;
-
-&lt;b&gt;⏱️ Επεξεργασία Παρασκηνίου &amp; Αυτοματοποίηση:&lt;/b&gt;&lt;br/&gt;
-• Ενσωμάτωση του Hangfire για προγραμματισμό εργασιών και ειδοποιήσεις μέσω email.&lt;br/&gt;
-
-&lt;b&gt;🚀 DevOps &amp; Διαχείριση Έργων:&lt;/b&gt;&lt;br/&gt;
-• Διαχείριση ολόκληρου του κύκλου ανάπτυξης στο Azure DevOps, περιλαμβάνοντας CI/CD pipelines και παρακολούθηση έργου.</value>
+    <value>&lt;p class="rich__group"&gt;🖥️ Ανάπτυξη Ιστοσελίδων &amp; Διεπαφή Χρήστη&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Ανάπτυξη web εφαρμογών με .NET 8, Blazor Server και ASP.NET MVC.&lt;/li&gt;&lt;li&gt;Δημιουργία μοντέρνων, responsive διεπαφών με MudBlazor και JavaScript.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;🛠️ Backend &amp; Διαχείριση Δεδομένων&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Εργασία με βάσεις SQL Server, με Stored Procedures και raw SQL για τα πιο σύνθετα ερωτήματα.&lt;/li&gt;&lt;li&gt;Διαχείριση πρόσβασης σε δεδομένα με Entity Framework Core.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;⏱️ Επεξεργασία Παρασκηνίου &amp; Αυτοματοποίηση&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Ενσωμάτωση του Hangfire για προγραμματισμένες εργασίες και ειδοποιήσεις μέσω email.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;🚀 DevOps &amp; Διαχείριση Έργων&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Διαχείριση ολόκληρου του κύκλου ανάπτυξης στο Azure DevOps, από τα CI/CD pipelines μέχρι την παρακολούθηση του έργου.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="AriaOpenMenu" xml:space="preserve">
     <value>Άνοιγμα μενού</value>
@@ -349,8 +304,11 @@
   <data name="AriaScrollToTop" xml:space="preserve">
     <value>Επιστροφή στην αρχή</value>
   </data>
-  <data name="AriaDownloadCV" xml:space="preserve">
-    <value>Λήψη βιογραφικού</value>
+  <data name="ViewCV" xml:space="preserve">
+    <value>Προβολή βιογραφικού</value>
+  </data>
+  <data name="AriaOpensNewTab" xml:space="preserve">
+    <value>(ανοίγει σε νέα καρτέλα)</value>
   </data>
   <data name="NotFoundTitle" xml:space="preserve">
     <value>Δεν βρέθηκε</value>

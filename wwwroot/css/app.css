@@ -276,20 +276,102 @@ img {
 .cv-link {
     display: inline-flex;
     align-items: center;
-    gap: .25rem;
-    padding: .15rem .25rem .15rem 1rem;
+    gap: .6rem;
+    min-height: 48px;
+    padding: .6rem 1.5rem .6rem 1.2rem;
     border: 1px solid rgba(var(--mud-palette-tertiary-rgb), .8);
     border-radius: var(--app-radius-pill);
     background: rgba(var(--mud-palette-tertiary-rgb), .14);
     color: var(--mud-palette-primary);
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .2s, box-shadow .2s, transform .2s var(--app-ease);
 }
 
-.cv-link__button:hover {
-    animation: bounceIn 1s;
+    .cv-link:active {
+        transform: translateY(0);
+    }
+
+    /* Keeps the site-wide focus ring color; only adds room around the pill. */
+    .cv-link:focus-visible {
+        outline-offset: 3px;
+    }
+
+.cv-link__external {
+    opacity: .7;
+    transition: transform .2s var(--app-ease), opacity .2s;
 }
+
+/* Hover effects only where hover exists, so they don't stick after a tap. */
+@media (hover: hover) {
+    .cv-link:hover {
+        background: rgba(var(--mud-palette-tertiary-rgb), .3);
+        box-shadow: var(--app-shadow-soft);
+        transform: translateY(-2px);
+    }
+
+        .cv-link:hover .cv-link__external {
+            opacity: 1;
+            transform: translate(2px, -2px);
+        }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cv-link,
+    .cv-link:hover,
+    .cv-link:hover .cv-link__external {
+        transform: none;
+    }
+}
+
+/* Rich text from resx: optional lead sentence, then headed bullet lists */
+.rich__lead {
+    margin: 0 0 .75rem;
+    line-height: 1.65;
+}
+
+.rich__group {
+    margin: 1rem 0 .35rem;
+    color: var(--mud-palette-primary);
+    font-size: .95rem;
+    font-weight: 700;
+}
+
+    .rich__group:first-child {
+        margin-top: 0;
+    }
+
+.rich__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .rich__list li {
+        position: relative;
+        padding-inline-start: 1.1rem;
+        line-height: 1.6;
+    }
+
+        .rich__list li + li {
+            margin-top: .3rem;
+        }
+
+        .rich__list li::before {
+            content: "";
+            position: absolute;
+            inset-inline-start: .15rem;
+            top: .62em;
+            width: .45rem;
+            height: .45rem;
+            border-radius: 50%;
+            background: var(--mud-palette-tertiary);
+        }
 
 .experience-timeline.mud-timeline {
-    max-width: 960px;
+    max-width: 1040px;
     margin-inline: auto;
 }
 

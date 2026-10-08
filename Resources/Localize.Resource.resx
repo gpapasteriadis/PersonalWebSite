@@ -146,10 +146,7 @@ In my spare time, I enjoy working out and going on motorcycle trips, they give m
     <value>Greek Armed Forces IT Corps</value>
   </data>
   <data name="ArmyDesc" xml:space="preserve">
-    <value>During Mandatory Military Service:&lt;br/&gt;
-• Developed and maintained internal software systems to support operational needs.&lt;br/&gt;
-• Provided technical support to end users, resolving inquiries and troubleshooting issues.&lt;br/&gt;
-• Contributed to ongoing improvements and enhancements of critical applications.</value>
+    <value>&lt;p class="rich__lead"&gt;During my mandatory military service:&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Built and maintained internal software that supported day-to-day operations.&lt;/li&gt;&lt;li&gt;Was the go-to person for end users: answering questions and fixing issues.&lt;/li&gt;&lt;li&gt;Helped improve and upgrade critical applications.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
@@ -170,10 +167,7 @@ In my spare time, I enjoy working out and going on motorcycle trips, they give m
     <value>Jul - Oct 2019</value>
   </data>
   <data name="CothetaDesc" xml:space="preserve">
-    <value>• Developed VR/AR projects with Unity3D, creating interactive experiences.</value>
-  </data>
-  <data name="CV" xml:space="preserve">
-    <value>Resume:</value>
+    <value>&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Built VR/AR projects in Unity3D, turning ideas into interactive experiences.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="DockerDesc" xml:space="preserve">
     <value>Docker has enabled me to seamlessly package and deploy applications with ease. Α few examples of some of the types of applications I have Dockerized are: .ΝΕΤ6 Services, NestJS App, Databases, Message Brokers, Frontend Solutions.</value>
@@ -200,12 +194,7 @@ In my spare time, I enjoy working out and going on motorcycle trips, they give m
     <value>FoodWaste App</value>
   </data>
   <data name="MobileAppDesc" xml:space="preserve">
-    <value>As a freelancer, I undertook a one-month project to develop a mobile application. FoodWaste application enables users to effortlessly input and categorize leftover food items, providing useful analytics to help them understand their consumption habits better.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Implementation Details:&lt;/b&gt;&lt;br&gt;
-· Leveraging the Ionic Framework integrated with Angular, I crafted dynamic user interfaces for seamless experiences across both Android and iOS platforms.&lt;br /&gt;
-· In the backend, I employed Apollo GraphQL and nestJS to build a robust system. MongoDB was utilized for data storage and retrieval.&lt;br /&gt;
-· Deployment was done on DigitalOcean using Docker containers. This approach allowed for agile packaging and deployment.</value>
+    <value>&lt;p class="rich__lead"&gt;A one-month freelance project: a mobile app where you log and categorize your leftover food and get analytics to understand your consumption habits.&lt;/p&gt;&lt;p class="rich__group"&gt;Under the hood&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Ionic with Angular for the UI, giving a smooth experience on both Android and iOS.&lt;/li&gt;&lt;li&gt;NestJS and Apollo GraphQL on the backend, with MongoDB for storing and retrieving data.&lt;/li&gt;&lt;li&gt;Deployed on DigitalOcean in Docker containers, which made packaging and shipping quick and easy.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="MobileAppShowSample" xml:space="preserve">
     <value>Click to see a sample</value>
@@ -226,15 +215,7 @@ In my spare time, I enjoy working out and going on motorcycle trips, they give m
     <value>Personal Website</value>
   </data>
   <data name="PersonalWebsiteDesc" xml:space="preserve">
-    <value>This project serves as a portfolio to showcase my projects, skills, and work experience in web development.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Implementation Details:&lt;/b&gt;&lt;br&gt;
-·Built using Blazor with .NET 8 and the MudBlazor library. A dynamic
-client-side web application that adapts effortlessly to any screen, whether you're browsing on a desktop, tablet, or smartphone.&lt;br&gt;
-
-·Hosted on Microsoft Azure using the Static Web Apps service.&lt;br&gt;
-
-·The codebase stored on GitHub, leveraging GitHub Actions for Continuous Integration and Continuous Development (CI/CD), which helps updates and enhancements roll out seamlessly.</value>
+    <value>&lt;p class="rich__lead"&gt;My portfolio: a place to show off my projects, skills and work experience in web development.&lt;/p&gt;&lt;p class="rich__group"&gt;How it's built&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Blazor on .NET 10 with the MudBlazor library. It's a client-side web app that adapts to any screen, whether you're on a desktop, tablet or phone.&lt;/li&gt;&lt;li&gt;Hosted on Microsoft Azure with Static Web Apps.&lt;/li&gt;&lt;li&gt;Code lives on GitHub, and GitHub Actions handles CI/CD, so every update goes live automatically.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="PersonalWebsiteTitle" xml:space="preserve">
     <value>&lt;u&gt;My First Personal Website&lt;/u&gt;</value>
@@ -297,37 +278,13 @@ client-side web application that adapts effortlessly to any screen, whether you'
     <value>Oct 2020 - Dec 2022</value>
   </data>
   <data name="TerracomDesc" xml:space="preserve">
-    <value>• Played a key role in developing and maintaining the QR-Patrol security management platform.&lt;br/&gt;
-• Actively contributed to technical analysis and system design, driving enhancements to project outcomes.&lt;br/&gt;
-• Collaborated closely with team members in regular meetings to align efforts, implement updates, and continuously improve the platform.</value>
+    <value>&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Core developer on QR-Patrol, a security management platform: building features and keeping it running.&lt;/li&gt;&lt;li&gt;Took part in technical analysis and system design, so every change made the product better.&lt;/li&gt;&lt;li&gt;Worked closely with the team in regular syncs to plan, ship updates and keep improving the platform.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="IndeavorDesc" xml:space="preserve">
-    <value>&lt;b&gt;Backend &amp; Platform Engineering:&lt;/b&gt;&lt;br/&gt;
-• Building backend services with .NET 10 and Entity Framework Core.&lt;br/&gt;
-• Working with PostgreSQL for data storage and querying.&lt;br/&gt;
-
-&lt;b&gt;Delivery &amp; Architecture:&lt;/b&gt;&lt;br/&gt;
-• Using Docker to package and run services consistently across environments.&lt;br/&gt;
-• Contributing to microservices-based systems and web development initiatives.&lt;br/&gt;
-
-&lt;b&gt;Quality &amp; Collaboration:&lt;/b&gt;&lt;br/&gt;
-• Applying xUnit for automated testing and reliability.&lt;br/&gt;
-• Supporting product delivery in a remote, full-time engineering role.</value>
+    <value>&lt;p class="rich__group"&gt;Backend &amp; Platform Engineering&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Building backend services with .NET 10 and Entity Framework Core.&lt;/li&gt;&lt;li&gt;Storing and querying data in PostgreSQL.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;Delivery &amp; Architecture&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Packaging services with Docker so they run the same everywhere.&lt;/li&gt;&lt;li&gt;Helping build microservices-based systems and web apps.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;Quality &amp; Collaboration&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Writing automated tests with xUnit to keep things reliable.&lt;/li&gt;&lt;li&gt;Supporting product delivery in a remote, full-time engineering role.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="PwCDesc" xml:space="preserve">
-  <value>&lt;b&gt;🖥️ Web Development &amp; UI:&lt;/b&gt;&lt;br/&gt;
- • Developed web applications using .NET 8, Blazor Server, and ASP.NET MVC.&lt;br/&gt;
- • Built modern, responsive UIs with MudBlazor and JavaScript.&lt;br/&gt;
-
-&lt;b&gt;🛠️ Backend &amp; Data Operations:&lt;/b&gt;&lt;br/&gt;
- • Worked with SQL Server databases using Stored Procedures and raw SQL for complex queries.&lt;br/&gt;
- • Managed data access with Entity Framework Core.&lt;br/&gt;
-
-&lt;b&gt;⏱️ Background Processing &amp; Automation:&lt;/b&gt;&lt;br/&gt;
- • Integrated Hangfire for task scheduling and email notifications.&lt;br/&gt;
-
-&lt;b&gt;🚀 DevOps &amp; Project Management:&lt;/b&gt;&lt;br/&gt;
- • Managed the full development lifecycle in Azure DevOps, including CI/CD pipelines and project tracking.</value>
+  <value>&lt;p class="rich__group"&gt;🖥️ Web Development &amp; UI&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Built web apps with .NET 8, Blazor Server and ASP.NET MVC.&lt;/li&gt;&lt;li&gt;Created modern, responsive UIs with MudBlazor and JavaScript.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;🛠️ Backend &amp; Data Operations&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Worked with SQL Server, using stored procedures and raw SQL for the trickier queries.&lt;/li&gt;&lt;li&gt;Handled data access with Entity Framework Core.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;⏱️ Background Processing &amp; Automation&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Set up Hangfire for scheduled jobs and email notifications.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;🚀 DevOps &amp; Project Management&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Ran the whole development cycle in Azure DevOps, from CI/CD pipelines to project tracking.&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="AriaOpenMenu" xml:space="preserve">
     <value>Open menu</value>
@@ -347,8 +304,11 @@ client-side web application that adapts effortlessly to any screen, whether you'
   <data name="AriaScrollToTop" xml:space="preserve">
     <value>Back to top</value>
   </data>
-  <data name="AriaDownloadCV" xml:space="preserve">
-    <value>Download resume</value>
+  <data name="ViewCV" xml:space="preserve">
+    <value>View resume</value>
+  </data>
+  <data name="AriaOpensNewTab" xml:space="preserve">
+    <value>(opens in a new tab)</value>
   </data>
   <data name="NotFoundTitle" xml:space="preserve">
     <value>Not found</value>
