@@ -43,6 +43,9 @@ public static class PortfolioContent
         "FmLabel", "FmTitle", "FmSummary",
         [".NET 10", "ASP.NET Core", "Blazor", "MudBlazor", "Entity Framework Core", "PostgreSQL",
          "MQTT", "RabbitMQ", ".NET Aspire", "Docker", "xUnit"]);
+    public static Project Radio { get; } = new(
+        "Radio", "RadioTitle", "RadioDesc",
+        ["JavaScript", "PWA", "Azure Functions", "Azure Static Web Apps", "GitHub Actions"]);
 
     public static IReadOnlyList<Skill> Skills { get; } =
     [

@@ -564,4 +564,16 @@ In my spare time, I enjoy working out and going on motorcycle trips, they give m
   <data name="FmNowText" xml:space="preserve">
     <value>Where it stands: sensor readings already flow from an Arduino prototype through the platform into a database and onto a first dashboard. Locations, customer accounts and per-location dashboards are being built now.</value>
   </data>
+  <data name="Radio" xml:space="preserve">
+    <value>Radio</value>
+  </data>
+  <data name="RadioTitle" xml:space="preserve">
+    <value>&lt;u&gt;Radio: a PWA for Listening to Radio Stations&lt;/u&gt;</value>
+  </data>
+  <data name="RadioDesc" xml:space="preserve">
+    <value>&lt;p class="rich__lead"&gt;A small installable web app for listening to radio stations on your phone. You keep a list of stations and switch with next and previous, without opening web pages one by one. The lock-screen and headphone buttons work too.&lt;/p&gt;&lt;p class="rich__group"&gt;What it does&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;A built-in catalog of Greek and worldwide stations with search and region or genre filters, plus adding any station by its stream link.&lt;/li&gt;&lt;li&gt;Favorites, your own folders, drag-to-reorder, light and dark themes, and a Greek and English interface.&lt;/li&gt;&lt;li&gt;Shows the song that is playing, with a quick Spotify search, on the screen and on the lock screen.&lt;/li&gt;&lt;li&gt;Your lists stay on your device, with a manual backup file instead of a login.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;Under the hood&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Plain JavaScript modules with no build step and no dependencies, and tests for the logic that makes decisions.&lt;/li&gt;&lt;li&gt;A small Azure Function reads the song title from the stream, guarded against misuse: https only, no private addresses, bounded reads and a rate limit.&lt;/li&gt;&lt;li&gt;Hosted on Azure Static Web Apps; every push runs checks and tests in GitHub Actions before it is deployed.&lt;/li&gt;&lt;/ul&gt;</value>
+  </data>
+  <data name="RadioOpenApp" xml:space="preserve">
+    <value>Open the app</value>
+  </data>
 </root>
