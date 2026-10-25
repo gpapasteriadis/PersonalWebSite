@@ -564,4 +564,16 @@
   <data name="FmNowText" xml:space="preserve">
     <value>Πού βρίσκεται: οι μετρήσεις ήδη ρέουν από ένα πρωτότυπο Arduino μέσω της πλατφόρμας σε μια βάση δεδομένων και σε ένα πρώτο dashboard. Οι τοποθεσίες, οι λογαριασμοί πελατών και τα dashboards ανά τοποθεσία βρίσκονται σε εξέλιξη.</value>
   </data>
+  <data name="Radio" xml:space="preserve">
+    <value>Radio</value>
+  </data>
+  <data name="RadioTitle" xml:space="preserve">
+    <value>&lt;u&gt;Radio: PWA για ακρόαση ραδιοφωνικών σταθμών&lt;/u&gt;</value>
+  </data>
+  <data name="RadioDesc" xml:space="preserve">
+    <value>&lt;p class="rich__lead"&gt;Μια μικρή web εφαρμογή που εγκαθίσταται στο κινητό για ακρόαση ραδιοφωνικών σταθμών. Κρατάς μια λίστα σταθμών και αλλάζεις με next και previous, χωρίς να ανοίγεις σελίδες μία-μία. Δουλεύουν και τα κουμπιά της οθόνης κλειδώματος και των ακουστικών.&lt;/p&gt;&lt;p class="rich__group"&gt;Τι κάνει&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Ενσωματωμένος κατάλογος ελληνικών και διεθνών σταθμών με αναζήτηση και φίλτρα περιοχής ή είδους, και προσθήκη οποιουδήποτε σταθμού με το link του stream.&lt;/li&gt;&lt;li&gt;Αγαπημένα, δικοί σου φάκελοι, αλλαγή σειράς με σύρσιμο, φωτεινό και σκούρο θέμα, και διεπαφή σε ελληνικά και αγγλικά.&lt;/li&gt;&lt;li&gt;Εμφανίζει το τραγούδι που παίζει, με γρήγορη αναζήτηση στο Spotify, στην οθόνη και στην οθόνη κλειδώματος.&lt;/li&gt;&lt;li&gt;Οι λίστες σου μένουν στη συσκευή σου, με χειροκίνητο αρχείο αντιγράφου ασφαλείας αντί για login.&lt;/li&gt;&lt;/ul&gt;&lt;p class="rich__group"&gt;Πώς δουλεύει&lt;/p&gt;&lt;ul class="rich__list" role="list"&gt;&lt;li&gt;Απλά JavaScript modules χωρίς build και χωρίς εξαρτήσεις, με τεστ για τη λογική που παίρνει αποφάσεις.&lt;/li&gt;&lt;li&gt;Μια μικρή Azure Function διαβάζει τον τίτλο του τραγουδιού από το stream, με προστασία από κατάχρηση: μόνο https, χωρίς ιδιωτικές διευθύνσεις, όρια ανάγνωσης και περιορισμός αιτημάτων.&lt;/li&gt;&lt;li&gt;Φιλοξενία στο Azure Static Web Apps· κάθε push τρέχει ελέγχους και τεστ στο GitHub Actions πριν γίνει deploy.&lt;/li&gt;&lt;/ul&gt;</value>
+  </data>
+  <data name="RadioOpenApp" xml:space="preserve">
+    <value>Άνοιγμα της εφαρμογής</value>
+  </data>
 </root>

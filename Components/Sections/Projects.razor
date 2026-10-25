@@ -61,6 +61,16 @@
                 }
             </div>
         </MudItem>
+
+        <MudItem xs="12">
+            <ProjectCard Project="PortfolioContent.Radio">
+                <Actions>
+                    <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Href="@Config["Projects:Radio_Live"]"
+                                   Target="_blank" rel="noopener" Color="Color.Primary"
+                                   title="@L["RadioOpenApp"]" aria-label="@($"{L["RadioOpenApp"]} {L["AriaOpensNewTab"]}")" />
+                </Actions>
+            </ProjectCard>
+        </MudItem>
     </MudGrid>
 </PortfolioSection>
 
